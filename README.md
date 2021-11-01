@@ -1,0 +1,2 @@
+# project_laporno_html_public
+ラポルノファンディング用HTML・CSS情報
