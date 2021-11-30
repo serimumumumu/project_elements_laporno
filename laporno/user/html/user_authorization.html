@@ -22,29 +22,25 @@
     <meta name="twitter:title" content="【ラポルノファンディング】">
     <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
     <!-- <title>マイページ</title> -->
-    <link rel="stylesheet" href="../../user/css/reset.css">
-    <link rel="stylesheet" href="../../user/css/header.css">
-    <link rel="stylesheet" href="../../user/css/user_footer.css">
-    <!-- <link rel="stylesheet" href="../../user/css/user_component.css"> -->
-    <link rel="stylesheet" href="../../user/css/user_signup.css">
-    <!-- <link rel="stylesheet" href="../../user/css/user_inquery_preview.css"> -->
-    <link rel="stylesheet" href="../../user/css/user_modal.css">
-    <script src="../../user/js/vue.js" defer></script>
+    <link rel="stylesheet" href="https://elements.laporno.fund/user/css/reset.css">
+    <link rel="stylesheet" href="https://elements.laporno.fund/user/css/header.css">
+    <link rel="stylesheet" href="https://elements.laporno.fund/user/css/user_footer.css">
+    <link rel="stylesheet" href="https://elements.laporno.fund/user/css/user_signup.css">
+    <link rel="stylesheet" href="https://elements.laporno.fund/user/css/user_modal.css">
+    <script src="https://elements.laporno.fund/user/js/vue.js" defer></script>
 
 </head>
 <body>
     <div id="app">
         <headers></headers>
-    <!-- </div> -->
-    <!-- パンクズりすと -->
-    <div class="panlist">
+      <!-- パンクズりすと -->
+      <div class="panlist">
         <ul >
-            <li ><a href="../../user/html/user_top.html">TOP</a></li>
-            <li class="arrow-l"><p>権限付与</p></li>
+          <li ><a href="../../user/html/user_top.html">TOP</a></li>
+          <li class="arrow-l"><p>権限付与</p></li>
         </ul>
-    </div>
-    <main class="user_authorization_card color1">
-      <!-- <form class="color0"> -->
+      </div>
+      <main class="user_authorization_card color1">
         <div class="card_content color0">
           <h1 class="card-title">権限付与</h1>
           <div class="card_info_index">
@@ -76,30 +72,28 @@
             </div>
         </div>
         </div>
-      <!-- </form> -->
-    </main>
+      </main>
       <userfooter></userfooter>
     </div>
-    <!-- <script src="../../user/js/component.js"></script> -->
-    <script src="../../user/js/user_footer.js" defer></script>
-    <script src="../../user/js/user_header_search.js" defer></script>
+    <script src="https://elements.laporno.fund/user/js/user_footer.js" defer></script>
+    <script src="https://elements.laporno.fund/user/js/user_header_search.js" defer></script>
     <script>
-          window.onload = function () {
-            new Vue ({
-                el:"#app",
-                data: {
-                    showContent:false,
-                },
-                methods:{
-                  openModal(){
-                this.showContent = true;
-              },
-              closeModal(){
-                this.showContent = false;
-              },
+      window.onload = function () {
+      new Vue ({
+          el:"#app",
+          data: {
+              showContent:false,
+          },
+          methods:{
+            openModal(){
+          this.showContent = true;
+          },
+          closeModal(){
+            this.showContent = false;
+          },
           }
-            });
-        }
+        });
+      }
     </script>
 </body>
 </html>

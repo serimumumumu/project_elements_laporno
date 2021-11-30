@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>結果</title>
-    <link rel="stylesheet" href="../../user/css/reset.css">
-    <link rel="stylesheet" href="../../user/css/header.css">
-    <link rel="stylesheet" href="../../user/css/user_gacha_detail.css">
-    <script src="../../user/js/vue.js" defer></script>
+    <link rel="stylesheet" href="https://elements.laporno.fund/user/css/reset.css">
+    <link rel="stylesheet" href="https://elements.laporno.fund/user/css/header.css">
+    <link rel="stylesheet" href="https://elements.laporno.fund/user/css/user_gacha_detail.css">
+    <script src="https://elements.laporno.fund/user/js/vue.js" defer></script>
 </head>
 <body>
-    <div id="headers">
+    <div id="app">
         <headers></headers>
-    </div>
+    <!-- </div> -->
     <!-- パンクズりすと -->
     <div class="panlist">
         <ul >
@@ -139,9 +139,53 @@
     <div  id="retry">
         <div class="button_area" href="" @click="openModal">もう一回引く</div>
         <a class="button_area" href="../../user/html/user_gacha_detail.html">ガチャ詳細へ</a>
+        <div v-show="showContent" @close="showContent = false">
+            <div class="overlay">
+                <div class="overlay-over">
+                  <div class="cancel-btn" @click="closeModal">
+                    <span class="x x_1"></span>
+                    <span class="x x_2"></span>
+                  </div>
+                    <!-- モーダルの中身 -->
+                  <div class="overlay-overmain">
+                    <div class="modal_section2">
+                      <h6 class="modal_title">ガチャを引く</h6>
+                      <div class="gacha_button">
+                          <button class="gacha_one" onclick="location.href='../../user/html/user_gacha_result.html'"><span class="gacha_one_span">１回</span>(000pt)</button>
+                          <button class="gacha_one withheart" onclick="location.href='../../user/html/user_gacha_result.html'"><span class="gacha_one_span">１０回</span>(000pt)
+                              <img class="gacha_heart" src="../../img/gacha_heart.png" alt="">
+                          </button>
+                      </div>
+                      <div class="lp_button">
+                        <p>所持LP:<span class="havelp">33,000pt</span></p>
+                        <button  id="btn-3" onclick="location.href='../../user/html/user_lp.html'">LP購入</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+        </div>
         <gacharu v-show="showContent" @close="showContent = false"></gacharu>
     </div>
-    <script src="../../user/js/component.js" defer></script>
-    <script src="../../user/js/actprodtop.js" defer></script>
+    <script src="https://elements.laporno.fund/user/js/user_header_search.js" defer></script>
+    <script>
+        window.onload = function () {
+          new Vue ({
+              el:"#app",
+              data: {
+                  isActiveTab: "1",
+                showContent:false,
+              },
+              methods:{
+               openModal(){
+                    this.showContent = true;
+                },
+                closeModal(){
+                    this.showContent = false;
+                },
+          }
+          });
+      }
+  </script>
 </body>
 </html>

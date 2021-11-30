@@ -17,7 +17,7 @@ html { color: #232323; }
 
 body { background-color: #E9E9E9; }
 
-.user_message_top { padding: 4px 16px 16px; }
+.user_message_top { padding: 4px 16px 16px; margin: 0 0 60px 0; }
 
 .user_message_top_index_title { padding: 16px 0 6px; font-size: 12px; }
 

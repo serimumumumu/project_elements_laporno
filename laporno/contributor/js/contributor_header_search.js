@@ -5,15 +5,15 @@ Vue.component('conheaders',{
   
   <header>
     <div class="header-left">
-         <a href="contributor_top.html"><img src="../../img/logo.png" alt="ラポルノロゴ"></a>
+         <a href="contributor_top.html"><img src="https://elements.laporno.fund/img/logo.png" alt="ラポルノロゴ"></a>
     </div>
     <div class="header-right">
-        <a href="">
-        <img src="../../img/mail.png" alt="">
+        <a href="https://elements.laporno.fund/contributor/html/contributor_message.html">
+        <img src="https://elements.laporno.fund/img/mail.png" alt="">
         </a>
         <div class="hmenu" id="hamburger_menu" @click="open=!open">
-            <img src="../../img/conmenu.png" alt="" >
-            <div class="hbtn" >
+            <img src="https://elements.laporno.fund/img/conmenu.png" alt="" >
+            <div class="hbtn">
                 <span class="line line_01" :class="{'btn_01':open }"></span>
                 <span class="line line_03" :class="{'btn_03':open }"></span>
             </div>
@@ -21,21 +21,21 @@ Vue.component('conheaders',{
         <div class="menu" v-show="open">
             <p class="menu_user">投稿者のなまえ</p>
             <ul>
-                <li><a href="contributor_mypage.html">マイページ</a></li>
-                <li><a href="">News</a></li>
-                <li><a href="contributor_project_top.html">プロジェクトTOP</a></li>
-                <li><a href="contributor_auction_top.html">オークションTOP</a></li>
-                <li><a href="contributor_gacha_top.html">ガチャTOP</a></li>
-                <li><a href="">LP購入</a></li>
-                <li><a href="contributor_mypage.html">お気に入り</a></li>
-                <li><a href="contributor_mypage.html">設定</a></li>
-                <li><a href="contributor_dummy.html">ダミーアカウント</a></li>
-                <li><a href="">お問い合わせ</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_mypage.html">マイページ</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_news.html">News</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_project_top.html">プロジェクトTOP</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_auction_top.html">オークションTOP</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_gacha_top.html">ガチャTOP</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_lp.html">LP購入</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_mypage.html">お気に入り</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_mypage.html">設定</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_dummy.html">ダミーアカウント</a></li>
+                <li><a hewf="https://elements.laporno.fund/contributor/html/contributor_inquiry.html">お問い合わせ</a></li>
                 <li><a href="">ログアウト</a></li>
             </ul>
             <div class="sns">
-                <a href="top.html"><img src="../../img/twitter.png" alt=""></a>
-                <a href="#"><img src="../../img/instagram.png" alt=""></a>
+                <a hewf=""><img src="https://elements.laporno.fund/img/twitter.png" alt=""></a>
+                <a hewf=""><img src="https://elements.laporno.fund/img/instagram.png" alt=""></a>
             </div>
         </div>
         </div>
@@ -56,7 +56,7 @@ Vue.component('conheaders',{
     template:`
     <div class="search">
         <form action="" method="">
-            <img src="../../img/serch.png" alt="">
+            <img src="https://elements.laporno.fund/img/serch.png" alt="">
             <input type="text" placeholder="検索する" />
         </form>
     </div>

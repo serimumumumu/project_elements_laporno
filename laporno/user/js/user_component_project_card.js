@@ -67,8 +67,8 @@ Vue.component('userprojectcard',{
                             <div class="overlay-overmain">
                                 <div class="modal_section" v-if="isActive">
                                 <h6 class="modal_title">押し女優さんを応援して表示順位を上げよう！</h6>
-                                <form action="">
-                                <textarea name="" id="" cols="30" rows="10" placeholder="応援コメントを入力してください" v-model="checkAgree"></textarea>
+                                <form class="support_form" action="">
+                                <textarea class="support_textarea" name="" id="" cols="30" rows="10" placeholder="応援コメントを入力してください" v-model="checkAgree"></textarea>
                                 </form>
                                 </div>
                                 <span class="modal_title_span2" v-show ="checkAgree==false" style="display:block;margin-top:6px;color:#FF0000;">※コメントを入力してください</span>

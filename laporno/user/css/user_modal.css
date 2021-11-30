@@ -73,6 +73,8 @@ html { color: #232323; }
 
 .overlay-overmain { color: #232323; background: #E9E9E9; padding: 30px 20px; margin: 0 auto; overflow: auto; }
 
+.support_form { background-color: #FAFAFA; padding: 10px; }
+
 #btn-2, .btn-2 { display: block; background: #232323; width: 195px; z-index: 100; color: #FAFAFA; border-radius: 4px; line-height: center; text-align: center; margin: 30px auto 0; font-size: 16px; padding: 14px; }
 
 [v-cloak] { opacity: 0; }

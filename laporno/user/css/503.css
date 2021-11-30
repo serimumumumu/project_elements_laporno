@@ -19,6 +19,8 @@ html { color: #232323; }
 
 .user_503_main { font-weight: bold; font-size: 94px; letter-spacing: -0.06em; display: block; margin: 30px auto; text-align: center; }
 
+.user_complete_main { font-weight: bold; font-size: 24px; letter-spacing: -0.06em; display: block; margin: 30px auto; text-align: center; }
+
 .user_503_main_description { font-size: 16px; text-align: center; display: block; letter-spacing: normal; }
 
 .user_503_sub { font-size: 12px; text-align: center; color: #7D7D7D; margin: 0 0 30px; }
@@ -34,6 +36,8 @@ html { color: #232323; }
 .user_404_reccomend_title { font-size: 12px; margin: 30px 0 0 0; text-align: center; padding: 0 0 10px; color: #7D7D7D; }
 
 .user_404_reccomend { padding: 0 0 0 16px; }
+
+.user_404_reccomend form { background-color: #FAFAFA; padding: 10px; }
 
 .user_404_reccomend_scroll { display: -webkit-box; display: -ms-flexbox; display: flex; overflow: scroll; gap: 8px; }
 
