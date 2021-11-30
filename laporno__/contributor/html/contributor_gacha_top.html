@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ガチャTop</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_top.css">
+  <link rel="stylesheet" href="../../contributor/css/contributor_gacha_top.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <conheaders></conheaders>
+    <div class="panlist">
+      <ul >
+          <li ><a href=",,/,,/contributor/html/contributor_top.html">TOP</a></li>
+          <li class="arrow-l"><p>ガチャTOP</p></li>
+      </ul>
+      </div>
+      <search></search>
+    <div class="color2">
+      <input id="tab1" type="radio" name="tab_btn" checked>
+      <input id="tab2" type="radio" name="tab_btn">
+      <input id="tab3" type="radio" name="tab_btn">
+      <div class="tab_labels">
+      <label class="tab1_label conbutton" for="tab1">一覧</label>
+      <label class="tab2_label conbutton" for="tab2">投稿</label>
+      <label class="tab3_label conbutton" for="tab3">景品一覧</label>
+      </div>
+      <div class="panel_area"  id="">
+        <div id="panel1" class="tab_panel">
+          <div class=" color2" >
+            <h3 class="page-title">ガチャ一覧</h3>
+            <div class="tab-area">
+              <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActiveTab === '1'}">開催中</div>
+              <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActiveTab === '2'}">終了</div>
+            </div>
+            <!--開催中-->
+            <div class="main-area color1" v-if="isActiveTab === '1'">
+              <div class="acts" >
+                <contributorgachacard ></contributorgachacard>
+                <contributorgachacard ></contributorgachacard>
+                <contributorgachacard ></contributorgachacard>
+                <contributorgachacard ></contributorgachacard>
+                <contributorgachacard ></contributorgachacard>
+              </div>
+            </div>
+            <!--終了-->
+            <div  class="main-area color1" v-else="isActiveTab === '2'">
+              <div class="acts">
+                <contributorgachaendcard ></contributorgachaendcard>
+                <contributorgachaendcard ></contributorgachaendcard>
+                <contributorgachaendcard ></contributorgachaendcard>
+                <contributorgachaendcard ></contributorgachaendcard>
+                <contributorgachaendcard ></contributorgachaendcard>
+              </div>
+            </div>
+          </div>   
+        </div>
+        <div id="panel2" class="tab_panel">
+          <h1 class="title">投稿一覧<button class="create-btn color1" onclick="location.href='../../contributor/html/contributor_gacha_new.html'"><img src="../../img/plus.png"> <p>新規作成</p></button></h1>
+          <div class="">
+            <div class="main-area color1">
+                <search></search>
+                <div class="table_sort_black" style="margin: 10px 0 8px auto;">
+                  <select name="order" id="" class="table_sort_select_black">
+                  <option >新着中</option>
+                  <option >登録順</option>
+                  </select>
+                </div>
+              <div class="acts" >
+                <!-- 申請前 -->
+                <div class="compo_card contributor_gacha_status">
+                  <a href="contributor_gacha_detail.html" class="gatya_card_imgarea">
+                    <img src="../../img/demoimg.png" alt="" class="compo_main_img">
+                  </a>
+                  <div class="gatya_card_inner">
+                    <a href="contributor_gacha_detail.html" class="gatya_card_title">ガチャのタイトルがガチャのタイトルがここに入りますよ</a>
+                    <a href="contributor_gacha_detail.html">
+                      <div class="info-inner">
+                        <img src="../../img/time.png" alt="">
+                        <div>12/12～12/18</div>
+                      </div>
+                    </a>
+                    <button href="" class="gacha_new_app_button" @click="openAppModal">申請する</button>
+                    <div v-show="showAppContent" @close="showAppContent">
+                      <div class="overlay "> 
+                        <div class="overlay-over">
+                          <div class="cancel-btn" @click="closeAppModal">
+                            <span class="x x_1"></span>
+                            <span class="x x_2"></span>
+                          </div>
+                          <div class="modal_section ">
+                            <div class="overlay-overmain ">
+                              <div class="modal_section">
+                                <h6 class="modal_title">申請完了</h6>
+                                <p>ガチャの申請を行いました。<br>
+                                マスターが承認するまでお待ちください</p>
+                                </div>
+                              <button  id="btn-2" @click="closeAppModal">ガチャ一覧</button>
+                              <!-- ボタンを押したあとの表示 -->
+                            </div>
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                  <span class="contributor_gacha_status_span">申請前</span>
+                </div>
+                <!-- 開催中 -->
+                <div class="compo_card contributor_gacha_status">
+                  <a href="contributor_gacha_new.html" class="gatya_card_imgarea">
+                      <img src="../../img/demoimg.png" alt="" class="compo_main_img">
+                  </a>
+                  <div class="gatya_card_inner">
+                      <a href="contributor_gacha_new.html" class="gatya_card_title">ガチャのタイトルがガチャのタイトルがここに入りますよ</a>
+                      <a href="contributor_gacha_new.html">
+                        <div class="info-inner">
+                          <img src="../../img/time.png" alt="">
+                          <div>12/12～12/18</div>
+                        </div>
+                        <div class="info-inner">
+                          <img src="../../img/lott.png" alt="">
+                          <div>現在20000回</div>
+                        </div>
+                      </a>
+                    </div>
+                    <span class="contributor_gacha_status_span">開催中</span>
+              </div>
+                <!-- 終了 -->
+                <div class="compo_card contributor_gacha_status">
+                  <a href="contributor_gacha_detail.html" class="gatya_card_imgarea">
+                      <img src="../../img/demoimg.png" alt="" class="compo_main_img">
+                  </a>
+                  <div class="gatya_card_inner">
+                      <a href="contributor_gacha_detail.html" class="gatya_card_title">ガチャのタイトルがガチャのタイトルがここに入りますよ</a>
+                      <a href="contributor_gacha_detail.html">
+                        <div class="info-inner">
+                          <img src="../../img/time.png" alt="">
+                          <div>12/12～12/18</div>
+                        </div>
+                        <div class="info-inner">
+                          <img src="../../img/lott.png" alt="">
+                          <div>現在20000回</div>
+                        </div>
+                      </a>
+                      <a href="../../contributor/html/contributor_detail_gacha.html" class="gacha_new_app_button">明細詳細</a>
+                    </div>
+                    <span class="contributor_gacha_status_span">終了</span>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="panel3" class="tab_panel">
+          <h1 class="title">景品一覧<button class="create-btn color1" onclick="location.href='../../contributor/html/contributor_gacha_new_add.html'"><img src="../../img/plus.png"> <p>新規作成</p></button></h1>
+          <div class="hyou_area content">
+            <div class="hyou">
+              <!-- <div class="gacha_attention color1" id="gacha_unread">
+                <h5><img src="../../img/excla.png" alt=""><span class="gacha_attention_span">2</span>件の未読記事があります</h5>
+              </div> -->
+              <div class="hyou-top">
+                <div class="table-title-area color5">
+                  <h2 class="table-title">景品一覧</h2>
+                  <div class="table_sort">
+                    <select name="order" id="" class="table_sort_select colo">
+                    <option >新着中</option>
+                    <option >登録順</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="search sub_search">
+                  <form action="" method="">
+                    <img src="../../img/serch.png" alt="">
+                    <input  type="text" placeholder="ユーザーを検索する" />
+                  </form>
+                </div>
+                <table class="table gacha">
+                  <tr class="table_header">
+                    <th class="table_180">ユーザー名</th>
+                    <th class="table_60">ID</th>
+                  <th class="bold-font table_200">タイトル</th>
+                  <th class="table_100">詳細</th>
+                  <th class="table_100">回数＋おまけ</th>
+                  <th class="table_40 table_center">Mail</th>
+                  </tr>
+                  <template v-for="(patron, index) in patrons">
+                    <tr>
+                      <td class="bold-font "><a  class="warn_icon" href="../../contributor/html/comtributor_user_profile.html">{{ patron.name }}</a></td>
+                      <td></td>
+                      <td><p href="../../contributor/html/contributor_gacha_detail.html">投稿タイトタイトルタイト</p></td>
+                      <td style="text-align: center;">
+                        <img @click="toggleGachas(patron)" :src="patron.showGachas ? '../../img/arrowup.png' : '../../img/arrowdown.png'">
+                      </td>
+                      <td>200＋20</td>
+                      <td class="table_80 table_center"><a class="table_center" href="../../contributor/html/contributor_message_detail.html"> <img class="td-img" src="../../img/mail.png" alt=""></a></td>
+                    </tr>
+                    <template v-if="patron.showGachas">
+                      <tr>
+                        <td></td>
+                        <td class="table_80 table_center">G-132</td>
+                        <td class="bold-font"><a href="../../contributor/html/contributor_gacha_detail.html">投稿タイトタイトルタイト</a></td>
+                        <td><button class="table-btn color3" onclick="location.href='../../contributor/html/contributor_gacha_list.html'">詳細</button></td>
+                        <td>100＋10</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td ></td>
+                        <td class="table_80 table_center">G-133</td>
+                        <td class="bold-font"><a href="../../master/html/master_gacha_detail.html">投稿タイトタイトルタイト</a></td>
+                        <td><button class="table-btn color3" onclick="location.href='../../master/html/master_gacha_list.html'">詳細</button></td>
+                        <td>100＋10</td>
+                        <td></td>
+                        </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td>その他</td>
+                        <td>
+                          <!-- 送料のモーダル出現↓
+                          <button class="table-btn color3">詳細</button> -->
+                          <p　class="table_center">申請中</p>
+                        </td>
+                        <td>100＋10</td>
+                        <td></td>
+                      </tr>
+                    </template>
+                  </template>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <script src="../../contributor/js/contributor_component.js" defer></script> -->
+  <script src="../../contributor/js/concomponent.js" defer></script>
+  <!-- <script src="../../contributor/js/conauchtop.js" defer></script> -->
+  <script src="../../contributor/js/contributor_header_search.js" defer></script>
+  <script src="../../contributor/js/contributor_component_gacha_card.js" defer></script>
+  <script >
+    window.onload = function () {
+      new Vue ({
+          el:"#app",
+          data() {
+            return {
+              isActiveTab: "1",
+              isActive: true,
+              showinfoContent:false,
+              showContent:false,
+              showAppContent:false,
+              patrons: [
+                {'name':'ユーザーの名前1', 'showGachas':false },
+                {'name':'ユーザーの名前2', 'showGachas':false }
+              ]
+            }
+          },
+          methods: {
+            isSelect(number) {
+              this.isActiveTab = number
+            },
+            openModal(){
+              this.showContent = true
+            },
+            closeModal(){
+              this.showContent = false
+            },
+            openAppModal(){
+              this.showAppContent = true
+            },
+            closeAppModal(){
+              this.showAppContent = false
+            },
+            openInfo(){
+              this.showinfoContent = true
+            },
+            closeInfo(){
+              this.showinfoContent = false
+            },
+            toggleGachas(patron){
+              patron.showGachas = patron.showGachas ? false : true
+            },
+            active() {
+              this.isActive = !this.isActive
+            },
+          }
+      });
+    }
+  </script>
+</body>
+</html>

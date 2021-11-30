@@ -1,0 +1,206 @@
+@import "color.scss";
+// 警告
+.warn_shadow {
+  box-shadow: 0px 0px 2px 2px rgba(255, 0, 0, 0.25) !important;
+
+}
+.warn_icon {
+  background-image: url(../../img/warnexcla.png);
+  z-index: 14;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position-x: 98%;
+}
+  // 検索バー
+  .search {
+      background: $gray;
+      padding:6px 16px;
+  }
+  .search form {
+      height:40px;
+      padding-left: 8px;
+      background-color:$whitewhite;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+  }
+  .search input {
+        width: 100%;
+      padding: 0 0 0 8px;
+  }
+  .search input::placeholder {
+      color: $gray;
+  }
+
+  ::placeholder {
+    font-size: 16px;
+  line-height: 16px;
+  color: $gray;
+  }
+  
+  // select {
+  //   background-image: url("../../img/arrowdown.png");
+  //   background-position: right 10px center;
+  //   background-repeat: no-repeat;
+  //   background-size: 14px;
+  // }
+  // ひとつボタン
+  .onebutton {
+    width: 100%;
+    margin: 30px 0;
+  }
+  .onebutton_a {
+    width: 60%;
+    background: $gray;
+    display: block;
+    padding: 14px 0;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.40);
+  }
+// 二つボタン
+.twobutton {
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.twobutton_a {
+  cursor: pointer;
+    width: 40%;
+    background: $gray;
+    display: block;
+    padding: 14px 0;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(196, 196,196,0.5)
+}
+
+
+input[type="radio"]{
+  display:none;
+}
+// 角ふたつタブ
+.tab_two_button_area{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tab_two_button {
+  width: 49%;
+  text-align: center;
+  font-size: 14;
+  padding: 12px;
+}
+.tab_two_panel{ 
+  display:none;
+}
+
+.tab_two_first_label,.tab_two_second_label{
+  background-color: $gray;
+}
+
+#tab_two_first:checked ~ .tab_two_button_area .tab_two_first_label,
+#tab_two_second:checked ~ .tab_two_button_area .tab_two_second_label{
+  border: 1px solid $grayblack;
+  background:$white;
+ }
+
+
+#tab_two_first:checked ~ .tab_two #tab_two_first_panel,
+#tab_two_second:checked ~ .tab_two #tab_two_second_panel{
+  display:block;
+}
+
+
+// 角タブみっつ
+.recht_three_tab_labels {
+  display: flex;
+  justify-content: space-between;
+}
+.recht_three_tabbtn {
+  width: 32%;
+  background: $gray;
+  font-size: 14px;
+  padding: 12px 8px;
+  text-align: center;
+  
+}
+.recht_three_panel_area {
+  padding: 10px 0px 0;
+  display:flex;
+  justify-content: space-between;
+}
+.recht_three_tab_panel{ 
+  display:none;
+}
+.recht_three_tab1_label,.recht_three_tab2_label,.recht_three_tab3_label{
+background-color: $gray;
+}
+#recht_three_tab1:checked ~ .recht_three_tab_labels .recht_three_tab1_label,#recht_three_tab2:checked ~ .recht_three_tab_labels .recht_three_tab2_label,#recht_three_tab3:checked ~ .recht_three_tab_labels .recht_three_tab3_label
+{
+  font-size: 14px;
+background:$white;
+border:1px solid $gray;
+}
+#recht_three_tab1:checked ~ .recht_three_panel_area #recht_three_panel1,#recht_three_tab2:checked ~ .recht_three_panel_area #recht_three_panel2,#recht_three_tab3:checked ~ .recht_three_panel_area #recht_three_panel3
+{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.tab_panel{ 
+  display:none;
+}
+.tab1_label,.tab2_label,.tab3_label,.tab4_label,.tab5_label,.tab6_label,.tab7_label,.tab8_label{
+background-color: $gray;
+}
+#tab1:checked ~ .tab_labels .tab1_label,#tab2:checked ~ .tab_labels .tab2_label,#tab3:checked ~ .tab_labels .tab3_label,#tab4:checked ~ .tab_labels .tab4_label,#tab5:checked ~ .tab_labels .tab5_label,#tab6:checked ~ .tab_labels .tab6_label,#tab7:checked ~ .tab_labels .tab7_label,#tab8:checked ~ .tab_labels .tab8_label
+{
+background:$white;
+}
+#tab1:checked ~ .panel_area #panel1,#tab2:checked ~ .panel_area #panel2,#tab3:checked ~ .panel_area #panel3,#tab4:checked ~ .panel_area #panel4,#tab5:checked ~ .panel_area #panel5,#tab6:checked ~ .panel_area #panel6,#tab7:checked ~ .panel_area #panel7,#tab8:checked ~ .panel_area #panel8
+{display:block;
+}
+.panel_area {
+  padding: 20px 16px 60px;
+}
+
+// チェックボックス
+.check_select {
+  display: block;
+  position: relative;
+  margin: 0 0 12px 0;
+}
+.checkmark {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  height: 25px;
+  width: 25px;
+  background-color: $white;
+  border-radius: 50%;
+  border: 1px solid $grayblack;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check_select input:checked ~ .checkmark:after {
+  display: block;
+}
+.check_select .checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: $black;
+}

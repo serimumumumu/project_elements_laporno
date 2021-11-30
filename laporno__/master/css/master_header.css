@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+html { font-family: 'Roboto', sans-serif; }
+
+html { color: #232323; }
+
+.color0 { background-color: #fff; }
+
+.color1 { background-color: #FAFAFA; }
+
+.color2 { background-color: #E9E9E9; }
+
+.color3 { background-color: #C4C4C4; }
+
+.color4 { background-color: #7D7D7D; }
+
+.color5 { background-color: #232323; }
+
+header { z-index: 9; width: 100%; position: fixed; background: #FAFAFA; padding: 8px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+.header-left img { vertical-align: center; height: 44px; }
+
+.header-right { display: -webkit-box; display: -ms-flexbox; display: flex; }
+
+#hamburger_menu { padding-left: 20px; }
+
+.hbtn { position: fixed; top: 0; right: 0; width: 80px; height: 72px; cursor: pointer; z-index: 50; }
+
+.line { position: absolute; top: 0; right: 20px; width: 32px; height: 2px; background: #232323; text-align: center; }
+
+.line_01 { top: -16px; }
+
+.line_03 { top: -36px; }
+
+.btn_01 { -webkit-transform: translateY(10px) rotate(-45deg); transform: translateY(10px) rotate(-45deg); top: 16px; }
+
+.btn_03 { top: 36px; -webkit-transform: translateY(-10px) rotate(45deg); transform: translateY(-10px) rotate(45deg); }
+
+.menu { position: fixed; top: 0; right: 0; padding: 30px 46px; background: #E9E9E9; }
+
+p.menu_user { position: relative; top: -16px; width: 124px; }
+
+.menu ul { padding: 0; margin: 0; }
+
+.menu li { border-bottom: 1px solid #7D7D7D; padding: 16px 0 8px 0; }
+
+.menu a { text-decoration: none; color: #232323; }
+
+.sns { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-pack: distribute; justify-content: space-around; padding: 16px; }
+
+.sns img { width: 28px; }
+
+.panlist ul { margin: 0; padding: 0; background: #FAFAFA; display: -webkit-box; display: -ms-flexbox; display: flex; overflow-x: scroll; width: 100%; padding: 0 10px 0px; }
+
+.panlist { background: #FAFAFA; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; padding: 48px 16px 0 16px; }
+
+.panlist a { font-weight: bold; display: inline-block; padding: 8px 8px 8px 8px; }
+
+.panlist p { display: inline-block; padding: 8px 8px 8px 8px; }
+
+.panlist li { font-size: 14px; position: relative; display: inline-block; padding-left: 20px; color: #7D7D7D; text-decoration: none; padding: 8px 8px 0 8px; word-break: keep-all; white-space: nowrap; }
+
+.panlist li:first-child { padding-left: 0px; }
+
+.panlist li:before { content: ''; width: 6px; height: 6px; border: 0; border-top: solid 2px #7D7D7D; border-right: solid 2px #7D7D7D; position: absolute; top: 60%; left: 0; margin-top: -4px; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+
+.panlist li:first-child::before { display: none; }

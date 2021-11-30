@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新規リターンテンプレート登録</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../contributor/css/contributor_project_new.css">
+  <script src="../../user/js/vue.js" defer ></script>
+</head>
+<body class="color1">
+    <div id="app">
+        <conheaders></conheaders>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+            <li class="arrow-l"><a href="../../contributor/html/contributor_project_top.html">プロジェクト一覧</a></li>
+            <li class="arrow-l"><a href="../../contributor/html/contributor_project_new.html">新規作成</a></li>
+            <li class="arrow-l"><a href="../../contributor/html/contributor_project_new_return_template.html">テンプレート一覧</a></li>
+            <li class="arrow-l"><p>新規リターンテンプレート登録</p></li>
+        </ul>
+    </div>
+    <h2 class="contributor_return_new_title">新規リターンテンプレート登録</h2>
+    <section class="main_card color0">
+        <!-- 記入フォーム -->
+        <div>
+            <div class="imgregist">
+                <label>
+                    <input type="file" accept="image/*" class="selectonpreview" onchange="previewImage(this);">写真を挿入する
+                </label>
+                <p class="imgpreview">
+                    <img id="preview1" src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+                </p>
+                
+            </div>
+            <!-- <div class="new_input">
+                <p class="new_input_sub">発送予定日*</p>
+                <input type="date" v-model="sendDate" id="send_date" class="new_input_select_50"/>
+                <span class="new_input_select_span">から順次発送予定</span>
+            </div> -->
+            <div class="new_input">
+                <p class="new_input_sub">リターンタイトル*</p>
+                <input type="text" v-model="title" class="new_input_select_100" placeholder="リターンタイトルがはいります"/>
+                <span class="input_text_count">0/50</span>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">説明*</p>
+                <textarea name="" class="new_textarea_select_100" id="" cols="10" rows="6"></textarea>
+                <!-- <span class="input_text_count">0/200</span> -->
+            </div>
+            <div class="new_input_two"> 
+                <div class="new_input">
+                    <p class="new_input_sub">金額*</p>
+                    <input type="text" v-model="money" class="new_input_select_75" placeholder="5,000"/>
+                    <span class="new_input_select_span">円</span>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">支援数*</p>
+                    <input type="text" v-model="support" class="new_input_select_75" placeholder="12"/>
+                    <span class="new_input_select_span">人</span>
+                </div>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">タイプ</p>
+                <div class="new_input_check_wrap">
+                    <label class="new_input_select_48">
+                        <input value="goods" type="radio" checked name="count_bonus_type"> 物販
+                    </label>
+                    <label class="new_input_select_48">
+                        <input value="real" type="radio" name="count_bonus_type"> デジタル
+                    </label>
+                    <label class="new_input_select_48">
+                        <input value="real" type="radio" name="count_bonus_type"> リアル(オフライン)
+                    </label>
+                    <label class="new_input_select_48">
+                        <input value="other" type="radio" name="count_bonus_type"> リアル(オンライン)
+                    </label>
+                </div>
+            </div>
+            <!-- <div class="main_in"> -->
+                <!-- 映像データ（48%*2） -->
+                <div class="new_input">
+                    <p class="new_input_sub">映像データの有無*</p>
+                    <div class="new_input_send">
+                        <label class="new_send">
+                            <input name="omake" class="Radio-Input" type="radio">
+                            <span class="Radio-Text">有り</span>
+                        </label>
+                        <label class="new_send">
+                            <input name="omake" class="Radio-Input" type="radio" checked>
+                            <span class="Radio-Text">無し</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- 映像データ（48%*2） -->
+                <div class="new_input">
+                    <p class="new_input_sub">USB郵送の有無*</p>
+                    <div class="new_input_send">
+                        <label class="new_send">
+                            <input name="usb" class="Radio-Input" type="radio">
+                            <span class="Radio-Text">有り</span>
+                        </label>
+                        <label class="new_send">
+                            <input name="usb" class="Radio-Input" type="radio" checked>
+                            <span class="Radio-Text">無し</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- USB郵送の有無 -->
+                <div class="new_input">
+                    <p class="new_input_sub">伝票種類*</p>
+                    <div class="new_input_send">
+                        <label class="new_send">
+                            <input v-model="isCountBounus" :value="false" name="bonus" class="Radio-Input" type="radio">
+                            <span class="Radio-Text">元払い</span>
+                        </label>
+                        <label class="new_send">
+                            <input v-model="isCountBounus" :value="true" name="bonus" class="Radio-Input" type="radio">
+                            <span class="Radio-Text">着払い</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- 送料着払いの場合送料入力出現 -->
+                <div v-if="isCountBounus">
+                    <div class="new_input">
+                        <p class="new_input_sub">送料</p>
+                        <input type="number" class="new_input_select_30" min="1" placeholder="820"><span class="new_input_select_span">円</span>
+                    </div>
+                </div>
+
+                <!-- 質問事項追加のボタンを押すとこのコンテンツ増える -->
+                <div>
+                    <div class="new_input">
+                        <p class="new_input_sub">質問事項</p>
+                        <input type="number" class="new_input_select_100" min="1" placeholder="質問を入力">
+                    </div>
+                    <div class="contributor_return_new_question_answer">
+                        <p class="new_input_sub">質問事項</p>
+                        <input type="number" class="new_input_select_100" min="1" placeholder="質問を入力">
+                    </div>
+                </div>
+                <button v-if="!isMaxCountBounus" @click="addCountBounus" class="return_question_add"><img src="../../img/plus.png"> 質問事項追加</button>
+        </div>
+        <div class="contributor_return_new_button">
+            <a class="twobutton_a" href="../../contributor/html/contributor_project_new.html">戻る</a>
+            <a class="twobutton_a" href="../../contributor/html/contributor_project_new_return_preview.html">確認</a>
+        </div>
+    </section>
+
+    <!-- <main>
+        <section class="main-content1 color1">
+            <h2 class="content-title ">新規リターン登録</h2>
+                <div class="imgregist">
+                    <label>
+                        <input type="file" accept='image/*' class="selectonpreview" onchange="previewImage(this);">写真を登録する
+                    </label>
+                    <p class="imgpreview card-content-box">
+                        <img id="preview" rc="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+                    </p>
+                </div>
+            <form >
+                <div class="card-content-box">
+                    <h2 class="sub-title">リターンタイトル</h2>  
+                    <textarea class="text-input" name="" placeholder="リターンの名前リターンの名前リターンの名前リターンの名前"></textarea>          
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title" >説明</h2>
+                    <textarea class="text-input description" placeholder="せつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめい"></textarea>
+                </div>
+                <div class="card-content-box content-flex">
+                    <article class="card-content-box-half">
+                        <h2 class="sub-title">金額</h2>
+                        <div class="select-set">
+                            <div class="select-area ">
+                                <select name="" id="" class="select">
+                                    <option value="">1,000</option>
+                                    <option value="">3,000</option>
+                                    <option value="">5,000</option>
+                                    <option value="">7,000</option>
+                                    <option value="">10,000</option>
+                                    <option value="">50,000</option>
+                                    <option value="">100,000</option>
+                                    <option value="">200,000</option>
+                                </select>
+                            </div>
+                            <p class="unit">円</p>
+                        </div>
+                    </article>
+                    <article class="card-content-box-half">
+                        <h2 class="sub-title">支援数</h2>
+                        <div class="select-set">
+                            <div class="select-area">
+                                <select name="" id="" class="select">
+                                    <option value="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                    <option value="">40</option>
+                                    <option value="">50</option>
+                                </select>
+                            </div>
+                            <p class="unit">人</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title">タイプ</h2>
+                    <div class="radio-input-area">
+                        <div class="radio-input"><input type="radio" id="buppann" name="type"><label for="buppann">物販</label></div>
+                        <div class="radio-input"><input type="radio" id="real" name="type"><label for="real">デジタル</label></div>
+                        <div class="radio-input"><input type="radio" id="real" name="type"><label for="real">リアル(オフライン)</label></div>
+                        <div class="radio-input"><input type="radio" id="real" name="type"><label for="real">リアル(オンライン)</label></div>
+                    </div>
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title">公開設定</h2>
+                    <div class="radio-input-area ">
+                        <div class="radio-input "><input type="radio" id="koukai" name="status"><label for="koukai">すぐ公開</label></div>
+                        <div class="radio-input"><input type="radio" id="hikoukai" name="status"><label for="hikoukai">非公開</label></div>
+                    </div>
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title" >質問事項</h2>
+                    <input class="input-box input-100" placeholder="希望の宛名">
+                </div>
+                <div class="card-content-box indent">
+                    <h2 class="sub-title" >回答形式</h2>
+                    <div class="select-area">
+                        <select name="" id="" class="select color1">
+                            <option value="">テキスト入力式</option>
+                            <option value="">回答形式</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title" >質問事項</h2>
+                    <input class="input-box input-100" placeholder="希望の宛名">
+                </div>
+                <div class="card-content-box indent">
+                    <h2 class="sub-title" >回答形式</h2>
+                    <div class="select-area">
+                        <select name="" id="" class="select">
+                            <option value="">テキスト入力式</option>
+                            <option value="">回答形式</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="create-btn2 color2" ><img src="../../img/plus.png">質問事項追加</button>
+            </form>
+        </section>
+        <div class="twobutton color1">
+        <a class="twobutton_a" href="projdetailneweditin.html">戻る</a>
+        <a class="twobutton_a" href="projdetailneweditinreturnpre.html">確認</a>
+        </div>
+    </main> -->
+    <footer>
+    </footer>
+    </div>
+    <script src="../../contributor/js/contributor_header_search.js" defer></script>
+    <script>
+        // function previewImage(obj)
+        // {
+        //     var fileReader = new FileReader();
+        //     fileReader.onload = (function() {
+        //         document.getElementById('preview1').src = fileReader.result;
+        //         document.getElementById('preview_preview').src = fileReader.result;
+        //     });
+        //     fileReader.readAsDataURL(obj.files[0]);
+        // }
+    
+        window.onload = function () {
+    
+            // Vue-multiselect
+            // Vue.component('multiselect', window.VueMultiselect.default);
+    
+            new Vue ({
+                el: "#app",
+                data: {
+                    title:"リターンタイトル",
+                    money:"10,000",
+                    support:"1,000",
+                    isConfirm: false,
+                    sendDate: null, //発送予定費
+                    //回数ボーナス
+                    isCountBounus: false, //回数ボーナスフラグ
+                    isMaxCountBounus: false, //
+                    countBounusesQty: 1,
+                },
+                methods:{
+                    addCountBounus()
+                    {
+                        this.countBounusesQty++
+                        if (this.countBounusesQty >= 50) this.isMaxCountBounus = true
+                    },
+                    tggleConfirm()
+                    {
+                        this.isConfirm = this.isConfirm ? false : true
+                    },
+                }
+            });
+        }
+    </script>
+</body>
+</html>

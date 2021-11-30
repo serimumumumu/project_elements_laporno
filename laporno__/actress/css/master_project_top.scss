@@ -1,0 +1,54 @@
+@import "color.scss";
+.hyou_area_rl16 {
+    width: 100%;
+    padding: 0 16px;
+  }
+#tab1:checked ~ .tab_labels .tab1_label,#tab2:checked ~ .tab_labels .tab2_label,#tab3:checked ~ .tab_labels .tab3_label,#tab4:checked ~ .tab_labels .tab4_label,#tab5:checked ~ .tab_labels .tab5_label,#tab6:checked ~ .tab_labels .tab6_label,#tab7:checked ~ .tab_labels .tab7_label,#tab8:checked ~ .tab_labels .tab8_label
+{
+background:$white;
+border: 1px solid $gray;
+}
+
+.conbutton {
+    width: 32%;
+    text-align: center;
+    padding: 12px 2px;
+    margin: 0;
+}
+.tab_labels {
+    flex-wrap: wrap;
+    gap: 4px;
+    display: flex;
+    padding: 0px 16px;
+    background: $whitewhite;
+    justify-content: space-around;
+}
+.table a {
+    text-align: center;
+}
+.table-mail {
+    width: 30px;
+}
+
+// 売上表TOP(master_profit_top)
+.profit_button_area {
+    padding: 20px 16px 10px;
+    margin: 0 0 0 auto;
+    text-align: right;
+    width: 100%;
+}
+.profit_button {
+    padding: 4px 28px;
+    border: 1px solid $black;
+    border-radius: 4px;
+}
+.profit_month_button {
+    padding: 10px;
+    background: $gray;
+    color: $black;
+    border-radius: 4px;
+    line-height: 15px;
+}
+.profit_month_button img {
+    width: 16px;
+}

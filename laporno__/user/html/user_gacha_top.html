@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガチャトップ</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/component.css">
+    <script src="../js/vue.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+        <!-- パンクズりすと -->
+        <div class="panlist">
+            <ul >
+                <li ><a href="../../user/html/user_top.html">TOP</a></li>
+                <li class="arrow-l"><p>ガチャトップ</p></li>
+            </ul>
+        </div>
+        <search></search>
+        <div >
+            <div class="main-top color2" >
+                <h3 class="page-title">ガチャ一覧</h3>
+            <div class="tab-area">
+                <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActiveTab === '1'}">開催中</div>
+                <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActiveTab === '2'}">終了</div>
+            </div>
+            <!--開催中-->
+            <div class="main-area color1" v-if="isActiveTab === '1'">
+                <div class="acts" >
+                    <usergachacard ></usergachacard>
+                    <usergachacard ></usergachacard>
+                    <usergachacard ></usergachacard>
+                    <usergachacard ></usergachacard>
+                    <usergachacard ></usergachacard>
+                </div>
+            </div>
+            <!--終了-->
+            <div  class="main-area color1" v-else="isActiveTab === '2'">
+                <div class="acts">
+                    <usergachaendcard ></usergachaendcard>
+                    <usergachaendcard ></usergachaendcard>
+                    <usergachaendcard ></usergachaendcard>
+                    <usergachaendcard ></usergachaendcard>
+                    <usergachaendcard ></usergachaendcard>
+                </div>
+            </div>
+            </div>   
+        </div>
+    </div>
+<script src="../../user/js/user_header_search.js" defer></script>
+<script src="../../user/js/user_component_gacha_card.js" defer></script>
+
+<script>
+    window.onload = function () {
+          new Vue ({
+              el:"#app",
+              data: {
+                  isActiveTab:"1",
+              },
+              methods:{
+                isSelect(number) {
+          this.isActiveTab = number;
+                  }
+              }
+              });
+          }
+  </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+@import "auchdetail.scss";
+
+.main-top-card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin: 10px 10px 20px;
+    padding: 10px 10px 10px;
+}
+.main-top-card-title{
+    padding: 10px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #C4C4C4;
+}
+.main_in_article_2 h6 {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 2px 0 12px 12px;
+    
+}
+
+.sienkingaku{
+    padding-top: 6px;
+    font-size: 22px;
+    font-weight: bold;
+    justify-content: flex-end;
+}
+   .supportbutton {
+
+    padding: 13px;
+    width: 60%;
+    margin: 0 auto;
+}
+// タブ切り替え
+.content-container {
+    padding: 20px 16px;
+}
+
+.tab{
+    width: 24.5%;
+}
+
+.content{
+    padding: 10px 10px 0;
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+    margin-bottom: 10px;
+}
+
+// 初めに/
+.main-content1-text{
+    margin:0px 0  20px;
+ }
+ .main-content-img-area img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+ }
+.main-content1-subtitle{
+     padding-bottom: 2px;
+    border-bottom: 1px solid $gray;
+    font-size: 16px;
+        margin-bottom: 8px;
+    font-weight: 700;
+ }
+
+//  リターン
+.return_index img {
+    margin-right: 4px;
+    width:18px ;
+}
+.return_index  {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.content1-card{
+    background: $whitewhite;
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.content-card-subtitle{
+    padding-top: 10px;
+}
+
+.content-card-text{
+    margin-bottom: 10px;
+}
+.card-img-area img{
+    width: 100%;
+}
+.choice-button{
+    border-radius: 4px;
+    height: 44px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $grayblack;
+    background: $whitegray;
+    margin-bottom: 10px;
+}
+
+.target-area{
+    color: $grayblack;
+    display:flex;
+    align-items: center;
+}
+.target-area img {
+    margin: 0 8px 4px 0;
+    width: 24px;
+
+}
+.target-area-span {
+    margin-left: 8px;
+  }
+// コメント
+.user-name-area{
+    display: flex;
+    margin-bottom: 10px;
+}
+.user-icon-area{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    width: 25px;
+    height: 25px;
+}
+.user-icon-area >img{
+    width: 100%;
+}
+
+.user-name{
+    font-weight: bold;
+    color: $grayblack;
+    display:flex;
+    align-items: center;
+    margin-left: 8px;
+}
+.content1-date ,.content1-card-date{
+    text-align: right;
+    color: $grayblack;
+}
+
+// 活動報告
+.content4-card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+
+.content1-card-title{
+    padding: 10px;
+    color:$grayblack;
+}
+
+.content1-card-text{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.content1-card-text p {
+    padding-top: 10px;
+}
+

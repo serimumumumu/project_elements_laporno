@@ -1,0 +1,40 @@
+// <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+// </style>
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+$whitewhite:#fff;
+$white : #FAFAFA;
+$whitegray :#E9E9E9;
+$gray : #C4C4C4 ;
+$grayblack : #7D7D7D;
+$black : #232323;
+$twitter : #1B9BEF;
+html{
+  color: $black;
+}
+.color0{
+  background-color: $whitewhite;
+}
+.color1{
+  background-color: $white;
+}
+.color1{
+  background-color: $white;
+}
+.color2{
+  background-color: $whitegray;
+}
+.color3{
+  background-color:$gray;
+}
+
+.color4{
+  background-color: $grayblack;
+}
+.color5{
+  background-color: $black;
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キャンペーンページ</title>
+    <meta name="description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <meta name="keywords" content="ラポファン,セクシー女優,オンラインオークション,ラポルノ,ラポルノファンディング,クラファン,クラウドファンディング,ガチャ">
+    <meta property="og:title" content="【ラポルノファンディング】">
+    <meta property="og:description" content="ラポルノファンディング">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ラポルノファンディング">
+    <!-- Facebook -->
+    <meta property="fb:app_id" content="">
+    <!-- //Facebook -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lapornofund">
+    <meta name="twitter:title" content="【ラポルノファンディング】">
+    <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_modal.css">
+
+    <!-- <link rel="stylesheet" href="../../user/css/user_component.css"> -->
+    <link rel="stylesheet" href="../../user/css/user_campaign.css">
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <headers></headers>
+  <!-- </div> -->
+  <!-- パンクズりすと -->
+  <div class="panlist">
+    <ul >
+      <li ><a href="../../user/html/user_top.html">TOP</a></li>
+      <li class="arrow-l"><p>キャンペーン</p></li>
+    </ul>
+  </div>
+  <div id="campaign">
+    <div class="campaign_top">
+      <h1 class="maintitle"> 所持しているコード </h1>
+      <div class="campaign_top_card">
+        <div class="campaign_top_card_inner">
+          <p>使用可能なコード</p>
+          <div style="text-align:right;"> <span class="have_code">3</span>枚<span class="have_code_span"> (うち期間切れ間近<span class="have_code_limit">1</span>枚)</span></div>
+        </div>
+      </div>
+      <h2 class="maintitle">コードを取得する</h2>
+      <div class="campaign_top_get_cord">
+        <input class="get_cord_input" type="text" placeholder="992K44JJR3E">
+        <button class="get_cord_button"  @click="openInputModal">取得</button>
+      </div>
+    </div>
+    <!-- プレゼントモーダル↓ -->
+    <!-- <presentcodeinput v-show="showInputContent" @close="showInputContent = false"></presentcodeinput> -->
+    <!-- 割引モーダル↓ -->
+    <discountcodeinput v-show="showInputContent" @close="showInputContent = false"></discountcodeinput>
+    <!-- たぶ -->
+    <div id="">
+      <div class="tab_labels">
+        <label class="tab1_label tabbtn" for="tab1" @click="isSelectTab('1')" v-bind:class="{'active': isActiveTab === '1'}">すべて</label>
+        <label class="tab2_label tabbtn" for="tab2" @click="isSelectTab('2')" v-bind:class="{'active': isActiveTab === '2'}">割引コード</label>
+        <label class="tab3_label tabbtn relative" for="tab3" @click="isSelectTab('3')" v-bind:class="{'active': isActiveTab === '3'}">プレゼントコード</label>
+      </div>
+      <div class="panel_area color1">
+        <!--すべて-->
+        <div id="panel1" class="tab_panel" v-if="isActiveTab === '1'">
+          <article class="code_present">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <p class="discount_status">発送ステータス</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限りコードを入力したユーザー全員にミニタオルプレゼント！このチャンスを見逃すな！</h3>
+            <button class="present_button" @click="openModal">詳細</button>
+          </article>
+          <article class="code_discount">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+            <div class="discount_detail">
+              <div class="discount_detail_use">
+                <p class="discount_detail_use_p"><img class="discount_detail_use_p_img" src="../../img/ticket.png" alt="チケットアイコン">オークション</p>
+                <p class="discount_rate">10％割引</p>
+              </div>
+
+            </div>
+          </article>
+            <article class="code_discount">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+            <div class="discount_detail_use">
+              <p class="discount_detail_use_p"><img class="discount_detail_use_p_img" src="../../img/ticket.png" alt="チケットアイコン">オークション</p>
+              <p class="discount_rate">10％割引</p>
+            </div>
+          </article>
+          <article class="code_discount end_period">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <p class="discount_status">期限切れ</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+            <div class="discount_detail_use">
+              <p class="discount_detail_use_p"><img class="discount_detail_use_p_img" src="../../img/ticket.png" alt="チケットアイコン">オークション</p>
+              <p class="discount_rate">10％割引</p>
+            </div>
+          </article>
+        </div>
+        <!--割引コード-->
+        <div id="panel2" class="tab_panel" v-else-if="isActiveTab === '2'">
+          <article class="code_discount">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+           <div class="discount_detail_use">
+              <p class="discount_detail_use_p"><img class="discount_detail_use_p_img" src="../../img/ticket.png" alt="チケットアイコン">オークション</p>
+              <p class="discount_rate">10％割引</p>
+            </div>
+          </article>
+          <article class="code_discount">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+           <div class="discount_detail_use">
+              <p class="discount_detail_use_p"><img class="discount_detail_use_p_img" src="../../img/ticket.png" alt="チケットアイコン">オークション</p>
+              <p class="discount_rate">10％割引</p>
+            </div>
+          </article>
+          <article class="code_discount end_period">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <p class="discount_status">期限切れ</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+           <div class="discount_detail_use">
+                <p class="discount_detail_use_p"><img class="discount_detail_use_p_img" src="../../img/ticket.png" alt="チケットアイコン">オークション</p>
+                <p class="discount_rate">10％割引</p>
+              </div>
+          </article>
+        </div>
+        <!--プレゼントコード-->
+        <div id="panel3" class="tab_panel" v-else-if="isActiveTab === '3'">
+          <article class="code_present">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <p class="discount_status">発送ステータス</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限りコードを入力したユーザー全員にミニタオルプレゼント！このチャンスを見逃すな！</h3>
+            <button class="present_button" @click="openModal">詳細</button>
+          </article>
+          <article class="code_present">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <p class="discount_status">発送ステータス</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限りコードを入力したユーザー全員にミニタオルプレゼント！このチャンスを見逃すな！</h3>
+            <button class="present_button" @click="openModal">詳細</button>
+          </article>
+          <article class="code_present">
+            <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+            <p class="discount_status">発送ステータス</p>
+            <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限りコードを入力したユーザー全員にミニタオルプレゼント！このチャンスを見逃すな！</h3>
+            <button class="present_button" @click="openModal">詳細</button>
+          </article>
+        </div>
+        <codepresent v-show="showContent" @close="showContent = false"></codepresent>
+      </div>   
+    </div>
+  </div>
+  </div>
+  <script src="../../user/js/user_header_search.js" defer></script>
+  <script src="../../user/js/user_footer.js" defer></script>
+  <script src="../../user/js/user_campaign.js" defer></script>
+  <!-- <script src="../../user/js/component.js"></script> -->
+  <script>
+    window.onload = function () {
+      new Vue ({
+          el:"#app",
+          data: {
+                  showContentGacha:false,
+                  isActiveHeart: true,
+                  isActiveTab: "1",
+                  showContent:false,
+                   showInputContent:false
+          },
+          methods:{
+            isSelectTab(number) {
+                    this.isActiveTab = number;
+                },
+            openModal(){
+              this.showContent = true;
+            },
+            closeModal(){
+              this.showContent = false;
+            },
+            openInputModal(){
+              this.showInputContent = true;
+            },
+            closeInputModal(){
+              this.showInputContent = false;
+            },
+      }
+      });
+  }
+</script>
+</body>
+</html>
+
+<!-- 
+<div id="">
+  <input id="tab1" type="radio" name="tab_btn" checked>
+  <input id="tab2" type="radio" name="tab_btn">
+  <input id="tab3" type="radio" name="tab_btn">
+  <div class="tab_labels">
+    <label class="tab1_label tabbtn" for="tab1">すべて</label>
+    <label class="tab2_label tabbtn" for="tab2">割引コード</label>
+    <label class="tab3_label tabbtn relative" for="tab3">プレゼントコード</label>
+  </div>
+  <div class="panel_area color1">
+    <!--すべて-->
+    <!-- <div id="panel1" class="tab_panel">
+      <article class="code_present">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <p class="discount_status">発送ステータス</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限りコードを入力したユーザー全員にミニタオルプレゼント！このチャンスを見逃すな！</h3>
+        <button class="present_button" @click="openModal">詳細</button>
+      </article>
+      <article class="code_discount">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+        <p class="discount_rate">10％割引</p>
+      </article>
+        <article class="code_discount">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+        <p class="discount_rate">10％割引</p>
+      </article>
+      <article class="code_discount end_period">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <p class="discount_status">期限切れ</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+        <p class="discount_rate">10％割引</p>
+      </article>
+    </div> -->
+    <!--割引コード-->
+    <!-- <div id="panel2" class="tab_panel">
+      <article class="code_discount">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+        <p class="discount_rate">10％割引</p>
+      </article>
+      <article class="code_discount">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+        <p class="discount_rate">10％割引</p>
+      </article>
+      <article class="code_discount end_period">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <p class="discount_status">期限切れ</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+        <p class="discount_rate">10％割引</p>
+      </article>
+    </div> -->
+    <!--プレゼントコード-->
+    <!-- <div id="panel3" class="tab_panel">
+      <article class="code_present">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <p class="discount_status">発送ステータス</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限りコードを入力したユーザー全員にミニタオルプレゼント！このチャンスを見逃すな！</h3>
+        <button class="present_button" @click="openModal">詳細</button>
+      </article>
+      <article class="code_present">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <p class="discount_status">発送ステータス</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限りコードを入力したユーザー全員にミニタオルプレゼント！このチャンスを見逃すな！</h3>
+        <button class="present_button" @click="openModal">詳細</button>
+      </article>
+      <article class="code_present">
+        <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+        <p class="discount_status">発送ステータス</p>
+        <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限りコードを入力したユーザー全員にミニタオルプレゼント！このチャンスを見逃すな！</h3>
+        <button class="present_button" @click="openModal">詳細</button>
+      </article>
+    </div>
+    <codepresent v-show="showContent" @close="showContent = false"></codepresent>
+  </div>   
+</div> --> -->

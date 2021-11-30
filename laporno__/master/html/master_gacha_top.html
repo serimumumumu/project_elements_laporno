@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ガチャ一覧</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../user/css/user_component.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_top.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <masheaders></masheaders>
+   <div class="panlist">
+    <ul>
+      <li ><a href="../../master/html/master_top.html">TOP</a></li>
+      <li class="arrow-l"><p>ガチャTOP</p></li>
+    </ul>
+    </div>
+    <search></search>
+  <div class="overall">
+   <input id="tab_two_first" type="radio" name="tab_btn3" checked>
+    <input id="tab_two_second" type="radio" name="tab_btn3">
+    <div class="tab_two_button_area gap">
+      <label class="tab_two_first_label tab_two_button" for="tab_two_first">一覧</label>
+      <label class="tab_two_second_label tab_two_button" for="tab_two_second">景品一覧</label>
+  </div>
+    <div class="tab_two">
+      <!-- 一覧 -->
+      <div id="tab_two_first_panel" class="tab_two_panel">
+        <div class="hyou_area">
+          <div class="hyou">
+            <div class="hyou-top">
+              <div class="table-title-area color5">
+                <h2 class="table-title">ガチャ一覧</h2>
+                <div class="table_sort">
+                  <select name="order" id="" class="table_sort_select color1">
+                  <option >新着中</option>
+                  <option >登録順</option>
+                  </select>
+                </div>
+              </div>
+              <table class="table gacha">
+                <tr class="table_header">
+                  <th class="table_60">ID</th>
+                  <th class="table_180">タイトル</th>
+                  <th class="table_200">景品</th>
+                  <th class="table_160">回数</th>
+                  <th class="table_100">開始日</th>
+                  <th class="table_100">終了日</th>
+                  <th class="table_100">ステータス</th>
+                  <th class="table_100">公開設定</th>
+                  <th class="table_100">明細発行</th>
+                </tr>
+                <tr>
+                  <td class="fs_12">G-1111</td>
+                  <td class="bold-font"><a class="bold-font" href="../../master/html/master_gacha_new_agree.html">投稿タイトタイトルタイト</a></td>
+                  <td>
+                    <p>S賞タイトル</p>
+                    <p>A賞タイトル</p>
+                    <p>B賞タイトル</p>
+                    <p>C賞タイトル</p>
+                    <p>D賞タイトル</p>
+                    <p>E賞タイトル</p>
+                    <p>ラストワン賞</p>
+                  </td>
+                  <td>
+                    <div class="td-count-inner">
+                      <p>合計</p>
+                      <p>5000回</p>
+                    </div>
+                    <div class="td-count-inner">
+                      <p>1回</p>
+                      <p>500回</p>
+                    </div>
+                    <div class="td-count-inner">
+                      <p>10回</p>
+                      <p>5000回</p>
+                    </div>
+                    <div class="td-count-inner">
+                      <p>おまけ</p>
+                      <p>55回</p>
+                    </div>
+                  </td>
+                  <td>2021/03/14<br> 00:00</td>
+                  <td>2021/05/20<br> 23:59</td>
+                  <td> 
+                    <!-- <p>終了</p><p>開催中</p> -->
+                    <p><button class="table-btn color3">承認する</button></p>
+                  </td>
+                  <td> 
+                    <button class="table-btn color3">
+                      <select  id="" >
+                        <option >非公開</option>
+                        <option >公開</option>
+                      </select>
+                    </button>
+                  </td>
+                  <td><button class="table-btn color3">詳細</button></td>
+                  <!-- <td><button class="table-btn color3">発行</button></td> -->
+                </tr>
+                <tr>
+                  <td class="fs_12">G-1111</td>
+                  <td class="bold-font"><a class="bold-font" href="../../master/html/master_gacha_detail.html">投稿タイトタイトルタイト</a></td>
+                  <td>
+                    <p>S賞タイトル</p>
+                    <p>A賞タイトル</p>
+                    <p>B賞タイトル</p>
+                    <p>C賞タイトル</p>
+                    <p>D賞タイトル</p>
+                    <p>E賞タイトル</p>
+                    <p>ラストワン賞</p>
+                  </td>
+                  <td>
+                    <div class="td-count-inner">
+                      <p>合計</p>
+                      <p>5000回</p>
+                    </div>
+                    <div class="td-count-inner">
+                      <p>1回</p>
+                      <p>500回</p>
+                    </div>
+                    <div class="td-count-inner">
+                      <p>10回</p>
+                      <p>5000回</p>
+                    </div>
+                    <div class="td-count-inner">
+                      <p>おまけ</p>
+                      <p>55回</p>
+                    </div>
+                  </td>
+                  <td>2021/03/14<br> 00:00</td>
+                  <td>2021/05/20<br> 23:59</td>
+                  <td> 
+                    <!-- <p>終了</p> -->
+                    <p>開催中</p>
+                    <!-- <p><button class="table-btn color3">承認する</button></p> -->
+                  </td>
+                  <td> 
+                    <button class="table-btn color3">
+                      <select  id="" >
+                        <option >非公開</option>
+                        <option >公開</option>
+                      </select>
+                    </button>
+                  </td>
+                  <td><button class="table-btn color3">詳細</button></td>
+                  <!-- <td><button class="table-btn color3">発行</button></td> -->
+                </tr>
+              </table>
+            </div>
+          </div>
+         </div>
+      </div>
+      <!-- 景品一覧 -->
+      <div id="tab_two_second_panel" class="tab_two_panel ">
+        <div class="hyou_area" id="conauchtop">
+          <div class="hyou">
+            <div class="gacha_attention color1" id="gacha_unread">
+              <h5><img src="../../img/excla.png" alt=""><span class="gacha_attention_span">2</span>件の未読記事があります</h5>
+            </div>
+            <div class="hyou-top">
+              <div class="table-title-area color5">
+                <h2 class="table-title">景品一覧</h2>
+                <div class="table_sort">
+                  <select name="order" id="" class="table_sort_select color1">
+                  <option >新着中</option>
+                  <option >登録順</option>
+                  </select>
+                </div>
+              </div>
+              <div class="search sub_search">
+                <form action="" method="">
+                  <img src="../../img/serch.png" alt="">
+                  <input  type="text" placeholder="ユーザーを検索する" />
+                </form>
+              </div>
+              <table class="table gacha">
+                <tr class="table_header">
+                  <th class="table_180">ユーザー名</th>
+                  <th class="table_60">ID</th>
+                  <th class="bold-font table_200">タイトル</th>
+                  <th class="table_100">詳細</th>
+                  <th class="table_100">回数＋おまけ</th>
+                  <th class="table_40 table_center">Mail</th>
+                </tr>
+                <template v-for="(patron, index) in patrons">
+                  <tr>
+                    <td class="bold-font"><a  class="warn_icon" href="../../master/html/master_user_profile.html">{{ patron.name }}</a></td>
+                    <td></td>
+                    <td class="bold-font"><a href="../../master/html/master_gacha_detail.html">投稿タイトタイトルタイト</a></td>
+                    <td style="text-align: center;">
+                      <img @click="toggleGachas(patron)" :src="patron.showGachas ? '../../img/arrowup.png' : '../../img/arrowdown.png'">
+                    </td>
+                    <td>300＋30</td>
+                    <td class="table_80 table_center"><a class="table_center" href="../../master/html/master_message_detail.html"> <img class="td-img" src="../../img/mail.png" alt=""></a></td>
+                  </tr>
+                  <template v-if="patron.showGachas">
+                    <tr>
+                      <td ></td>
+                      <td class="table_80 table_center">G-132</td>
+                      <td class="bold-font"><a href="../../master/html/master_gacha_detail.html">投稿タイトタイトルタイト</a></td>
+                      <td><button class="table-btn color3" onclick="location.href='../../master/html/master_gacha_list.html'">詳細</button></td>
+                      <td>100＋10</td>
+                      <td ></td>
+                    </tr>
+                    <tr>
+                      <td ></td>
+                      <td class="table_80 table_center">G-133</td>
+                      <td class="bold-font"><a href="../../master/html/master_gacha_detail.html">投稿タイトタイトルタイト</a></td>
+                      <td><button class="table-btn color3" onclick="location.href='../../master/html/master_gacha_list.html'">詳細</button></td>
+                      <td>100＋10</td>
+                      <td ></td>
+                      </tr>
+                    <tr class="warn_bg">
+                      <td ></td>
+                      <td ></td>
+                      <td >その他</td>
+                      <td class="warn_icon"><button class="table-btn color3 warn_icon" onclick="location.href='../../master/html/master_gacha_new_add_agree.html'">追加承認</button></td>
+                      <td>100＋10</td>
+                      <td ></td>
+                    </tr>
+                  </template>
+                </template>
+              </table>
+            </div>
+          </div>
+         </div>
+      </div>   
+  </div>
+  </div>
+</div>
+  <script src="../../contributor/js/conauchtop.js" defer></script>
+  <script src="../../master/js/master_header_search.js"></script>
+  <script >
+    window.onload = function () {
+      new Vue ({
+          el:"#app",
+          data() {
+            return {
+              isActiveTab: "1",
+              isActive: true,
+              showinfoContent:false,
+              showContent:false,
+              patrons:[
+                {'name':'ユーザーの名前1', 'showGachas':false },
+                {'name':'ユーザーの名前2', 'showGachas':false  }
+              ]
+            }
+
+          },
+          mounted () {},
+          methods: {
+            isSelect(number) {
+              this.isActiveTab = number
+            },
+            openModal(){
+              this.showContent = true
+            },
+            closeModal(){
+              this.showContent = false
+            },
+            openInfo(){
+              this.showinfoContent = true
+            },
+            closeInfo(){
+              this.showinfoContent = false
+            },
+            toggleGachas(patron){
+              patron.showGachas = patron.showGachas ? false : true
+            },
+            active() {
+              this.isActive = !this.isActive
+            },
+          }
+      });
+    }
+  </script>
+</body>
+</html>

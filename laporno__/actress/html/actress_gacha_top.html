@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガチャトップ</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/component.css">
+    <script src="js/vue.js" defer></script>
+</head>
+<body>
+    <div id="headers">
+        <headers></headers>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="user_user_top.html">TOP</a></li>
+            <li class="arrow-l">ガチャトップ</li>
+        </ul>
+    </div>
+    <div id="search">
+        <search></search>
+    </div>
+    <div >
+        <div class="main-top color2" id="actprodtop">
+        <h3 class="page-title">ガチャ一覧</h3>
+        <div class="tab-area">
+            <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">開催中</div>
+            <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">終了</div>
+        </div>
+        <!--開催中-->
+        <div class="main-area color1" v-if="isActive === '1'">
+                <div class="acts" >
+                    <gachacard ></gachacard>
+                    <gachacard ></gachacard>
+                    <gachacard ></gachacard>
+                    <gachacard ></gachacard>
+                    <gachacard ></gachacard>
+                </div>
+        </div>
+        <!--終了-->
+        <div  class="main-area color1" v-else="isActive === '2'">
+                <div class="acts">
+                    <gachaendcard ></gachaendcard>
+                    <gachaendcard ></gachaendcard>
+                    <gachaendcard ></gachaendcard>
+                    <gachaendcard ></gachaendcard>
+                    <gachaendcard ></gachaendcard>
+                </div>
+        </div>
+        </div>   
+    </div>
+
+<script src="js/component.js" defer></script>
+<script src="js/actprodtop.js" defer></script>
+</body>
+</html>

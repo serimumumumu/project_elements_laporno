@@ -1,0 +1,306 @@
+@import "color.scss";
+
+body {
+  background: $white;
+}
+.card{
+    margin:20px 16px;
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    // padding: 20px;
+}
+.card_content {
+  padding: 30px 20px ;
+}
+.card_info_index {
+  margin: 0 0 60px 0;
+}
+.two_inputs {
+  display: flex;
+  justify-content: space-between;
+}
+.card_info_one {
+  margin: 16px 0 0;
+}
+.card-title{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    margin:0px 0 30px;
+}
+
+.sub-title{
+  display: block;
+    font-size: 12px;
+    color: $gray;
+    margin:0px 0 2px;
+}
+
+.check-area{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 6px;
+}
+
+.checkbox-text{
+    color: $grayblack;
+    font-size: 10px;
+}
+.checkbox-text_2{
+    font-size: 10px;
+}
+
+.card-btn{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 42px;
+    border-radius: 4px;
+    color: $grayblack;
+    text-align: center;
+}
+.card_info_one_select{
+    border: 1px solid $gray;
+    width: 50%;
+    margin-right: 8px;
+    padding: 10px;
+}
+.memo-text{
+  border: 1px solid $gray;
+  height: 100px;
+  width: 100%;
+  resize: none;
+  padding: 10px;
+}
+
+.delitext {
+  border: 1px solid $gray;
+  padding: 10px;
+  width: 50%;
+  margin: 0 8px 0 0;
+}
+
+.delitext_full{
+  @extend .delitext;
+  width: 100%;
+}
+.delitext_threequo{
+  @extend .delitext;
+  width: 75%;
+}
+.delitext_full{
+  @extend .delitext;
+  width: 100%;
+}
+.onequo{
+  width: 30%;
+}
+.sub_delitext {
+  display:inline-block;
+  margin:0 0 0  12px;
+}
+  
+  .img-input-area{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .img-input-label{
+    width: 49%;
+    padding: 20px;
+    border: 1px solid $gray;
+    text-align: center;
+  }
+  .img-input-area p{
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  input[type="file"]{
+    display: none;
+  }
+  
+  .img-roaded-area{
+    width: 48%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .img-roaded-area img{
+    width: 49%;
+    aspect-ratio: 16/9;
+    margin-bottom: 10px;
+  }
+  .img-roaded-area img:last-child{
+    margin-bottom: 0;
+  }
+
+  // 確認画面(production_campaign_new_confirm_campaign.html)
+  .answer_text {
+    font-size:14px;
+    padding: 0 0 6px 8px ;
+    border-bottom: 1px solid $gray;
+  }
+
+  // カレンダー新規登録
+  .selectonpreview {
+    display: none;
+  }
+  .img_regist{
+    position: relative;
+    margin:0px auto;
+    width: 100%;
+  }
+  .img_regist label {
+    position: absolute;
+    background-color:$whitewhite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+  }
+  .img_preview img {
+    width: 100%;
+  }
+  #preview1,  #preview2,  #preview3{
+    aspect-ratio: 16 / 9;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    background-image: url(../../img/demoimg.png);
+  }
+
+  .text_layout_6 ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .text_layout_6 li{
+    display: flex;
+    padding: 10px 18px;
+    font-size: 14px;
+    background: $gray;
+    border-radius: 4px;
+    
+    margin: 0 4px 6px 0;
+  }
+  .checkbox_s [type="checkbox"] {
+    display: none;
+  }
+  .checkbox_s {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  // お知らせ新規登録確認本文
+.answer_text_h5 {
+  background: $whitegray;
+  font-size: 18px;
+  padding: 3px 8px;
+  display: block;
+  margin: 0 0 6px 0;
+}
+.answer_text_p {
+  padding: 4px 8px ;
+}
+.answer_text_img {
+  width: 100%;
+  padding: 8px;
+}
+
+// バナー新規登録(master_banner_new_banner)
+.banner_select_index {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.banner_img {
+  width: 100%;
+}
+.banner_option {
+
+  width: 48%;
+}
+.banner_select {
+  padding: 8px 0 4px;
+  line-height: 14px;
+  display: flex;
+  p{
+    font-size: 12px;
+  }
+  input {
+    margin-right: 4px;
+  }
+}
+.banner_calender_p {
+  content:"";
+  width: 100%;
+  height: 20px;
+  vertical-align: middle;
+  background:$grayblack;
+  padding: 2px 4px;
+  color: $white;
+}
+// 明細作成画面(master_receipt_new_receipt)
+.corporation_name {
+  font-size: 16px;
+
+  span{
+    font-size: 12px;
+    color: $grayblack;
+    margin-left: 16px;
+  }
+}
+.Present_name {
+  font-size: 10px;
+  line-height: 14px;
+  text-align: right;
+  color: $grayblack;
+}
+.corporation_amount{
+
+ h2{
+  font-size: 20px;
+  border-bottom: 1px solid $black;
+  display: inline-block;
+ }
+ p{
+   font-size: 12px;
+   margin: 4px 0 0 0;
+ }
+}
+// 編集時のinput
+.edit::placeholder {
+  color: $black;
+}
+
+.receipt_table_header {
+  white-space: pre;
+  position: -webkit-sticky;
+  /* position: sticky; */
+  background: $white;
+  font-size: 12px;
+  /* top: 42px; */
+  /* left: 0; */
+}
+.receipt_table {
+  background: $whitewhite;
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  
+  table-layout: fixed;
+  // td,tr,th{
+  //   text-align: left;
+  // }
+}
+.receipt_table_tr{
+    text-align: left;
+
+}
+.receipt_table_summury {
+  text-align: right;
+}

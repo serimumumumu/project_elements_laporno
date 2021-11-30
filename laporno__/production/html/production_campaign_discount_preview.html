@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キャンペーン新規発行 </title>
+    <meta name="description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <meta name="keywords" content="ラポファン,セクシー女優,オンラインオークション,ラポルノ,ラポルノファンディング,クラファン,クラウドファンディング,ガチャ">
+    <meta property="og:title" content="【ラポルノファンディング】">
+    <meta property="og:description" content="ラポルノファンディング">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ラポルノファンディング">
+    <!-- Facebook -->
+    <meta property="fb:app_id" content="">
+    <!-- //Facebook -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lapornofund">
+    <meta name="twitter:title" content="【ラポルノファンディング】">
+    <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <!-- <title>マイページ</title> -->
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <link rel="stylesheet" href="../../user/css/user_component.css">
+    <link rel="stylesheet" href="../../user/css/user_signup.css">
+    <link rel="stylesheet" href="../../user/css/user_mypage.css">
+    <script src="../../user/js/vue.js"></script>
+
+</head>
+<body>
+    <div id="headers">
+      <header>
+        <div class="header-left">
+             <a href="top.html"><img src="../../img/logo.png" alt="ラポルノロゴ"></a>
+        </div>
+        <div class="header-right">
+            <a href="mailtop.html">
+            <img src="../../img/mail.png" alt="">
+            </a>
+            <div class="hmenu" id="hamburger_menu" @click="open=!open">
+                <img src="../../img/conmenu.png" alt="" >
+                <div class="hbtn" >
+                    <span class="line line_01" :class="{'btn_01':open }"></span>
+                    <span class="line line_03" :class="{'btn_03':open }"></span>
+                </div>
+                </div>
+            <div class="menu" v-show="open">
+                <p class="menu_user">投稿者のなまえ</p>
+                <ul>
+                    <li><a href="../../contributor/html/contributor_mypage.html">マイページ</a></li>
+                    <li><a href="../html/newstop.html">News</a></li>
+                    <li><a href="../html/projtop.html">プロジェクトTOP</a></li>
+                    <li><a href="auctiontop.html">オークションTOP</a></li>
+                    <li><a href="../html/gachatop.html">ガチャTOP</a></li>
+                    <li><a href="../html/buylp.html">LP購入</a></li>
+                    <li><a href="../../contributor/html/contributor_mypage.html#tab1">お気に入り</a></li>
+                    <li><a href="../../contributor/html/contributor_mypage.html">設定</a></li>
+                    <li><a href="../html/dummytop.html">ダミーアカウント</a></li>
+                    <li><a href="../html/inquiry.html">お問い合わせ</a></li>
+                    <li><a href="">ログアウト</a></li>
+                </ul>
+                <div class="sns">
+                    <a href="top.html"><img src="../../img///twitter.png" alt=""></a>
+                    <a href="#"><img src="../../img///instagram.png" alt=""></a>
+                </div>
+            </div>
+            </div>
+        </header>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../user/html/user_top.html">TOP</a></li>
+            <li ><a href="">キャンペーン一覧</a></li>
+            <li ><a href="../../user/html/production_campaign_new_campaign.html">キャンペーン新規作成</a></li>
+            <li class="arrow-l">キャンペーン新規発行</li>
+        </ul>
+    </div>
+    <main class="color1">
+        <form class="card color0">
+          <div class="card_content">
+          <h1 class="card-title">キャンペーン発行</h1>
+          <div class="card_info_index">
+            <div class="card_info_one">
+              <span class="sub-title">種別</span>
+              <p class="answer_text">割引</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">キャンペーンタイトル</span>
+              <p class="answer_text">タイトル</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">期限</span>
+              <p class="answer_text">2010/09/11 00:00 ~ 2020/11/11 23:59</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">割引数</span>
+              <p class="answer_text">20%</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">有効使用回数</span>
+              <p class="answer_text">11100回</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">備考</span>
+              <p class="answer_text">なし</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">確認コード</span>
+              <p class="answer_text">YU986204UHJ</p>
+            </div>
+
+        </div>
+        <div class="two_inputs">
+          <a class="twobutton_a" href="../../contributor/html/contributor_campaign_top.html">戻る</a>
+          <a class="twobutton_a" href="../../contributor/html/contributor_campaign_top.html">発行する</a>
+
+        </div>
+        </div>
+        </form>
+    </main>
+    <footer class="color5">
+      <div class="foot_list">
+
+        <ul class="foot_list_ul">
+          <li><a href="">ラポルノファンディングとは</a></li>
+          <li><a href="">よくある質問</a></li>
+          <li><a href="">お問い合わせ</a></li>
+          <li><a href="">特定商取引法の表示</a></li>
+          <li><a href="">利用規約</a></li>
+          <li><a href="">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <p class="footer_copyright">©︎laporno.fund, All Rights Reserved.</p>
+    </footer>
+    <!-- <script src="../../user/js/component.js"></script> -->
+    <script>
+       var productionHeader = new Vue({
+        el:'#headers',
+        data: function() {
+        return{
+          open:false
+        }
+      }
+      })
+    </script>
+</body>
+</html>

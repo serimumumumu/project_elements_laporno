@@ -1,0 +1,194 @@
+@import "../../user/css/color.scss";
+
+.omake-checkbox{
+    display: none;
+}
+/* チェックボックスの代わりを成すラベル */
+.omake-checkbox +label{
+    display: none;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    padding-right: 10px;
+}
+/* ラベルの左に表示させる正方形のボックス□ */
+.omake-checkbox +label::before{
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    margin-top: -10px;
+    left: 8px;
+    top: 50%;
+    border: 1px solid;
+    border-color: #FAFAFA; /* 枠の色変更 お好きな色を */
+}
+/* チェックが入った時のレ点 */
+.omake-checkbox:checked+label::after{
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 18px;
+    height: 9px;
+    margin-top: -9px;
+    top: 50%;
+    left: 8px;
+    transform: rotate(-45deg);
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-color:  #FAFAFA; /* チェックの色変更 お好きな色を */
+}
+
+
+.order-area{
+    position: relative; 
+    border-radius: 4px;
+    z-index: 0;
+}
+
+.order{
+    width: 100%;
+    padding: 3px 30px 3px 10px;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+// .drop-title{
+//     color: #FAFAFA;
+//     padding: 13px 10px;
+//     position: relative;
+// }
+
+// .drop-title::after{
+//     content: "";
+//     position: absolute;
+//     top: 8px;
+//     bottom: 0;
+//     right: 12px;
+//     background-image: url(../../img/arrowdown-w.png);
+//     transform: rotate(180deg);
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     width: 30px;
+//     height: 30px;
+// }
+
+.omake-drop-area{
+    margin-bottom: 10px;
+}
+
+.omake-table-area{
+    padding:0 5px 0 16px;
+}
+
+.checkbox-td{
+    width: 10%;
+}
+
+.omake-name-th{
+    padding: 8px;
+}
+
+.omake-name-td{
+    width: 90%;
+    padding: 23px 8px;
+}
+.omake-table-title-area{
+    padding: 9px 0;
+    position: relative;
+    margin-top: 1px;
+}
+.omake-table-title{
+    font-size: 14px;
+    font-weight: 400;
+    color: #FAFAFA;
+}
+
+.omake-table-title-area::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    background-image: url(../../img/arrowdown-w.png);
+    transform: rotate(180deg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+}
+
+.omake-table-close::after{
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    background-image: url(../../img/arrowdown-w.png);
+    // transform: rotate(180deg);
+    transform: rotate(
+360deg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+}
+
+.omake-add{
+    padding: 6px 26px 6px 0;
+}
+
+.omake-add-checkbox{
+    width: 10%;
+}
+
+.omake-add-label{
+    font-size: 12px;
+}
+
+.omake-add-btn{
+    font-size: 12px;
+    padding: 3px 17px;
+    color: #FAFAFA;
+    border-radius: 4px;
+}
+
+.omake-all-add{
+    padding: 10px 26px 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.omake-add-all-label{
+    color: #FAFAFA;
+    font-size: 12px;
+    display: block;
+    width: 65%;
+    margin-right: 12px;
+}
+
+.omake-add-all-btn{
+    font-size: 12px;
+    padding: 3px 17px;
+    border-radius: 4px;
+}
+
+.projtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding: 10px 16px;
+}
+.projtitle h3 {
+    font-size: 16px;
+    color: $white;
+}
+.projtitle img {
+    width: 20px;
+}
+table.lp_table {
+    width: 100%;
+}

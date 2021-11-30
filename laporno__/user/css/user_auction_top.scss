@@ -1,0 +1,10 @@
+@import "color.scss";
+
+// カードのハート位置
+.favorite-icon {
+    bottom: 112px;
+}
+.active{
+    background:$white;
+    border-bottom: 1px solid $gray;
+}

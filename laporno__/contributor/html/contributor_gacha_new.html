@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガチャ詳細編集</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../master/css/master_hyou.css">
+    <link rel="stylesheet" href="../../contributor/css/contributor_gacha_new.css">
+
+    <script src="../../user/js/vue.js" defer></script>
+    <script src="../../contributor/js/concomponent.js" defer></script>
+    <!-- Vue-multiselect -->
+    <script src="https://unpkg.com/vue-multiselect@2.1.0" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
+</head>
+<body>
+    <div id="app">
+        <conheaders></conheaders>
+        <!-- パンクズりすと -->
+        <div class="panlist">
+            <ul >
+                <li><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+                <li class="arrow-l"><a href="../../contributor/html/contributor_gacha_top.html">ガチャトップ</a></li>
+                <li class="arrow-l"><p>新規登録</p></li>
+            </ul>
+        </div>
+        <section v-show="!isConfirm" class="main_card" id="auchimgedit">
+            <!-- 記入フォーム -->
+            <div>
+                <div class="new_input">
+                    <p class="new_input_sub">紐付け先</p>
+                    <select name="parentsGacha" v-model="parentsGacha" class="new_input_select_75">
+                        <option v-for="(gacha, index) in parentsGachas" :value="index">{{ gacha }}</option>
+                    </select>
+                    <span class="new_input_select_span">に紐付け</span>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">ガチャタイトル*</p>
+                    <input type="text" v-model="title" class="new_input_select_100" placeholder="ガチャタイトルがはいります"/>
+                    <span class="input_text_count">0/25</span>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">発送予定日*</p>
+                    <input type="date" v-model="sendDate" id="send_date" class="new_input_select_50"/>
+                    <span class="new_input_select_span">から順次発送予定</span>
+                </div>
+                <div class="new_input  img_three_tub">
+                    <input id="tab1" type="radio" name="tab_btn" checked>
+                    <input id="tab2" type="radio" name="tab_btn" disabled>
+                    <input id="tab3" type="radio" name="tab_btn" disabled>
+                    <div class="tab_labels">
+                        <label class="tab1_label conbutton" for="tab1">テンプレ１</label>
+                        <label class="tab2_label conbutton" for="tab2">テンプレ２</label>
+                        <label class="tab3_label conbutton" for="tab3">テンプレ３</label>
+                    </div>
+                    <div class="panel_area">
+                        <div id="panel1" class="tab_panel ">
+                            <div class="imgregist">
+                                <label>
+                                    <input type="file" accept="image/*" class="selectonpreview" onchange="previewImage(this);">写真を変更する
+                                </label>
+                                <p class="imgpreview">
+                                    <img id="preview1" src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+                                </p>
+                                
+                            </div>
+                        </div>
+                        <div id="panel2" class="tab_panel ">
+                            <div class="imgregist">
+                                <label>
+                                    <input type="file" accept="image/*" class="selectonpreview" onchange="previewImage(this);">写真を変更する
+                                </label>
+                                <p class="imgpreview">
+                                    <img id="preview3" src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+                                </p>
+                                <h5 class="impreview_actname">{{ selectvalue }}</h5>
+                            </div>
+                            <div class="new_input">
+                                <p class="new_input_sub">画像に挿入する文字</p>
+                                <input type="text" class="new_input_select_100" placeholder="画像に挿入する文字がはいります"/>
+                                <span class="input_text_count">0/25</span>
+                            </div>
+                            <div class="new_input new_input_two">
+                                <div class="">
+                                    <p class="new_input_sub"><img src="../../img/time.png" alt="">使用するフォント</p>
+                                    <input type="text" class="new_input_select_90" v-model="selectvalue" list="fontlist" placeholder="明朝">
+                                </div>
+                            </div>
+                            <div class="new_input" >
+                                <p class="new_input_sub"><img src="../../img/time.png" alt="">文字色</p>
+                                <div class="colors_index">
+                                    <div class="color" id="white_text"></div>
+                                    <div class="color" id="black_text"></div>
+                                    <div class="color" id="red_text"></div>
+                                    <div class="color" id="orange_text"></div>
+                                    <div class="color" id="yellow_text"></div>
+                                    <div class="color" id="green_text"></div>
+                                    <div class="color" id="water_text"></div>
+                                    <div class="color" id="blue_text"></div>
+                                    <div class="color" id="purple_text"></div>
+                                    <div class="color" id="pink_text"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="panel3" class="tab_panel ">
+                            <div class="imgregist">
+                                <div class="album">
+                                    <img class="main_img" src="../../img/demoimg2.png" alt="アルバム1" id="album1">
+                                    <div class="actress_name">
+                                        <h3>
+                                            {{ selectvalue }}<span class="actress_name_span">Joyu Name</span>
+                                        </h3>
+                                    </div>
+                                    <img id="preview2" src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  alt="アルバム2" id="album2">
+                                </div>
+                            </div>
+                            <div class="new_input">
+                                <p class="new_input_sub">画像に挿入する文字</p>
+                                <input type="text" class="new_input_select_100" placeholder="画像に挿入する文字がはいります"/>
+                                <span class="input_text_count">0/25</span>
+                            </div>
+                            <div class="new_input new_input_two">
+                                <div class="">
+                                    <p class="new_input_sub"><img src="../../img/time.png" alt="">使用するフォント</p>
+                                    <input type="text" class="new_input_select_90" v-model="selectvalue" list="fontlist" placeholder="明朝">
+                                </div>
+                            </div>
+                            <div class="new_input" >
+                                <div class="">
+                                    <p class="new_input_sub"><img src="../../img/time.png" alt="">文字色</p>
+                                    <div class="colors_index">
+                                        <div class="color" id="t3_white_text"></div>
+                                        <div class="color" id="t3_black_text"></div>
+                                        <div class="color" id="t3_red_text"></div>
+                                        <div class="color" id="t3_orange_text"></div>
+                                        <div class="color" id="t3_yellow_text"></div>
+                                        <div class="color" id="t3_green_text"></div>
+                                        <div class="color" id="t3_water_text"></div>
+                                        <div class="color" id="t3_blue_text"></div>
+                                        <div class="color" id="t3_purple_text"></div>
+                                        <div class="color" id="t3_pink_text"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new_input" >
+                                <p class="new_input_sub"><img src="../../img/time.png" alt="">背景色</p>
+                                <div class="colors_index">
+                                    <div class="color" id="white_back"></div>
+                                    <div class="color" id="black_back"></div>
+                                    <div class="color" id="red_back"></div>
+                                    <div class="color" id="orange_back"></div>
+                                    <div class="color" id="yellow_back"></div>
+                                    <div class="color" id="green_back"></div>
+                                    <div class="color" id="water_back"></div>
+                                    <div class="color" id="blue_back"></div>
+                                    <div class="color" id="purple_back"></div>
+                                    <div class="color" id="pink_back"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_in">
+                    <div class="new_input">
+                        <p class="new_input_sub"><img src="../../img/lady.png" alt="">女優</p>
+                        <multiselect
+                            v-model="actressesSelected"
+                            :options="actresses"
+                            :multiple="true"
+                            :close-on-select="true"
+                            placeholder="複数選択セレクタ"
+                        >
+                        </multiselect>  
+                    </div>
+                    <div class="new_input">
+                        <p class="new_input_sub"><img src="../../img/time.png" alt="">開始</p>
+                        <select-datetime :date="'start_date'" :time="'start_time'"></select-datetime>
+                        <p class="new_input_sub"><img src="../../img/time.png" alt="">終了</p>
+                        <select-datetime :date="'end_date'" :time="'end_time'"></select-datetime>
+                    </div>
+                    <!-- 使用LP（30%） -->
+                    <div class="new_input">
+                        <p class="new_input_sub"><img src="../../img/money.png" alt="">使用LP(1回分)*</p>
+                        <input type="text" class="new_input_select_30" placeholder="800"><span class="new_input_select_span">LP</span>
+                    </div>
+                    <!-- カウント方式（30%*3） -->
+                    <div class="new_input">
+                        <p class="new_input_sub">カウントについて*</p>
+                        <div class="new_input_check">
+                            <label class="new_input_select_32" >
+                                <input v-model="countType" value="down" type="radio" name="how_count">
+                                ダウン式
+                            </label>
+                            <label class="new_input_select_32" >
+                                <input v-model="countType" value="up" type="radio" name="how_count">
+                                アップ式
+                            </label>
+                            <label class="new_input_select_32">
+                                <input v-model="countType" :value="null" type="radio" checked name="how_count">
+                                なし
+                            </label>
+                        </div>
+                    </div>
+                    <!-- おまけの有無（48%*2） -->
+                    <div class="new_input">
+                        <p class="new_input_sub">10回回して1回おまけの有無*</p>
+                        <div class="new_input_send">
+                            <label class="new_send">
+                                <input name="omake" class="Radio-Input" type="radio">
+                                <span class="Radio-Text">有り</span>
+                            </label>
+                            <label class="new_send">
+                                <input name="omake" class="Radio-Input" type="radio" checked>
+                                <span class="Radio-Text">無し</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- 回数ボーナスの有無 -->
+                    <div class="new_input">
+                        <p class="new_input_sub">回数ボーナスの有無*<img @click="openCountBounusModal" class="what_count_bonus" src="../../img/quesblack.png" alt=""></p>
+                        <div class="new_input_send">
+                            <label class="new_send">
+                                <input v-model="isCountBounus" :value="true" name="bonus" class="Radio-Input" type="radio">
+                                <span class="Radio-Text">有り</span>
+                            </label>
+                            <label class="new_send">
+                                <input v-model="isCountBounus" :value="false" name="bonus" class="Radio-Input" type="radio">
+                                <span class="Radio-Text">無し</span>
+                            </label>
+                        </div>
+                    </div>
+                    <about-modal
+                        :modal_title="'回数ボーナスとは？'"
+                        :modal_text="'1人が引いたガチャの総回数に応じて出るボーナス'"
+                        :modal_text_example_up="'例）回数ボーナス有：100回でサイン付き私物プレゼント'"
+                        :modal_text_example_down="'Aさんが期間中に100回を引いた時点で,'"
+                        :modal_text_example_down_bottom="'サイン付き私物が確定でもらえる。'"
+                        v-show="shwoAboutCountBounusModal"
+                        @close="shwoAboutCountBounusModal = false">
+                    </about-modal>
+                    <!-- 回数ボーナス詳細(ここからボタンで増やせる) -->
+                    <div v-if="isCountBounus">
+                        <div v-for="n in countBounusesQty">
+                            <div class="new_input">
+                                <p class="new_input_sub">回数ボーナス詳細</p>
+                                <input type="number" class="new_input_select_30" min="1" placeholder="80"><span class="new_input_select_span">回</span>
+                            </div>
+                            <!-- ボーナス特典 -->
+                            <div class="new_input">
+                                <p class="new_input_sub">ボーナス特典</p>
+                                <input type="text" v-model="selectvalue" list="taglist" class="new_input_select_100" placeholder="ボーナスの特典"/>
+                            </div>
+                            <div class="new_input">
+                                <p class="new_input_sub">タイプ</p>
+                                <div class="new_input_check_nowrap">
+                                    <label class="new_input_select_24">
+                                        <input value="goods" type="radio" checked name="count_bonus_type"> 物販
+                                    </label>
+                                    <label class="new_input_select_24">
+                                        <input value="real" type="radio" name="count_bonus_type"> リアル
+                                    </label>
+                                    <label class="new_input_select_24">
+                                        <input value="real" type="radio" name="count_bonus_type"> デジタル
+                                    </label>
+                                    <label class="new_input_select_24">
+                                        <input value="other" type="radio" name="count_bonus_type"> その他
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ボーナス追加ボタンを押し、入力が済んだタイプの下に↓の削除ボタンが出現する -->
+                        <button class="gacha_bonus_delete"><img class="gacha_bonus_trash_img" src="../../img/trash-w.png" alt="">削除</button>
+
+                        <!-- ここまで”回数ボーナス詳細” -->
+                        <button v-if="!isMaxCountBounus" @click="addCountBounus" class="gacha_bonus_add"><img src="../../img/plus.png"> ボーナス追加</button>
+                    </div>
+
+                    <!-- ストレッチボーナス詳細(ここからボタンで増やせる) -->
+                    <!-- ストレッチボーナスの有無 -->
+                    <div v-if="countType === 'up'" class="new_input">
+                        <p class="new_input_sub">ストレッチボーナスの有無*<img @click="openStretchBounusModal" class="what_stretch_bonus" src="../../img/quesblack.png" alt=""></p>
+                        <div class="new_input_send">
+                            <label class="new_send">
+                                <input v-model="isStretchBounus" :value="true" name="stretch_bonus" class="Radio-Input" type="radio">
+                                <span class="Radio-Text">有り</span>
+                            </label>
+                            <label class="new_send">
+                                <input v-model="isStretchBounus" :value="false" name="stretch_bonus" class="Radio-Input" type="radio">
+                                <span class="Radio-Text">無し</span>
+                            </label>
+                        </div>
+                    </div>
+                    <about-modal
+                    :modal_title="'ストレッチボーナスとは'"
+                    :modal_text="'全ユーザーが引いたガチャの総合計に応じて出るボーナス'"
+                    :modal_text_example_up="'例)ストレッチボーナス有：1000回でオリジナルボイスプレゼント'"
+                    :modal_text_example_down="'100人参加で各自が10回引いた場合、合計1000回,'"
+                    :modal_text_example_down_bottom="'→100人にオリジナルボイスプレゼント確定'"
+                        v-show="shwoAboutStretcBounusModal" @close="shwoAboutStretcBounusModal = false">
+                    </about-modal>
+                    <div v-if="countType === 'up' && isStretchBounus">
+                        <div v-for="n in stretchBounusesQty">
+                            <div class="new_input">
+                                <p class="new_input_sub">ストレッチボーナス詳細</p>
+                                <input type="text" class="new_input_select_30" placeholder="80"><span class="new_input_select_span">回</span>
+                            </div>
+                            <!-- ストレッチボーナス特典 -->
+                            <div class="new_input">
+                                <p class="new_input_sub">ストレッチボーナス特典</p>
+                                <input type="text" v-model="selectvalue" list="taglist" class="new_input_select_100" placeholder="ストレッチボーナスの特典"/>
+                            </div>
+                            <div class="new_input">
+                                <p class="new_input_sub">タイプ</p>
+                                <div class="new_input_check_nowrap">
+                                    <label class="new_input_select_24">
+                                        <input type="radio" checked name="stretch_bonus_type"> 
+                                        物販
+                                    </label>
+                                    <label class="new_input_select_24">
+                                        <input type="radio" name="stretch_bonus_type">
+                                        リアル
+                                    </label>
+                                    <label class="new_input_select_24">
+                                        <input type="radio" name="stretch_bonus_type">
+                                        デジタル
+                                    </label>
+                                    <label class="new_input_select_24">
+                                        <input type="radio" name="stretch_bonus_type">
+                                        その他
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- ここまで”ストレッチボーナス詳細” -->
+                        </div>
+                        <button  v-if="!isMaxStretchBounus" @click="addStretchBounus" class="gacha_bonus_add"><img src="../../img/plus.png"> ボーナス追加</button>
+                    </div>
+                    <div class="onebutton">
+                        <a href="#" @click="tggleConfirm()" class="onebutton_a">確認</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 確認画面 -->
+        <section v-show="isConfirm" class="main_card">
+            <div>
+                <div class="new_input">
+                    <p class="new_input_sub">紐付け先</p>
+                    <p v-if="parentsGacha" class="new_answer_100">{{ parentsGachas[parentsGacha] }}<span class="new_input_select_span_gray">に紐付ける</span></p>
+                    <p v-else>なし</p>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">ガチャタイトル*</p>
+                    <p class="new_answer_100">{{ title }}</p>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">発送予定日</p>
+                    <p class="new_answer_100">{{ sendDate }}<span class="new_input_select_span_gray">から順次発送予定</span></p>
+                </div>
+                <div class="new_input">
+                    <p class="imgpreview">
+                        <img id="preview_preview" src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                    </p>
+                </div>
+                <div class="new_input new_input_two">
+                    <div class="">
+                        <p class="new_input_sub"><img src="../../img/time.png" alt="">開始</p>
+                        <p class="new_answer_100">2021/11/11 15時</p>
+                        </div>
+                    <div class="">
+                        <p class="new_input_sub"><img src="../../img/time.png" alt="">終了</p>
+                        <p class="new_answer_100">2021/11/21 15時</p>
+                    </div>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">１回LP</p>
+                    <p class="new_answer_100">800<span class="new_input_select_span_gray">LP</span></p>
+                </div>
+                <div class="new_input new_input_two">
+                    <div class="">
+                        <p class="new_input_sub">ラストワン賞</p>
+                        <p class="new_answer_100">有り</p>
+                    </div>
+                    <div class="">
+                        <p class="new_input_sub">カウントについて</p>
+                        <p class="new_answer_100">カウントアップ式</p>
+                    </div>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">10回回して1回おまけ</p>
+                    <p class="new_answer_100">有り</p>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">回数ボーナス</p>
+                    <p class="new_answer_100">100回回すとサイン付きチェキ</p>
+                    <p class="new_answer_100">1000回回すと名前入りサイン付きチェキ</p>
+                    <p class="new_answer_100">3000回回すとキスマーク付きチェキ</p>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">スクラッチボーナス</p>
+                    <p class="new_answer_100">10000回回すとサイン付きチェキ</p>
+                    <p class="new_answer_100">50000回回すとイベント開催</p>
+                </div>
+                <div class="onebutton">
+                    <a href="#" @click="tggleConfirm()" class="onebutton_a">編集する</a>
+                </div>
+            </div>
+        </section>
+        <div class="main-top color2">
+            <div class="tab-area">
+                <div class="tab color3 " @click="isSelect('1')" :class="{'active': isActive === '1'}">内容</div>
+                <div class="tab color3" @click="isSelect('2')" :class="{'active': isActive === '2'}">景品一覧</div>
+                <div class="tab color3" style="opacity:0.5;" >活動報告</div>
+                <!-- <div style="opacity:0.25;" class="tab color3">活動報告</div> -->
+            </div>
+            <!--内容-->
+            <div class="color1 gacha_new_downpart" v-if="isActive === '1'">
+                <div class="gacha_title_and_button">
+                    <h2 class="gacha_content_title">内容</h2>
+                    <a class="gacha_content_button" href="../../contributor/html/contributor_gacha_new_content.html">編集</a>
+                </div>
+                <div class="gacha_content_main">
+                    <div class="user_gacha_content">
+                        <h6 class="user_gacha_content_title">たいとるたいとる</h6>
+                        <p class="user_gacha_content_p">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        <div class="main-content-img-area"><img src="../../img/demoimg.png" alt=""></div>
+                        <h6 class="user_gacha_content_title_border">たいとるたいとる</h6>
+                        <p class="user_gacha_content_p">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </div>
+                    <div class="table_area">
+                        <p class="probability-title"><img src="../../img/scale.png" alt="">確率</p>
+                        <table class="probability">
+                            <tr>
+                                <th>景品</th>
+                                <th>確率</th>
+                            </tr>
+                            <tr>
+                                <td>景品の名前</td>
+                                <td>20%</td>
+                            </tr>
+                            <tr>
+                                <td>景品の名前</td>
+                                <td>20%</td>
+                            </tr>
+                            <tr>
+                                <td>景品の名前</td>
+                                <td>20%</td>
+                            </tr>
+                        </table>
+                        <p class="probability-text">※ガチャが引き進められるほど確率は変動し、これに限りません</p>
+                    </div>
+                </div>
+            </div>
+            <!--景品一覧-->
+            <div  class="color1 gacha_new_downpart" v-else="isActive === '2'">
+                <div class="gacha_title_and_button">
+                    <h2 class="gacha_content_title">景品一覧</h2>
+                    <a class="gacha_content_button" href="../../contributor/html/contributor_gacha_new_freebie.html"><img class="gacha_content_button_img" src="../../img/plus.png">新規作成</a>
+                </div>
+                <div class="gacha_content_main">
+
+                </div>
+                <div class="main-content-inner">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                            <div class="table-title-area color5">
+                                <h2 class="table-title">ガチャ一覧</h2>
+                                <div class="table_sort">
+                                <select name="order" id="" class="table_sort_select color1">
+                                <option >総数少ない順</option>
+                                <option >新着中</option>
+                                <option >登録順</option>
+                                </select>
+                                </div>
+                            </div>
+                            <table class="table gacha">
+                                <tr class="table_header">
+                                    <th class="table_160">賞の名前</th>
+                                    <th class="table_160">女優名</th>
+                                    <th class="table_60">合計数</th>
+                                    <th class="table_60">出数</th>
+                                    <th class="table_60">残数</th>
+                                </tr>
+                                <tr>
+                                    <td>賞の名前</td>
+                                    <td>女優の名前 </td>
+                                    <td class="text_right">10000</td>
+                                    <td class="text_right">1000</td>
+                                    <td class="text_right">99000</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>女優の名前 </td>
+                                    <td class="text_right">10000</td>
+                                    <td class="text_right">1000</td>
+                                    <td class="text_right">99000</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>女優の名前 </td>
+                                    <td class="text_right">10000</td>
+                                    <td class="text_right">1000</td>
+                                    <td class="text_right">99000</td>
+                                </tr>
+                                <tr>
+                                    <td>賞の名前B</td>
+                                    <td>女優の名前 </td>
+                                    <td class="text_right">10000</td>
+                                    <td class="text_right">1000</td>
+                                    <td class="text_right">99000</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>女優の名前 </td>
+                                    <td class="text_right">10000</td>
+                                    <td class="text_right">1000</td>
+                                    <td class="text_right">99000</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>女優の名前 </td>
+                                    <td class="text_right">10000</td>
+                                    <td class="text_right">1000</td>
+                                    <td class="text_right">99000</td>
+                                </tr>
+                                <tr>
+                                    <td>賞の名前C</td>
+                                    <td>女優の名前 </td>
+                                    <td class="text_right">10000</td>
+                                    <td class="text_right">1000</td>
+                                    <td class="text_right">99000</td>
+                                </tr>
+                                <tr>
+                                    <td>ラストワン</td>
+                                    <td></td>
+                                    <td class="text_right">1</td>
+                                    <td class="text_right">0</td>
+                                    <td class="text_right">1</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <article class="user_gacha_detail_freebie">
+                        <h5 class="user_gacha_detail_freebie_title">賞のタイトル</h5>
+                        <div class="user_gacha_detail_freebie_main">
+                        <img class="user_gacha_detail_freebie_main_img" src="../../img/demoimg.png"  alt="">
+                        <p class="user_gacha_detail_freebie_content">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        <div class="user_gacha_detail_datas">
+                            <div class="user_gacha_detail_data">
+                                <p class="user_gacha_detail_data_p"><img class="user_gacha_detail_data_img" src="../../img/movie.png" alt="">映像データ：なし</p>
+                            </div>
+                            <div class="user_gacha_detail_data">
+                                <p class="user_gacha_detail_data_p"><img class="user_gacha_detail_data_img" src="../../img/usbdata.png" alt="">USB郵送：なし</p>
+                            </div>
+                        </div>
+                        <div class="keihin-area">
+                            <div class="keihin color3">
+                                <p>女優の名前</p>
+                                <p>typeA</p>
+                                <p>10</p>
+                            </div>
+                            <div class="keihin color3">
+                                <p>女優の名前</p>
+                                <p>typeA</p>
+                                <p>10</p>
+                            </div>
+                            <div class="keihin color3">
+                                <p>女優の名前</p>
+                                <p>typeA</p>
+                                <p>10</p>
+                            </div>
+                        </div>
+                        <a class="gacha_freebie_edit_button" href="../../contributor/html/contributor_gacha_new_freebie.html">編集</a>
+                        </div>
+                    </article>
+                    <article class="user_gacha_detail_freebie">
+                        <h5 class="user_gacha_detail_freebie_title">ラストワン賞</h5>
+                        <div class="user_gacha_detail_freebie_main">
+                        <img class="user_gacha_detail_freebie_main_img" src="../../img/demoimg.png"  alt="">
+                        <p class="user_gacha_detail_freebie_content">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        <div class="user_gacha_detail_datas" style="margin-bottom: 10px;">
+                            <div class="user_gacha_detail_data">
+                                <p class="user_gacha_detail_data_p"><img class="user_gacha_detail_data_img" src="../../img/movie.png" alt="">映像データ：なし</p>
+                            </div>
+                            <div class="user_gacha_detail_data">
+                                <p class="user_gacha_detail_data_p"><img class="user_gacha_detail_data_img" src="../../img/usbdata.png" alt="">USB郵送：なし</p>
+                            </div>
+                        </div>
+                        <a class="gacha_freebie_edit_button" href="../../contributor/html/contributor_gacha_new_freebie.html">編集</a>
+                        </div>
+                    </article>
+                </div>
+                    
+                </div>  
+            </div>
+            <!-- 活動報告一覧 -->
+            <!-- <div  class="color1 gacha_new_downpart" >
+            <div class="gacha_new_downpart color1" >
+                <div class="gacha_title_and_button">
+                    <h2 class="gacha_content_title">活動報告</h2>
+                    <a class="gacha_content_button" href="../../contributor/html/contributor_gacha_new_report.html"><img class="gacha_content_button_img" src="../../img/plus.png">新規作成</a>
+                </div>
+                <div class="main-content-inner">
+                    <section class="gacha_active_report">
+                        <span class="gacha_active_report_date">2021/01/03</span>
+                        <p class="gacha_active_report_title color2">活動報告のタイトル</p>
+                        <article class="gacha_active_report_content">
+                            <div class="gacha_active_report_img">
+                                <img src="../../img/demoimg.png" alt="">
+                            </div>
+                            <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </article>
+                    </section>
+                    <section class="gacha_active_report">
+                        <span class="gacha_active_report_date">2021/01/03</span>
+                        <p class="gacha_active_report_title color2">活動報告のタイトル</p>
+                        <article class="gacha_active_report_content">
+                            <div class="gacha_active_report_img">
+                                <img src="../../img/demoimg.png" alt="">
+                            </div>
+                            <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </article>
+                    </section>
+                    <section class="gacha_active_report">
+                        <span class="gacha_active_report_date">2021/01/03</span>
+                        <p class="gacha_active_report_title color2">活動報告のタイトル</p>
+                        <article class="gacha_active_report_content">
+                            <div class="gacha_active_report_img">
+                                <img src="../../img/demoimg.png" alt="">
+                            </div>
+                            <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        </article>
+                    </section>
+                </div>
+            </div>  
+            </div> -->
+        </div>
+        <!-- 追従フッター -->
+        <div class="twobutton color1">
+            <a class="twobutton_a" href="../../contributor/html/contributor_gacha_top.html">戻る</a>
+            <a class="twobutton_a" href="../../contributor/html/contributor_gacha_new_preview.html">確認</a>
+        </div>
+    </div>
+<script src="../../contributor/js/contributor_header_search.js" defer></script>
+<script>
+    function previewImage(obj)
+    {
+        var fileReader = new FileReader();
+        fileReader.onload = (function() {
+            document.getElementById('preview1').src = fileReader.result;
+            document.getElementById('preview_preview').src = fileReader.result;
+        });
+        fileReader.readAsDataURL(obj.files[0]);
+    }
+
+    window.onload = function () {
+
+        // Vue-multiselect
+        Vue.component('multiselect', window.VueMultiselect.default);
+
+        new Vue ({
+            el: "#app",
+            data: {
+                isConfirm: false,
+                //紐付け先
+                parentsGachas: [], //紐付けガチャ候補
+                actresses: [], //女優選択候補
+                parentsGacha: null, //紐付けるガチャID
+                title: null, //ガチャタイトル
+                sendDate: null, //発送予定費
+                actressesSelected: null, //女優選択（複数）
+                selectvalue: null,
+                countType: null,
+                //回数ボーナス
+                isCountBounus: false, //回数ボーナスフラグ
+                isMaxCountBounus: false, //
+                shwoAboutCountBounusModal:false, //回数ボーナスとは？モーダル表示フラグ
+                shwoAboutStretcBounusModal:false, //ストレッチボーナスとは？モーダル表示フラグ
+                countBounusDefault: {
+                    qty: 100,
+                    content: '',
+                    type: null,
+                },
+                countBounusesQty: 1,
+                //ストレッチボーナス
+                isStretchBounus: false,
+                isMaxStretchBounus: false,
+                stretchBounusDefault: {
+                    qty: 100,
+                    content: '',
+                    type: null,
+                },
+                stretchBounusesQty: 1,
+                //一時的
+                isActive: "1",
+            },
+            created(){
+                this.getParentsGachas()
+                this.getActresses()
+            },
+            methods:{
+                getParentsGachas ()
+                {
+                    this.parentsGachas = [null, '〇〇〇〇〇〇〇〇ガチャ1弾', 'テストテストテストガチャ1弾', '______________ガチャ1弾'] //key => 女優ID value => 女優名の情報が入る
+                },
+                getActresses ()
+                {
+                    this.actresses = ['女優1', '女優2', '女優3'] //key => 女優ID value => 女優名の情報が入る
+                },
+                addCountBounus()
+                {
+                    this.countBounusesQty++
+                    if (this.countBounusesQty >= 5) this.isMaxCountBounus = true
+                },
+                addStretchBounus()
+                {
+                    this.stretchBounusesQty++
+                    if (this.stretchBounusesQty >= 5) this.isMaxStretchBounus = true
+                },
+                tggleConfirm()
+                {
+                    this.isConfirm = this.isConfirm ? false : true
+                },
+                isSelect(number) {
+                    this.isActive = number;
+                },
+                openCountBounusModal(){
+                    this.shwoAboutCountBounusModal = true;
+                },
+                openStretchBounusModal(){
+                    this.shwoAboutStretcBounusModal = true;
+                },
+            }
+        });
+    }
+</script>
+</body>
+</html>

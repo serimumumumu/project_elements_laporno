@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ガチャ景品詳細リスト</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_top.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_modal.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <conheaders></conheaders>
+    <div class="panlist">
+      <ul >
+        <li ><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+        <li ><a href="../../contributor/html/contributor_gacha_top.html">ガチャTOP</a></li>
+        <li class="arrow-l"><p>景品詳細</p></li>
+      </ul>
+    </div>
+      <search></search>
+    <div id="">
+      <h1 class="title">景品詳細</h1>
+      <div class="content">
+        <div class="listowner color1" >
+          <h2 class="">ユーザーの名前</h2>
+          <div class="mailinfo">
+            <div href=""  @click="openInfo" class="usersendinfolist">情報
+            </div>
+            <a href="../../contributor/html/contributor_message_detail.html"><img src="../../img/mail.png" alt=""></a>
+          </div>
+          <userinfo v-show="showinfoContent" @close="showinfoContent = false"></userinfo>
+        </div>
+        <div class="hyou" >
+          <div class="hyou-top">
+            <div class="table-title-area color5">
+              <h2 class="table-title">ガチャ一覧</h2>
+              <div class="table_sort">
+                <select name="order" id="" class="table_sort_select color1">
+                <option >新着中</option>
+                <option >登録順</option>
+                </select>
+              </div>
+            </div>
+            <div class="search sub_search">
+              <form action="" method="">
+                <img src="../../img/serch.png" alt="">
+                <input  type="text" placeholder="検索する" />
+              </form>
+            </div>
+            <table class="table gacha">
+              <tr class="table_header">
+                <th class="table_180">タイトル</th>
+                <th class="table_40"></th>
+                <th class="table_160">賞</th>
+                <th class="table_160">景品</th>
+                <th class="table_120">女優</th>
+                <th class="table_40">VR</th>
+                <th class="table_60">個数</th>
+                <th class="table_100">詳細</th>
+                <th class="table_100">ステータス</th>
+                <th class="table_40 table_center">Mail</th>
+              </tr>
+              <tr>
+                <td class="bold-font"><a href="../../contributor/html/contributor_gacha_detail.html">投稿タイトタイトルタイト</a></td>
+                <td class="t_center"><input id="chkbox1" type="checkbox"/></td>
+                <td>賞の名前賞の名前</td>
+                <td>景品景品景品景品景品景品</td>
+                <td class="bold-font"><a href="../../contributor/html/contributor_actress_profile.html">女優のなまえ</a></td>
+                <td>20</td>
+                <td>200</td>
+                <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                <!-- <td> <button class="table-btn" onclick="location.href='../../contributor/html/contributor_gacha_send_info.html'">情報登録</button></td> -->
+                <!-- <td>発送済</td> -->
+                <td class="t_center">発送準備</td>
+                <td class="table_80 table_center"><a class="table_center" href="../../contributor/html/contributor_message_detail.html"> <img class="td-img" src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="t_center"><input id="chkbox1" type="checkbox"/></td>
+                <td>賞の名前賞の名前</td>
+                <td>景品景品景品景品景品景品</td>
+                <td class="bold-font"><a href="../../contributor/html/contributor_actress_profile.html">女優のなまえ</a></td>
+                <td>20</td>
+                <td>200</td>
+                <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                <!-- <td> <button class="table-btn" onclick="location.href='../../contributor/html/contributor_gacha_send_info.html'">情報登録</button></td> -->
+                <!-- <td>発送済</td> -->
+                <td class="t_center">発送準備</td>
+                <td class="table_80 table_center"><a class="table_center" href="../../contributor/html/contributor_message_detail.html"> <img class="td-img" src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="t_center"><input id="chkbox1" type="checkbox"/></td>
+                <td>賞の名前賞の名前</td>
+                <td>景品景品景品景品景品景品</td>
+                <td class="bold-font"><a href="../../contributor/html/contributor_actress_profile.html">女優のなまえ</a></td>
+                <td>20</td>
+                <td>200</td>
+                <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                <!-- <td> <button class="table-btn" onclick="location.href='../../contributor/html/contributor_gacha_send_info.html'">情報登録</button></td> -->
+                <!-- <td>発送済</td> -->
+                <td class="t_center">発送準備</td>
+                <td class="table_80 table_center"><a class="table_center" href="../../contributor/html/contributor_message_detail.html"> <img class="td-img" src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="t_center"><input id="chkbox1" type="checkbox"/></td>
+                <td>賞の名前賞の名前</td>
+                <td>景品景品景品景品景品景品</td>
+                <td class="bold-font"><a href="../../contributor/html/contributor_actress_profile.html">女優のなまえ</a></td>
+                <td>20</td>
+                <td>200</td>
+                <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                <!-- <td> <button class="table-btn" onclick="location.href='../../contributor/html/contributor_gacha_send_info.html'">情報登録</button></td> -->
+                <!-- <td>発送済</td> -->
+                <td class="t_center">発送準備</td>
+                <td class="table_80 table_center"><a class="table_center" href="../../contributor/html/contributor_message_detail.html"> <img class="td-img" src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="t_center"><input id="chkbox1" type="checkbox"/></td>
+                <td>賞の名前賞の名前</td>
+                <td>景品景品景品景品景品景品</td>
+                <td class="bold-font"><a href="../../contributor/html/contributor_actress_profile.html">女優のなまえ</a></td>
+                <td>20</td>
+                <td>200</td>
+                <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                <!-- <td> <button class="table-btn" onclick="location.href='../../contributor/html/contributor_gacha_send_info.html'">情報登録</button></td> -->
+                <!-- <td>発送済</td> -->
+                <td class="t_center">発送準備</td>
+                <td class="table_80 table_center"><a class="table_center" href="../../contributor/html/contributor_message_detail.html"> <img class="td-img" src="../../img/mail.png" alt=""></a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="contributor_gacha_list_hyou_button color5">
+            <p class="contributor_gacha_list_hyou_button_p">チェックした賞の発送情報まとめて登録</p><a class="contributor_gacha_list_hyou_button_a" href="../../contributor/html/contributor_gacha_send_info.html">実行</a>
+          </div>
+          <congachasendinfo v-show="showContent" @close="showContent = false"></congachasendinfo>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="../../contributor/js/contributor_header_search.js"></script>
+    <script src="../../contributor/js/contributor_userinfo.js"></script>
+<script src="../../contributor/js/contributor_gacha_list.js"></script>
+<script>
+
+window.onload = function () {
+new Vue ({
+    el:"#app",
+    data:{
+      showinfoContent:false,
+      showContent:false,
+      list:false
+    },
+    methods: {
+      openModal(){
+        this.showContent = true;
+      },
+      closeModal(){
+        this.showContent = false;
+      },
+      openInfo(){
+        this.showinfoContent = true;
+      },
+      closeInfo(){
+        this.showinfoContent = false;
+      },
+        open(){
+          this.list = !this.list
+      }
+    }
+});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロダクションプロフィールページ</title>
+    <meta name="description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <meta name="keywords" content="ラポファン,セクシー女優,オンラインオークション,ラポルノ,ラポルノファンディング,クラファン,クラウドファンディング,ガチャ">
+    <meta property="og:title" content="【ラポルノファンディング】">
+    <meta property="og:description" content="ラポルノファンディング">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ラポルノファンディング">
+    <!-- Facebook -->
+    <meta property="fb:app_id" content="">
+    <!-- //Facebook -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lapornofund">
+    <meta name="twitter:title" content="【ラポルノファンディング】">
+    <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/user_component.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/user_footer.css">
+    <link rel="stylesheet" href="css/user_profile.css">
+    <script src="js/vue.js"></script>
+
+</head>
+<body>
+    <div id="headers">
+      <headers></headers>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+      <ul >
+        <li ><a href="#tab5">TOP</a></li>
+        <li class="arrow-l">プロダクションプロフィールページ</li>
+      </ul>
+    </div>
+    <!-- プロフィール -->
+    <div class="user color1" id="profile">
+      <div class="user-left" >
+        <div class="user-img"><img src="../../img/userimage.png" alt=""></div>    
+        <!-- <div class="user-rank">
+              <div class="subtitle" >称号</div>
+                  <div @click="openModalPrize" class="rank-icon-area">
+                      <div class="rank-icon" >
+                  <img src="../../img/patoran3.png" alt="patron">
+                  <div class="icon-text">パトロン</div>
+              </div>
+              <div class="rank-icon">
+                  <img src="../../img/patoran3.png" alt="patron">
+                  <div class="icon-text">パトロン</div>
+              </div>
+              <div class="rank-icon">
+                  <img src="../../img/patoran3.png" alt="patron">
+                  <div class="icon-text">パトロン</div>
+              </div>
+          </div>
+          </div> -->
+      </div>
+      <div class="user-right">
+        <div class="user-name-area">
+          <div class="subtitle">プロダクション名</div>
+          <div class="user-name">プロダクション名</div>
+        </div>
+        <div class="user-info-area">
+          <div class="info">
+              <div class="subtitle">ホームページ</div>
+              <div class="subtext"><a class="twitter_link" href=""><img src="../../img/profile_home.png" alt=""></a></div>
+          </div>
+            <div class="info">
+                <div class="subtitle">Twitter</div>
+                <div class="subtext"><a class="twitter_link" href=""><img src="../../img/profile_twitter.png" alt=""></a></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- たぶ -->
+    <div id="actprodtop">
+      <input id="tab1" type="radio" name="tab_btn" checked>
+      <input id="tab2" type="radio" name="tab_btn">
+      <input id="tab3" type="radio" name="tab_btn">
+      <input id="tab4" type="radio" name="tab_btn">
+      <input id="tab5" type="radio" name="tab_btn">
+      <input id="tab6" type="radio" name="tab_btn">
+      <input id="tab7" type="radio" name="tab_btn">
+      <input id="tab8" type="radio" name="tab_btn">
+      <div class="tab_labels">
+        <label class="tab1_label tabbtn" for="tab1">支援履歴</label>
+        <label class="tab2_label tabbtn" for="tab2">入札落履歴</label>
+        <label class="tab3_label tabbtn relative" for="tab3">景品一覧</label>
+        <label class="tab4_label tabbtn" for="tab4">お気に入り</label>
+        <label class="tab5_label tabbtn" for="tab5">プロジェクト</label>
+        <label class="tab6_label tabbtn" for="tab6">オークション</label>
+        <label class="tab7_label tabbtn" for="tab7">ガチャ</label>
+        <label class="tab8_label tabbtn" for="tab8">所属女優</label>
+      </div>
+      <div class="panel_area color1">
+          <!--支援履歴-->
+          <div id="panel1" class="tab_panel">
+            <div class="content">
+              <div class="content-main" v-cloak>
+                <img src="../../img/demoimg.png" alt="">
+                <togbutton1>
+                  <template v-slot:incontent >
+                    <div class="return" >リターン</div>
+                    <div class="content-sub">
+                        <div class="content-sub-left">
+                            <div class="content-subtitle">景品タイトル</div>
+                            <img  src="../../img/demoimg.png" alt="">
+                        </div>
+                        <div class="content-sub-right" >
+                            <div class="date color3">履行済(デート)</div>
+                            <div class="pr_but" >
+                                <div class="price">￥300,000</div>
+                            </div>
+                        </div>
+                        </div>
+                    </template>
+                </togbutton1>
+              </div>
+            </div>
+            <div class="content">
+              <div class="content-main" v-cloak>
+                <img src="../../img/demoimg.png" alt="">
+                <togbutton1>
+                  <template v-slot:incontent >
+                    <div class="return" >リターン</div>
+                    <div class="content-sub">
+                      <div class="content-sub-left">
+                        <div class="content-subtitle">景品タイトル</div>
+                        <img  src="../../img/demoimg.png" alt="">
+                      </div>
+                      <div class="content-sub-right" >
+                        <div class="date color3">履行済(デート)</div>
+                        <div class="pr_but" >
+                          <div class="price">￥500,000</div>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </togbutton1>
+              </div>
+            </div>
+          </div>
+            <!--入札落履歴-->
+          <div id="panel2" class="tab_panel">
+            <div class="maintitle">入札</div>
+            <div class="content2-main1">
+              <auchcard></auchcard>
+              <auchcard></auchcard>
+            </div>
+            <div class="content2-main2">
+                <div class="maintitle" id="detailbutton">落札</div>
+                <div class="content2-main2-card">
+                    <div class="content2-main2-top">
+                        <div class="content2-main2-title">【新村あかり】色紙＋チェキ【新村あかり】色紙＋チェキ</div>
+                        <div class="content2-main2-status color3">ステータス</div>
+                    </div>
+                    <div class="content2-main2-middle">
+                        <img src="../../img/demoimg.png" alt="">
+                        <div class="c2-m2-info">
+                            <div class="info-inner">
+                                <img src="../../img/lady.png" alt="">
+                                <div>新村あかり</div>
+                            </div>
+                            <div class="info-inner">
+                                <img src="../../img/pro.png" alt="">
+                                <div>桃太郎永劫出版</div>
+                            </div>
+                            <div class="info-inner">
+                                <img src="../../img/mallet.png" alt="">
+                                <div>3,111,111円</div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!--景品一覧-->
+          <div id="panel3" class="tab_panel">
+            <gachafreebieuser></gachafreebieuser>
+            <gachafreebieuser></gachafreebieuser>
+            <gachafreebieuser></gachafreebieuser>
+          </div>
+          <!--お気に入り-->
+          <div id="panel4" class="tab_panel">
+            <input id="recht_three_tab1" type="radio" name="tab_btn2" checked>
+            <input id="recht_three_tab2" type="radio" name="tab_btn2">
+            <input id="recht_three_tab3" type="radio" name="tab_btn2">
+            <div class="recht_three_tab_labels gap">
+            <label class="recht_three_tab1_label recht_three_tabbtn" for="recht_three_tab1">プロジェクト</label>
+            <label class="recht_three_tab2_label recht_three_tabbtn" for="recht_three_tab2">オークション</label>
+            <label class="recht_three_tab3_label recht_three_tabbtn" for="recht_three_tab3">ガチャ</label>
+            </div>
+            <div class="recht_three_panel_area">
+              <div id="recht_three_panel1" class="recht_three_tab_panel">
+                <projcard></projcard>
+                <projcard></projcard>
+                <projcard></projcard>
+              </div>
+              <div id="recht_three_panel2" class="recht_three_tab_panel">
+                <auchcard></auchcard>
+                <auchcard></auchcard>
+                <auchcard></auchcard>
+              </div>
+              <div id="recht_three_panel3" class="recht_three_tab_panel">
+                <gachacard></gachacard>
+                <gachacard></gachacard>
+                <gachacard></gachacard>
+              </div>
+            </div>   
+          </div>
+          <div id="panel5" class="tab_panel">
+            <div class="content2-main1">
+              <projcard></projcard>
+              <projcard></projcard>
+            </div>
+          </div>   
+          <div id="panel6" class="tab_panel">
+            <div class="content2-main1">
+              <auchcard></auchcard>
+              <auchcard></auchcard>
+            </div>
+          </div>   
+          <div id="panel7" class="tab_panel">
+            <div class="content2-main1">
+              <gachacard></gachacard>
+              <gachacard></gachacard>
+            </div>
+          </div>   
+          <div id="panel8" class="tab_panel">
+            <div class="content2-main1">
+              <actress></actress>
+              <actress></actress>
+              <actress></actress>
+              <actress></actress>
+            </div>
+          </div>   
+      </div>
+    </div>
+    <footer class="color5">
+      <div class="foot_list">
+        <ul class="foot_list_ul">
+          <li><a href="">ラポルノファンディングとは</a></li>
+          <li><a href="">よくある質問</a></li>
+          <li><a href="">お問い合わせ</a></li>
+          <li><a href="">特定商取引法の表示</a></li>
+          <li><a href="">利用規約</a></li>
+          <li><a href="">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <p class="footer_copyright">©︎laporno.fund, All Rights Reserved.</p>
+    </footer>
+    <script src="js/mypage.js" defer></script>
+    <script src="js/component.js"></script>
+</body>
+</html>

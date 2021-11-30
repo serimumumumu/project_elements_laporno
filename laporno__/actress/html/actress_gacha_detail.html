@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガチャ詳細</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/gachadetail.css">
+    <script src="js/vue.js" defer></script>
+</head>
+<body>
+    <div id="headers">
+        <headers></headers>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="user_user_top.html">TOP</a></li>
+            <li class="arrow-l"><a href="user_gacha_user_top.html">ガチャトップ</a></li>
+            <li class="arrow-l">ガチャタイトル</li>
+        </ul>
+    </div>
+    <section class="main_card">
+        <h6 class="main_card_title">ガチャタイトルガチャタイトル</h6>
+        <div class="card_img">
+            <img src="../../img/demoimg.png" alt="">
+        </div>
+        <div class="info_inner">
+            <article class="info-title">
+                <div class="info_sub"><img src="../../img/pro.png" alt="">投稿者</div>
+                <a href="user_contributor_profile.html" class="info-maker" >桃太郎出版</a>
+            </article>
+            <article class="info-title">
+                <div class="info_sub"><img src="../../img/time.png" alt="">期間</div>
+                <p class="info-real">12/12～12/18</p>
+            </article>
+        </div>
+    </section>
+    <div class="main-top color2" id="actprodtop">
+        <div class="tab-area">
+            <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">内容</div>
+            <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">景品一覧</div>
+        </div>
+        <!--内容-->
+        <div class="content-container color1" v-if="isActive === '1'">
+            <div class="main-content-inner">
+                <p class="main-content-text">
+                    テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+                <div class="main-content-img-area">
+                    <img src="../../img/demoimg.png" alt="">
+                </div>
+                <p class="main-content-text">
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+            </div>
+        </div>
+        <!--景品一覧-->
+        <div  class="content-container color1" v-else="isActive === '2'">
+            <div class="main-content-inner">
+                <article class="award">
+                    <h6 class="award_h6">〇〇賞</h6>
+                    <div class="award_detail">
+                        <img src="../../img/demoimg.png" alt="">
+                        <p class="award_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </div>
+                </article>
+                <article class="award">
+                    <h6 class="award_h6">〇〇賞</h6>
+                    <div class="award_detail">
+                        <img src="../../img/demoimg.png" alt="">
+                        <p class="award_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </div>
+                </article>
+                <article class="award">
+                    <h6 class="award_h6">〇〇賞</h6>
+                    <div class="award_detail">
+                        <img src="../../img/demoimg.png" alt="">
+                        <p class="award_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </div>
+                </article>
+                <div class="table_area">
+                    <p class="probability-title"><img src="../../img/scale.png" alt="">確率</p>
+                    <table class="probability">
+                        <tr>
+                            <th>景品</th>
+                            <th>確率</th>
+                        </tr>
+                        <tr>
+                            <td>景品の名前</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <td>景品の名前</td>
+                            <td>20%</td>
+                        </tr>
+                        <tr>
+                            <td>景品の名前</td>
+                            <td>20%</td>
+                        </tr>
+                    </table>
+                    <article class="probability-text">※確率に関してのなにか</article>
+                </div>
+            </div>  
+        </div>   
+        <div class="floatbutton">
+            <img class="questionbutton" src="../../img/quesblack.png" alt="">
+            <img class="topscrollbutton" src="../../img/pagetop.png" alt="">
+        </div>
+    </div>
+    <!-- 追従フッター -->
+    <div id="float_area">
+        <div class="float_area_heart">
+            <div class="favorite_icon2" v-if="isActive" @click="changeHeart">
+                <img class="favorite_icon2_img" src="../../img/favheart.png" alt="">
+            </div>
+            <div class="favorite_icon2" v-else @click="changeHeart">
+                <img class="favorite_icon2_img" src="../../img/favedheart.png" alt="">
+            </div>
+            <p class="">324</p>
+        </div>
+        <div class="float_area_a">
+            <a @click="openModal" class="">ガチャを引く</a>
+        </div>
+        <gacharu v-show="showContent" @close="showContent = false"></gacharu>
+    </div>
+    <script src="js/component.js" defer></script>
+    <script src="js/actprodtop.js" defer></script>
+</body>
+</html>

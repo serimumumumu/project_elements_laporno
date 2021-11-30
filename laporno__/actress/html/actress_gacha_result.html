@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ガチャ詳細</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/gachadetail.css">
+    <script src="js/vue.js" defer></script>
+</head>
+<body>
+    <div id="headers">
+        <headers></headers>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="user_user_top.html">TOP</a></li>
+            <li class="arrow-l"><a href="user_gacha_user_top.html">ガチャトップ</a></li>
+            <li class="arrow-l">ガチャタイトル</li>
+        </ul>
+    </div>
+    <div class="result-inner">
+        <h5 class="result-title">結果</h5>
+        <h5 class="gacha-title">ガチャタイトル</h5>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+        <section class="result-card color1">
+            <div class="result-card-left">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <div class="result-card-right">
+                <h6 class="award-title">〇〇〇〇賞</h6>
+                <p class="award-text">所持数（0個 → 2個)</p>
+            </div>
+        </section>
+    
+    </div>
+    <div  id="retry">
+        <div class="button_area" href="" @click="openModal">もう一回引く</div>
+        <a class="button_area" href="gachadetail.html">ガチャ詳細へ</a>
+        <gacharu v-show="showContent" @close="showContent = false"></gacharu>
+    </div>
+    <script src="js/component.js" defer></script>
+    <script src="js/actprodtop.js" defer></script>
+</body>
+</html>

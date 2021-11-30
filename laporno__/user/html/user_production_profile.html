@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロダクションプロフィールページ</title>
+    <meta name="description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <meta name="keywords" content="ラポファン,セクシー女優,オンラインオークション,ラポルノ,ラポルノファンディング,クラファン,クラウドファンディング,ガチャ">
+    <meta property="og:title" content="【ラポルノファンディング】">
+    <meta property="og:description" content="ラポルノファンディング">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ラポルノファンディング">
+    <!-- Facebook -->
+    <meta property="fb:app_id" content="">
+    <!-- //Facebook -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lapornofund">
+    <meta name="twitter:title" content="【ラポルノファンディング】">
+    <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <!-- user_production_profileで全部縛っている↓ -->
+    <link rel="stylesheet" href="../../user/css/user_production_profile.css">
+    <link rel="stylesheet" href="../../user/css/user_modal.css">
+    <script src="../../user/js/vue.js"></script>
+
+</head>
+<body>
+    <!-- プロフィール -->
+    <div id="app" class="user_production_profile">
+      <headers></headers>
+      <!-- </div> -->
+      <!-- パンクズりすと -->
+      <div class="panlist">
+        <ul >
+          <li ><a href="../../user/html/user_top.html">TOP</a></li>
+          <li class="arrow-l"><p>プロダクションプロフィールページ</p></li>
+        </ul>
+      </div>
+      <div class="user color1" id="">
+        <div class="user-left" >
+          <div class="user-img"><img src="../../img/userimage.png" alt=""></div>    
+        </div>
+        <div class="user-right">
+          <div class="user-name-area">
+            <div class="subtitle">プロダクション名</div>
+            <div class="user-name">プロダクション名</div>
+          </div>
+          <div class="user-info-area">
+            <div class="info">
+                <div class="subtitle">ホームページ</div>
+                <div class="subtext"><a class="user-info-area_link" href=""><img class="user-info-area_link_img"  src="../../img/profile_home.png" alt=""></a></div>
+            </div>
+              <div class="info">
+                  <div class="subtitle">Twitter</div>
+                  <div class="subtext"><a class="user-info-area_link" href=""><img class="user-info-area_link_img"  src="../../img/profile_twitter.png" alt=""></a></div>
+              </div>
+          </div>
+        </div>
+      </div>
+  <!-- たぶ -->
+    <div id="">
+      <input id="tab1" type="radio" name="tab_btn" checked>
+      <input id="tab2" type="radio" name="tab_btn">
+      <input id="tab3" type="radio" name="tab_btn">
+      <input id="tab4" type="radio" name="tab_btn">
+      <input id="tab5" type="radio" name="tab_btn">
+      <input id="tab6" type="radio" name="tab_btn">
+      <input id="tab7" type="radio" name="tab_btn">
+      <input id="tab8" type="radio" name="tab_btn">
+      <div class="tab_labels gap">
+          <label class="tab1_label tabbtn" for="tab1">支援履歴</label>
+          <label class="tab2_label tabbtn" for="tab2">入札落履歴</label>
+          <label class="tab3_label tabbtn relative" for="tab3">景品一覧</label>
+          <label class="tab4_label tabbtn" for="tab4">お気に入り</label>
+          <label class="tab5_label tabbtn" for="tab5">プロジェクト</label>
+          <label class="tab6_label tabbtn" for="tab6">オークション</label>
+          <label class="tab7_label tabbtn relative" for="tab7">ガチャ</label>
+          <label class="tab8_label tabbtn" for="tab8">所属女優</label>
+      </div>
+      <div class="panel_area color1">
+          <!--支援履歴-->
+          <div id="panel1" class="tab_panel">
+              <div class="content color0">
+                  <article class="user_aboutproject_card" v-cloak>
+                      <img class="user_aboutproject_card_img" src="../../img/demoimg.png" alt="">
+                      <div class="user_aboutproject_card_in">
+                          <div class="user_aboutproject_card_in_title">タイトル <img :class="{'_state_open': isOpenedProject }" @click="accordingProjectToggle()" src="../../img/arrowdown.png" alt="" ></div>
+                          <div class="" v-if="isOpenedProject">
+                              <p class="user_aboutproject_card_return" >リターン</p>
+                              <article class="user_aboutproject_card_return_card ">
+                                  <div class="user_aboutproject_card_return_card_title">リターンタイトル</div>
+                                  <p class="">￥150,000</p>
+                              </article>
+                              <article class="user_aboutproject_card_return_card ">
+                                  <div class="user_aboutproject_card_return_card_title">リターンタイトル</div>
+                                  <p class="">￥150,000</p>
+                              </article>
+                          </div>
+                      </div>
+                  </article>
+              </div>
+          </div>
+          <!--入札落履歴-->
+          <div id="panel2" class="tab_panel">
+              <h2 class="user_aboutauction_title">入札</h2>
+              <div class="user_aboutauction user_auction_card_position">
+                  <userauctioncard></userauctioncard>
+                  <userauctioncard></userauctioncard>
+                  <userauctioncard></userauctioncard>
+                  <userauctioncard></userauctioncard>
+              </div>
+              <h2 class="user_aboutauction_title">落札</h2>
+              <article class="user_aboutauction_card color0">
+                  <h5 class="user_aboutauction_card_title ">【新村あかり】色紙＋チェキ【新村あかり】色紙＋チェキ</h5>
+                      <div class="user_aboutauction_card_detail">
+                      <img class="user_aboutauction_card_detail_img" src="../../img/demoimg.png" alt="">
+                      <p class="user_aboutauction_card_detail_info_inner"> <img class="user_aboutauction_card_detail_info_inner_img" src="../../img/mallet.png" alt=""> 3,111,111円
+                          </p>
+                  </div>
+              </article>
+          </div>
+          <!--景品一覧-->
+          <div id="panel3" class="tab_panel">
+              <article class="user_aboutgacha color0">
+                  <h4 class="user_aboutgacha_maintitle">タイトルタイトルタイトルタイトル</h4>
+                  <div class="user_aboutgacha_outer_detail">
+                      <div class="user_aboutgacha_detail_index">
+                          <p><span class="subtitle">使用LP</span>8800lp</p>
+                      </div>
+                      <div>
+                          <img class=""  :class="{'_state_open': isOpenedGachaFreebie }" @click="accordingGachaFreebieToggle()" src="../../img/arrowdown.png" alt=""  >
+                      </div>
+                  </div>
+                  <div class="user_aboutgacha_detail" v-if="isOpenedGachaFreebie">
+                      <h6 class="user_aboutgacha_detail_article_title">景品タイトル</h6>
+                      <span class="user_aboutgacha_detail_article_span">X3</span>
+                  </div>
+          </article>
+          </div>
+    
+          <!--お気に入り-->
+          <div id="panel4" class="tab_panel">
+              <input id="recht_three_tab1" type="radio" name="tab_btn2" checked>
+              <input id="recht_three_tab2" type="radio" name="tab_btn2">
+              <input id="recht_three_tab3" type="radio" name="tab_btn2">
+              <div class="recht_three_tab_labels gap">
+              <label class="recht_three_tab1_label recht_three_tabbtn" for="recht_three_tab1">プロジェクト</label>
+              <label class="recht_three_tab2_label recht_three_tabbtn" for="recht_three_tab2">オークション</label>
+              <label class="recht_three_tab3_label recht_three_tabbtn" for="recht_three_tab3">ガチャ</label>
+              </div>
+              <select class="user_favorite_sort">
+                <option value="">新着順</option>
+                <option value="">新着順</option>
+                <option value="">新着順</option>
+                <option value="">新着順</option>
+            </select>
+              <div class="recht_three_panel_area">
+                  <div id="recht_three_panel1" class="recht_three_tab_panel">
+                      <userprojectcard></userprojectcard>
+                      <userprojectcard></userprojectcard>
+                      <userprojectcard></userprojectcard>
+                  </div>
+                  <div id="recht_three_panel2" class="recht_three_tab_panel user_auction_card_position">
+                          <userauctioncard></userauctioncard>
+                          <userauctioncard></userauctioncard>
+                          <userauctioncard></userauctioncard>
+                  </div>
+                  <div id="recht_three_panel3" class="recht_three_tab_panel">
+                      <usergachacard></usergachacard>
+                      <usergachacard></usergachacard>
+                      <usergachacard></usergachacard>
+                  </div>
+              </div>   
+          </div>
+          <div id="panel5" class="tab_panel">
+            <select class="user_favorite_sort_no_margin">
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+          </select>
+            <div class="profile_tab_project">
+              <userprojectcard></userprojectcard>
+              <userprojectcard></userprojectcard>
+              <userprojectcard></userprojectcard>
+  
+            </div>
+          </div>   
+          <div id="panel6" class="tab_panel">
+            <select class="user_favorite_sort_no_margin">
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+          </select>
+            <div class="profile_tab_auction user_auction_card_position">
+              <userauctioncard></userauctioncard>
+              <userauctioncard></userauctioncard>
+            </div>
+          </div>   
+          <div id="panel7" class="tab_panel">
+            <select class="user_favorite_sort_no_margin">
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+          </select>
+            <div class="profile_tab_gacha">
+              <usergachacard></usergachacard>
+              <usergachacard></usergachacard>
+              <usergachacard></usergachacard>
+  
+            </div>
+          </div>   
+          <div id="panel8" class="tab_panel">
+            <select class="user_favorite_sort_no_margin">
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+              <option value="">新着順</option>
+          </select>
+            <div class="profile_tab_actress">
+              <useractresscard ></useractresscard>
+              <useractresscard ></useractresscard>
+              <useractresscard ></useractresscard>
+  
+            </div>
+            
+          </div>  
+      </div> 
+    </div>
+    <userfooter></userfooter>
+    </div>
+  <script src="../../user/js/user_header_search.js"></script>
+  <script src="../../user/js/user_component_project_card.js"></script>
+  <script src="../../user/js/user_component_auction_card.js"></script>
+  <script src="../../user/js/user_component_gacha_card.js"></script>
+  <script src="../../user/js/user_component_actress_production_contributor.js"></script>
+  <script src="../../user/js/user_footer.js"></script>
+  <script>
+    window.onload = function () {
+    new Vue ({
+        el:"#app",
+        data: {
+            isActiveTab:"1",
+            isActiveHeart:"false",
+            isOpenedProject: false,
+            isOpenedGachaFreebie: false,
+        },
+        methods:{
+            accordingProjectToggle: function(){
+            this.isOpenedProject = !this.isOpenedProject;
+            },
+            accordingGachaFreebieToggle: function(){
+            this.isOpenedGachaFreebie = !this.isOpenedGachaFreebie;
+            },
+            isSelectTab(number) {
+            this.isActiveTab = number;
+            },
+            changeHeart() {
+            this.isActiveHeart = !this.isActiveHeart;
+            },
+        }
+      });
+    }
+</script>
+</body>
+</html>

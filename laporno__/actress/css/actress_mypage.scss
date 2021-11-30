@@ -1,0 +1,636 @@
+// @import "component.scss";
+@import "component.scss";
+
+
+// 修正ボタン
+img.profedit {
+    width: 30px;
+    position: absolute;
+    margin:0 0 0 6px;
+    top: 0;
+}
+img.profeditimg {
+    width: 30px !important;
+    position: absolute;
+    margin:0 0 0 6px;
+    top: 0;
+    right: 0;
+}
+// 修正ボタンモーダル(名前)
+.editnamemodal {
+    width: 80%;
+    margin: 0 auto;
+}
+.editnamemodal img {
+    display: block;
+    margin: 0 auto 16px;
+}
+
+input.modal_input {
+    padding: 10px;
+    background: $white;
+    width: 100%;
+}
+// 修正ボタンモーダル(画像)
+.editimgmodal {
+    width: 80%;
+    margin: 0 auto;
+}
+select.editimg {
+    width: 100%;
+    background: $white;
+    padding: 8px;
+    margin: 0 0 16px 0;
+}
+.editimgmodal img {
+    width: 100%;
+}
+// コンポーネント
+// PrizeSelect称号
+
+
+.prize_title {
+    font-size: 12px;
+    color: $grayblack;
+    padding: 0 0 6px 0;
+}
+.prize_choice_title{
+     font-size: 12px;
+    color: $grayblack;
+    padding: 16px 0 6px 0;
+}
+.prize_index {
+    padding: 16px;
+    display: flex;
+    background: $white;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+    gap:10px;
+
+}
+.prize_index_article {
+    padding: 10px 5px;
+    width: 30%;
+    text-align: center;
+    border: 1px dotted $gray;
+}
+.prize_index_article p{
+    font-size: 6px;
+    padding: 4px 0 0 0;
+}
+.prize_index_article img {
+    width: 50%;
+}
+.rank-icon{
+    width: 30%;
+    flex-shrink: 0;
+}
+.rank-icon-area{
+    display: flex;
+    justify-content: space-between;
+}
+.icon-text{
+    font-size:8px;
+    line-height: 18px;
+}
+.modal_p_r {
+    text-align: center;
+    padding:0 0 30px 0;
+}
+.modal_img {
+    margin: 0 auto;
+    width: 80%;
+    display: block;
+
+}
+.x_ {
+  position: absolute;
+    top: -60px;
+    right: -4px;
+    width:24px;
+    height:2px;
+    background:$black;
+    text-align:center;
+}
+.x_1_ {
+  top:-4px;
+    transform:translateY(10px) rotate(-45deg);
+}
+.x_2_ {
+  top:16px;
+    transform:translateY(-10px) rotate(45deg);
+}
+.overlay-overmain {
+    overflow: scroll;
+  background:$whitegray;
+    padding:30px 20px;
+    margin:0 auto;
+}
+#btn-2{
+    display: block;
+    background: $gray;
+    width: 195px;
+    z-index: 100;
+    color: $white;
+    border-radius: 4px;
+    line-height: center;
+    text-align: center;
+    margin: 30px auto 0;
+    font-size: 16px;
+    padding: 14px;
+
+}
+.modal_title {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    padding:0 0 30px 0;
+}
+.modal_title  span{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}
+.modal_heart {
+    margin: 0 auto;
+    width: 50%;
+    display: block;
+
+}
+
+// トグルコンポーネント
+.outer_title {
+    width: 70%;
+}
+.rireki-tr{
+    border: 1px solid $gray;
+}
+.outer{
+    border-top: 1px solid $gray;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.outer_right{
+    display: flex;
+    align-items: center;
+}
+.outer_right img {
+    padding:0 0 0 8px;
+}
+.outer_right_span {
+    display: block;
+    font-size:10px;
+  }
+
+// コンポーネント終わり
+
+
+.button-area, .content2-main2-top{
+    display: flex;
+}
+.user{
+    z-index: -9;
+    padding: 10px;
+    display:flex;
+}
+.user-left{
+    width: 38%;
+}
+.user-img ,.choice{
+    position: relative;
+}
+.user-img >img , .rank-icon > img{
+    width: 100%;
+}
+.user-right{
+    width: 62%;
+    padding:0 0 0 10px;
+    text-align:left;
+}
+.user-name-area{
+    position: relative;
+    padding:0 0 10px 0;
+}
+.user-name{
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.user-info-area ,.content6-card-area{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.info{
+    padding:0 0 10px 0;
+}
+
+.user-info-area > *{
+    width: 48%;
+    flex-shrink: 0;
+}
+
+.subtext{
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.q-icon{
+    height: 16px;
+    margin: 0 0 0 4px;
+}
+
+.content{
+    padding: 10px ;
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+    margin:0 0 10px 0;
+}
+
+ .content-sub-left img,.input-full ,.detail_img img{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+.content-main > img{
+    width: 100%;
+}
+.return {
+   margin: 0 0 0 10px;
+}
+.switch_title{
+      display: flex;
+      padding: 10px;
+      justify-content:space-between;
+      align-items: center;
+  }
+._state_open {
+    transform:rotateX(180deg);
+}
+
+.return{
+    font-size: 10px;
+    line-height: 12px;
+    margin:0 0 6px 0;
+}
+.content-sub{
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+    display: flex;
+    margin:0 0 10px 0;
+}
+.content-sub-left{
+    width: 55%;
+    padding:10px;
+}
+.content-subtitle,.change-info-part{
+    margin-bottom: 16px;
+}
+.content-sub-right{
+    width:45%;
+    padding: 0 0 10px 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.detail-button-area .button {
+    margin:0  10px 0 0;
+}
+.date {
+    padding: 12px 8px;
+    font-size: 14px;
+}
+.pr_but {
+    padding:10px;
+}
+.button{
+    border-radius: 4px;
+    height: 34px;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rireki_detail_p {
+    padding: 8px;
+    font-size:14px;
+}
+.maintitle {
+    padding:0 0 6px 0;
+}
+.batch{
+    border: 1px solid $gray;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+    width: 60%;
+}
+
+.subtitle_p {
+    font-size: 12px;
+    padding: 8px;
+    line-height: 18px;
+    border: 1px solid $gray;
+}
+
+.content2-main1{
+    display: flex;
+    justify-content: space-between;
+    margin:0 0 20px 0; 
+}
+
+.content2-main2-middle{
+    display: flex; 
+    padding: 10px;
+}
+
+.content2-main2-middle > img{
+    width: 50%;
+}
+
+.c2-m2-info{
+    padding: 0 0 0 10px;
+}
+
+.info-inner{
+    display: flex;
+    padding: 0 0 4px 0;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.info-inner > img{
+    width: 14px;
+    margin-right: 5px;
+}
+.content2-main2-card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin:0 0 10px 0;
+}
+
+.content2-main2-title{
+    width: 70%;
+    padding:10px;
+}
+
+.content2-main2-status{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content2-main2-bottom > textarea{
+    width: 100%;
+    border: 1px solid $whitegray;
+
+}
+
+.content2-main2-bottom{
+    padding: 0 10px 10px 10px;
+}
+
+.c2-m2-button{
+    width:30%;
+    margin: 0 0 0 auto;
+}
+
+.lp-card{
+    background: $whitewhite;
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.lp-card-inner{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $gray;
+    align-items: baseline;
+}
+.have_lp {
+    font-size:22px;
+    margin-right: 8px;
+}
+.free_lp_span {
+    margin: 2px 0 0 0;
+    display: block;
+    text-align: right;
+    font-size:12px;
+}
+
+
+.buy-lp-button{
+    width: 50%;
+    margin: 0 0 10px auto ; 
+}
+
+.rireki{
+    border: 1px solid $gray;
+    margin:0 0  20px 0; 
+}
+
+.rireki-th{
+    padding: 10px;
+    color: $whitewhite;
+}
+
+.content6-card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin: 0 0 10px 0;
+    width: 100%;
+    padding:16px 16px 32px;
+}
+
+.touroku-info-part {
+    border-bottom: 1px solid $gray;
+    padding: 16px 0 6px ;
+}
+
+.change-input{
+    height: 42px;
+    border: 1px solid $gray;
+    margin: 0 0 4px 0;
+    padding: 0 0 0 8px;
+}
+
+.input-half{
+    width: 49%;
+}
+
+.input-75{
+    width: 75%;
+}
+
+.radio-input{
+    border: 1px solid $gray;
+    padding: 10px 0 10px 36px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.jyuusyo-button{
+    padding: 9px;
+    margin: 0 0 0 9px;
+}
+
+.harf-size , .modal_colum_div{
+    width: 50%;
+}
+
+.active{
+    background:$white;
+     border-bottom: 1px solid $gray;
+}
+
+// .check_select {
+//     display: block;
+//     position: relative;
+//     margin: 0 0 12px 0;
+// }
+// .checkmark {
+//     position: absolute;
+//     top: 6px;
+//     left: 6px;
+//     height: 25px;
+//     width: 25px;
+//     background-color: $white;
+//     border-radius: 50%;
+//     border: 1px solid $grayblack;
+// }
+// .checkmark:after {
+//     content: "";
+//     position: absolute;
+//     display: none;
+// }
+
+// .check_select input:checked ~ .checkmark:after {
+//     display: block;
+// }
+// .check_select .checkmark:after {
+//     top: 5px;
+//     left: 5px;
+//     width: 13px;
+//     height: 13px;
+//     border-radius: 50%;
+//     background: $black;
+// }
+// select.change-input.input-half {
+//     background: none;
+// }
+.change_button {
+     display: block;
+    background:$gray;
+    width: 50%;
+    border-radius: 4px;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0 auto;
+    color: $whitewhite;
+    font-size: 16px;
+}
+
+// モーダル中身
+.modal_section {
+    color:$black;
+}
+// .modal_title {
+//     text-align: center;
+//     font-size: 18px;
+//     padding:0 0 30px 0;
+// }
+.subtitle{
+    font-size: 10px;
+    line-height: 18px;
+    color: $grayblack;
+    display: block;
+}
+.modal_colum {
+    align-items: center;
+    display: flex;
+}
+.modal_colum_div a{
+    width: 50%;
+    color: $white;
+    background-color: $grayblack;
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px 34px;
+    
+}
+.modal_p {
+    padding:0 0 16px 0;
+}
+.modal_p_last {
+    padding:0 0 30px 0;
+}
+
+.modal_button a{
+    background: $gray;
+    text-align: center;
+    margin:  0 0 16px auto;
+    border-radius: 4px;
+    padding: 10px;
+    width: 50%;
+    display: block;
+}
+
+// 景品一覧
+.gacha_outer {
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+    padding: 10px;
+    margin: 0 0 10px 0;
+}
+.gacha_outer_maintitle {
+    padding: 0;
+
+}
+.detail_index p{
+    font-size: 12px;
+    margin:0 0 6px;
+}
+.detail_index p:last-child{
+    margin: 0;
+}
+.discount_span {
+    display: block;
+    font-size: 10px;
+}
+.gacha_outer_detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 0 10px 0;
+}
+.detail_img  {
+    aspect-ratio: 16 / 9;
+    width: 56%;
+}
+
+
+
+//   上角丸たぶ
+.tabbtn {
+    width: 33%;
+    background: $gray;
+    gap: 2px;
+    font-size: 14px;
+    padding: 12px;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+    margin:0 0 2px 0;
+    letter-spacing: -0.1em;
+}
+.tab_labels {
+    padding: 20px 16px 0 16px;
+    background:$whitegray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }

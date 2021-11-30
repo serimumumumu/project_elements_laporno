@@ -1,0 +1,121 @@
+@import "component.scss";
+// @import "mypage.scss";
+
+.content >>> iframe {
+    width: 100%;
+    border: none;
+    overflow: hidden;
+  }
+.r-1q9bdsx {
+    border-radius: 0px; 
+ }
+.tab-area {
+    justify-content: center;
+}
+.tab {
+    width: 32%;
+    margin: 0 2px 2px 0;
+    line-height: 16px;
+}
+
+.main-top{
+    padding: 16px;
+}
+
+.main-img-area img{
+    width: 100%;
+}
+
+.name-bottom{
+    font-size: 18px;
+    margin: 10px;
+    text-align: center;
+}
+
+.info-title{
+    padding-bottom: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #7D7D7D;
+}
+.info-text{
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+// / タブ切り替え↓
+.tab_wrap {
+    background: $whitegray;
+    padding: 20px 0 0 0;
+}
+.twitter_index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    background: $white;
+    justify-content: center;
+  }
+
+  .twitter-button{
+    border-radius: 4px 4px 0 0;
+    width: 32%;
+    text-align: center;
+    padding: 12px 2px;
+    margin: 0;
+  }
+  .yoko {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+input[type="radio"]
+{display:none;}
+.tab_panel
+{ display:none;
+  background: $white;
+ padding:20px 16px;
+}
+.tab1_label,.tab2_label,.tab3_label,.tab4_label,.tab5_label{
+  background-color: $gray;
+}
+#tab1:checked ~ .twitter_index .tab1_label
+{
+  border-bottom: 1px solid $grayblack;
+  background:$white;
+}
+#tab2:checked ~ .twitter_index .tab2_label
+{
+  border-bottom: 1px solid $grayblack;
+  background:$white;
+}
+#tab3:checked ~ .twitter_index .tab3_label
+{
+  border-bottom: 1px solid $grayblack;
+  background:$white;
+}
+#tab4:checked ~ .twitter_index .tab4_label
+{
+  border-bottom: 1px solid $grayblack;
+  background:$white;
+}
+#tab5:checked ~ .twitter_index .tab5_label
+{
+  border-bottom: 1px solid $grayblack;
+  background:$white;
+}
+#tab1:checked ~ .panel_area #panel1
+{display:block;
+}
+#tab2:checked ~ .panel_area #panel2
+{display:block;
+}
+#tab3:checked ~ .panel_area #panel3
+{display:block;
+}
+#tab4:checked ~ .panel_area #panel4
+{display:block;
+}
+#tab5:checked ~ .panel_area #panel5
+{display:block;
+}

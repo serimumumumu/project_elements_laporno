@@ -1,0 +1,211 @@
+@import "component.scss";
+.twitter_index {
+  display: flex;
+  padding: 20px 1px 0;
+  background: $whitegray;
+  justify-content: space-between;
+}
+.twitter-button{
+  border-radius: 4px 4px 0 0;
+  width: 24.8%;
+  letter-spacing: -0.1em;
+  overflow:hidden;
+  text-align: center;
+  padding: 12px 2px;
+  margin: 0;
+}
+
+// お知らせ
+
+.info-area{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10px; 
+}
+
+.info-attention{
+  color: $whitewhite;
+  padding: 0 20px;
+}
+
+// カレンダー
+.schedule_article {
+  margin: 0 0px 10px;
+  padding: 10px;
+  border-radius: 4px;
+  background: $white;
+}
+a.schedule_article_a {
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 0 0 16px;
+  width: 80%;
+}
+.schedule_article ul {
+  margin:6px 0 0;
+
+}
+.schedule_articl_li {
+  margin-top: 4px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.main-top{
+  padding: 16px;
+}
+
+.calendar{
+  width: 100%;
+  margin-bottom: 10px;
+  table-layout: fixed;
+  border: 1px solid $gray;
+}
+
+.calendar *{
+  font-size: 12px;
+}
+
+th{
+  padding: 6px;
+  height: 26px;
+  text-align: center;
+}
+
+td{
+  height: 93px;
+  padding: 6px 0;
+  text-align: center;
+}
+
+.schedule{
+  font-size: 9px;
+  text-decoration: underline;
+  margin-bottom: 9px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.schedule-b{
+  color: #1DA1F2;
+}
+
+th,td{
+  border-top: 1px solid #C4C4C4;
+  border-bottom: 1px solid #C4C4C4;
+}
+
+.today{
+  background-color: #E9E9E9;
+  box-shadow: 0px 0px 6px rgba(35, 35, 35, 0.24);
+}
+
+
+.sat{
+  color: #4B73FF;
+}
+
+.sun{
+  color: #FF4545;
+}
+
+.td-ex-area{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 9px;
+}
+
+.ex-margin{
+  margin-right: 8px;
+}
+// カレンダーモーダル
+.modal_schedule_detail {
+  width: 100%;
+  color: #232323;
+  margin: 8px auto;
+  line-height: 18px;
+  font-size: 12px;
+}
+.modal_schedule_detail_a {
+  text-align: right;
+  text-decoration: underline;
+}
+
+
+
+.container-flex-area{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-container{
+  text-align: center;
+  padding: 8px;
+  margin-bottom: 10px;
+  height: 63px;
+}
+
+.container-half{
+  width: 49%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-title{
+  font-size:16px;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+
+.move-btn{
+  padding: 4px 25px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+// タブ切り替え↓
+input[type="radio"]
+{display:none;}
+.tab_panel
+{ display:none;
+  background: $white;
+ padding:20px 16px;
+}
+.tab1_label,.tab2_label,.tab3_label,.tab4_label{
+  background-color: $gray;
+}
+#tab1:checked ~ .twitter_index .tab1_label
+{
+  border-bottom: 1px solid $grayblack;
+  background:$white;
+}
+#tab2:checked ~ .twitter_index .tab2_label
+{
+  border-bottom: 1px solid $grayblack;
+  background:$white;
+}
+#tab3:checked ~ .twitter_index .tab3_label
+{
+  border-bottom: 1px solid $grayblack;
+  background:$white;
+}
+#tab4:checked ~ .twitter_index .tab4_label
+{
+  border-bottom: 1px solid $grayblack;
+  background:$white;
+}
+#tab1:checked ~ .panel_area #panel1
+{display:block;
+}
+#tab2:checked ~ .panel_area #panel2
+{display:block;
+}
+#tab3:checked ~ .panel_area #panel3
+{display:block;
+}
+#tab4:checked ~ .panel_area #panel4
+{display:block;
+}
+

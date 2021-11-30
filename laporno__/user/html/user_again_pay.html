@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>再決済ページ</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <!-- お支払内容以外user_auction_pay.htmlと同じ -->
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <link rel="stylesheet" href="../../user/css/user_auction_pay.css">
+    <script src="../../user/js/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../user/html/user_top.html">TOP</a></li>
+            <li class="arrow-l"><a href="../../html/user/user_mypage.html">マイページ</a></li>
+            <li class="arrow-l"><p>再決済ページ</p></li>
+        </ul>
+    </div>
+    <main  >
+      <div class="main_frame">
+        <div class="pay-summary-card">
+          <h1 class="pay_main_title">お支払い内容</h1>
+          <div class="pay_content">
+            <p class="pay_sub">プロジェクトタイトル</p>
+            <h2 class="pay_text">プロジェクトのタイトルが入ります</h2>
+          </div>
+          <div class="pay_content">
+            <p class="pay_sub">リターンタイトル</p>
+            <h2 class="pay_text">リターンのタイトルが入ります</h2>
+          </div>
+          <div class="pay_content">
+            <p class="pay_sub">金額</p>
+            <h2 class="pay_text">{{ aucmoney }}円</h2>
+          </div>
+          <div class="pay_content">
+            <p class="pay_sub">備考</p>
+            <h2 class="pay_text">追加リターン</h2>
+          </div>
+        </div>
+        <section class="card_frame">
+          <p class="title_sub">キャンペーンコードを使う</p>
+          <section class="main-midle-card">
+            <article class="campaign_code_area">
+              <div class="midle-card-title">使用可能なコード</div>
+              <div class="midle-card-kingaku" >
+                <span class="support_money">3</span>枚</div>
+            </article>
+            <span class="campaign_limit_span">(内2021/10/22に期限切れ間近1枚)</span>
+            <article class="code_discount">
+              <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+              <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+              <div class="discount_detail_use">
+                <p class="discount_detail_use_p"><img class="discount_detail_use_p_img" src="../../img/ticket.png" alt="チケットアイコン">オークション</p>
+                <p class="discount_rate">10％割引</p>
+              </div>
+            </article>
+          </section>
+        </section>
+        <section class="card_frame">
+          <p class="title_sub">LPポイントを使う</p>
+          <div class="main-midle-card">
+            <article class="campaign_code_area">
+              <div class="midle-card-title">現在所持LPポイント</div>
+              <div class="midle-card-kingaku" ><span class="support_money">33,000</span>lp</div>
+              </article>
+              <span class="point_limit_span">（4月21日に失効するポイント<span class="limit_point" >55555</span>lp)</span>
+              <div class="siyoulp-area">
+                <input class="siyoulp" v-model="point" :placeholder=" point ">
+                <div >ptを使用する</div>
+            </div>
+          </div>
+        </section>
+        <section class="card_frame">
+            <p class="title_sub">支払い方法</p>
+            <div class="tab_wrap" >
+                <input id="tab4" type="radio" name="tab_btn" checked>
+                <input id="tab5" type="radio" name="tab_btn">
+                <div class="button-area">
+                    <label class="tab4_label cashbutton " for="tab4">カード決済</label>
+                    <label class="tab5_label cashbutton " for="tab5">銀行振込</label>
+                </div>
+                <div class="panel_area">
+                    <div id="panel4" class="tab_panel">
+                        <section class="main-bottom-card ">
+                            <h6 class="bottom-card-subtitle">注意事項</h6>
+                            <p class="bottom-card-text">ここに注意事項が入ります</p>
+                            <h6 class="bottom-card-subtitle">限度額について</h6>
+                            <p class="bottom-card-text">テキストテキストテキストテキスト</p>
+                            <h6 class="bottom-card-subtitle">キャンセルについて</h6>
+                            <p class="bottom-card-text">テキストテキストテキストテキスト</p>
+                        </section>
+                    </div>
+                    <div id="panel5" class="tab_panel">
+                        <section class="main-bottom-card">
+                            <h6 class="bottom-card-title">口座名義</h6>
+                            <input type="text" class=" card-input1 ">
+                            <h6 class="bottom-card-title">振込先口座</h6>
+                            <input type="text" class=" card-input1">
+                            <h6 class="bottom-card-subtitle">注意事項</h6>
+                            <p class="bottom-card-text">テキストテキストテキストテキスト</p>
+                            <h6 class="bottom-card-subtitle">キャンセルについて</h6>
+                            <p class="bottom-card-text">テキストテキストテキストテキスト</p>
+                        </section> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div >
+        </div>
+      </div>
+      <div class="result_pay">
+        <p class="result_p">合計金額:<span class="result_span bold-font">{{ aucmoney - point }}</span>円</p>
+        <!-- 銀行振込のプレビュー -->
+        <!-- <button onclick="location.href='../../user/html/user_again_pay_bank_confirm.html'"
+        class="submit color3">決済へ進む</button> -->
+        <!-- <a href="../../user/html/user_again_pay_bank_confirm.html"></a> -->
+        <!-- カードのプレビュー -->
+        <button name="returnsummary"  onclick="location.href='../../user/html/user_again_pay_card_confirm.html'"
+        class="submit color3">決済へ進む</button>
+        </div>
+    </main>
+</div>
+    <script src="../../user/js/user_header_search.js" defer></script>
+    
+    <script>
+      window.onload = function () {
+            new Vue ({
+                el:"#app",
+                data: {
+                  aucmoney:"12,000",
+                  point:"3000",
+                  extrapoint:"",
+                },
+                created(){
+                },
+                methods:{
+                }
+                });
+            }
+    </script>
+   
+</body>
+</html>

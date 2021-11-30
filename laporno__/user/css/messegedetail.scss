@@ -1,0 +1,181 @@
+@import "component.scss";
+
+
+
+/* メッセージカード */
+.message-card-area{
+    padding: 20px 16px 30px 16px;
+}
+
+.message-card{
+    padding: 16px 10px;
+    border-radius: 4px;
+}
+
+.message-title-container{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    border-bottom: 1px solid $gray;
+    margin-bottom: 16px;
+}
+.message-title-container img {
+    transform: rotate(180deg);
+}
+.message-title{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.message-area{
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray;
+}
+
+.icon-area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.message-icon{
+    width: 44px;
+}
+
+.icon-name{
+    text-align: center;
+    font-size: 10px;
+}
+
+.message-container_left{
+    margin: 0 56px 10px 56px;
+}
+
+.message-container_right{
+    margin: 0 17px 10px 86px;
+}
+
+.message{
+    border: 1px solid $gray;   
+    padding: 10px ;
+    font-size: 12px;
+    width: 230px;
+}
+
+.message-left{
+    border-radius: 4px 4px 4px 0px;
+}
+
+.top_20 {
+    margin-top: 20px;
+}
+.message-right{
+    color: $white;
+    border-radius: 4px 4px 0px 4px;
+}
+
+.send-time{
+    font-size: 10px;
+    color: $grayblack;
+    padding: 0 10px 0 10px;
+}
+
+.send-time-right{
+    text-align: right;
+}
+
+.message-send-area{
+    padding: 10px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message-input{
+    width: 70%;
+    height: 50px;
+    border-radius: 4px;
+    outline: 0;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.return-btn{
+    display: block;
+    margin: 30px auto;
+    width: 40%;
+    // height: 42px;
+    padding: 14px 0;
+    box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+    border-radius: 4px;
+    color: $white;
+    text-align: center;
+}
+
+
+
+
+// news
+
+/* アウトライン */
+.main-area{
+    padding: 20px 16px;
+}
+
+/* 共通パーツ */
+.category-top{
+    border-bottom: 1px solid $gray;
+    margin-bottom: 20px;
+}
+
+.date{
+    color: $grayblack;
+    font-size: 10px;
+    margin-bottom: 6px;
+}
+
+.category-title-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.category-title{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0 10px;
+}
+
+.return-arrow-btn{
+    padding: 5px;
+}
+
+.return-arrow-btn > img{
+    max-width: 30px;
+}
+
+.category-bottom{
+    padding: 0 12px;
+}
+
+.news-img{
+    width: 80%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.news-text{
+    margin-bottom: 20px;
+}
+
+/* news-box */
+
+.news-box{
+    padding: 16px 8px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}

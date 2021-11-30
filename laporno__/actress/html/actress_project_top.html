@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトトップ</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/project.css">
+   <script src="js/vue.js"></script>
+    <script src="js/swiper.js"></script>
+</head>
+<body style="background: #e9e9e9;">
+    <div id="headers">
+        <headers></headers>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="user_user_top.html">TOP</a></li>
+            <li class="arrow-l">プロジェクトトップ</li>
+        </ul>
+    </div>
+    <div id="search">
+        <search></search>
+    </div>
+    <div class="swiper">
+        <div class="swiper-container"> 
+        <!-- ラッパーの（スライドを囲む） div 要素 -->
+        <div class="swiper-wrapper"> 
+          <!-- それぞれのスライドの div 要素 -->
+          <div class="swiper-slide"><img src="../../img/demoimg2.png" alt=""></div>
+          <div class="swiper-slide"><img src="../../img/demoimg.png" alt=""></div>
+          <div class="swiper-slide"><img src="../../img/demoimg2.png" alt=""></div>
+          <div class="swiper-slide"><img src="../../img/demoimg.png" alt=""></div>
+        </div>
+        <!-- ページネーションの div 要素 -->
+        <div class="swiper-pagination"></div>
+        <!-- ナビゲーションボタンの div 要素-->
+        <div class="swiper-button-prev"><img src="../../img/arrowleft.png" alt=""></div>
+        <div class="swiper-button-next"><img src="../../img/arrowright.png" alt=""></div>
+        <!-- スクロールバーの div 要素 -->
+        <div class="swiper-scrollbar"></div>
+         </div>
+    </div>
+    <div id="actprodtop"> 
+        <div class="new_project color2">
+            <div class="new_title">
+                <p class="title">新着プロジェクト</p>
+            </div>
+            <div class="new_procard" >
+                <projcard ></projcard>
+                <projcard ></projcard>
+                <projcard ></projcard>
+                <projcard ></projcard>
+                <projcard ></projcard>
+            </div>
+        </div>
+        <div >
+            <div class="main-top color2" >
+                <h3 class="page-title">プロジェクト一覧</h3>
+                <div class="tab-area">
+                    <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">募集中</div>
+                    <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">制作中</div>
+                    <div class="tab color3 " @click="isSelect('3')" v-bind:class="{'active': isActive === '3'}">販売中</div>
+                    <div class="tab color3" @click="isSelect('4')" v-bind:class="{'active': isActive === '4'}">イベント</div>
+                </div>
+                <!--募集中-->
+                <div class="pro_index" v-if="isActive === '1'">
+                    <projcard></projcard>
+                </div>
+                <!--制作中-->
+                <div  class="pro_index" v-else-if="isActive === '2'">
+                    <projcard></projcard>
+                </div>
+                <!--販売中-->
+                <div  class="pro_index"  v-else-if="isActive === '3'">
+                    <projsellcard></projsellcard>
+                </div>
+                <!--イベント-->
+                <div  class="pro_index" v-else="isActive === '4'">
+                    <projcard></projcard>
+                </div>
+            </div>   
+        </div>
+    </div>
+    <script src="js/component.js" defer></script>
+    <script src="js/projtop.js" defer></script>
+    <script src="js/actprodtop.js" defer></script>
+    <script>
+    const swiper = new Swiper(".swiper-container", {
+        // ドットインジケーターの表示
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        // 前後スライドボタンを表示
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        loop: true, // ループの有効化
+        autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+      },
+    });
+
+    </script>
+</body>
+</html>

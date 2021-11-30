@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LP購入</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_lp.css">
+    <link rel="stylesheet" href="../../user/css/user_modal.css">
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+    <!-- </div> -->
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../user/html/user_top.html">TOP</a></li>
+            <li class="arrow-l"><p>LP購入</p></li>
+        </ul>
+    </div>
+    <!-- <main id="buylp"> -->
+        <div class="card">
+            <h1 class="card-title">LP購入</h1>
+            <div class="card-content-box">
+                <h2 class="sub-title">LP購入額</h2>
+                <select name="" id="" class="lp-amount-select">
+                    <option value="">購入額</option>
+                    <option value="">500円(500LP)</option>
+                </select>
+            </div>
+            <div class="card-content-box">
+                <h2 class="sub-title">お支払い方法</h2>
+                <div class="tab_wrap" >
+                    <input id="tab4" type="radio" name="tab_btn" checked>
+                    <input id="tab5" type="radio" name="tab_btn">
+                    <div class="button-area">
+                        <label class="tab4_label cashbutton " for="tab4">カード決済</label>
+                        <label class="tab5_label cashbutton " for="tab5">銀行振込</label>
+                    </div>
+                    <div class="panel_area">
+                        <div id="panel4" class="tab_panel">
+                            <div class="check-area">
+                                <input type="checkbox" id="agree" class="checkbox">
+                                <label for="all-read" class="checkbox-text">
+                                    <span class="under-line">ラポルノガチャ会員規約</span>に同意する
+                                </label>
+                            </div>
+                            <p class="check-error">※規約に同意したらチェックを入れてください</p>
+                            <div id="buylpcard">
+                                <!-- <div> -->
+                                    <a class="onebutton_a" >カード決済へ</a>
+                                <!-- </div> -->
+                                    </div>
+                                    <section class="attention-area">
+                                        <h3>■注意事項</h3>
+                                        <p>・LPの有効期限は購入から150日間です。</p>
+                                        <p>・現在、LPはラポルノファンディングサイト内のラポルノガチャのみ使用できます。</p>
+                                        <p>・銀行振込の場合、着金確認ができ次第LPが付与されます。口座番号は申請後に自動送信されるメール、もしくは申請完了画面をご参照ください。</p>
+                            </section>
+                        </div>
+                        <div id="panel5" class="tab_panel">
+                            <div class="card-content-box">
+                                <h2 class="sub-title">お振込元の口座名義(必須)</h2>
+                                <input type="text" class="ctext" placeholder="名前">
+                                <p class="input-error">※すでに登録されています。</p>
+                            </div>
+                            <div class="check-area">
+                                <input type="checkbox"  class="checkbox">
+                                <label for="all-read" class="checkbox-text">
+                                    <span class="under-line">ラポルノガチャ会員規約</span>に同意する
+                                </label>
+                            </div>
+                            <p class="check-error">※規約に同意したらチェックを入れてください</p>
+
+                            <!-- <div>
+                                <button class="card-btn color2"  @click="openModal">銀行振込申請へ</button>
+                                <div v-show="showContent" @close="showContent = false">
+                                  <div class="overlay">
+                                    <div class="overlay-over">
+                                      <div class="cancel-btn" onclick="location.href='user_mypage.html'">
+                                        <span class="x x_1"></span>
+                                        <span class="x x_2"></span>
+                                      </div>
+                                      <div class="overlay-overmain">
+                                        <div class="modal_section2" >
+                                          <h6 class="modal_title">振込申請を行いました<span class="modal_title_span2">振込詳細情報はマイページからご確認ください。</span></h6>
+                                          <img class="modal_heart" src="../../img/bigheart.png" alt="" >
+                                          <button  onclick="location.href='user_mypage.html'" id="btn-2">マイページへ</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div> -->
+                              <button  class="onebutton_a" @click="openModal">確定</button>
+                              <div v-show="showContent" @close="showContent = false">
+                                <div class="overlay">
+                                    <div class="overlay-over">
+                                    <div class="cancel-btn" onclick="location.href='../../user/html/user_mypage.html'">
+                                        <span class="x x_1"></span>
+                                        <span class="x x_2"></span>
+                                    </div>
+                                    <div class="overlay-overmain">
+                                        <div class="modal_section">
+                                            <h6 class="modal_title">LP振込申請完了<span>申請ありがとうございます<br>下記振込先に２営業日以内に<br>
+                                            支援総額のお振込をお願いします。<br></h6>
+                                            <div class="card-content">
+                                            <p class="sub-title">振込先銀行名</p>
+                                            <h6 class="sub-text">Paypay銀行</h6>
+                                            </div>
+                                            <div class="card-content">
+                                            <p class="sub-title">支店名</p>
+                                            <h6 class="sub-text">渋谷支店</h6>
+                                            </div>
+                                            <div class="card-content">
+                                            <p class="sub-title">種類</p>
+                                            <h6 class="sub-text">当座</h6>
+                                            </div>
+                                            <div class="card-content">
+                                            <p class="sub-title">口座番号</p>
+                                            <h6 class="sub-text">32212334</h6>
+                                            </div>
+                                            <div class="card-content">
+                                            <p class="sub-title">口座名義</p>
+                                            <h6 class="sub-text">株式会社YOSUGA　(カ)ヨスガ</h6>
+                                        </div>
+                                        </div>
+                                        <div class="btn-area">
+                                        <a href="../../user/html/user_mypage.html" class="onebutton_a" >マイページへ</a >
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            <!-- <buylpbank></buylpbank> -->
+                            <!-- <button class="card-btn color2">振り込み申請</button> -->
+                    
+                            <section class="attention-area">
+                                <h3>■注意事項</h3>
+                                <p>・LPの有効期限は購入から150日間です。</p>
+                                <p>・現在、LPはラポルノファンディングサイト内のラポルノガチャのみ使用できます。</p>
+                                <p>・銀行振込の場合、着金確認ができ次第LPが付与されます。口座番号は申請後に自動送信されるメール、もしくは申請完了画面をご参照ください。</p>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </main> -->
+</div>
+    <script src="../../user/js/user_header_search.js"></script>
+    <script>
+
+        window.onload = function () {
+        new Vue ({
+            el:"#app",
+            data: {
+                isActiveHeart:"false",
+                showContent:false,
+            },
+            created(){
+            },
+            methods:{
+                changeHeart() {
+                this.isActiveHeart = !this.isActiveHeart;
+                  },
+                  openModal(){
+                    this.showContent = true;
+                    this.isActive = true;
+                  },
+            }
+            });
+        }
+</script>
+</body>
+</html>

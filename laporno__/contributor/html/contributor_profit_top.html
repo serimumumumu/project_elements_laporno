@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>売上表</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../contributor/css/auchtop.css">
+  <link rel="stylesheet" href="../../user/css/contributor_campaign_top.css">
+  <link rel="stylesheet" href="../../user/css/master_project_top.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="conheaders">
+      <masheaders></masheaders>
+    </div>
+    <div class="panlist">
+      <ul >
+          <li ><a href="../../master/html/master_top.html">TOP</a></li>
+          <li class="arrow-l">売上表</li>
+      </ul>
+  </div>
+    <div id="search" >
+      <search></search>
+    </div>
+  <div class="" id="main">
+    <input id="tab1" type="radio" name="tab_btn" checked>
+    <input id="tab2" type="radio" name="tab_btn">
+    <input id="tab3" type="radio" name="tab_btn">
+    <h1 class="title">売上表一覧</h1>
+    <div class="tab_labels gap">
+    <label class="tab1_label conbutton" for="tab1">プロジェクト</label>
+    <label class="tab2_label conbutton" for="tab2">オークション</label>
+    <label class="tab3_label conbutton" for="tab3">ガチャ</label>
+    </div>
+    <div class="profit_button_area">  
+        <a class="profit_button">コピー</a>
+        <a class="profit_button">CSV</a>
+    </div>
+    <div class="table-title-area">
+        <a class="profit_month_button" href=""><img src="../../img/arrowleft.png"> 2020年7月</a>
+        <p>2020年8月</p>
+        <a class="profit_month_button" href=""> 2020年9月<img src="../../img/arrowright.png"></a>
+    </div>
+    <div class="panel_area">
+      <div id="panel1" class="tab_panel">
+        <div class="hyou_area_rl16" >
+            <div class="hyou">
+                <div class="hyou-top">
+                    <div class="table-title-area color5">
+                    <h2 class="table-title">プロジェクト</h2>
+                    <div class="table_sort">
+                        <select name="order" id="" class="table_sort_select color1">
+                        <option >新着中</option>
+                        <option >登録順</option>
+                        </select>
+                    </div>
+                    </div>
+                <table class="table">
+                    <tr class="table_header">
+                        <th class="table_80">ID</th>
+                        <th class="table_120">投稿者</th>
+                        <th class="table_120">女優</th>
+                        <th class="table_160">タイトル</th>
+                        <th class="table_120" >売上額(カッコ内lp)</th>
+                        <th class="table_120">開始日</th>
+                        <th class="table_120">終了日</th>
+                        <th class="table_80">1日</th>
+                        <th class="table_80">2日</th>
+                        <th class="table_80">3日</th>
+                        <th class="table_80">4日</th>
+                        <th class="table_80">5日</th>
+                        <th class="table_80">6日</th>  
+                    </tr>
+                    <tr>
+                        <td>A-1000</td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿タイトルタイトルタイトトルタイトルタイトル</a></td>
+                        <td>50,000</td>
+                        <td>2021/03/14</td>
+                        <td>2021/05/20</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>50,000</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>A-1000</td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿タイトルタイトルタイトトルタイトルタイトル</a></td>
+                        <td>50,000</td>
+                        <td>2021/03/14</td>
+                        <td>2021/05/20</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>50,000</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>A-1000</td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿タイトルタイトルタイトトルタイトルタイトル</a></td>
+                        <td>50,000</td>
+                        <td>2021/03/14</td>
+                        <td>2021/05/20</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>50,000</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>A-1000</td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿タイトルタイトルタイトトルタイトルタイトル</a></td>
+                        <td>50,000</td>
+                        <td>2021/03/14</td>
+                        <td>2021/05/20</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>50,000</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>A-1000</td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿タイトルタイトルタイトトルタイトルタイトル</a></td>
+                        <td>50,000</td>
+                        <td>2021/03/14</td>
+                        <td>2021/05/20</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>50,000</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>A-1000</td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿者の名前</a></td>
+                        <td class=""><a>投稿タイトルタイトルタイトトルタイトルタイトル</a></td>
+                        <td>50,000</td>
+                        <td>2021/03/14</td>
+                        <td>2021/05/20</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>50,000</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="table_footer">
+                        <th colspan="4">平均</th>
+                        <th >¥1220000(3000lp)</th>
+                    </tr>
+                    <tr class="table_footer2">
+                        <th colspan="4">合計</th>
+                        <th >¥1220000(3000lp)</th>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div id="panel2" class="tab_panel">
+      </div>
+      <div id="panel3" class="tab_panel">
+      </div>
+    </div>
+  
+    </div>
+
+<script src="../../master/js/mascomponent.js" defer></script>
+<script src="../../master/js/masauchtop.js" defer></script>
+</body>
+</html>

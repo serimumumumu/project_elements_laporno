@@ -1,0 +1,151 @@
+@import "../../user/css/color.scss" ;
+main {
+  margin: 0 0 60px 0;
+}
+.report_preview {
+  padding:20px 36px 60px; 
+  // background: $whitewhite;
+}
+.report_title {
+  font-size:16px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+.report_content_ {
+  padding:16px 0 6px 0;
+  border-bottom: 1px solid $gray;
+}
+.report_content_sub {
+  font-size: 12px;
+  color:$grayblack;
+  margin: 0 0 2px;
+}
+.report_content_main {
+  font-size:14px;
+  margin:0 0 0 6px;
+}
+.mg_top_16 {
+  margin: 16px 0 0 0;
+}
+.gacha_active_report {
+  background: $whitewhite;
+  box-shadow: 0px 0px 4px 2px rgba(196, 196, 196 , 0.25);
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+.gacha_active_report_date {
+  text-align: right;
+  color: $gray;
+  display: block;
+}
+.gacha_active_report_title{
+padding: 10px;
+color: $grayblack;
+display: flex;
+justify-content: space-between;
+  
+}
+.gacha_active_report_title_point {
+width:14px;
+}
+.gacha_active_report_img img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.gacha_active_report_content {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.twobutton {
+  width: 100%;
+  padding: 0 30px 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.twobutton_a {
+  cursor: pointer;
+    width: 40%;
+    color: $white;
+    background: $black;
+    display: block;
+    padding: 14px 0;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(196, 196,196,0.5)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// 活動報告ページ(contributor_gacha_new_report.html)
+
+.main-content1{
+  padding: 18px 16px;
+}
+
+.content-title{
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-content-box{
+  margin-bottom: 16px;
+  color: $grayblack;
+}
+
+.input-box{
+  border: 1px solid $gray;
+  resize: none;
+  padding: 10px;
+  margin-right: 11px;
+  background: $whitewhite;
+}
+
+.label_top_permission {
+  background: $whitewhite;
+  display:inline-block;
+  border: 1px solid $gray;
+  width: 30%;
+  padding: 0px 12px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.content1-btn-area{
+ margin-bottom: 10px;
+ display: flex;
+ justify-content: space-between;
+}
+
+.content1-btn{
+ border-radius: 4px;
+ padding: 10px;
+ font-size: 14px;
+ font-weight: 400;
+}
+
+.content1-input-text{
+  height: 360px;
+ width: 100%;
+ padding: 10px;
+ margin: 0 0 16px 0;
+ font-size: 14px;
+ border: 1px solid $gray;
+ resize: none;
+}
+.sub-title {
+  font-size: 12px;
+}

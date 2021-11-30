@@ -1,0 +1,196 @@
+@import "component.scss";
+
+
+
+/* メッセージカード */
+.message-card-area , .main-area{
+    padding: 20px 16px ;
+}
+
+.message-card{
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.message-title-container{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    border-bottom: 1px solid $gray;
+    margin-bottom: 16px;
+}
+.message-title-container img {
+    transform: rotate(180deg);
+}
+.message-title{
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 16px;
+}
+
+.message-area{
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray;
+}
+
+.icon-area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.message-icon{
+    width: 44px;
+}
+
+.icon-name{
+    text-align: center;
+    font-size: 10px;
+}
+.message-left{
+
+    border-radius: 4px 4px 4px 0px;
+    width: 230px;
+    margin: 0 auto 16px 60px;
+}
+.message-left-inner {
+    border: 1px solid $gray;  
+    border-radius: 4px 4px  4px 0;
+    padding: 10px;
+
+}
+.message-left-inner p{
+    font-size: 12px;
+    line-height: 16px;
+}
+.message-right{
+    width: 230px;
+    margin: 0 0 0 auto;
+}
+.message-right-inner{
+    color: $white;
+    background: $grayblack;
+    border-radius: 4px 4px 0px 4px;
+    padding: 10px;
+}
+.message-right-inner p{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+
+.send-time{
+    font-size: 10px;
+    color: $grayblack;
+    padding: 4px 10px ;
+
+}
+
+.send-time-right{
+    text-align: right;
+}
+
+.message-send-area{
+    padding: 10px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.message-input{
+    width: 70%;
+    height: 50px;
+    border-radius: 4px;
+    outline: 0;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.return-btn{
+    display: block;
+    margin: 30px auto;
+    padding: 14px 0;
+    width: 40%;
+    height: 42px;
+    box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
+    border-radius: 4px;
+    color: $white;
+    text-align: center;
+}
+
+
+
+
+// news
+
+// /* アウトライン */
+// .main-area{
+//     padding: 20px 16px;
+// }
+
+/* 共通パーツ */
+.category-top{
+    border-bottom: 1px solid $gray;
+    margin-bottom: 20px;
+}
+
+.date{
+    color: $grayblack;
+    font-size: 10px;
+    margin:0 8px 8px;
+}
+
+.category-title-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.category-title{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0 10px;
+}
+
+.return-arrow-btn{
+    padding: 5px;
+}
+
+.return-arrow-btn > img{
+    max-width: 30px;
+}
+
+.category-bottom{
+    padding: 0 12px;
+}
+
+.news-img{
+    width: 80%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.news-text{
+    margin-bottom: 20px;
+}
+
+/* news-box */
+
+.news-box{
+    padding: 16px 8px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+.news-box-sub {
+    padding:10px 16px;
+    display: inline-block;
+    
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  

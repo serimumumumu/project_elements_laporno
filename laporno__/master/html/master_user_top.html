@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ユーザー一覧</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../user/css/user_component.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../user/css/contributor_campaign_top.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+
+
+    <div id="conheaders">
+      <masheaders></masheaders>
+    </div>
+    <div class="panlist">
+      <ul >
+          <li ><a href="../../master/html/master_top.html">TOP</a></li>
+          <li class="arrow-l">ユーザー一覧</li>
+      </ul>
+  </div>
+    <div id="search" >
+      <search></search>
+    </div>
+  <div id="masauchtop">
+    <h1 class="title">ユーザー一覧</h1>
+    <div class="user_action_button">
+      <button onclick="location.href='aaonewmessage.html'" class="content-btn color3">一斉メッセージ</button>
+      <button onclick="location.href='aaonewmail.html'" class="content-btn color3">一斉メール</button>
+      <button class="content-btn color3">一斉LP付与</button>
+    </div>
+    <div class="hyou_area_rl16">
+      <div class="hyou-top">
+        <table class="table">
+          <div class="table-title-area color5">
+            <h2 class="table-title">ユーザー一覧</h2>
+            <div class="table_sort">
+              <select name="order" id="" class="table_sort_select color1">
+              <option >新着中</option>
+              <option >登録順</option>
+              </select>
+          </div>
+        </div>
+          <tr class="table_header">
+            <th class="table_40"></th>
+            <th class="title-td table_160">ユーザー名</th>
+            <th class="table_80">ランク</th>
+            <th class="table_120">支援額</th>
+            <th class="table_80">メッセージ</th>
+            <th class="table_80">メール</th>
+            <th class="table_120">LP付与</th>
+            <th class="table_120">退会処理</th>
+          </tr>
+          <tr>
+            <td class="table_center"><input type="checkbox"></td>
+            <td class="bold-font table_120"><a href="">ユーザーの名前</a></td>
+            <td>ブロンズ</td>
+            <td>222,220,000</td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td ><button class="table-btn color3 table_center"  @click="openInfo">付与</button></td>
+            <td ><button class="table-btn color3 table_center" @click="openModal">実行</button></td>
+          </tr>
+          <tr>
+            <td class="table_center"><input type="checkbox"></td>
+            <td class="bold-font table_120"><a href="">ユーザーの名前</a></td>
+            <td>ブロンズ</td>
+            <td>222,220,000</td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td ><button class="table-btn color3 table_center"  @click="openInfo">付与</button></td>
+            <td ><button class="table-btn color3 table_center" @click="openModal">実行</button></td>
+          </tr>
+          <tr>
+            <td class="table_center"><input type="checkbox"></td>
+            <td class="bold-font table_120"><a href="">ユーザーの名前</a></td>
+            <td>ブロンズ</td>
+            <td>222,220,000</td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td ><button class="table-btn color3 table_center"  @click="openInfo">付与</button></td>
+            <td ><button class="table-btn color3 table_center" @click="openModal">実行</button></td>
+          </tr>
+          <tr>
+            <td class="table_center"><input type="checkbox"></td>
+            <td class="bold-font table_120"><a href="">ユーザーの名前</a></td>
+            <td>ブロンズ</td>
+            <td>222,220,000</td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td ><button class="table-btn color3 table_center"  @click="openInfo">付与</button></td>
+            <td ><button class="table-btn color3 table_center" @click="openModal">実行</button></td>
+          </tr>
+          <tr>
+            <td class="table_center"><input type="checkbox"></td>
+            <td class="bold-font table_120"><a href="">ユーザーの名前</a></td>
+            <td>ブロンズ</td>
+            <td>222,220,000</td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td ><button class="table-btn color3 table_center"  @click="openInfo">付与</button></td>
+            <td ><button class="table-btn color3 table_center" @click="openModal">実行</button></td>
+          </tr>
+          <tr>
+            <td class="table_center"><input type="checkbox"></td>
+            <td class="bold-font table_120"><a href="">ユーザーの名前</a></td>
+            <td>ブロンズ</td>
+            <td>222,220,000</td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td ><button class="table-btn color3 table_center"  @click="openInfo">付与</button></td>
+            <td ><button class="table-btn color3 table_center" @click="openModal">実行</button></td>
+          </tr>
+          <tr>
+            <td class="table_center"><input type="checkbox"></td>
+            <td class="bold-font table_120"><a href="">ユーザーの名前</a></td>
+            <td>ブロンズ</td>
+            <td>222,220,000</td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            <td ><button class="table-btn color3 table_center"  @click="openInfo">付与</button></td>
+            <td ><button class="table-btn color3 table_center" @click="openModal">実行</button></td>
+          </tr>
+          <quitmember v-show="showContent" @close="showContent = false"></quitmember>
+          <lppresentmodal v-show="showinfoContent" @close="showinfoContent = false"></lppresentmodal>
+        </table>
+        <div class="check_delete_button color3">
+          <div>
+            <input type="checkbox" id="omake-add1" class="omake-add-checkbox">
+            <label for="omake-add1" class="omake-add-label">チェックしたユーザーを昇格する</label>
+          </div>
+          <button class="omake-add-btn color5">実行</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="../../user/js/component.js" defer></script>
+<script src="../../master/js/mascomponent.js" defer></script>
+<script src="../../master/js/masauchtop.js"></script>
+</body>
+</html>

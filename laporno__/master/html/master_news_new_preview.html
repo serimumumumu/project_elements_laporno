@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お知らせ新規登録確認 </title>
+    <meta name="description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <meta name="keywords" content="ラポファン,セクシー女優,オンラインオークション,ラポルノ,ラポルノファンディング,クラファン,クラウドファンディング,ガチャ">
+    <meta property="og:title" content="【ラポルノファンディング】">
+    <meta property="og:description" content="ラポルノファンディング">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ラポルノファンディング">
+    <!-- Facebook -->
+    <meta property="fb:app_id" content="">
+    <!-- //Facebook -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lapornofund">
+    <meta name="twitter:title" content="【ラポルノファンディング】">
+    <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <link rel="stylesheet" href="../../user/css/user_component.css">
+    <link rel="stylesheet" href="../../user/css/user_signup.css">
+    <link rel="stylesheet" href="../../user/css/user_mypage.css">
+    <script src="../../user/js/vue.js"></script>
+
+</head>
+<body>
+    <div id="headers">
+        <header>
+            <div class="header-left">
+                 <a href="top.html"><img src="../../img/logo.png" alt="ラポルノロゴ"></a>
+            </div>
+            <div class="header-right">
+              <a href="mailtop.html">
+              <img src="../../img/mail.png" alt="">
+              </a>
+              <div class="hmenu" id="hamburger_menu" @click="open=!open">
+                <img src="../../img/conmenu.png" alt="" >
+                <div class="hbtn" >
+                  <span class="line line_01" :class="{'btn_01':open }"></span>
+                  <span class="line line_03" :class="{'btn_03':open }"></span>
+                </div>
+              </div>
+              <div class="menu" v-show="open">
+                <p class="menu_user">マスター専用</p>
+                <ul>
+                  <li><a href="usertop.html">ユーザー一覧</a></li>
+                  <li><a href="contributortop.html">投稿者一覧</a></li>
+                  <li><a href="actresstop.html">女優一覧</a></li>
+                  <li><a href="projtop.html">プロジェクト一覧</a></li>
+                  <li><a href="../../master/html/master_project_support_top.html">支援一覧</a></li>
+                  <li><a href="auctiontop.html">オークション一覧</a></li>
+                  <li><a href="auchbidtop.html">落札者一覧</a></li>
+                  <li><a href="gachatop.html">ガチャ一覧</a></li>
+                  <li><a href="newstop.html">News一覧</a></li>
+                  <li><a href="buylp.html">LP表</a></li>
+                  <li><a href="">売上表</a></li>
+                  <li><a href="dummytop.html">ダミーアカウント一覧</a></li>
+                  <li><a href="">ログアウト</a></li>
+                </ul>
+              </div>
+              </div>
+            </header>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../master/html/master_top.html">TOP</a></li>
+            <li ><a href="../../master/html/newstop.html">お知らせ一覧</a></li>
+            <li ><a href="../../user/html/production_campaign_new_campaign.html">お知らせ新規作成</a></li>
+            <li class="arrow-l">お知らせ新規登録確認</li>
+        </ul>
+    </div>
+    <main class="color1">
+        <form class="card color0">
+          <div class="card_content">
+          <h1 class="card-title">お知らせ新規登録確認</h1>
+          <div class="card_info_index">
+            <div class="card_info_one">
+              <span class="sub-title">タイトル</span>
+              <p class="answer_text">写真集発売記念イベント</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">掲載期間</span>
+              <p class="answer_text">07/07 14:00~07/09 23:59</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">トップ掲載期間</span>
+              <p class="answer_text">07/07 14:00~07/08 23:59</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">同一の内容を送信</span>
+              <p class="answer_text">メールでも配信</p>
+            </div>
+            <div class="card_info_one">
+              <span class="sub-title">本文</span>
+                <div class="answer_text"> 
+                    <h5 class="answer_text_h5">見出し見出し見出し</h5>
+                    <p class="answer_text_p">ここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入ります</p>
+                    <img class="answer_text_img" src="../../img/demoimg2.png" alt="">
+                    <p class="answer_text_p">ここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入りますここに本文が入ります</p>
+                </div>  
+            </div>
+        </div>
+        <div class="two_inputs">
+          <a class="twobutton_a" href="../../master/html/master_news_edit_news.html">戻る</a>
+          <a class="twobutton_a" href="../../master/html/newstop.html">登録</a>
+        </div>
+        </div>
+        </form>
+    </main>
+    <footer class="color5">
+      <div class="foot_list">
+        <ul class="foot_list_ul">
+          <li><a href="">ラポルノファンディングとは</a></li>
+          <li><a href="">よくある質問</a></li>
+          <li><a href="">お問い合わせ</a></li>
+          <li><a href="">特定商取引法の表示</a></li>
+          <li><a href="">利用規約</a></li>
+          <li><a href="">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <p class="footer_copyright">©︎laporno.fund, All Rights Reserved.</p>
+    </footer>
+    <!-- <script src="../../user/js/component.js"></script> -->
+    <script>
+       var productionHeader = new Vue({
+        el:'#headers',
+        data: function() {
+        return{
+          open:false
+        }
+      }
+      })
+    </script>
+</body>
+</html>

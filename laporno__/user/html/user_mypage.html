@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイページ</title>
+    <meta name="description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <meta name="keywords" content="ラポファン,セクシー女優,オンラインオークション,ラポルノ,ラポルノファンディング,クラファン,クラウドファンディング,ガチャ">
+    <meta property="og:title" content="【ラポルノファンディング】">
+    <meta property="og:description" content="ラポルノファンディング">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ラポルノファンディング">
+    <!-- Facebook -->
+    <meta property="fb:app_id" content="">
+    <!-- //Facebook -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lapornofund">
+    <meta name="twitter:title" content="【ラポルノファンディング】">
+    <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <!-- <title>マイページ</title> -->
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <link rel="stylesheet" href="../../user/css/user_mypage.css">
+    <link rel="stylesheet" href="../../user/css/user_modal.css">
+    <script src="../../user/js/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+    <!-- </div> -->
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../user/html/user_top.html">TOP</a></li>
+            <li class="arrow-l"><p>マイページ</p></li>
+        </ul>
+    </div>
+    <!-- プロフィール -->
+    <div class="user color1">
+        <div class="user-left" >
+            <div class="user-img"><img src="../../img/userimage.png" alt=""><img v-show="editpen" @click="openModalEditImg" class="profeditimg" src="../../img/editpen.png" alt="">
+                <div v-show="showContentEditImg" @close="showContentEditImg = false" v-cloak>
+                    <div class="overlay">
+                        <div class="overlay-over">
+                            <div class="cancel-btn" @click="closeModalEditImg">
+                            <span class="x x_1"></span>
+                            <span class="x x_2"></span>
+                            </div>
+                            <!-- モーダルの中身 -->
+                            <div class="overlay-overmain">
+                            <div class="modal_section2">
+                                <h6 class="modal_title">アイコンを変更する</h6>
+                                <div class="editimgmodal">
+                                    <div class="">
+                                        <select class="editimg" name="" id="">
+                                        <option value="X">選択してください</option>
+                                        <option value="A">画像ファイルから選択</option>
+                                        <option value="B">カメラ</option>
+                                        <option value="C">フォルダ</option>
+                                        </select>
+                                    </div>
+                                    <img src="../../img/demoimg.png"></img>
+                                </div>
+                                <button  id="btn-2" @click="closeModalEditImg">変更する</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="user-rank">
+                <p class="subtitle" >称号</p>
+                <div @click="openModalPrize" class="rank-icon-area">
+                    <div class="rank-icon" >
+                        <img src="../../img/patoran3.png" alt="patron">
+                        <p class="icon-text">パトロン</p>
+                    </div>
+                    <div class="rank-icon">
+                        <img src="../../img/patoran3.png" alt="patron">
+                        <p class="icon-text">パトロン</p>
+                    </div>
+                    <div class="rank-icon">
+                        <img src="../../img/patoran3.png" alt="patron">
+                        <p class="icon-text">パトロン</p>
+                    </div>
+                </div>
+             </div>
+        <!-- <prizeselectmodal v-show="showContentPrize" @close="showContentPrize = false">
+        </prizeselectmodal> -->
+        </div>
+        <div class="user-right">
+            <div class="user-name-area">
+                <p class="subtitle">ユーザー名</p>
+                <div class="user-name">ユーザーの名前<img v-show="editpen" @click="openModalEditName" class="profedit" src="../../img/editpen.png" alt="">
+                    <div v-show="showContentEditName" @close="showContentEditName = false" v-cloak>
+                        <div class="overlay">
+                            <div class="overlay-over">
+                                <div class="cancel-btn" @click="closeModalEditName">
+                                    <span class="x x_1"></span>
+                                    <span class="x x_2"></span>
+                                </div>
+                            <!-- モーダルの中身 -->
+                                <div class="overlay-overmain">
+                                    <div class="modal_section2">
+                                        <h6 class="modal_title">ユーザー名を変更する</h6>
+                                        <div class="editnamemodal">
+                                            <span class="subtitle">現在のユーザー名</span>
+                                            <p class="modal_p">ユーザーのお名前</p>
+                                            <img src="../../img/arrowdown.png"> 
+                                            <span class="subtitle">変更後のユーザー名</span>
+                                            <input class="modal_input" placeholder="ユーザーのお名前">
+                                        </div>
+                                        <button class="btn-2" @click="closeModalEditName">変更する</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="user-info-area" >
+                <div class="lp info">
+                    <p class="subtitle">所持LP</p>
+                    <div class="syojilp subtext">999,999,999 pt</div>
+                </div>
+                <div class="lp-button info">
+                    <a href="user_lp.html" class="button color3">LP購入</a>
+                </div>
+                <div class="info" >
+                    <p class="subtitle" v-on:click="openModalRank">
+                        ランク<img src="../../img/ques.png" alt="" class="q-icon">
+                    </p>
+                    <div class="subtext">ゴールド</div>
+                </div>
+                    <!-- <patronrank v-show="showContentRank" @close="showContentRank = false"></patronrank> -->
+                <div class="sien info">
+                    <p class="subtitle">支援総額</p>
+                    <div class="subtext">999,999,999円</div>
+                </div>
+            </div>
+            <div class="edit-button">
+                <div class="button color3" @click="profileEdit">プロフィール編集</div>
+            </div>
+        </div>
+    </div>
+    <!-- たぶ -->
+    <div id="actprodtop">
+        <input id="tab1" type="radio" name="tab_btn" checked>
+        <input id="tab2" type="radio" name="tab_btn">
+        <input id="tab3" type="radio" name="tab_btn">
+        <input id="tab4" type="radio" name="tab_btn">
+        <input id="tab5" type="radio" name="tab_btn">
+        <input id="tab6" type="radio" name="tab_btn">
+        <div class="tab_labels gap">
+            <label class="tab1_label tabbtn" for="tab1">支援履歴</label>
+            <label class="tab2_label tabbtn" for="tab2">入札落履歴</label>
+            <label class="tab3_label tabbtn relative" for="tab3">景品一覧</label>
+            <label class="tab4_label tabbtn" for="tab4">LP購入履歴</label>
+            <label class="tab5_label tabbtn" for="tab5">お気に入り</label>
+            <label class="tab6_label tabbtn" for="tab6">設定</label>
+        </div>
+        <div class="panel_area color1">
+            <!--支援履歴-->
+            <div id="panel1" class="tab_panel">
+                <div class="content color0">
+                    <article class="user_mypage_aboutproject_card" v-cloak>
+                        <img class="user_mypage_aboutproject_card_img" src="../../img/demoimg.png" alt="">
+                        <div class="user_mypage_aboutproject_card_in">
+                            <div class="user_mypage_aboutproject_card_in_title">タイトル <img :class="{'_state_open': isOpenedProject }" @click="accordingProjectToggle()" src="../../img/arrowdown.png" alt="" ></div>
+                            <div class="" v-if="isOpenedProject">
+                                <p class="user_mypage_aboutproject_card_return" >リターン</p>
+                                <!-- 発送準備(質問)モーダル↓ -->
+                               <!-- <article class="user_mypage_aboutproject_card_return_card warn_shadow">
+                                    <div class="user_mypage_aboutproject_card_return_card_left">
+                                        <div class="content-subtitle">リターンタイトル</div>
+                                        <img  src="../../img/demoimg.png" alt="">
+                                    </div>
+                                    <div class="user_mypage_aboutproject_card_return_card_right" >
+                                        <div class="user_mypage_aboutproject_card_return_card_right_date color3">追加支払い</div>
+                                        <div class="user_mypage_aboutproject_card_return_card_right_detail" >
+                                            <div class="price">￥150,000<span class="discount_span">(10%割引コード使用)</span></div>
+                                            <button class="user_mypage_aboutproject_card_return_card_right_detail_button " @click="openReturnModal">詳細
+                                            </button>
+                                            <div v-show="showContentReturn" @close="showContentReturn = false">
+                                                <div class="overlay">
+                                                    <div class="overlay-over">
+                                                        <div class="cancel-btn" @click="closeReturnModal">
+                                                            <span class="x x_1"></span>
+                                                            <span class="x x_2"></span>
+                                                        </div>
+                                                        <div class="overlay-overmain">
+                                                            <div class="modal_section">
+                                                                <h6 class="modal_title">リターンについて<span class="modal_title_span">
+                                                                    下記リターンの質問を回答してください
+                                                                </span></h6>
+                                                                <div>
+                                                                    <span class="subtitle">リターンタイトル</span>
+                                                                    <p class="modal_p">リターン景品の名前リターン景品の名前</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">希望の宛名</span>
+                                                                    <input type="text" class="modal_input" placeholder="ユーザーの名前">
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">Tシャツのサイズ</span>
+                                                                    <select class="modal_input_half" placeholder="L">
+                                                                        <option value="">L</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn-2" >回答する</button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>  -->
+                                <!-- 新規追加支払いモーダル↓ -->
+                                <!-- <article class="user_mypage_aboutproject_card_return_card warn_shadow">
+                                    <div class="user_mypage_aboutproject_card_return_card_left">
+                                        <div class="content-subtitle">リターンタイトル</div>
+                                        <img  src="../../img/demoimg.png" alt="">
+                                    </div>
+                                    <div class="user_mypage_aboutproject_card_return_card_right" >
+                                        <div class="user_mypage_aboutproject_card_return_card_right_date color3">追加支払い</div>
+                                        <div class="user_mypage_aboutproject_card_return_card_right_detail" >
+                                            <div class="price">￥150,000<span class="discount_span">(10%割引コード使用)</span></div>
+                                            <button class="user_mypage_aboutproject_card_return_card_right_detail_button " @click="openReturnModal">詳細
+                                            </button>
+                                            <div v-show="showContentReturn" @close="showContentReturn = false">
+                                                <div class="overlay">
+                                                    <div class="overlay-over">
+                                                        <div class="cancel-btn" @click="closeReturnModal">
+                                                            <span class="x x_1"></span>
+                                                            <span class="x x_2"></span>
+                                                        </div>
+                                                        <div class="overlay-overmain">
+                                                            <div class="modal_section">
+                                                                <h6 class="modal_title">お知らせ<span class="modal_title_span">
+                                                                    下記プロジェクトのご用意ができました。<br>ボタンからお支払いをお願いいたします
+                                                                </span></h6>
+                                                                <div>
+                                                                    <span class="subtitle">リターンタイトル</span>
+                                                                    <p class="modal_p">リターン景品の名前リターン景品の名前</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">金額</span>
+                                                                    <p class="modal_p">8000円</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">備考</span>
+                                                                    <p class="modal_p">追加リターン</p>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn-2" onclick="location.href='../../user/html/user_extra_pay.html'">支払いページへ</button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article> -->
+                               <!-- 再決済モーダル↓ -->
+                                <!-- <article class="user_mypage_aboutproject_card_return_card warn_shadow">
+                                    <div class="user_mypage_aboutproject_card_return_card_left">
+                                        <div class="content-subtitle">リターンタイトル</div>
+                                        <img  src="../../img/demoimg.png" alt="">
+                                    </div>
+                                    <div class="user_mypage_aboutproject_card_return_card_right" >
+                                        <div class="user_mypage_aboutproject_card_return_card_right_date color3">再決済</div>
+                                        <div class="user_mypage_aboutproject_card_return_card_right_detail" >
+                                            <div class="price">￥150,000<span class="discount_span">(10%割引コード使用)</span></div>
+                                            <button class="user_mypage_aboutproject_card_return_card_right_detail_button " @click="openReturnModal">詳細
+                                            </button>
+                                            <div v-show="showContentReturn" @close="showContentReturn = false">
+                                                <div class="overlay">
+                                                    <div class="overlay-over">
+                                                        <div class="cancel-btn" @click="closeReturnModal">
+                                                            <span class="x x_1"></span>
+                                                            <span class="x x_2"></span>
+                                                        </div>
+                                                        <div class="overlay-overmain">
+                                                            <div class="modal_section">
+                                                                <h6 class="modal_title">クレジットカード処理が<br>
+                                                                    正常に行われませんでした<span class="modal_title_span">
+                                                                    下の再決済ボタンから再決済のお手続きをお願いいたします。
+                                                                </span></h6>
+                                                            </div>
+                                                            <button class="btn-2" onclick="location.href='../../user/html/user_again_pay.html'">再決済ページへ</button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article> -->
+                                 <!-- 履行未(リアル（オンライン）イベント) -->
+                                <!-- <article class="user_mypage_aboutproject_card_return_card">
+                                    <div class="user_mypage_aboutproject_card_return_card_left">
+                                        <div class="content-subtitle">リターンタイトル</div>
+                                        <img  src="../../img/demoimg.png" alt="">
+                                    </div>
+                                    <div class="user_mypage_aboutproject_card_return_card_right" >
+                                        <div class="user_mypage_aboutproject_card_return_card_right_date color3">履行未（デート）</div>
+                                        <div class="user_mypage_aboutproject_card_return_card_right_detail" >
+                                            <div class="price">￥150,000<span class="discount_span">(10%割引コード使用)</span></div>
+                                            <button class="user_mypage_aboutproject_card_return_card_right_detail_button " @click="openReturnModal">詳細
+                                            </button>
+                                            <div v-show="showContentReturn" @close="showContentReturn = false">
+                                                <div class="overlay">
+                                                    <div class="overlay-over">
+                                                        <div class="cancel-btn" @click="closeReturnModal">
+                                                            <span class="x x_1"></span>
+                                                            <span class="x x_2"></span>
+                                                        </div>
+                                                        <div class="overlay-overmain">
+                                                            <div class="modal_section">
+                                                                <h6 class="modal_title">リターン詳細</h6>
+                                                                <div>
+                                                                    <span class="subtitle">リターンタイトル</span>
+                                                                    <p class="modal_p">リターン景品の名前リターン景品の名前</p>
+                                                                </div>
+                                                                <div class="modal_colum">
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">支援金額</span>
+                                                                        <p class="modal_p">¥15,500</p>
+                                                                    </div>
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">決済方法</span>
+                                                                        <p class="modal_p">クレジットカード</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal_colum">
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">お支払状況</span>
+                                                                        <p class="modal_p">入金済</p>
+                                                                    </div>
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">決済日</span>
+                                                                        <p class="modal_p">2020/02/22</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">メモ</span>
+                                                                        <p class="modal_p">メモメモメモメモメモメモメモメモメモメモメモメモメモメモメモメモ</p>
+                                                                </div>
+                                                                <h5 class="modal_section_h5">リアルイベント情報</h5>
+                                                                <div>
+                                                                    <span class="subtitle">開催日時</span>
+                                                                        <p class="modal_p">2020/04/11 15:00~21:00</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">使用するオンラインツール</span>
+                                                                        <p class="modal_p">Zoom</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">使用するツールの事前ダウンロードの必要</span>
+                                                                        <p class="modal_p">不要</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">オンラインURL</span>
+                                                                    <a class="modal_a">https://ninjacode.work/</a>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">注意事項</span>
+                                                                    <p class="modal_p">ここに注意事項が入りますここに注意事項が入りますここに注意事項が入りますここに注意事項が入りますここに注意事項が入ります</p>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn-2" @click="closeReturnModal">閉じる</button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article> -->
+                                 <!-- 履行未(リアル(オフライン)イベント) -->
+                                <!-- <article class="user_mypage_aboutproject_card_return_card">
+                                    <div class="user_mypage_aboutproject_card_return_card_left">
+                                        <div class="content-subtitle">リターンタイトル</div>
+                                        <img  src="../../img/demoimg.png" alt="">
+                                    </div>
+                                    <div class="user_mypage_aboutproject_card_return_card_right" >
+                                        <div class="user_mypage_aboutproject_card_return_card_right_date color3">履行未（デート）</div>
+                                        <div class="user_mypage_aboutproject_card_return_card_right_detail" >
+                                            <div class="price">￥150,000<span class="discount_span">(10%割引コード使用)</span></div>
+                                            <button class="user_mypage_aboutproject_card_return_card_right_detail_button " @click="openReturnModal">詳細
+                                            </button>
+                                            <div v-show="showContentReturn" @close="showContentReturn = false">
+                                                <div class="overlay">
+                                                    <div class="overlay-over">
+                                                        <div class="cancel-btn" @click="closeReturnModal">
+                                                            <span class="x x_1"></span>
+                                                            <span class="x x_2"></span>
+                                                        </div>
+                                                        <div class="overlay-overmain">
+                                                            <div class="modal_section">
+                                                                <h6 class="modal_title">リターン詳細</h6>
+                                                                <div>
+                                                                    <span class="subtitle">リターンタイトル</span>
+                                                                    <p class="modal_p">リターン景品の名前リターン景品の名前</p>
+                                                                </div>
+                                                                <div class="modal_colum">
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">支援金額</span>
+                                                                        <p class="modal_p">¥15,500</p>
+                                                                    </div>
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">決済方法</span>
+                                                                        <p class="modal_p">クレジットカード</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal_colum">
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">お支払状況</span>
+                                                                        <p class="modal_p">入金済</p>
+                                                                    </div>
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">決済日</span>
+                                                                        <p class="modal_p">2020/02/22</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">メモ</span>
+                                                                        <p class="modal_p">メモメモメモメモメモメモメモメモメモメモメモメモメモメモメモメモ</p>
+                                                                </div>
+                                                                <h5 class="modal_section_h5">リアルイベント情報</h5>
+                                                                <div>
+                                                                    <span class="subtitle">開催日時</span>
+                                                                        <p class="modal_p">2020/04/11 15:00~21:00</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">集合時間</span>
+                                                                        <p class="modal_p">2020/04/11 14:50</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">待ち合わせ場所</span>
+                                                                        <p class="modal_p">JR渋谷駅東口改札前</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">開催場所住所</span>
+                                                                    <p class="modal_p">東京都渋谷区円山町20-1<br>新大宗円山ビル1階</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">開催場所URL</span>
+                                                                    <a class="modal_a">https://ninjacode.work/</a>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">タイムスケジュール</span>
+                                                                    <p class="modal_p">
+                                                                    15:00 待ち合わせ<br>
+                                                                      15:30 ポートレート<br>
+                                                                      16:00 食事会<br>
+                                                                      18:00 解散<br>
+                                                                    </p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">持ち物</span>
+                                                                    <p class="modal_p">印鑑、写真付き身分証明書</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">注意事項</span>
+                                                                    <p class="modal_p">ここに注意事項が入りますここに注意事項が入りますここに注意事項が入りますここに注意事項が入りますここに注意事項が入ります</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">同行者</span>
+                                                                    <p class="modal_p">同行者氏名</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">同行者連絡先</span>
+                                                                    <p class="modal_p">09077885554</p>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn-2" @click="closeReturnModal">閉じる</button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article> -->
+                                <!-- 未入金 -->
+                                <article class="user_mypage_aboutproject_card_return_card warn_shadow">
+                                    <div class="user_mypage_aboutproject_card_return_card_left">
+                                        <div class="content-subtitle">リターンタイトル</div>
+                                        <img  src="../../img/demoimg.png" alt="">
+                                    </div>
+                                    <div class="user_mypage_aboutproject_card_return_card_right" >
+                                        <div class="user_mypage_aboutproject_card_return_card_right_date color3">未入金</div>
+                                        <div class="user_mypage_aboutproject_card_return_card_right_detail" >
+                                            <div class="price">￥150,000<span class="discount_span">(10%割引コード使用)</span></div>
+                                            <button class="user_mypage_aboutproject_card_return_card_right_detail_button " @click="openReturnModal">詳細
+                                            </button>
+                                            <div v-show="showContentReturn" @close="showContentReturn = false">
+                                                <div class="overlay">
+                                                    <div class="overlay-over">
+                                                        <div class="cancel-btn" @click="closeReturnModal">
+                                                            <span class="x x_1"></span>
+                                                            <span class="x x_2"></span>
+                                                        </div>
+                                                        <div class="overlay-overmain">
+                                                            <div class="modal_section">
+                                                                <h6 class="modal_title">リターン詳細</h6>
+                                                                <div>
+                                                                    <span class="subtitle">リターンタイトル</span>
+                                                                    <p class="modal_p">リターン景品の名前リターン景品の名前</p>
+                                                                </div>
+                                                                <div class="modal_colum">
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">支援金額</span>
+                                                                        <p class="modal_p">¥15,500</p>
+                                                                    </div>
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">決済方法</span>
+                                                                        <p class="modal_p">銀行振込</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal_colum">
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">お支払状況</span>
+                                                                        <p class="modal_p">未入金</p>
+                                                                    </div>
+                                                                    <div class="modal_colum_div">
+                                                                        <button class="user_mypage_aboutproject_card_return_card_modal_bank_button">振り込み先情報</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">メモ</span>
+                                                                        <p class="modal_p">メモメモメモメモメモメモメモメモメモメモメモメモメモメモメモメモ</p>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn-2" @click="closeReturnModal">閉じる</button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!-- 発送済 -->
+                                <!-- <article class="user_mypage_aboutproject_card_return_card">
+                                    <div class="user_mypage_aboutproject_card_return_card_left">
+                                        <div class="content-subtitle">リターンタイトル</div>
+                                        <img  src="../../img/demoimg.png" alt="">
+                                    </div>
+                                    <div class="user_mypage_aboutproject_card_return_card_right" >
+                                        <div class="user_mypage_aboutproject_card_return_card_right_date color3">発送済</div>
+                                        <div class="user_mypage_aboutproject_card_return_card_right_detail" >
+                                            <div class="price">￥150,000<span class="discount_span">(10%割引コード使用)</span></div>
+                                            <button class="user_mypage_aboutproject_card_return_card_right_detail_button " @click="openReturnModal">詳細
+                                            </button>
+                                            <div v-show="showContentReturn" @close="showContentReturn = false">
+                                                <div class="overlay">
+                                                    <div class="overlay-over">
+                                                        <div class="cancel-btn" @click="closeReturnModal">
+                                                            <span class="x x_1"></span>
+                                                            <span class="x x_2"></span>
+                                                        </div>
+                                                        <div class="overlay-overmain">
+                                                            <div class="modal_section">
+                                                                <h6 class="modal_title">リターン詳細</h6>
+                                                                <div>
+                                                                    <span class="subtitle">リターンタイトル</span>
+                                                                    <p class="modal_p">リターン景品の名前リターン景品の名前</p>
+                                                                </div>
+                                                                <div class="modal_colum">
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">支援金額</span>
+                                                                        <p class="modal_p">¥15,500</p>
+                                                                    </div>
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">決済方法</span>
+                                                                        <p class="modal_p">クレジットカード</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal_colum">
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">お支払状況</span>
+                                                                        <p class="modal_p">入金済</p>
+                                                                    </div>
+                                                                    <div class="modal_colum_div">
+                                                                        <span class="subtitle">決済日</span>
+                                                                        <p class="modal_p">2020/02/22</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">メモ</span>
+                                                                        <p class="modal_p">メモメモメモメモメモメモメモメモメモメモメモメモメモメモメモメモ</p>
+                                                                </div>
+                                                                <div class="modal_colum">
+                                                                <div class="modal_colum_div">
+                                                                <span class="subtitle">伝票番号</span>
+                                                                <p class="modal_p">12345678901234</p>
+                                                                </div>
+                                                                <div class="modal_colum_div">
+                                                                <span class="subtitle">配送業者</span>
+                                                                <p class="modal_p">ヤマト運輸</p>
+                                                                </div>
+                                                                </div>
+                                                                <span class="subtitle">伝票写真</span>
+                                                                <div class="modal_colum_img">
+                                                                    <img src="../../img/demoimg.png" alt="">
+                                                                    <img src="../../img/demoimg.png" alt="">
+                                                                </div>
+                                                                <p class="modal_p"> </p>
+                                                                <div class="modal_button">
+                                                                <a href="https:/qiita.com/SUGISHIA/items/d4d8b48be48767c17815">
+                                                                配達情報はこちら</a>
+                                                                </div>
+                                                                <h5　class="modal_section_h5">質問の回答</h5>
+                                                                <div>
+                                                                    <span class="subtitle">希望の色</span>
+                                                                        <p class="modal_p">青</p>
+                                                                </div>
+                                                                <div>
+                                                                    <span class="subtitle">希望のサイズ</span>
+                                                                        <p class="modal_p">LL</p>
+                                                                </div>
+                                                            </div>
+                                                            <button class="btn-2" @click="closeReturnModal">閉じる</button>
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article> -->
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+             <!--入札落履歴-->
+            <div id="panel2" class="tab_panel">
+                <h2 class="user_mypage_aboutauction_title">入札</h2>
+                <div class="user_mypage_aboutauction">
+                    <userauctioncard></userauctioncard>
+                    <userauctioncard></userauctioncard>
+                </div>
+                <h2 class="user_mypage_aboutauction_title">落札</h2>
+                <article class="user_mypage_aboutauction_card color0">
+                    <div class="user_mypage_aboutauction_card_top">
+                        <h5 class="user_mypage_aboutauction_card_top_title ">【新村あかり】色紙＋チェキ【新村あかり】色紙＋チェキ</h5>
+                        <div class="user_mypage_aboutauction_card_top_status color3">ステータス</div>
+                    </div>
+                    <div class="user_mypage_aboutauction_card_top_status_middle">
+                        <img class="user_mypage_aboutauction_card_top_status_middle_img" src="../../img/demoimg.png" alt="">
+                        <div class="user_mypage_aboutauction_card_top_status_middle_info">
+                            <div class="user_mypage_aboutauction_card_top_status_middle_info_inner">
+                                <img class="user_mypage_aboutauction_card_top_status_middle_info_inner_img" src="../../img/lady.png" alt="">
+                                <div>新村あかり</div>
+                            </div>
+                            <div class="user_mypage_aboutauction_card_top_status_middle_info_inner">
+                                <img class="user_mypage_aboutauction_card_top_status_middle_info_inner_img" src="../../img/pro.png" alt="">
+                                <div>桃太郎永劫出版</div>
+                            </div>
+                            <div class="user_mypage_aboutauction_card_top_status_middle_info_inner">
+                                <img class="user_mypage_aboutauction_card_top_status_middle_info_inner_img" src="../../img/mallet.png" alt="">
+                                <div>3,111,111円<span class="discount_span">(10%割引コード使用)</span></div>
+                            </div>
+                            <div class="user_mypage_aboutauction_card_top_status_middle_info_inner">
+                                <img class="user_mypage_aboutauction_card_top_status_middle_info_inner_img" src="../../img/money.png" alt="">
+                                <div>入金済</div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="user_mypage_aboutauction_card_bottom" >
+                        <div class="subtitle">発送メモ</div>
+                        <p class="user_mypage_aboutauction_card_bottom_subtitle">特になし<br> ここにメモが入ります <br></p>
+                        <div class="user_mypage_aboutauction_card_bottom_button " @click="openAuctionModal">詳細
+                        </div>
+                        <div v-show="showContentAuction" @close="showContentAuction = false">
+                            <div class="overlay">
+                                <div class="overlay-over">
+                                    <div class="cancel-btn" @click="closeAuctionModal">
+                                        <span class="x x_1"></span>
+                                        <span class="x x_2"></span>
+                                    </div>
+                                    <!-- 発送情報↓ -->
+                                        <div class="overlay-overmain">
+                                            <div class="modal_section">
+                                            <h6 class="modal_title">おめでとうございます<span class="modal_title_span">オークション商品の落札が成功しました。<br>
+                                                下記ボタンから落札商品のお支払いをお願いします</span></h6>
+                                                <img class="modal_heart" src="../../img/bigheart.png" alt="">
+                                                    <button class="btn-2" onclick="location.href='../../user/html/user_auction_pay.html'">お支払いページへ</button>
+                                            </div>
+                                        </div>
+                                        <!-- お支払いページへのモーダル↓ -->
+                                         <!-- <div class="overlay-overmain">
+                                            <div class="modal_section">
+                                                <h6 class="modal_title">落札詳細</h6>
+                                                <div>
+                                                    <span class="subtitle">オークション名</span>
+                                                    <p class="modal_p">オークション名オークション名オークション名</p>
+                                                </div>
+                                                <div class="modal_colum">
+                                                    <div class="modal_colum_div">
+                                                        <span class="subtitle">支援金額</span>
+                                                        <p class="modal_p">¥15,500</p>
+                                                    </div>
+                                                    <div class="modal_colum_div">
+                                                        <span class="subtitle">決済方法</span>
+                                                        <p class="modal_p">クレジットカード</p>
+                                                    </div>
+                                                </div>
+                                                <div class="modal_colum">
+                                                    <div class="modal_colum_div">
+                                                        <span class="subtitle">お支払状況</span>
+                                                        <p class="modal_p">入金済</p>
+                                                    </div>
+                                                    <div class="modal_colum_div">
+                                                        <span class="subtitle">決済日</span>
+                                                        <p class="modal_p">2020/02/22</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <span class="subtitle">メモ</span>
+                                                    <p class="modal_p">メモメモメモメモメモメモメモメモメモメモメモメモメモメモメモメモ</p>
+                                                </div>
+                                                <div class="modal_colum">
+                                                    <div class="modal_colum_div">
+                                                        <span class="subtitle">伝票番号</span>
+                                                        <p class="modal_p">12345678901234</p>
+                                                    </div>
+                                                    <div class="modal_colum_div">
+                                                        <span class="subtitle">配送業者</span>
+                                                        <p class="modal_p">ヤマト運輸</p>
+                                                    </div>
+                                                </div>
+                                                <span class="subtitle">伝票写真</span>
+                                                <div class="modal_colum_img">
+                                                    <img src="../../img/demoimg.png" alt="">
+                                                    <img src="../../img/demoimg.png" alt="">
+                                                </div>
+                                                <p class="modal_p"> </p>
+                                                <div class="modal_button">
+                                                    <a href="https:/qiita.com/SUGISHIA/items/d4d8b48be48767c17815">
+                                                    配達情報はこちら</a>
+                                                </div>
+                                            </div>
+                                            <button class="btn-2" @click="closeAuctionModal">閉じる</button>
+                                        </div> -->
+                                    </div>
+                                </div>
+                             </div>
+                    </div>
+                </article>
+            </div>
+            <!--景品一覧-->
+            <div id="panel3" class="tab_panel">
+                <article class="gacha_outer color0 warn_shadow">
+                        <h4 class="gacha_outer_maintitle warn_icon">タイトル</h4>
+                        <div class="gacha_outer_detail">
+                            <div class="detail_img" >
+                                <img src="../../img/demoimg.png" alt="" >
+                            </div>
+                            <div class="detail_index">
+                                <p><span class="subtitle">景品数</span>12個</p>
+                                <p><span class="subtitle">使用LP</span>8800lp<span class="discount_span">(10%割引コード使用)</span></p>
+                                <p><span class="subtitle">投稿者</span>桃太郎映像 </p>
+                            </div>
+                            <div>
+                                <img class=""  :class="{'_state_open': isOpenedGachaFreebie }" @click="accordingGachaFreebieToggle()" src="../../img/arrowdown.png" alt=""  >
+                            </div>
+                        </div>
+                        <div class="user_mypage_aboutgacha_detail" v-if="isOpenedGachaFreebie">
+                            <div class="user_mypage_aboutgacha_detail_left">
+                                <div class="user_mypage_aboutgacha_detail_left_title">景品タイトル</div>
+                                <img class="user_mypage_aboutgacha_detail_left_img" src="../../img/demoimg.png" alt="">
+                            </div>
+                            <div class="user_mypage_aboutgacha_detail_right">
+                                <p class="user_mypage_aboutgacha_detail_right_date color3">発送済み</p>
+                                <p class="user_mypage_aboutgacha_detail_right_amount">x3</p>
+                                <button class="user_mypage_aboutgacha_detail_right_button_area_button" @click="openGachaFreebieModal">詳細
+                                </button>
+                                <div class="user_mypage_aboutgacha_detail_right_button_area">
+                                    <div v-show="showContentGachaFreebie" @close="showContentGachaFreebie = false">
+                                        <div class="overlay">
+                                            <div class="overlay-over">
+                                                <div class="cancel-btn" @click="closeGachaFreebieModal">
+                                                    <span class="x x_1"></span>
+                                                    <span class="x x_2"></span>
+                                                </div>
+                                                <div class="overlay-overmain">
+                                                    <div class="modal_section">
+                                                        <h6 class="modal_title">景品詳細</h6>
+                                                        <div>
+                                                            <span class="subtitle">ガチャ景品名</span>
+                                                                <p class="modal_p">ガチャ景品の名前ガチャ景品の名前</p>
+                                                        </div>
+                                                        <div>
+                                                            <span class="subtitle">メモ</span>
+                                                                <p class="modal_p">メモメモメモメモメモメモメモメモメモメモメモメモメモメモメモメモ</p>
+                                                        </div>
+                                                        <div class="modal_colum">
+                                                            <div class="modal_colum_div">
+                                                                <span class="subtitle">発送会社</span>
+                                                                <p class="modal_p">ヤマト運輸</p>
+                                                            </div>
+                                                            <div class="modal_colum_div">
+                                                                <span class="subtitle">送料</span>
+                                                                <p class="modal_p">着払い(820円)</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal_colum">
+                                                            <div class="modal_colum_div">
+                                                                <span class="subtitle">発送方法</span>
+                                                                <p class="modal_p">クロネコ便</p>
+                                                            </div>
+                                                            <div class="modal_colum_div">
+                                                                <span class="subtitle">伝票番号</span>
+                                                                <p class="modal_p">12345678901234</p>
+                                                            </div>
+                                                        </div>
+                                                        <span class="subtitle">伝票写真</span>
+                                                        <div class="modal_colum_img">
+                                                            <img src="../../img/demoimg.png" alt="">
+                                                            <img src="../../img/demoimg.png" alt="">
+                                                        </div>
+                                                        <p class="modal_p"> </p>
+                                                        <div class="modal_button">
+                                                            <a href="https:/qiita.com/SUGISHIA/items/d4d8b48be48767c17815">
+                                                            配達情報はこちら</a>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn-2" @click="closeGachaFreebieModal">閉じる</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                             </div>
+                        </div>
+                        <div class="user_mypage_aboutgacha_detail" v-if="isOpenedGachaFreebie">
+                            <div class="user_mypage_aboutgacha_detail_left">
+                                <div class="user_mypage_aboutgacha_detail_left_title">景品タイトル</div>
+                                <img class="user_mypage_aboutgacha_detail_left_img" src="../../img/demoimg.png" alt="">
+                            </div>
+                            <div class="user_mypage_aboutgacha_detail_right">
+                                <p class="user_mypage_aboutgacha_detail_right_date color3">未入金</p>
+                                <button class="user_mypage_aboutgacha_detail_right_button_area_button" @click="openGachaFreebieModal">詳細
+                                </button>
+                                <div class="user_mypage_aboutgacha_detail_right_button_area">
+                                    <div v-show="showContentGachaFreebie" @close="showContentGachaFreebie = false">
+                                        <div class="overlay">
+                                            <div class="overlay-over">
+                                                <div class="cancel-btn" @click="closeGachaFreebieModal">
+                                                    <span class="x x_1"></span>
+                                                    <span class="x x_2"></span>
+                                                </div>
+                                                <div class="overlay-overmain">
+                                                    <div class="modal_section">
+                                                        <h6 class="modal_title">追加支払いのお知らせ<span class="modal_title_span">以下項目にて追加のお支払いが必要です。
+                                                            お支払いページへボタンより手続きを<br>お願いいたします
+                                                        </span></h6>
+                                                        <div>
+                                                            <span class="subtitle">ガチャ景品名</span>
+                                                                <p class="modal_p">ガチャ景品の名前ガチャ景品の名前</p>
+                                                        </div>
+                                                        <div>
+                                                            <span class="subtitle">金額</span>
+                                                                <p class="modal_p">820円</p>
+                                                        </div>
+                                                        <div>
+                                                            <span class="subtitle">備考</span>
+                                                                <p class="modal_p">送料</p>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn-2" onclick="location.href='../../user/html/user_extra_pay.html'">お支払ページへ</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                             </div>
+                        </div>
+                        <!-- <div class="user_mypage_aboutgacha_detail warn_shadow" v-if="isOpenedGachaFreebie">
+                            <div class="user_mypage_aboutgacha_detail_left">
+                                <div class="user_mypage_aboutgacha_detail_left_title ">その他</div>
+                                <img src="../../img/demoimg.png" alt="">
+                            </div>
+                            <div class="user_mypage_aboutgacha_detail_right">
+                                <div class="user_mypage_aboutgacha_detail_right_date color3">未入金</div>
+                                <div class="user_mypage_aboutgacha_detail_right_button_area">
+                                    <div class="button color3" @click="openGachaFreebieModal">詳細
+                                    </div>
+                                    <div v-show="showContentGachaFreebie" @close="showContentGachaFreebie = false">
+                                        <div class="overlay">
+                                            <div class="overlay-over">
+                                                <div class="cancel-btn" @click="closeGachaFreebieModal">
+                                                    <span class="x x_1"></span>
+                                                    <span class="x x_2"></span>
+                                                </div>
+                                                <div class="overlay-overmain">
+                                                    <div class="modal_section">
+                                                        <h6 class="modal_title">追加支払いのお知らせ<span class="modal_title_span">以下項目にて追加のお支払いが必要です。
+                                                            お支払いページへボタンより手続きを<br>お願いいたします
+                                                        </span></h6>
+                                                        <div>
+                                                            <span class="subtitle">ガチャ景品名</span>
+                                                                <p class="modal_p">ガチャ景品の名前ガチャ景品の名前</p>
+                                                        </div>
+                                                        <div>
+                                                            <span class="subtitle">金額</span>
+                                                                <p class="modal_p">820円</p>
+                                                        </div>
+                                                        <div>
+                                                            <span class="subtitle">備考</span>
+                                                                <p class="modal_p">送料</p>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn-2" onclick="location.href='../../user/html/user_extra_pay.html'">お支払ページへ</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                </article>
+            </div> 
+            <!--+LP購入履歴-->
+             <div id="panel4" class="tab_panel">
+                <div class="user_mypage_aboutlp_lp-card">
+                    <div class="user_mypage_aboutlp_lp-card-inner">
+                        <div >現在所持LP</div>
+                        <div> <span class="user_mypage_aboutlp_have_lp">999,999,999</span>LP<span class="user_mypage_aboutlp_free_lp_span"> (うちおまけ  <span class="user_mypage_aboutlp_free_lp_span_lp"> 99000 </span>lp)</span></div>
+                    </div>
+                </div>
+                <a href="user_lp.html" class="user_mypage_aboutlp_buy-lp-button ">LP購入する</a>
+                <div class="user_mypage_aboutlp_tub_index">
+                    <button class="user_mypage_aboutlp_tub" @click="isSelectTab('1')" v-bind:class="{'lp_tab_active': isActiveTab === '1'}">LP使用履歴</button>
+                    <button class="user_mypage_aboutlp_tub" @click="isSelectTab('2')" v-bind:class="{'lp_tab_active': isActiveTab === '2'}">LP購入履歴</button>
+                </div>
+
+                <div class="user_mypage_aboutlp_lp_tab_in" v-if="isActiveTab === '1'">
+                    <p class="user_mypage_aboutlp_lp_tab_in_title color5">LP使用履歴</p>
+                        <article class="user_mypage_aboutlp_lp_buy_history" v-cloak>
+                        <div  class="user_mypage_aboutlp_lp_buy_history_outer">
+                            <div class="user_mypage_aboutlp_lp_buy_history_outer_title">2021/08/08 12:44<br>タイトル</div>
+                            <p>4400pt</p>
+                            <img class="more-btn" :class="{'_state_open': isOpenedLp }" @click="aboutLpAccordingToggle()" src="../../img/arrowdown.png" alt="" >
+                        </div>
+                        <div class="" v-if="isOpenedLp">
+                            <p class="rireki_detail_p">タイトルタイトル</p>  
+                        </div>
+                    </article>
+                </div>
+                <div class="user_mypage_aboutlp_lp_tab_in" v-else="isActiveTab === '2'">
+                    <div class="user_mypage_aboutlp_lp_tab_in_title color5">LP購入履歴</div>
+                        <article class="user_mypage_aboutlp_lp_buy_history" v-cloak>
+                            <div  class="user_mypage_aboutlp_lp_buy_history_outer">
+                                <div class="user_mypage_aboutlp_lp_buy_history_outer_title">2021/08/08 12:44</div>
+                                <p>4400pt<span class="user_mypage_aboutlp_lp_buy_history_outer_right_span">(おまけ333pt)</span></p>
+                                
+                                <img class="more-btn" :class="{'_state_open': isOpenedLp }" @click="aboutLpAccordingToggle()" src="../../img/arrowdown.png" alt="" >
+                            </div>
+                            <div class="" v-if="isOpenedLp">
+                                <p class="rireki_detail_p">有効期限：1991/11/11<br>クレジットカード決済</p>  
+                            </div>
+                        </article>
+                </div>
+            </div>
+            <!--お気に入り-->
+            <div id="panel5" class="tab_panel">
+                <input id="recht_three_tab1" type="radio" name="tab_btn2" checked>
+                <input id="recht_three_tab2" type="radio" name="tab_btn2">
+                <input id="recht_three_tab3" type="radio" name="tab_btn2">
+                <div class="recht_three_tab_labels gap">
+                <label class="recht_three_tab1_label recht_three_tabbtn" for="recht_three_tab1">プロジェクト</label>
+                <label class="recht_three_tab2_label recht_three_tabbtn" for="recht_three_tab2">オークション</label>
+                <label class="recht_three_tab3_label recht_three_tabbtn" for="recht_three_tab3">ガチャ</label>
+                </div>
+                <select class="user_favorite_sort">
+                    <option value="">新着順</option>
+                    <option value="">新着順</option>
+                    <option value="">新着順</option>
+                    <option value="">新着順</option>
+                </select>
+                <div class="recht_three_panel_area">
+                    <div id="recht_three_panel1" class="recht_three_tab_panel">
+                        <userprojectcard></userprojectcard>
+                        <userprojectcard></userprojectcard>
+                        <userprojectcard></userprojectcard>
+                    </div>
+                    <div id="recht_three_panel2" class="recht_three_tab_panel user_auction_card_position">
+                            <userauctioncard></userauctioncard>
+                            <userauctioncard></userauctioncard>
+                            <userauctioncard></userauctioncard>
+                    </div>
+                    <div id="recht_three_panel3" class="recht_three_tab_panel">
+                        <usergachacard></usergachacard>
+                        <usergachacard></usergachacard>
+                        <usergachacard></usergachacard>
+                    </div>
+                </div>   
+            </div>
+          <div id="panel6" class="tab_two_panel"> 
+                <input id="tab_two_first" type="radio" name="tab_btn3" checked>
+                <input id="tab_two_second" type="radio" name="tab_btn3">
+                <div class="tab_two_button_area gap">
+                <label class="tab_two_first_label tab_two_button" for="tab_two_first">登録情報</label>
+                <label class="tab_two_second_label tab_two_button" for="tab_two_second">変更</label>
+                </div>
+                <div class="tab_two">
+                    <div id="tab_two_first_panel" class="tab_two_panel">
+                        <div class="user_lp_aboutsetting_content">
+                            <div class="user_lp_aboutsetting_content_card">
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">メールアドレス</div>
+                                    <div class="">XXXXXXXXXX@gmail.com</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">電話番号</div>
+                                    <div class="">090-7777-5555</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">住所</div>
+                                    <div class="">
+                                        <div class="yuubin-num">〒XXX-XXX</div>
+                                        <div class="jyusyo">
+                                            東京都<br>
+                                            新太宗丸ビル7Fインター
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">本名</div>
+                                    <div class="">羅保野 あつし</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">フリガナ</div>
+                                    <div class="">ラホノ アツシ</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">送り主</div>
+                                    <div class="">投稿者法人名</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">郵便局留め先</div>
+                                    <div class="">郵便局の支店の名前</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">ヤマト留め先</div>
+                                    <div class="">ヤマトの支店の名前</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">メールの通知設定</div>
+                                    <div class="">許可</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">メールの通知許可種類</div>
+                                    <div class="">ニュースレター、ファンディング、ガチャ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab_two_second_panel" class="tab_two_panel">
+                        <div class="user_lp_aboutsetting_content">
+                            <div class="user_lp_aboutsetting_content_card">
+                                <div class="change-info-part">
+                                    <div class="subtitle">メールアドレス</div>
+                                    <input type="text" class="change-input input-full">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">電話番号</div>
+                                    <input type="text" class="change-input input-half">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">住所</div>
+                                    <div class="content2-main2-top">
+                                        <input type="text" class="change-input input-half" placeholder="〒000-3333">
+                                        <div class="jyuusyo-button-area">
+                                            <div class="button color3 jyuusyo-button">住所検索</div>
+                                        </div>
+                                    </div>                                        
+                                    <input type="text" class="change-input input-half" placeholder="都道府県">
+                                    <input type="text" class="change-input input-half" placeholder="市町村">
+                                    <input type="text" class="change-input input-full" placeholder="それ以下番地、建物名、部屋番号">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">本名</div>
+                                    <input type="text" class="change-input input-75">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">フリガナ</div>
+                                    <input type="text" class="change-input input-75">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">送り主</div>
+                                    <div class="user_lp_aboutsetting_content">
+                                        <label class="check_select radio-input input-half">投稿者法人名
+                                            <input type="radio" checked="checked" name="radio1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="check_select radio-input input-half">久我明正
+                                            <input type="radio" name="radio1">
+                                            <span class="checkmark"></span>
+                                        </label>                    
+                                    </div>                    
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">郵便局留め先</div>
+                                    <div class="input-choice">
+                                        <select class="change-input input-half" name="" id="">
+                                            <option value="X">選ぶ</option>
+                                            <option value="A">選択肢1</option>
+                                            <option value="B">選択肢2</option>
+                                            <option value="C">選択肢3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">ヤマト留め先</div>
+                                    <select class="change-input input-half" name="" id="">
+                                            <option value="X">選ぶ</option>
+                                            <option value="A">選択肢1</option>
+                                            <option value="B">選択肢2</option>
+                                            <option value="C">選択肢3</option>
+                                        </select>
+                                </div>
+                                <div class="change-info-part harf-size">
+                                    <div class="subtitle">メールの通知設定</div>
+                                    <div class="user_lp_aboutsetting_content">
+                                        <label class="check_select radio-input input-half">ON
+                                            <input type="radio" checked="checked" name="radio2">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="check_select radio-input input-half">OFF
+                                            <input type="radio" name="radio2">
+                                            <span class="checkmark"></span>
+                                        </label>  
+                                    </div>
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">メールの通知許可種類設定</div>
+                                    <div class="user_lp_aboutsetting_content">
+                                        <label class="check_select user_mypage_aboutsetting_change_message_variants input-half">
+                                            <input class="" type="checkbox" name=""><span class="user_mypage_aboutsetting_change_message_variants_name">ニュースレター</span>
+                                        </label> 
+                                        <label class="check_select user_mypage_aboutsetting_change_message_variants input-half">
+                                            <input class="" type="checkbox" name=""><span class="user_mypage_aboutsetting_change_message_variants_name">運営</span>
+                                        </label> 
+                                        <label class="check_select user_mypage_aboutsetting_change_message_variants input-half">
+                                            <input class="" type="checkbox" name=""><span class="user_mypage_aboutsetting_change_message_variants_name">ファンディング</span>
+                                        </label> 
+                                        <label class="check_select user_mypage_aboutsetting_change_message_variants input-half">
+                                            <input class="" type="checkbox" name=""><span class="user_mypage_aboutsetting_change_message_variants_name">オークション</span>
+                                        </label> 
+                                        <label class="check_select user_mypage_aboutsetting_change_message_variants input-half">
+                                            <input class="" type="checkbox" name=""><span class="user_mypage_aboutsetting_change_message_variants_name">ガチャ</span>
+                                        </label> 
+                                    </div>
+                                </div>
+                                <a class="change_button">変更する</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <userfooter></userfooter>
+      </div>
+    <!-- <script src="js/mypage.js" defer></script> -->
+    <!-- <script src="js/component.js"></script> -->
+    <script src="../../user/js/user_header_search.js"></script>
+    <script src="../../user/js/user_component_project_card.js"></script>
+    <script src="../../user/js/user_component_auction_card.js"></script>
+    <script src="../../user/js/user_component_gacha_card.js"></script>
+    <script src="../../user/js/user_component_actress_production_contributor.js"></script>
+    <script src="../../user/js/user_footer.js"></script>
+    <script>
+
+        window.onload = function () {
+        new Vue ({
+            el:"#app",
+            data: {
+                showContentPrize:false,
+                showContentRank:false,
+                editpen:false,
+                showContentEditName:false,
+                showContentEditImg:false,
+                isActiveTab:"1",
+                isActiveHeart:"false",
+                isOpenedProject: false,
+                showContentReturn:false,
+                showContentAuction:false,
+                isOpenedLp: false,
+                isOpenedGachaFreebie: false,
+                showContentGachaFreebie:false,
+            },
+            created(){
+            },
+            methods:{
+                // 称号
+                openModalPrize(){
+                 this.showContentPrize = true;
+                },
+                // パトロンランク
+                openModalRank(){
+                    this.showContentRank = true;
+                },
+                // プロフィール編集
+                profileEdit(){
+                    this.editpen =!this.editpen;
+                },
+                // ユーザーネーム変更
+                openModalEditName(){
+                    this.showContentEditName = true;
+                    this.editpen = false;
+                },
+                closeModalEditName(){
+                    this.showContentEditName = false;
+                    // this.editpen = false;
+                },
+                // アイコン変更
+                openModalEditImg(){
+                    this.showContentEditImg = true;
+                    this.editpen = false;
+                },
+                closeModalEditImg(){
+                    this.showContentEditImg = false;
+                    // this.editpen = false;
+                },
+                accordingProjectToggle: function(){
+                this.isOpenedProject = !this.isOpenedProject;
+                },
+                accordingGachaFreebieToggle: function(){
+                this.isOpenedGachaFreebie = !this.isOpenedGachaFreebie;
+                },
+                openReturnModal:function(){
+                    this.showContentReturn = true;
+                },
+                closeReturnModal:function(){
+                    this.showContentReturn = false;
+                },
+                openAuctionModal:function(){
+                    this.showContentAuction = true;
+                },
+                closeAuctionModal:function(){
+                    this.showContentAuction = false;
+                },
+                openGachaFreebieModal:function(){
+                    this.showContentGachaFreebie = true;
+                },
+                closeGachaFreebieModal:function(){
+                    this.showContentGachaFreebie = false;
+                },
+                isSelectTab(number) {
+                this.isActiveTab = number;
+                },
+                changeHeart() {
+                this.isActiveHeart = !this.isActiveHeart;
+                  },
+                aboutLpAccordingToggle: function(){
+        this.isOpenedLp = !this.isOpenedLp;
+      },
+            }
+            });
+        }
+</script>
+</body>
+</html>

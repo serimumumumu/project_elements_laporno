@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>決済内容確認</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_project_return_preview.css">
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul>
+          <li ><a href="../../user/html/user_top.html">TOP</a></li>
+          <li class="arrow-l"><a href="../../user/html/user_mypage.html">マイページ</a></li>
+          <li class="arrow-l"><a href="../../user/html/user_again_pay.html">再決済ページ</a></li>
+          <li><p>決済内容確認</p></li>
+        </ul>
+    </div>
+    <div class="card-area" id="projpay">
+      <section class="card">
+          <article class="title">お支払い内容確認</article>
+          <div class="card-content">
+              <p class="sub-title">プロジェクトタイトル</p>
+              <h6 class="sub-text">プロジェクトのタイトルが入ります</h6>
+          </div>
+          <div class="card-content">
+              <p class="sub-title">リターンタイトル</p>
+              <h6 class="sub-text">リターンのタイトルが入ります</h6>
+          </div>
+          <div class="card-content">
+              <p class="sub-title">金額</p>
+              <h6 class="sub-text">10,000円</h6>
+          </div>
+          <div class="card-content">
+              <p class="sub-title">備考</p>
+              <h6 class="sub-text">追加リターン</h6>
+          </div>
+          <div class="card-content">
+              <p class="sub-title">使用するキャンペーンコード</p>
+              <h6 class="sub-text">-10%割引<br>
+                  ハロウィン連動キャンペーン！今だけ黒船プロ...</h6>
+          </div>
+          <div class="card-content">
+              <p class="sub-title">LP使用数</p>
+              <h6 class="sub-text">1500lp</h6>
+          </div>
+          <div class="card-content">
+              <p class="sub-title">キャンペーンコード,LPを差し引いた合計</p>
+              <h6 class="sub-text">8850円</h6>
+          </div>
+          <div class="card-content">
+              <p class="sub-title">決済方法</p>
+              <h6 class="sub-text">カード</h6>
+          </div>
+          <div class="card-content">
+              <p class="sub-title">決済時期</p>
+              <h6 class="sub-text">2営業日以内
+              </h6>
+          </div>
+          <div class="card-content">
+              <p class="sub-title">送料</p>
+              <h6 class="sub-text">着払い(1200円)</h6>
+          </div>
+          <div class="btn-area">
+              <a href="../../user/html/user_again_pay.html" class="button color3" >戻る</a >
+              <a href="#" class="button color3" >確定</a >
+          </div>
+      </section>
+  </div>
+  </div>
+    <script src="../../user/js/user_header_search.js"></script>
+    <script >
+           window.onload = function () {
+            new Vue ({
+                el:"#app",
+                data: {
+                },
+                methods:{
+                }
+                });
+            }
+    </script>
+</body>
+</html>

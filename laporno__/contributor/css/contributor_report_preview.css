@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+html { font-family: 'Roboto', sans-serif; }
+
+html { color: #232323; }
+
+.color0 { background-color: #fff; }
+
+.color1 { background-color: #FAFAFA; }
+
+.color2 { background-color: #E9E9E9; }
+
+.color3 { background-color: #C4C4C4; }
+
+.color4 { background-color: #7D7D7D; }
+
+.color5 { background-color: #232323; }
+
+main { margin: 0 0 60px 0; }
+
+.report_preview { padding: 20px 36px 60px; }
+
+.report_title { font-size: 16px; font-weight: bold; margin: 0 0 20px 0; text-align: center; }
+
+.report_content_ { padding: 16px 0 6px 0; border-bottom: 1px solid #C4C4C4; }
+
+.report_content_sub { font-size: 12px; color: #7D7D7D; margin: 0 0 2px; }
+
+.report_content_main { font-size: 14px; margin: 0 0 0 6px; }
+
+.mg_top_16 { margin: 16px 0 0 0; }
+
+.gacha_active_report { background: #fff; -webkit-box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25); box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25); padding: 10px 10px; margin-bottom: 10px; }
+
+.gacha_active_report_date { text-align: right; color: #C4C4C4; display: block; }
+
+.gacha_active_report_title { padding: 10px; color: #7D7D7D; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+.gacha_active_report_title_point { width: 14px; }
+
+.gacha_active_report_img img { width: 100%; margin-bottom: 10px; }
+
+.gacha_active_report_content { padding: 10px; margin-bottom: 10px; }
+
+.twobutton { width: 100%; padding: 0 30px 60px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+.twobutton_a { cursor: pointer; width: 40%; color: #FAFAFA; background: #232323; display: block; padding: 14px 0; border-radius: 4px; margin: 0 auto; text-align: center; -webkit-box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.5); box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.5); }
+
+.main-content1 { padding: 18px 16px; }
+
+.content-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; text-align: center; }
+
+.card-content-box { margin-bottom: 16px; color: #7D7D7D; }
+
+.input-box { border: 1px solid #C4C4C4; resize: none; padding: 10px; margin-right: 11px; background: #fff; }
+
+.label_top_permission { background: #fff; display: inline-block; border: 1px solid #C4C4C4; width: 30%; padding: 0px 12px; line-height: 40px; vertical-align: middle; }
+
+.content1-btn-area { margin-bottom: 10px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+.content1-btn { border-radius: 4px; padding: 10px; font-size: 14px; font-weight: 400; }
+
+.content1-input-text { height: 360px; width: 100%; padding: 10px; margin: 0 0 16px 0; font-size: 14px; border: 1px solid #C4C4C4; resize: none; }
+
+.sub-title { font-size: 12px; }

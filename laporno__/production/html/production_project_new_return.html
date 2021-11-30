@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新規リターン登録</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../css/projdetailedit.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+        <div id="conheaders">
+            <conheaders></conheaders>
+        </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="top.html">TOP</a></li>
+            <li class="arrow-l"><a href="projtop.html">プロジェクト一覧</a></li>
+            <li class="arrow-l"><a href="projtop.html">プロジェクトタイトル</a></li>
+            <li class="arrow-l">新規リターン登録</li>
+        </ul>
+    </div>
+    <main>
+        <section class="main-content1 color1">
+            <h2 class="content-title ">新規リターン登録</h2>
+                <div class="imgregist">
+                    <label>
+                        <input type="file" accept='image/*' class="selectonpreview" onchange="previewImage(this);">写真を登録する
+                    </label>
+                    <p class="imgpreview card-content-box">
+                        <img id="preview" rc="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+                    </p>
+                </div>
+            <form >
+                <div class="card-content-box">
+                    <h2 class="sub-title">リターンタイトル</h2>  
+                    <textarea class="text-input" name="" placeholder="リターンの名前リターンの名前リターンの名前リターンの名前"></textarea>          
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title" >説明</h2>
+                    <textarea class="text-input description" placeholder="せつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめい"></textarea>
+                </div>
+                <div class="card-content-box content-flex">
+                    <article class="card-content-box-half">
+                        <h2 class="sub-title">金額</h2>
+                        <div class="select-set">
+                            <div class="select-area ">
+                                <select name="" id="" class="select">
+                                    <option value="">1,000</option>
+                                    <option value="">3,000</option>
+                                    <option value="">5,000</option>
+                                    <option value="">7,000</option>
+                                    <option value="">10,000</option>
+                                    <option value="">50,000</option>
+                                    <option value="">100,000</option>
+                                    <option value="">200,000</option>
+                                </select>
+                            </div>
+                            <p class="unit">円</p>
+                        </div>
+                    </article>
+                    <article class="card-content-box-half">
+                        <h2 class="sub-title">支援数</h2>
+                        <div class="select-set">
+                            <div class="select-area">
+                                <select name="" id="" class="select">
+                                    <option value="">10</option>
+                                    <option value="">20</option>
+                                    <option value="">30</option>
+                                    <option value="">40</option>
+                                    <option value="">50</option>
+                                </select>
+                            </div>
+                            <p class="unit">人</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title">タイプ</h2>
+                    <div class="radio-input-area">
+                        <div class="radio-input"><input type="radio" id="buppann" name="type"><label for="buppann">物販</label></div>
+                        <div class="radio-input"><input type="radio" id="real" name="type"><label for="real">リアル</label></div>
+                    </div>
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title">公開設定</h2>
+                    <div class="radio-input-area ">
+                        <div class="radio-input "><input type="radio" id="koukai" name="status"><label for="koukai">すぐ公開</label></div>
+                        <div class="radio-input"><input type="radio" id="hikoukai" name="status"><label for="hikoukai">非公開</label></div>
+                    </div>
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title" >質問事項</h2>
+                    <input class="input-box input-100" placeholder="希望の宛名">
+                </div>
+                <div class="card-content-box indent">
+                    <h2 class="sub-title" >回答形式</h2>
+                    <div class="select-area">
+                        <select name="" id="" class="select color1">
+                            <option value="">テキスト入力式</option>
+                            <option value="">回答形式</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title" >質問事項</h2>
+                    <input class="input-box input-100" placeholder="希望の宛名">
+                </div>
+                <div class="card-content-box indent">
+                    <h2 class="sub-title" >回答形式</h2>
+                    <div class="select-area">
+                        <select name="" id="" class="select">
+                            <option value="">テキスト入力式</option>
+                            <option value="">回答形式</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="create-btn2 color2" ><img src="../../img/plus.png">質問事項追加</button>
+            </form>
+        </section>
+        <div class="twobutton color1">
+        <a class="twobutton_a" href="projdetailneweditin.html">戻る</a>
+        <a class="twobutton_a" href="projdetailneweditinreturnpre.html">確認</a>
+        </div>
+    </main>
+    <footer>
+    </footer>
+    <script src="../js/concomponent.js"></script>
+    <script>
+        function previewImage(obj)
+        {
+            var fileReader = new FileReader();
+            fileReader.onload = (function() {
+                document.getElementById('preview').src = fileReader.result;
+            });
+            fileReader.readAsDataURL(obj.files[0]);
+        }
+    </script>
+</body>
+</html>

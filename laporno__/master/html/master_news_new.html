@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お知らせ新規登録 </title>
+    <meta name="description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <meta name="keywords" content="ラポファン,セクシー女優,オンラインオークション,ラポルノ,ラポルノファンディング,クラファン,クラウドファンディング,ガチャ">
+    <meta property="og:title" content="【ラポルノファンディング】">
+    <meta property="og:description" content="ラポルノファンディング">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ラポルノファンディング">
+    <!-- Facebook -->
+    <meta property="fb:app_id" content="">
+    <!-- //Facebook -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lapornofund">
+    <meta name="twitter:title" content="【ラポルノファンディング】">
+    <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <!-- <title>マイページ</title> -->
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <link rel="stylesheet" href="../../user/css/user_component.css">
+    <link rel="stylesheet" href="../../user/css/user_signup.css">
+    <link rel="stylesheet" href="../../user/css/user_mypage.css">
+    <script src="../../user/js/vue.js"></script>
+
+</head>
+<body>
+    <div id="headers">
+        <header>
+            <div class="header-left">
+                 <a href="../../master/html/master_top.html"><img src="../../img/logo.png" alt="ラポルノロゴ"></a>
+            </div>
+            <div class="header-right">
+              <a href="../../master/html/mailtop.html">
+              <img src="../../img/mail.png" alt="">
+              </a>
+              <div class="hmenu" id="hamburger_menu" @click="open=!open">
+                <img src="../../img/conmenu.png" alt="" >
+                <div class="hbtn" >
+                  <span class="line line_01" :class="{'btn_01':open }"></span>
+                  <span class="line line_03" :class="{'btn_03':open }"></span>
+                </div>
+              </div>
+              <div class="menu" v-show="open">
+                <p class="menu_user">マスター専用</p>
+                <ul>
+                  <li><a href="usertop.html">ユーザー一覧</a></li>
+                  <li><a href="contributortop.html">投稿者一覧</a></li>
+                  <li><a href="actresstop.html">女優一覧</a></li>
+                  <li><a href="projtop.html">プロジェクト一覧</a></li>
+                  <li><a href="../../master/html/master_project_support_top.html">支援一覧</a></li>
+                  <li><a href="auctiontop.html">オークション一覧</a></li>
+                  <li><a href="auchbidtop.html">落札者一覧</a></li>
+                  <li><a href="gachatop.html">ガチャ一覧</a></li>
+                  <li><a href="newstop.html">News一覧</a></li>
+                  <li><a href="buylp.html">LP表</a></li>
+                  <li><a href="">売上表</a></li>
+                  <li><a href="dummytop.html">ダミーアカウント一覧</a></li>
+                  <li><a href="">ログアウト</a></li>
+                </ul>
+              </div>
+              </div>
+            </header>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../user/html/top.html">TOP</a></li>
+            <li ><a href="../../master/html/newstop.html">お知らせ一覧</a></li>
+            <li class="arrow-l">お知らせ新規登録</li>
+        </ul>
+    </div>
+    <main class="color1">
+        <form class="card color0">
+            <div class="card_content">
+                    <h1 class="card-title">お知らせ新規登録</h1>
+                    <div class="card_info_index">
+                        <div class="two_inputs">
+                        <div class="card_info_one">
+                            <span class="sub-title">掲載開始日</span>
+                            <input type="text" class="delitext_threequo" placeholder="2020/11/12 00:00">
+                        </div>
+                        <div class="card_info_one">
+                            <span class="sub-title">掲載終了日</span>
+                            <input type="text" class="delitext_threequo" placeholder="2020/11/23 23:59">
+                        </div>
+                        </div>
+                        <div class="two_inputs">
+                        <div class="card_info_one">
+                            <span class="sub-title">トップ掲載開始日</span>
+                            <input type="text" class="delitext_threequo" placeholder="2020/11/12 00:00">
+                        </div>
+                        <div class="card_info_one">
+                            <span class="sub-title">トップ掲載終了日</span>
+                            <input type="text" class="delitext_threequo" placeholder="2020/11/23 23:59">
+                        </div>
+                    </div>
+                    <div class="card_info_one">
+                        <span class="sub-title">お知らせタイトル</span>
+                        <input type="text" class="delitext_full" placeholder="おしのタイトル">
+                    </div>
+                    <div class="card_info_one">
+                        <span class="sub-title">本文</span>
+                        <div class="text_layout_6">
+                            <ul>
+                                <li>見出し</li>
+                                <li>太字</li>
+                                <li>写真</li>
+                                <li>動画</li>
+                                <li>リンク</li>
+                                <li>埋め込みYoutube</li>
+                            </ul>
+                        </div>
+                        <textarea type="text" class="delitext_full" cols="80" rows="10" placeholder="キャンペーンのタイトル"></textarea>
+                        </div>
+                    <!-- </div> -->
+                    <!-- <div class="two_inputs"> -->
+                        <div class="card_info_one ">
+                          <span class="sub-title">同内容を他でもお知らせ</span>
+                          <div class="two_inputs checkbox_s">
+
+                              <label class="check_select delitext_full radio-input">メール配信
+                                  <input class="delitext_full" type="checkbox"  name="radio2">
+                                  <span class="checkmark"></span>
+                                </label>
+                                <label class="check_select delitext_full radio-input">メッセージ配信
+                                    <input class="delitext_full" type="checkbox" name="radio2">
+                                    <span class="checkmark"></span>
+                                </label>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="two_inputs">
+                <a class="twobutton_a" href="../../master/html/newstop.html">一覧へ</a>
+                <a class="twobutton_a" href="../../master/html/master_news_new_confirm_news.html">確認</a>
+            </div>
+            </div>
+        </form>
+    </main>
+    <footer class="color5">
+      <div class="foot_list">
+        <ul class="foot_list_ul">
+          <li><a href="">ラポルノファンディングとは</a></li>
+          <li><a href="">よくある質問</a></li>
+          <li><a href="">お問い合わせ</a></li>
+          <li><a href="">特定商取引法の表示</a></li>
+          <li><a href="">利用規約</a></li>
+          <li><a href="">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <p class="footer_copyright">©︎laporno.fund, All Rights Reserved.</p>
+    </footer>
+    <!-- <script src="../../user/js/component.js"></script> -->
+    <script>
+       var productionHeader = new Vue({
+        el:'#headers',
+        data: function() {
+        return{
+          open:false
+        }
+      }
+      })
+    </script>
+</body>
+</html>

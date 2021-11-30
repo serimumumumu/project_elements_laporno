@@ -1,0 +1,500 @@
+@import "concomponent.scss";
+
+
+.twobutton {
+    padding: 10px 0;
+}
+
+.main_card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin:20px 16px ;
+    padding:10px;
+}
+.main_card_title{
+    padding: 0 0 10px 0;
+    font-size: 16px;
+}
+.tab-area {
+    padding-top: 20px;
+}
+
+.act-select{
+    border: 1px solid $gray;
+    width: 43%;
+    margin-left: 12px;
+    padding: 10px;
+    background: $whitewhite;
+}
+.bold-font{
+    font-weight: bold;
+  }
+// 上部
+.main_in {
+    padding: 10px 0;
+}
+.main_in_article {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+.main_in_article_2 {
+    width: 50%;
+    margin-bottom: 0;;
+}
+.delitext {
+    border: 1px solid $gray;
+    padding: 10px;
+    width: 86%;
+    margin: 0 0 0 12px;
+  }
+.main_in_article_2 img ,.main_in_article_1 img{
+    width: 14px;
+    margin:0 4px 2px 0;
+}
+.main_in_article_2 p ,.main_in_article_1 p {
+    color: $grayblack;
+    font-size: 12px;
+    line-height: 18px;
+    
+}
+.main_in_article_2 a {
+    margin: 0 0 0 12px;
+}
+.main_in_article p {
+    margin-bottom: 4px;
+}
+.main_in_article_2 h6{
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 0 0 12px;
+    
+}
+.main_in_article_1 , .input-100 , .card-img{
+    width: 100%;
+}
+.relative {
+    position: relative;
+}
+
+
+// はじめに 、活動報告ページ
+
+.main-content1{
+    padding: 18px 16px;
+}
+
+.content-title{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-content-box{
+    margin-bottom: 16px;
+    color: $grayblack;
+}
+
+.input-box{
+    border: 1px solid $gray;
+    resize: none;
+    padding: 10px;
+    margin-right: 11px;
+    background: $whitewhite;
+}
+
+.label_top_permission {
+    background: $whitewhite;
+    display:inline-block;
+    border: 1px solid $gray;
+    width: 30%;
+    padding: 0px 12px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+// .input-100{
+//     width: 100%;
+// }
+
+
+.content1-btn-area{
+   margin-bottom: 10px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.content1-btn{
+   border-radius: 4px;
+   padding: 10px;
+   font-size: 14px;
+   font-weight: 400;
+}
+
+.content1-input-text{
+    height: 360px;
+   width: 100%;
+   padding: 10px;
+   margin: 0 0 16px 0;
+   font-size: 14px;
+   border: 1px solid $gray;
+   resize: none;
+}
+
+// リターン新規登録ページ
+.img-input{
+    
+    width: 315px;
+    height: 177px;
+    margin: 0 auto 16px;
+    width: 100%;
+    text-align: center;
+    padding: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid $gray;
+  }
+ 
+  input[type="file"]{
+    display: none;
+  }
+  input[type="radio"] {
+    -webkit-appearance: radio;
+    display: inline-block;
+}
+
+.indent{
+    padding-left: 10px;
+}
+
+.sub-title{
+    font-size: 12px;
+    color: $grayblack;
+    margin-bottom: 4px;
+}
+
+.text-input{
+    border: 1px solid $gray;
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    background: $whitewhite;
+}
+
+.description{
+    height: 100px;
+}
+
+.radio-input-area{
+    display: flex;
+    gap: 10px;
+}
+
+.radio-input{
+    background: $whitewhite;
+    border: 1px solid $gray;
+    padding: 10px;
+    width: 35%;
+}
+
+label{
+    margin-left: 4px;
+    color: $grayblack;
+}
+
+
+/* select */
+
+.select-set{
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.select-area{
+    position:relative;
+    z-index: 0;
+}
+
+.unit{
+    margin-left: 4px;
+    color: $grayblack;
+}
+
+.select{
+    border: 1px solid $gray;
+    width: 100%;
+    padding: 10px 30px 10px 10px;
+    font-size: 14px;
+    color: $grayblack;
+    background: $whitewhite;
+}
+.create-btn {
+    text-align: right;
+    display: block;
+    margin: 0 0 0 auto;
+    padding: 10px 12px;
+    font-weight: 400;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .edit_btn {
+    position: absolute;
+    right: 16px;
+    padding: 8px 7px;
+    font-weight: 400;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 6px;
+  }
+.create-btn2 {
+    text-align: right;
+    display: block;
+    margin: 0 0 0 auto;
+    padding: 10px 12px;
+    font-weight: 400;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .create-btn2 img {
+    width:18px;
+    margin-right: 4px;
+  }
+
+//   リターン確認画面
+view {
+    display: none;
+  }
+  .imgregist{
+    position: relative;
+    margin:0px auto;
+    width: 100%;
+  }
+  .imgregist label {
+    position: absolute;
+    background-color: #fff;
+    top: 42%;
+    right: 30%;
+    width: 136px;
+    text-align: center;
+    padding: 8px;
+  }
+  .imgpreview img {
+    width: 100%;
+  }
+  #preview{
+    text-align: center;
+    width: 320px;
+    display: block;
+    height: 180px;
+    margin: 0 auto;
+    background-image: url(../../img/demoimg.png);
+  }
+  .preview{
+    text-align: center;
+    width: 320px;
+    display: block;
+    height: 180px;
+    margin: 0 auto;
+    background-image: url(../../img/demoimg.png);
+  }
+.card{
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+    padding: 20px 20px 1px 20px;
+}
+
+.return-title{
+    margin: 10px 0 6px;
+    color: $black;
+    font-size: 14px;
+}
+
+.content-description{
+    color: $black;
+    margin-bottom: 13px;
+    font-size: 12px;
+    max-height: 40px;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.show-more{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 12px;
+    color: #7d7d7d;
+}
+
+// .card-img{
+//     width: 100%;
+// }
+.content-flex{
+    display: flex;
+    flex-basis: auto;
+    margin-bottom: 16px;
+}
+
+.card-content-box-half{
+    padding-right: 20px;
+    flex:1;
+}
+.card-content-box-half p {
+    color: $black;
+}
+
+.card-content-underline {
+    border-bottom: 1px solid #C4C4C4;
+    margin-bottom: 16px;
+}
+
+.font16 {
+    font-size: 16px;
+}
+.sub-text {
+    margin-bottom: 6px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.card-btn{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 42px;
+    border-radius: 4px;
+    color: #FAFAFA;
+    text-align: center;
+}
+.checkbox-area{
+    margin-bottom: 10px;
+}
+.checkbox-area label{
+    color: #232323;
+}
+
+.amount {
+    width: 40px;
+    border-radius: 4px;
+    padding: 3px;
+    border: 1px solid $grayblack;
+}
+
+.limit-area{
+    color: $black;
+    display:flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+.limit-area img{
+    margin-right: 8px;
+}
+.select-amount{
+    border-radius: 4px;
+    line-height: 23px;
+    padding: 4px 10px;
+    width: fit-content;
+    margin-bottom: 13px;
+}
+
+.select-amount label{
+    color: #FAFAFA;
+}
+
+// 編集画面(projdetaileditin)
+
+.lookbutton {
+    width: 40%;
+    border: 1px solid $grayblack;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0 0px auto;
+    text-align: center;
+    background: $white;
+}
+.reportbuttons {
+    width: 60%;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 0 auto ;
+}
+.reportbutton {
+    width: 48%;
+    border: 1px solid $grayblack;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    background: $white;
+}
+
+// ガチャ編集画面(gachadetaileditin)
+.keihin-area{
+    // padding: 10px 0 0 0;
+    border-top: 1px solid $gray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.keihin{
+    padding: 4px 12px;
+    display: flex;
+    justify-content: space-between;
+    width: 49%;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.keihin p{
+    font-size: 12px;
+    padding: 4px 8px;
+}
+.gacha-amount-input{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.batsu {
+    display: block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+}
+   
+.batsu::before, .batsu::after { /* 共通設定 */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px; /* 棒の幅（太さ） */
+    height: 25px; /* 棒の高さ */
+    background: #7D7D7D;
+}
+   
+.batsu::before {
+    transform: translate(-50%,-50%) rotate(40deg);
+}
+   
+.batsu::after {
+    transform: translate(-50%,-50%) rotate(-40deg);
+}

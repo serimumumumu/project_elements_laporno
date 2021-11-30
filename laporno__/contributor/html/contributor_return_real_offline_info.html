@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>リターン発送先情報登録</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/buylp.css">
+  <link rel="stylesheet" href="../../contributor/css/contributor_send_info.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <conheaders></conheaders>
+  <!-- </div> -->
+<div class="panlist">
+    <ul >
+        <li ><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+        <li class="arrow-l"><a href="../../contributor/html/contributor_project_top.html">プロジェクトTOP</a></li>
+        <li class="arrow-l"><p>情報登録</p></li>
+    </ul>
+</div>
+<main class="contributor_send_info">
+  <form >
+      <h1 class="contributor_send_info_title">情報登録</h1>
+    <div class="contributor_send_info_box">
+        <h2 class="sub-title">タイトル</h2>  
+        <p class="sub-text">プロジェクトのタイトルプロジェクトのタイトルプロジェクトのタイトル</p>          
+    </div>
+    <div class="contributor_send_info_box">
+        <h2 class="sub-title">リターン名</h2>  
+        <p class="sub-text">プロジェクトのタイトル</p>          
+        <p class="sub-text">プロジェクトのタイトル２</p>          
+    </div>
+    <div class="contributor_send_info_box">
+        <h2 class="sub-title">パトロン</h2>
+        <p class="sub-text">パトロンの名前</p>
+    </div>
+    <div class="contributor_send_info_box">
+        <h2 class="sub-title">支援金額</h2>
+        <p class="sub-text">11,200円</p>
+    </div>
+    <h2 class="contributor_event_info_title">リアルイベント情報</h2>
+    <div>
+        <div class="contributor_send_info_box">
+            <h2 class="sub-title">開催日</h2>
+            <input name="" id="" class="delitext_60" placeholder="2022/01/01">
+        </div>
+        <div class="two_delitext contributor_send_info_box">
+            <div >
+                <h2 class="sub-title">開始時間</h2>
+                <input name="" id="" class="delitext_90" placeholder="12:00">
+            </div>
+            <div >
+                <h2 class="sub-title">終了時間</h2>
+                <input name="" id="" class="delitext_90" placeholder="14:00">
+            </div> 
+        </div>
+        <div class="contributor_send_info_box">
+            <h2 class="sub-title">使用するオンラインツール</h2>
+            <input name="" id="" class="delitext_90" placeholder="渋谷駅東口階段前">
+        </div>
+        <div class="contributor_send_info_box">
+            <h2 class="sub-title">使用するツールの事前ダウンロード</h2>
+            <div class="two_delitext">
+                <label for=""　class="delitext_30_radio">
+                    <input type="radio" name="onlinetool_downroad" id="" > 必要
+                </label>
+                <label for=""　class="delitext_30_radio">
+                    <input type="radio" name="onlinetool_downroad" id="" checked> 不要
+                </label>
+            </div>
+        </div>
+        <div class="contributor_send_info_box">
+            <h2 class="sub-title">オンラインURL</h2>
+            <input name="" id="" class="delitext_90" placeholder="渋谷駅東口階段前">
+        </div>
+        <div class="contributor_send_info_box">
+            <h2 class="sub-title" >注意事項</h2>
+            <textarea class="mailsend-text" placeholder=""></textarea>
+        </div>
+        <button class="add_info_button"><img class="add_info_button_img" src="../../img/plus.png">情報追加</button>
+        <div class="contributor_send_info_box">
+            <h2 class="sub-title" >メモ</h2>
+            <textarea class="memo-text" placeholder="メモが入ります"></textarea>
+        </div>
+    </div>
+    <div class="onebutton">
+      <a class="onebutton_a" href="../../contributor/html/contributor_project_top.html">登録</a>
+    </div>
+</form>
+</main>
+</div>
+<script src="../../contributor/js/contributor_header_search.js"></script>
+<script>
+
+window.onload = function () {
+    new Vue ({
+        el:"#app",
+        data: {
+        user:"ユーザー名",
+        actress:"女優名",
+        contributor:"投稿者名",
+        title:"タイトル",
+        isActiveTab: "1",
+        },
+        created(){
+        },
+        methods:{
+        isSelect(number) {
+        this.isActiveTab = number;
+    },
+        }
+    });
+}
+</script>
+</body>
+</html>

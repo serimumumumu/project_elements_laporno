@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メッセージ</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/search.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <!-- <link rel="stylesheet" href="../../user/css/messege.css"> -->
+    <link rel="stylesheet" href="../../user/css/user_message_top.css">
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <headers></headers>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../user/html/user_top.html">TOP</a></li>
+            <li class="arrow-l"><p>メッセージTOP</p></li>
+        </ul>
+    </div>
+    <search></search>
+    <main>
+        <div class="user_message_top">
+            <!-- ファンディング -->
+            <div class="user_message_top_index">
+                <h2 class="user_message_top_index_title">ファンディング</h2>
+                <div class="user_message_top_index_content">
+                    <article class="user_message_top_index_content_article">
+                        <div class="user_message_top_index_content_article_title">
+                            <h3 class="user_message_top_index_content_article_title_h3">支援済みプロジェクト </h3>
+                            <div class="user_message_top_index_content_article_title_mail">
+                                <img class="user_message_top_index_content_article_title_mail_img" src="../../img/mail.png" alt="メール">
+                                <p class="user_message_top_index_content_article_title_mail_p" >10</p>
+                            </div>
+                            <img class="user_message_top_index_content_article_title_arrow" src="../../img/arrowdown.png" alt="">
+                        </div>
+                        <div class="user_message_top_index_content_main">
+                            <!-- <article class="user_message_top_index_content_main_article">
+                                <p class="user_message_top_index_content_main_article_p">ファンディングの名前ファンディングの名前ファンディングの名前ファンディングの名前ファンディングの名前</p> 
+                                <div class="user_message_top_index_content_main_article_link">
+                                    <div class="user_message_top_index_content_main_article_mail">
+                                        <img class="user_message_top_index_content_main_article_mail_img" src="../../img/mail.png" alt="メール">
+                                        <p class="user_message_top_index_content_main_article_mail_mail_p" >3</p>
+                                    </div>   
+                                    <img class="user_message_top_index_content_main_article_arrow" src="../../img/arrowright.png" alt="メール詳細リンク">
+                                </div>
+                            </article> -->
+                        </div>
+                    </article>
+                    <article class="user_message_top_index_content_article">
+                        <div class="user_message_top_index_content_article_title">
+                            <h3 class="user_message_top_index_content_article_title_h3">支援していないプロジェクト </h3>
+                            <div class="user_message_top_index_content_article_title_mail">
+                                <img class="user_message_top_index_content_article_title_mail_img" src="../../img/mail.png" alt="メール">
+                                <p class="user_message_top_index_content_article_title_mail_p" >10</p>
+                            </div>
+                            <img class="user_message_top_index_content_article_title_arrow" src="../../img/arrowdown.png" alt="">
+                        </div>
+                        <div class="user_message_top_index_content_main">
+                            <!-- <article class="user_message_top_index_content_main_article">
+                                <p class="user_message_top_index_content_main_article_p">ファンディングの名前ファンディングの名前ファンディングの名前ファンディングの名前ファンディングの名前</p> 
+                                <div class="user_message_top_index_content_main_article_link">
+                                    <div class="user_message_top_index_content_main_article_mail">
+                                        <img class="user_message_top_index_content_main_article_mail_img" src="../../img/mail.png" alt="メール">
+                                        <p class="user_message_top_index_content_main_article_mail_mail_p" >3</p>
+                                    </div>   
+                                    <img class="user_message_top_index_content_main_article_arrow" src="../../img/arrowright.png" alt="メール詳細リンク">
+                                </div>
+                            </article> -->
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- オークション -->
+            <div class="user_message_top_index">
+                <h2 class="user_message_top_index_title">オークション</h2>
+                <div class="user_message_top_index_content">
+                    <article class="user_message_top_index_content_article">
+                        <div class="user_message_top_index_content_article_title">
+                            <h3 class="user_message_top_index_content_article_title_h3">落札済みオークション </h3>
+                            <div class="user_message_top_index_content_article_title_mail">
+                                <img class="user_message_top_index_content_article_title_mail_img" src="../../img/mail.png" alt="メール">
+                                <p class="user_message_top_index_content_article_title_mail_p" >10</p>
+                            </div>
+                            <img class="user_message_top_index_content_article_title_arrow" src="../../img/arrowdown.png" alt="">
+                        </div>
+                        <div class="user_message_top_index_content_main">
+                            <!-- <article class="user_message_top_index_content_main_article">
+                                <p class="user_message_top_index_content_main_article_p">オークションの名前ファンディングの名前ファンディングの名前ファンディングの名前ファンディングの名前</p> 
+                                <div class="user_message_top_index_content_main_article_link">
+                                    <div class="user_message_top_index_content_main_article_mail">
+                                        <img class="user_message_top_index_content_main_article_mail_img" src="../../img/mail.png" alt="メール">
+                                        <p class="user_message_top_index_content_main_article_mail_mail_p" >3</p>
+                                    </div>   
+                                    <img class="user_message_top_index_content_main_article_arrow" src="../../img/arrowright.png" alt="メール詳細リンク">
+                                </div>
+                            </article> -->
+                        </div>
+                    </article>
+                    <article class="user_message_top_index_content_article">
+                        <div class="user_message_top_index_content_article_title">
+                            <h3 class="user_message_top_index_content_article_title_h3">入札中オークション </h3>
+                            <div class="user_message_top_index_content_article_title_mail">
+                                <img class="user_message_top_index_content_article_title_mail_img" src="../../img/mail.png" alt="メール">
+                                <p class="user_message_top_index_content_article_title_mail_p" >10</p>
+                            </div>
+                            <img class="user_message_top_index_content_article_title_arrow" src="../../img/arrowdown.png" alt="">
+                        </div>
+                        <div class="user_message_top_index_content_main">
+                            <!-- <article class="user_message_top_index_content_main_article">
+                                <p class="user_message_top_index_content_main_article_p">オークションの名前オークションの名前オークションの名前オークションの名前オークションの名前</p> 
+                                <div class="user_message_top_index_content_main_article_link">
+                                    <div class="user_message_top_index_content_main_article_mail">
+                                        <img class="user_message_top_index_content_main_article_mail_img" src="../../img/mail.png" alt="メール">
+                                        <p class="user_message_top_index_content_main_article_mail_mail_p" >3</p>
+                                    </div>   
+                                    <img class="user_message_top_index_content_main_article_arrow" src="../../img/arrowright.png" alt="メール詳細リンク">
+                                </div>
+                            </article> -->
+                        </div>
+                    </article>
+                    <article class="user_message_top_index_content_article">
+                        <div class="user_message_top_index_content_article_title">
+                            <h3 class="user_message_top_index_content_article_title_h3">未入札オークション </h3>
+                            <div class="user_message_top_index_content_article_title_mail">
+                                <img class="user_message_top_index_content_article_title_mail_img" src="../../img/mail.png" alt="メール">
+                                <p class="user_message_top_index_content_article_title_mail_p" >10</p>
+                            </div>
+                            <img class="user_message_top_index_content_article_title_arrow" src="../../img/arrowdown.png" alt="">
+                        </div>
+                        <div class="user_message_top_index_content_main">
+                            <!-- <article class="user_message_top_index_content_main_article">
+                                <p class="user_message_top_index_content_main_article_p">オークションの名前オークションの名前オークションの名前オークションの名前オークションの名前</p> 
+                                <div class="user_message_top_index_content_main_article_link">
+                                    <div class="user_message_top_index_content_main_article_mail">
+                                        <img class="user_message_top_index_content_main_article_mail_img" src="../../img/mail.png" alt="メール">
+                                        <p class="user_message_top_index_content_main_article_mail_mail_p" >3</p>
+                                    </div>   
+                                    <img class="user_message_top_index_content_main_article_arrow" src="../../img/arrowright.png" alt="メール詳細リンク">
+                                </div>
+                            </article> -->
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- ガチャ -->
+            <div class="user_message_top_index">
+                <h2 class="user_message_top_index_title">ガチャ</h2>
+                <div class="user_message_top_index_content">
+                    <article class="user_message_top_index_content_article">
+                        <div class="user_message_top_index_content_article_title">
+                            <h3 class="user_message_top_index_content_article_title_h3">購入済みガチャ </h3>
+                            <div class="user_message_top_index_content_article_title_mail">
+                                <img class="user_message_top_index_content_article_title_mail_img" src="../../img/mail.png" alt="メール">
+                                <p class="user_message_top_index_content_article_title_mail_p" >10</p>
+                            </div>
+                            <img class="user_message_top_index_content_article_title_arrow" src="../../img/arrowdown.png" alt="">
+                        </div>
+                        <div class="user_message_top_index_content_main">
+                            <!-- <article class="user_message_top_index_content_main_article">
+                                <p class="user_message_top_index_content_main_article_p">ガチャの名前ガチャの名前ガチャの名前ガチャの名前ガチャの名前ガチャの名前ガチャの名前</p> 
+                                <div class="user_message_top_index_content_main_article_link">
+                                    <div class="user_message_top_index_content_main_article_mail">
+                                        <img class="user_message_top_index_content_main_article_mail_img" src="../../img/mail.png" alt="メール">
+                                        <p class="user_message_top_index_content_main_article_mail_mail_p" >3</p>
+                                    </div>   
+                                    <img class="user_message_top_index_content_main_article_arrow" src="../../img/arrowright.png" alt="メール詳細リンク">
+                                </div>
+                            </article> -->
+                        </div>
+                    </article>
+                    <article class="user_message_top_index_content_article">
+                        <div class="user_message_top_index_content_article_title">
+                            <h3 class="user_message_top_index_content_article_title_h3">未購入ガチャ </h3>
+                            <div class="user_message_top_index_content_article_title_mail">
+                                <img class="user_message_top_index_content_article_title_mail_img" src="../../img/mail.png" alt="メール">
+                                <p class="user_message_top_index_content_article_title_mail_p" >10</p>
+                            </div>
+                            <img class="user_message_top_index_content_article_title_arrow" src="../../img/arrowdown.png" alt="">
+                        </div>
+                        <div class="user_message_top_index_content_main">
+                            <!-- <article class="user_message_top_index_content_main_article">
+                                <p class="user_message_top_index_content_main_article_p">ガチャの名前ガチャの名前ガチャの名前ガチャの名前ガチャの名前</p> 
+                                <div class="user_message_top_index_content_main_article_link">
+                                    <div class="user_message_top_index_content_main_article_mail">
+                                        <img class="user_message_top_index_content_main_article_mail_img" src="../../img/mail.png" alt="メール">
+                                        <p class="user_message_top_index_content_main_article_mail_mail_p" >3</p>
+                                    </div>   
+                                    <img class="user_message_top_index_content_main_article_arrow" src="../../img/arrowright.png" alt="メール詳細リンク">
+                                </div>
+                            </article> -->
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- お問い合わせ -->
+            <div class="user_message_top_index">
+                <h2 class="user_message_top_index_title">お問い合わせ</h2>
+                <div class="user_message_top_index_content">
+                    <article class="user_message_top_index_content_article">
+                        <div class="user_message_top_index_content_article_title">
+                            <h3 class="user_message_top_index_content_article_title_h3">キャンペーンについて </h3>
+                            <div class="user_message_top_index_content_article_title_mail">
+                                <img class="user_message_top_index_content_article_title_mail_img" src="../../img/mail.png" alt="メール">
+                                <p class="user_message_top_index_content_article_title_mail_p" >10</p>
+                            </div>
+                            <img class="user_message_top_index_content_article_title_arrow" src="../../img/arrowdown.png" alt="">
+                        </div>
+                        <div class="user_message_top_index_content_main">
+                            <!-- <article class="user_message_top_index_content_main_article">
+                                <p class="user_message_top_index_content_main_article_p">ガチャの名前ガチャの名前ガチャの名前ガチャの名前ガチャの名前ガチャの名前ガチャの名前</p> 
+                                <div class="user_message_top_index_content_main_article_link">
+                                    <div class="user_message_top_index_content_main_article_mail">
+                                        <img class="user_message_top_index_content_main_article_mail_img" src="../../img/mail.png" alt="メール">
+                                        <p class="user_message_top_index_content_main_article_mail_mail_p" >3</p>
+                                    </div>   
+                                    <img class="user_message_top_index_content_main_article_arrow" src="../../img/arrowright.png" alt="メール詳細リンク">
+                                </div>
+                            </article> -->
+                        </div>
+                    </article>
+                    <article class="user_message_top_index_content_article">
+                        <div class="user_message_top_index_content_article_title">
+                            <h3 class="user_message_top_index_content_article_title_h3">その他 </h3>
+                            <div class="user_message_top_index_content_article_title_mail">
+                                <img class="user_message_top_index_content_article_title_mail_img" src="../../img/mail.png" alt="メール">
+                                <p class="user_message_top_index_content_article_title_mail_p" >10</p>
+                            </div>
+                            <img class="user_message_top_index_content_article_title_arrow" src="../../img/arrowdown.png" alt="">
+                        </div>
+                        <div class="user_message_top_index_content_main">
+                            <!-- <article class="user_message_top_index_content_main_article">
+                                <p class="user_message_top_index_content_main_article_p">ガチャの名前ガチャの名前ガチャの名前ガチャの名前ガチャの名前</p> 
+                                <div class="user_message_top_index_content_main_article_link">
+                                    <div class="user_message_top_index_content_main_article_mail">
+                                        <img class="user_message_top_index_content_main_article_mail_img" src="../../img/mail.png" alt="メール">
+                                        <p class="user_message_top_index_content_main_article_mail_mail_p" >3</p>
+                                    </div>   
+                                    <img class="user_message_top_index_content_main_article_arrow" src="../../img/arrowright.png" alt="メール詳細リンク">
+                                </div>
+                            </article> -->
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+    <userfooter></userfooter>
+</div>
+    <script src="../../user/js/user_header_search.js"></script>
+    <script >
+           window.onload = function () {
+            new Vue ({
+                el:"#app",
+                data: {
+                },
+                methods:{
+                }
+                });
+            }
+    </script>
+</body>
+</html>

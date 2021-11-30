@@ -1,0 +1,95 @@
+@import "concomponent.scss";
+
+
+.sub_search {
+    position: relative;
+    top: 0;
+    left: 0;
+    position: sticky;
+}
+.bold-font  {
+  font-weight: bold;
+}
+.draft_icon {
+  width: 12px;
+  margin-left: 8px;
+}
+
+.title{
+  font-weight: 700;
+  font-size: 16px;
+  position: relative;
+  display:block; 
+  text-align: center;
+  padding: 20px 0 ;
+}
+.create-btn {
+  position: absolute;
+  right: 16px;
+  padding: 8px 7px;
+  font-weight: 400;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.create-btn img {
+  width:23px;
+}
+
+.table_sort_black {
+  display: block;
+  border-radius: 4px;
+  width: 30%;
+  padding: 4px;
+  background: #000;
+  margin: 10px 0 8px;
+  font-size: 14px;
+  background: $black;
+}
+.table_sort_select_black {
+  background-image: url(../../img/arrowdown-w.png);
+  background-repeat: no-repeat;
+  padding: 6px 2px;
+  width: 100%;
+  display: block;
+  background-size: 14px;
+  background-position: right;
+  color:$white;
+}
+.table_center {
+  text-align: center;
+}
+.contributor_gacha_status {
+  position: relative;
+}
+.contributor_gacha_status_span {
+  position: absolute;
+  top:0 ;
+  right: 0;
+  font-size:12px;
+  line-height: 18px;
+  padding:4px 8px;
+  color: $white;
+  font-weight:bold;
+
+  background: $black;
+}
+.gacha_new_app_button {
+  width: 80%;
+  background: $black;
+  color: $white;
+  display: block;
+  padding: 8px 0;
+  border-radius: 4px;
+  margin: 8px auto 0;
+  text-align: center;
+}
+.overlay-overmain,.overlay-overmain2 {
+  overflow: auto;
+}

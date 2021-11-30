@@ -1,0 +1,83 @@
+@import "../../user/css/color.scss";
+
+body {
+  background: $white;
+}
+
+.img-input-area{
+  display: flex;
+  justify-content: space-between;
+}
+
+.imt-input-icon{
+  display: block;
+}
+
+.img-input{
+  width: 49%;
+  text-align: center;
+  padding: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #C4C4C4;
+}
+
+input[type="file"]{
+  display: none;
+}
+
+.inputted-img-area{
+  width: 49%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.inputted-img{
+  width: 49%;
+  height: fit-content;
+  margin-bottom: 11px;
+}
+
+.inputted-last{
+  margin: 0;
+}
+
+.memo-text{
+  border: 1px solid #C4C4C4;
+  height: 100px;
+  width: 100%;
+  resize: none;
+  padding: 10px;
+  font-size: 12px;
+}
+.mailsend-text{
+  border: 1px solid #C4C4C4;
+  height: 180px;
+  width: 100%;
+  resize: none;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.delitext {
+  border: 1px solid #C4C4C4;
+  padding: 10px;
+  width: 50%;
+  margin: 0 8px 0 0;
+}
+
+.delitext_75 {
+  @extend .delitext;
+  width: 75%;
+}
+.priplaceholder{
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid $gray;
+  padding: 6px 8px; 
+  margin: 0 6px 4px 0px;
+  display: inline-block;
+  }

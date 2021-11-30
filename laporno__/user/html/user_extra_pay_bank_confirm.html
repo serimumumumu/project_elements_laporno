@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>決済内容確認</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/user_project_return_preview.css">
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul>
+            <li ><a href="../../user/html/user_top.html">TOP</a></li>
+            <li class="arrow-l"><a href="../../user/html/user_mypage.html">マイページ</a></li>
+            <li class="arrow-l"><a href="../../user/html/user_extra_pay.html">新規追加決済ページ</a></li>
+            <li><p>決済内容確認</p></li>
+        </ul>
+    </div>
+    <div class="card-area" >
+        <section class="card">
+            <h5 class="title">お支払い内容確認</h5>
+            <div class="card-content">
+                <p class="sub-title">プロジェクトタイトル</p>
+                <h6 class="sub-text">プロジェクトのタイトルが入ります</h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">リターンタイトル</p>
+                <h6 class="sub-text">リターンのタイトルが入ります</h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">金額</p>
+                <h6 class="sub-text">10,000円</h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">備考</p>
+                <h6 class="sub-text">追加リターン</h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">使用するキャンペーンコード</p>
+                <h6 class="sub-text">-10%割引<br>
+                    ハロウィン連動キャンペーン！今だけ黒船プロ...</h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">LP使用数</p>
+                <h6 class="sub-text">1500lp</h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">キャンペーンコード,LPを差し引いた合計</p>
+                <h6 class="sub-text">8850円</h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">決済方法</p>
+                <h6 class="sub-text">銀行振込</h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">決済時期</p>
+                <h6 class="sub-text">2営業日以内
+                </h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">口座名義</p>
+                <h6 class="sub-text">ココニ　ジドウフリガナ
+                </h6>
+            </div>
+            <div class="card-content">
+                <p class="sub-title">送料</p>
+                <h6 class="sub-text">着払い(1200円)</h6>
+            </div>
+            <div class="btn-area">
+                <a href="../../user/html/user_auction_pay.html" class="button color3" >戻る</a >
+                    <div class="button color3">
+                    <button @click="openModal">申請</button>
+                    </div>
+                    <div v-show="showContent == true" @close="closeModal">
+                      <div class="overlay">
+                        <div class="overlay-over">
+                          <div class="cancel-btn" onclick="location.href='../../user/html/user_mypage.html'">
+                            <span class="x x_1"></span>
+                            <span class="x x_2"></span>
+                          </div>
+                          <div class="overlay-overmain">
+                            <div class="modal_section">
+                                <h6 class="modal_title">決済申請確定<span>下記振込先に２営業日以内に<br>
+                                落札総額のお振込をお願いします。<br>
+                                この情報はマイページからも確認できます。</span></h6>
+                                <div class="card-content">
+                                <p class="sub-title">振込先銀行名</p>
+                                <h6 class="sub-text">Paypay銀行</h6>
+                                 </div>
+                                <div class="card-content">
+                                <p class="sub-title">支店名</p>
+                                <h6 class="sub-text">渋谷支店</h6>
+                                 </div>
+                                <div class="card-content">
+                                <p class="sub-title">種類</p>
+                                <h6 class="sub-text">当座</h6>
+                                 </div>
+                                <div class="card-content">
+                                <p class="sub-title">口座番号</p>
+                                <h6 class="sub-text">32212334</h6>
+                                 </div>
+                                <div class="card-content">
+                                <p class="sub-title">口座名義</p>
+                                <h6 class="sub-text">株式会社YOSUGA　(カ)ヨスガ</h6>
+                              </div>
+                            </div>
+                            <div class="btn-area">
+                              <a href="../../user/html/user_mypage.html" class="onebutton_a " >マイページへ</a >
+                             </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </section>
+    </div>
+    </div>
+    <script src="../../user/js/user_header_search.js"></script>
+    <script >
+           window.onload = function () {
+            new Vue ({
+                el:"#app",
+                data: {
+                    showContent:"false",
+                },
+                methods:{
+                    openModal(){
+            this.showContent = true;
+            },
+                    closeModal(){
+            this.showContent = false;
+            },
+                }
+                });
+            }
+    </script>
+</body>
+</html>

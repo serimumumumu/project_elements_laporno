@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロジェクトTop</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/project.css">
+  <link rel="stylesheet" href="../../contributor/css/auchtop.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="conheaders">
+    <conheaders></conheaders>
+  </div>
+  <div class="panlist">
+    <ul >
+      <li ><a href="top.html">TOP</a></li>
+      <li class="arrow-l">プロジェクトTOP</li>
+    </ul>
+  </div>
+  <div id="search" >
+    <search></search>
+  </div>
+  <div class="color2">
+    <input id="tab1" type="radio" name="tab_btn" checked>
+    <input id="tab2" type="radio" name="tab_btn">
+    <input id="tab3" type="radio" name="tab_btn">
+    <div class="tab_labels">
+      <label class="tab1_label conbutton" for="tab1">一覧</label>
+      <label class="tab2_label conbutton" for="tab2">投稿</label>
+      <label class="tab3_label conbutton" for="tab3">パトロン</label>
+    </div>
+    <div class="panel_area"  id="conauchtop">
+      <div id="panel1" class="tab_panel">
+        <div class="new_project">
+          <div class="new_title">
+            <p>新着プロジェクト</p>
+          </div>
+          <div class="new_procard" >
+            <projcard ></projcard>
+            <projcard ></projcard>
+            <projcard ></projcard>
+            <projcard ></projcard>
+            <projcard ></projcard>
+          </div>
+        </div>
+        <div >
+          <h3 class="page-title">新着プロジェクト一覧</h3>
+          <div class="tab-area">
+            <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">募集中</div>
+            <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">制作中</div>
+            <div class="tab color3 " @click="isSelect('3')" v-bind:class="{'active': isActive === '3'}">販売中</div>
+            <div class="tab color3" @click="isSelect('4')" v-bind:class="{'active': isActive === '4'}">イベント</div>
+          </div>
+          <div class="pro_index" v-if="isActive === '1'">
+            <projcard></projcard>
+        </div>
+        <div  class="pro_index" v-else-if="isActive === '2'">
+            <projcard></projcard>
+        </div>
+        <div  class="pro_index"  v-else-if="isActive === '3'">
+            <projsellcard></projsellcard>
+        </div>
+        <div  class="pro_index" v-else="isActive === '4'">
+            <projcard></projcard>
+        </div>
+        </div>   
+       </div>
+      <div id="panel2" class="tab_panel">
+        <h1 class="title">投稿一覧<button class="create-btn color1" onclick="location.href='projdetailneweditin.html'"><img src="../../img/plus.png"> <p>新規作成</p></button></h1>
+        <div class="content">
+          <div class="hyou-top">
+            <table class="table">
+              <div class="table-title-area color5">
+                <h2 class="table-title">投稿一覧</h2>
+                <select name="order" id="" class="order color1">
+                <option >新着中</option>
+                <option >登録順</option>
+                </select>
+              </div>
+              <tr class="table_header">
+                <th class="table_80">ID</th>
+                <th class="table_80">画像</th>
+                <th class="table_120">女優</th>
+                <th class="title-td table_160">タイトル</th>
+                <th class="table_120">開始日</th>
+                <th class="table_120">終了日</th>
+                <th class="table_120">パトロン数</th>
+                <th class="table_80">支援額</th>
+                <th class="table_120">ステータス</th>
+                <th class="table_120">編集</th>
+              </tr>
+              <tr>
+                <td >P-1111</td>
+                <td><img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                <td class="bold-font"><a href="actressdetail.html">だいたいろくじ</a></td>
+                <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+                <td>2021/03/14 00:00</td>
+                <td>2021/05/20 23:59</td>
+                <td ><a class="bold-font table_center " href="projdetail.html">0</a></td>
+                <td>0</td>
+                <td> <button class="table-btn color3" onclick="appButton()">申請する</button></td>
+                <td><button class="table-btn color3" onclick="location.href='projdetailedit.html'">編集</button></td>
+              </tr>
+              <tr>
+                <td class="table_80">P-1111</td>
+                <td><img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                <td class="bold-font"><a href="actressdetail.html">だいたいろくじ</a></td>
+                <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+                <td>2021/03/14 00:00</td>
+                <td>2021/05/20 23:59</td>
+                <td class="table_120"><a class="bold-font table_center " href="projdetail.html">0</a></td>
+                <td>0</td>
+                <td> 申請中</td>
+                <td><button class="table-btn color3" onclick="location.href='projdetailedit.html'">編集</button></td>
+              </tr>
+              <tr>
+                <td class="table_80">P-1111</td>
+                <td><img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                <td class="bold-font"><a href="actressdetail.html">だいたいろくじ</a></td>
+                <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+                <td>2021/03/14 00:00</td>
+                <td>2021/05/20 23:59</td>
+                <td class="table_120"><a class="bold-font table_center " href="projdetail.html">10</a></td>
+                <td>20000</td>
+                <td> <select class="table-btn" name="" id="">
+                  <option value="">公開中</option>
+                  <option value="">非公開</option>
+                </select></td>
+                <td><button class="table-btn color3" onclick="location.href='projdetailedit.html'">編集</button></td>
+              </tr>
+              <tr>
+                <td class="table_80">P-1111</td>
+                <td><img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                <td class="bold-font"><a href="actressdetail.html">だいたいろくじ</a></td>
+                <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+                <td>2021/03/14 00:00</td>
+                <td>2021/05/20 23:59</td>
+                <td class="table_120"><a class="bold-font table_center " href="projdetail.html">30</a></td>
+                <td>100000</td>
+                <td> <select class="table-btn" name="" id="">
+                  <option value="">承認済</option>
+                  <option value="">公開中</option>
+                  <option value="">非公開</option>
+                </select></td>
+                <td><button class="table-btn color3" onclick="location.href='projdetailedit.html'">編集</button></td>
+              </tr>
+              <tr>
+                <td class="table_80">P-1111</td>
+                <td><img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                <td class="bold-font"><a href="actressdetail.html">だいたいろくじ</a></td>
+                <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+                <td>2021/03/14 00:00</td>
+                <td>2021/05/20 23:59</td>
+                <td class="table_120"><a class="bold-font table_center " href="projdetail.html">50</a></td>
+                <td>222400</td>
+                <td>終了</td>
+                <td><button class="table-btn color3" onclick="location.href='projdetailedit.html'">編集</button></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="panel3" class="tab_panel">
+        <h1 class="title">パトロン一覧</h1>
+        <div class="content">
+          <div class="hyou-top">
+            <table class="table">
+             <div class="table-title-area color5">
+               <h2 class="table-title">パトロン一覧</h2>
+               <select name="order" id="" class="order color1">
+               <option >新着中</option>
+               <option >登録順</option>
+               </select>
+             </div>
+             <tr class="table_header">
+               <th class="table_40"></th>
+               <th class="table_120">支援日</th>
+               <th class="table_160">パトロン名</th>
+               <th class="table_80">ID</th>
+               <th class="table_160">タイトル</th>
+               <th class="table_120">リターン名</th>
+               <th class="table_80 table_center">支援額</th>
+               <th class="table_120">支払方法</th>
+               <th class="table_120">支払発送ステータス</th>
+               <th class="table_120">発送情報</th>
+               <th class="table_120 table_center">発送通知</th>
+               <th class="table_80 table_center">Mail</th>
+             </tr>
+             <tr>
+               <td class="table_40 table_center"><input type="checkbox"></td>
+               <td>2021/03/12</td>
+               <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+               <td class="table_80 table_center">P-130</td>
+               <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+               <td>リターンタイトル</td>
+               <td class="table_center table_80">20,000</td>
+               <td>銀行振込</td>
+               <td>未入金</td>
+               <td ></td>
+               <td ></td>
+               <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+             </tr>
+             <tr>
+               <td class="table_40 table_center"><input type="checkbox"></td>
+               <td>2021/03/12</td>
+               <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+               <td class="table_80 table_center">P-130</td>
+               <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+               <td>リターンタイトル</td>
+               <td class="table_center table_80">20,000</td>
+               <td>カード</td>
+               <td> <button class="table-btn"> <select name="" id="">
+                 <option value="">発送準備</option>
+                 <option value="">発送済</option>
+               </select></button></td>
+               <td> <button onclick='location.href="projdeliverinforegist.html"' class="table-btn">登録</button></td>
+               <td ></td>
+               <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+             </tr>
+             <tr>
+               <td class="table_40 table_center"><input type="checkbox"></td>
+               <td>2021/03/12</td>
+               <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+               <td class="table_80 table_center">P-130</td>
+               <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+               <td>リターンタイトル</td>
+               <td class="table_center table_80">20,000</td>
+               <td>カード</td>
+               <td> <button class="table-btn"> <select name="" id="">
+                 <option value="">発送済</option>
+                 <option value="">キャンセル</option>
+               </select></button></td>
+               <td> <button class="table-btn" @click="openModal">詳細</button></td>
+               <td >未</td>
+               <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+             </tr>
+             <tr>
+               <td class="table_40 table_center"><input type="checkbox"></td>
+               <td>2021/03/12</td>
+               <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+               <td class="table_80 table_center">P-130</td>
+               <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+               <td>リターンタイトル</td>
+               <td class="table_center table_80">20,000</td>
+               <td>カード</td>
+               <td> <button class="table-btn"> <select name="" id="">
+                 <option value="">発送済</option>
+                 <option value="">キャンセル</option>
+               </select></button></td>
+               <td> <button class="table-btn" @click="openModal">詳細</button></td>
+               <td >未</td>
+               <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+             </tr>
+             <tr>
+               <td class="table_40 table_center"><input type="checkbox"></td>
+               <td>2021/03/12</td>
+               <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+               <td class="table_80 table_center">P-130</td>
+               <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+               <td>リターンタイトル</td>
+               <td class="table_center table_80">20,000</td>
+               <td>銀行振込</td>
+               <td> <button class="table-btn"> <select name="" id="">
+                 <option value="">発送済</option>
+                 <option value="">キャンセル</option>
+               </select></button></td>
+               <td> <button class="table-btn" @click="openModal">詳細</button></td>
+               <td >未</td>
+               <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+             </tr>
+             <tr>
+               <td class="table_40 table_center"><input type="checkbox"></td>
+               <td>2021/03/12</td>
+               <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+               <td class="table_80 table_center">P-130</td>
+               <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+               <td>リターンタイトル</td>
+               <td class="table_center table_80">20,000</td>
+               <td>カード</td>
+               <td> <button class="table-btn"> <select name="" id="">
+                 <option value="">発送済</option>
+                 <option value="">キャンセル</option>
+               </select></button></td>
+               <td> <button class="table-btn" @click="openModal">詳細</button></td>
+               <td >済</td>
+               <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+             </tr>
+             <tr>
+               <td class="table_40 table_center"><input type="checkbox"></td>
+               <td>2021/03/12</td>
+               <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+               <td class="table_80 table_center">P-130</td>
+                <td class="bold-font"><a href="projdetail.html">投稿タイトタイトルタイト</a></td>
+               <td>リターンタイトル</td>
+               <td class="table_center table_80">20,000</td>
+               <td>カード</td>
+               <td> <button class="table-btn"> <select name="" id="">
+                 <option value="">発送済</option>
+                 <option value="">キャンセル</option>
+               </select></button></td>
+               <td> <button class="table-btn">詳細</button></td>
+               <td >未</td>
+               <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+             </tr>
+             <userinfo v-show="showinfoContent" @close="showinfoContent = false"></userinfo>
+             <conreturnsendinfo v-show="showContent" @close="showContent = false"></conreturnsendinfo>
+           </table>
+         </div>
+          <h3 class="btn-title">チェックしたパトロンの</h3>
+          <div class="content-btn-area">
+              <button class="content-btn color3">配送情報登録</button>
+              <button class="content-btn color3">発送準備完了</button>
+              <button class="content-btn color3">通知一斉送信</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../user/js/component.js" defer></script>
+  <script src="../../contributor/js/concomponent.js" defer></script>
+  <script src="../../contributor/js/conauchtop.js" defer></script>
+  <script>
+    function appButton(){
+      let appButtonName = document.getElementById("")
+      alert("申請されました");
+    }
+      // var application = document.getElementsByClassName("app-btn");
+      
+      // alert('JavaScriptのアラート');
+
+  </script>
+</body>
+</html>

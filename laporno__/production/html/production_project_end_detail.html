@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト詳細</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../contributor/css/auchtop.css">
+    <link rel="stylesheet" href="../../contributor/css/projdetail.css">
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="conheaders">
+        <conheaders></conheaders>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="top.html">TOP</a></li>
+            <li class="arrow-l"><a href="projtop.html">プロジェクト一覧</a></li>
+            <li class="arrow-l">プロジェクトタイトルタイトル</li>
+        </ul>
+    </div>
+    <section class="main_card" id="support">
+        <div class="card_img">
+            <img src="../../img/demoimg.png" alt="">
+        </div>
+        <article class="main-top-card-title">【新村あかり】色紙＋チェキ</article>
+        <div class="main_in">
+            <article class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/lady.png" alt="">女優名</p>
+                    <a class="bold-font " href="../../user/actressdetail.html"> 新村あかり </a>
+                </div>
+                <div class="main_in_article_2">
+                    <p class="ain_in_article_2_p"><img src="../../img/pro.png" alt="">投稿者</p>
+                    <a href="contributordetail.html" class="bold-font"> 桃太郎出版</a>
+                </div>
+            </article>
+            <article class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/guys.png" alt="">支援者数</p>
+                    <h6>999人</h6>
+                </div>
+                <div class="main_in_article_2">
+                    <p class="ain_in_article_2_p"><img src="../../img/time.png" alt="">タイムリミット</p>
+                    <h6> 残り12時間</h6>
+                </div>
+            </article>
+            <article >
+                <div class="main_in_article_1">
+                    <p class=""><img src="../../img/folder.png" alt="">カテゴリー</p>
+                    <h6>スレンダー,美乳,美肌</h6>
+                </div>
+            </article>
+            <div class="sienkingaku">3,111,111円
+            </div>
+            <article class="percent-area">
+                <div class="percent color3"></div>
+            </article> 
+        </div>
+        <supportbutton></supportbutton>
+    </section>
+    <div class=" color2">
+        <div id="conauchtop">
+            <div class="tab-area">
+                <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">初めに</div>
+                <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">リターン</div>
+                <div class="tab color3" @click="isSelect('3')" v-bind:class="{'active': isActive === '3'}">コメント</div>
+                <div class="tab color3" @click="isSelect('4')" v-bind:class="{'active': isActive === '4'}">活動報告</div>
+                <div class="tab color3" @click="isSelect('5')" v-bind:class="{'active': isActive === '5'}">パトロン一覧</div>
+            </div>
+            <!--初めに-->
+            <div class="content-container color1" v-if="isActive === '1'">
+                <div class="main-content1-inner">
+                    <div class="main-content1-text">
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </div>
+                    <div class="main-content-img-area">
+                        <img src="../../img/demoimg.png" alt="">
+                    </div>
+                    <div class="main-content1-subtitle"> 資金の使い道 </div>
+                    <div class="main-content1-text">
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </div>
+                    <div class="main-content1-subtitle">注意事項 </div>
+                    <div class="main-content1-text">
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </div>
+                </div>
+            </div>
+            <!--リターン-->
+            <div class="content-container  color1" v-else-if="isActive === '2'">
+                <h5 class="return_index"><img src="../../img/present.png" alt="">リターン一覧</h5>
+                <section class="content1-card">
+                    <article class="main-top-card-title">リターーーンタイトル</article>
+                    <div class="card-img-area">
+                        <img src="../../img/demoimg.png" alt="">
+                    </div>
+                    <article class="content-card-subtitle">￥5000円</article>
+                    <article class="content-card-text">テキストテキストテキスト</article>
+                    <div class="choice-button-area">
+                        <a href="../html/projreturn.html" class="choice-button color3">リターンを選択する</a>
+                    </div>
+                    <div class="target-area"><img src="../../img/guys.png"> 支援者：10名<span class="target-area-span">残り受付人数：4名</span></div>
+                    <div class="target-area"><img src="../../img/ques.png"> サイズ：M,L,LL</div>
+                </section>
+                <section class="content1-card">
+                    <article class="main-top-card-title">リターーーンタイトル</article>
+                    <div class="card-img-area">
+                        <img src="../../img/demoimg.png" alt="">
+                    </div>
+                    <article class="content-card-subtitle">￥5000円</article>
+                    <article class="content-card-text">テキストテキストテキスト</article>
+                    <div class="choice-button-area">
+                        <a href="../html/projreturn.html" class="choice-button color3">リターンを選択する</a>
+                    </div>
+                    <div class="target-area"><img src="../../img/guys.png"> 支援者：10名<span class="target-area-span">残り受付人数：無制限</span></div>
+                </section>
+                <section class="content1-card">
+                    <article class="main-top-card-title">リターーーンタイトル</article>
+                    <div class="card-img-area">
+                        <img src="../../img/demoimg.png" alt="">
+                    </div>
+                    <article class="content-card-subtitle">￥5000円</article>
+                    <article class="content-card-text">テキストテキストテキスト</article>
+                    <div class="choice-button-area">
+                        <a href="../html/projreturn.html" class="choice-button color3">リターンを選択する</a>
+                    </div>
+                    <div class="target-area"><img src="../../img/guys.png"> 支援者：10名<span class="target-area-span">残り受付人数：3名</span></div>
+                    <div class="target-area"><img src="../../img/ques.png"> 希望の宛名</div>
+                    <div class="target-area"><img src="../../img/ques.png"> 色：ピンク,白,黒</div>
+                </section>
+            </div>
+            <!--コメント-->
+            <div class="content-container  color1" v-else-if="isActive === '3'">
+                <section class="content1-card">
+                    <a href="../html/userpage.html" class="user-name-area">
+                        <div class="user-icon-area color4">
+                            <img src="../../img/man_white.png" alt="">
+                        </div>
+                        <div class="user-name">パトロン名</div>
+                    </a >
+                    <div class="content-card-text">
+                        コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント
+                    </div>
+                    <article class="content1-date">2021/01/11</article>
+                </section>
+                <section class="content1-card">
+                    <a ref="../html/userpage.html" class="user-name-area">
+                        <div class="user-icon-area color4">
+                            <img src="../../img/man_white.png" alt="">
+                        </div>
+                        <div class="user-name">パトロン名</div>
+                    </a>
+                    <div class="content-card-text">
+                        コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント
+                    </div>
+                    <article class="content1-date">2021/01/11</article>
+                </section>
+                <section class="content1-card">
+                    <a ref="../html/userpage.html" class="user-name-area">
+                        <div class="user-icon-area color4">
+                            <img src="../../img/man_white.png" alt="">
+                        </div>
+                        <div class="user-name">パトロン名</div>
+                    </a>
+                    <div class="content-card-text">
+                        コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント
+                    </div>
+                    <article class="content1-date">2021/01/11</article>
+                </section>
+            </div>
+            <!--活動報告-->
+            <div class="content-container  color1" v-else-if="isActive === '4'">
+                <section class="content4-card">
+                    <article class="content1-card-date">2021/01/03</article>
+                    <article class="content1-card-title color2">活動報告のタイトル</article>
+                    <article class="content1-card-text">
+                        <div class="card-img-area">
+                            <img src="../../img/demoimg.png" alt="">
+                        </div>
+                        <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </article>
+                </section>
+                <section class="content4-card">
+                    <article class="content1-card-date">2021/01/03</article>
+                    <article class="content1-card-title color2">活動報告のタイトル</article>
+                    <article class="content1-card-text">
+                        <div class="card-img-area">
+                            <img src="../../img/demoimg.png" alt="">
+                        </div>
+                        <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </article>
+                </section>
+                <section class="content4-card">
+                    <article class="content1-card-date">2021/01/03</article>
+                    <article class="content1-card-title color2">活動報告のタイトル</article>
+                    <article class="content1-card-text">
+                        <div class="card-img-area">
+                            <img src="../../img/demoimg.png" alt="">
+                        </div>
+                        <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    </article>
+                </section>
+            </div>
+            <!-- パトロン一覧 -->
+            <div class="content-container color1" v-if="isActive === '5'">
+                <div class="content" >
+                    <h1 class="title">パトロン一覧</h1>
+                    <div class="hyou-top">
+                        <table class="table">
+                         <div class="table-title-area color5">
+                           <h2 class="table-title">パトロン一覧</h2>
+                           <select name="order" id="" class="order color1">
+                           <option >新着中</option>
+                           <option >登録順</option>
+                           </select>
+                         </div>
+                         <tr class="table_header">
+                           <th class="table_40"></th>
+                           <th class="table_120">支援日</th>
+                           <th class="table_160">パトロン名</th>
+                           <th class="table_120">リターン名</th>
+                           <th class="table_80 table_center">支援額</th>
+                           <th class="table_120">支払方法</th>
+                           <th class="table_120">支払発送ステータス</th>
+                           <th class="table_120">発送情報</th>
+                           <th class="table_120 table_center">発送通知</th>
+                           <th class="table_80 table_center">Mail</th>
+                         </tr>
+                         <tr>
+                           <td class="table_40 table_center"><input type="checkbox"></td>
+                           <td>2021/03/12</td>
+                           <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+                           <td>リターンタイトル</td>
+                           <td class="table_center table_80">20,000</td>
+                           <td>銀行振込</td>
+                           <td>未入金</td>
+                           <td ></td>
+                           <td ></td>
+                           <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+                         </tr>
+                         <tr>
+                           <td class="table_40 table_center"><input type="checkbox"></td>
+                           <td>2021/03/12</td>
+                           <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+                           <td>リターンタイトル</td>
+                           <td class="table_center table_80">20,000</td>
+                           <td>カード</td>
+                           <td> <select  class="table-btn" name="" id="">
+                             <option value="">発送準備</option>
+                             <option value="">発送済</option>
+                           </select></td>
+                           <td> <button onclick="location.href='projdeliverinforegist.html'" class="table-btn">登録</button></td>
+                           <td ></td>
+                           <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+                         </tr>
+                         <tr>
+                           <td class="table_40 table_center"><input type="checkbox"></td>
+                           <td>2021/03/12</td>
+                           <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+                           <td>リターンタイトル</td>
+                           <td class="table_center table_80">20,000</td>
+                           <td>カード</td>
+                           <td><select  class="table-btn" name="" id="">
+                             <option value="">発送済</option>
+                             <option value="">キャンセル</option>
+                           </select></td>
+                           <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                           <td >未</td>
+                           <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+                         </tr>
+                         <tr>
+                           <td class="table_40 table_center"><input type="checkbox"></td>
+                           <td>2021/03/12</td>
+                           <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+                           <td>リターンタイトル</td>
+                           <td class="table_center table_80">20,000</td>
+                           <td>カード</td>
+                           <td><select  class="table-btn" name="" id="">
+                             <option value="">発送済</option>
+                             <option value="">キャンセル</option>
+                           </select></td>
+                           <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                           <td >未</td>
+                           <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+                         </tr>
+                         <tr>
+                           <td class="table_40 table_center"><input type="checkbox"></td>
+                           <td>2021/03/12</td>
+                           <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+                           <td>リターンタイトル</td>
+                           <td class="table_center table_80">20,000</td>
+                           <td>銀行振込</td>
+                           <td><select  class="table-btn" name="" id="">
+                             <option value="">発送済</option>
+                             <option value="">キャンセル</option>
+                           </select></td>
+                           <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                           <td >未</td>
+                           <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+                         </tr>
+                         <tr>
+                           <td class="table_40 table_center"><input type="checkbox"></td>
+                           <td>2021/03/12</td>
+                           <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+                           <td>リターンタイトル</td>
+                           <td class="table_center table_80">20,000</td>
+                           <td>カード</td>
+                           <td><select  class="table-btn" name="" id="">
+                             <option value="">発送済</option>
+                             <option value="">キャンセル</option>
+                           </select></td>
+                           <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                           <td >済</td>
+                           <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+                         </tr>
+                         <tr>
+                           <td class="table_40 table_center"><input type="checkbox"></td>
+                           <td>2021/03/12</td>
+                           <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+                           <td>リターンタイトル</td>
+                           <td class="table_center table_80">20,000</td>
+                           <td>カード</td>
+                           <td><select  class="table-btn" name="" id="">
+                             <option value="">発送済</option>
+                             <option value="">キャンセル</option>
+                           </select></td>
+                           <td> <button class="table-btn">詳細</button></td>
+                           <td >未</td>
+                           <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+                         </tr>
+                         <userinfo v-show="showinfoContent" @close="showinfoContent = false"></userinfo>
+                         <conreturnsendinfo v-show="showContent" @close="showContent = false"></conreturnsendinfo>
+                       </table>
+                     </div>
+                    <h3 class="btn-title">チェックしたパトロンの</h3>
+                    <div class="content-btn-area">
+                        <button class="content-btn color3">配送情報登録</button>
+                        <button class="content-btn color3">発送準備完了</button>
+                        <button class="content-btn color3">通知一斉送信</button>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+    <div class="floatbutton">
+        <img class="questionbutton" src="../../img/quesblack.png" alt="">
+        <img class="topscrollbutton" src="../../img/pagetop.png" alt="">
+    </div>
+    <div id="float_area">
+        <div class="float_area_heart">
+            <div class="favorite_icon2" v-if="isActive" @click="changeHeart">
+                <img class="favorite_icon2_img" src="../../img/favheart.png" alt="">
+            </div>
+            <div class="favorite_icon2" v-else @click="changeHeart">
+                <img class="favorite_icon2_img" src="../../img/favedheart.png" alt="">
+            </div>
+            <p class="">324</p>
+        </div>
+        <a class="float_area_a" href="projreturn.html">支援する</a>
+    </div>
+    <script src="../../user/js/mypage.js"></script>
+    <script src="../../user/js/component.js" ></script>
+    <script src="../../contributor/js/concomponent.js" ></script>
+    <script src="../../contributor/js/conauchtop.js"></script>
+    <script>
+        var support = new Vue({
+            el:"#support",
+            data:{}
+        })
+</script>
+</body>
+</html>

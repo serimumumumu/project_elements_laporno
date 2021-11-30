@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+html { font-family: 'Roboto', sans-serif; }
+
+html { color: #232323; }
+
+.color0 { background-color: #fff; }
+
+.color1 { background-color: #FAFAFA; }
+
+.color2 { background-color: #E9E9E9; }
+
+.color3 { background-color: #C4C4C4; }
+
+.color4 { background-color: #7D7D7D; }
+
+.color5 { background-color: #232323; }
+
+.user_503 { margin: 0 0 60px 0; }
+
+.user_503_main { font-weight: bold; font-size: 94px; letter-spacing: -0.06em; display: block; margin: 30px auto; text-align: center; }
+
+.user_503_main_description { font-size: 16px; text-align: center; display: block; letter-spacing: normal; }
+
+.user_503_sub { font-size: 12px; text-align: center; color: #7D7D7D; margin: 0 0 30px; }
+
+.user_503_banner { font-size: 18px; margin: 0px auto 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.user_503_banner::before, .user_503_banner::after { content: ''; width: 1px; height: 24px; background-color: #C4C4C4; }
+
+.user_503_banner::before { margin-right: 16px; -webkit-transform: rotate(-35deg); transform: rotate(-35deg); }
+
+.user_503_banner::after { margin-left: 10px; -webkit-transform: rotate(35deg); transform: rotate(35deg); }
+
+.user_404_reccomend_title { font-size: 12px; margin: 30px 0 0 0; text-align: center; padding: 0 0 10px; color: #7D7D7D; }
+
+.user_404_reccomend { padding: 0 0 0 16px; }
+
+.user_404_reccomend_scroll { display: -webkit-box; display: -ms-flexbox; display: flex; overflow: scroll; gap: 8px; }
+
+.auction .favorite-icon { bottom: 108px; }
+
+.favorite-icon { z-index: 0; position: absolute; bottom: 8px; right: 8px; }
+
+.favorite-icon img { border-radius: 16px; background: #fff; width: 31px; }
+
+a { display: block; }
+
+.relative, .gatya_card_imgarea { position: relative; }
+
+.compo_card { min-width: 49%; width: 100%; background: #fff; -webkit-box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25); box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25); margin-bottom: 10px; }
+
+.compo_main_img { width: 100%; }
+
+.info-inner { display: -webkit-box; display: -ms-flexbox; display: flex; padding-bottom: 4px; font-size: 12px; line-height: 18px; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.info-inner img { width: 14px; margin-right: 5px; }
+
+.gatya_card_title { font-size: 12px; line-height: 18px; margin-bottom: 6px; }
+
+.gatya_card_inner { padding: 8px; position: relative; text-align: left; }
+
+.auc_card_inner { text-align: left; padding: 8px; }
+
+.auc_card_title { font-size: 12px; line-height: 18px; margin-bottom: 6px; }
+
+.nyuusatu-now > span { font-weight: bold; text-align: right; font-size: 16px; }
+
+.nyuusatu-now { padding: 8px 0; font-size: 12px; }
+
+.patron-name { font-size: 14px; }
+
+.patron-name-area { border-top: 1px solid #C4C4C4; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: baseline; -ms-flex-align: baseline; align-items: baseline; padding: 8px 0 4px; }
+
+.patron-name-area > img { width: 14px; height: 16px; margin-right: 4px; }
+
+.heart_nyu { position: absolute; top: 0; right: 0; }
+
+.heart_auch { position: absolute; top: 67%; right: 0px; }
+
+.compo_card_hot_p { position: absolute; bottom: 8px; padding: 2px 8px; line-height: 14px; font-size: 12px; font-weight: bold; color: #FAFAFA; border-radius: 0px 4px 4px 0px; background: rgba(35, 35, 35, 0.5); }
+
+.compo_card_hot_fire { width: 14px; }
+
+.proj_card_title { font-size: 12px; line-height: 18px; margin: 0 0 6px 0; }
+
+.info-2column { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+.sienkingaku { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 8px 0 0 0; }
+
+.sienkingaku-title { font-size: 10px; line-height: 12px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
+
+.percent-area { padding: 4px 0px; }
+
+.percent { border-radius: 2px; height: 4px; width: 100%; position: relative; }
+
+.percent::before { content: ""; width: 100px; height: 4px; background-color: #232323; position: absolute; left: 0; top: 0; border-radius: 2px; }
+
+.projsup { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; margin-top: 4px; }
+
+.supportbutton { padding: 7px; width: 75%; background: #C4C4C4; border-radius: 4px; text-align: center; }
+
+.sellbutton { padding: 7px; width: 100%; background: #C4C4C4; border-radius: 4px; text-align: center; }
+
+.projsup_heart { position: relative; left: 38px; top: 8px; }
+
+#btn-2:disabled { opacity: 0.3; }
+
+::-webkit-input-placeholder { font-size: 16px; line-height: 16px; color: #C4C4C4; }
+
+:-ms-input-placeholder { font-size: 16px; line-height: 16px; color: #C4C4C4; }
+
+::-ms-input-placeholder { font-size: 16px; line-height: 16px; color: #C4C4C4; }
+
+::placeholder { font-size: 16px; line-height: 16px; color: #C4C4C4; }
+
+.button1 { background: #C4C4C4; border-radius: 4px; height: 40px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.button { background: #C4C4C4; border-radius: 4px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.cancel-btn { position: absolute; top: 0; right: 0px; z-index: 110; cursor: pointer; width: 72px; height: 70px; }
+
+#btn-2, .btn-2 { display: block; background: #232323; width: 195px; z-index: 100; color: #FAFAFA; border-radius: 4px; line-height: center; text-align: center; margin: 30px auto 0; font-size: 16px; padding: 14px; }
+
+.main-area { padding: 10px 16px; }

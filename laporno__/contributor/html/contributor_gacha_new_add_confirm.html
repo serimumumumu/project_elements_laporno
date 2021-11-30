@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新規追加申請承認</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_new_add_agree.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_modal.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="conheaders">
+    <conheaders></conheaders>
+</div>
+  <div class="panlist">
+    <ul>
+      <li ><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+      <li ><a href="../../contributor/html/contributor_gacha_top.html">ガチャTOP</a></li>
+      <li ><a href="../../contributor/html/contributor_gacha_new_add.html">新規追加申請</a></li>
+      <li class="arrow-l"><p>新規追加申請確認</p></li>
+    </ul>
+    </div>
+  <div class="master_gacha_new_add_agree_form" id="master_gacha">
+    <form action="">
+      <h1 class="master_gacha_new_add_agree_title">新規追加申請</h1>
+      <div class="card_info_index">
+
+        <div class="card_info_one">
+          <span class="sub-title">ユーザー名</span>
+          <p class="master_gacha_new_add_agree_form_text">ユーザーのなまえ</p>
+        </div>
+        <div class="card_info_one">
+          <span class="sub-title">ガチャタイトル</span>
+          <p class="master_gacha_new_add_agree_form_text">ガチャのなまえ</p>
+        </div>
+        <div class="card_info_one">
+          <span class="sub-title">賞の名前</span>
+          <p class="master_gacha_new_add_agree_form_text">賞のなまえ</p>
+        </div>
+        <div class="card_info_one">
+          <span class="sub-title">金額</span>
+          <p class="master_gacha_new_add_agree_form_text">600円</p>
+        </div>
+        <div class="card_info_one">
+          <span class="sub-title">備考</span>
+          <p class="master_gacha_new_add_agree_form_text">ガチャの送料分</p>
+        </div>
+      </div>
+      <div class="twobutton"> 
+        <a class="twobutton_a" href="../../contributor/html/contributor_gacha_new_add.html">戻る</a>
+        <div class="twobutton_a" @click="openModal">申請</div>
+
+      </div>
+      <contributorgachanewaddagree v-show="showContent" @close="showContent = false"></contributorgachanewaddagree>
+    </form>
+
+  </div>
+
+  <script src="../../contributor/js/concomponent.js" defer></script>
+  <script src="../../contributor/js/contributor_gacha.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

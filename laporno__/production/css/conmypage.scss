@@ -1,0 +1,22 @@
+@import "concomponent.scss";
+
+.conprofile {
+    padding: 10px 16PX;
+}
+.conuser {
+    display: flex;
+}
+img.profedit {
+    width: 30px;
+    position: absolute;
+    margin-left: 6px;
+    top: 0;
+    right: 0;
+}
+.tab {
+    margin-right: 1px;
+}
+
+.tab-area {
+    justify-content: center;
+}

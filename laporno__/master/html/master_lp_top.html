@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LP一覧</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../user/css/user_component.css">
+  <link rel="stylesheet" href="../../user/css/contributor_campaign_top.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body class="color2">
+    <div id="conheaders">
+      <masheaders></masheaders>
+    </div>
+    <div class="panlist">
+      <ul >
+          <li ><a href="../../user/html/master_top.html">TOP</a></li>
+          <li class="arrow-l">LP一覧</li>
+      </ul>
+     </div>
+    <div id="search" >
+        <search></search>
+    </div>
+    <div>
+        <input id="tab_two_first" type="radio" name="tab_btn3" checked>
+        <input id="tab_two_second" type="radio" name="tab_btn3">
+        <div class="tab_two_button_area gap " style="margin: 20px 16px 0;">
+        <label class="tab_two_first_label tab_two_button" for="tab_two_first">LP購入者一覧</label>
+        <label class="tab_two_second_label tab_two_button" for="tab_two_second">LPオマケ付与</label>
+        </div>
+        <div class="tab_two">
+    <!-- LP購入者一覧 -->
+            <div id="tab_two_first_panel" class="tab_two_panel">
+                <h1 class="title">LP購入者一覧</h1>
+                <div class="hyou_area_rl16"  id="fortoggle">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                            <div class="table-title-area color5">
+                            <h2 class="table-title">キャンペーン一覧</h2>
+                            <div class="table_sort">
+                                <select name="order" id="" class="table_sort_select color1">
+                                <option >新着中</option>
+                                <option >登録順</option>
+                                </select>
+                            </div>
+                            </div>
+                        <table class="table">
+                            <tr class="table_header">
+                                <th class="table_120">購入日時</th>
+                                <th class=" table_160">ユーザー名</th>
+                                <th class="table_80">購入LP数</th>
+                                <th class="table_120">決済方法</th>
+                                <th class="table_120">ステータス</th>
+                            </tr>
+                            <tr>
+                                <td >2021/03/14 00:00</td>
+                                <td class="bold-font table_120"><a href="">ユーザーの名前</a></td>
+                                <td >2000</td>
+                                <td >銀行振込</td>
+                                <td><button class="table-btn color3 table_center" click="openModal">付与</button></td>
+                            </tr>
+                            <tr>
+                                <td >2021/03/14 00:00</td>
+                                <td class="bold-font table_120"><a href="">ユーザーの名前</a></td>
+                                <td >2000</td>
+                                <td >銀行振込</td>
+                                <td >未</td>
+                            </tr>
+                            <lppresentmodal v-show="showContent" @close="showContent = false"></lppresentmodal>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- LPオマケ付与 -->
+            <div id="tab_two_second_panel" class="tab_two_panel ">
+                <h1 class="title">LPオマケ付与</h1>
+                <div class="hyou_area_rl16">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                            <div class="table-title-area color5">
+                            <h2 class="table-title">キャンペーン一覧</h2>
+                            <div class="table_sort">
+                                <select name="order" id="" class="table_sort_select color1">
+                                <option >新着中</option>
+                                <option >登録順</option>
+                                </select>
+                            </div>
+                            </div>
+                        <table class="table">
+                            <tr class="table_header">
+                                <th class=" table_160">タイトル</th>
+                                <th class="table_120">確認コード</th>
+                                <th class="table_80">有効回数</th>
+                                <th class="table_160">有効期間</th>
+                                <th class="table_120">ステータス</th>
+                                <th class="table_120">編集</th>
+                                <th class="table_120">ユーザー一覧</th>
+                            </tr>
+                            <tr>
+                                <td class="bold-font table_120"><a href="">投稿タイトタイトルタイト</a></td>
+                                <td >E2839IU0121</td>
+                                <td >1000</td>
+                                <td >2021/03/14 00:00<br>~<br>2021/03/15 00:00</td>
+                                <td >公開</td>
+                                <td ><button class="table-btn color3" onclick="location.href='../../user/html/master_news_edit_news.html'">編集</button></td>
+                                <td ><button class="table-btn color3" onclick="location.href='../../contributor/html/contributor_campaign_present_detail.html'">詳細</button></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+  </div>
+    <script src="../../master/js/mascomponent.js" defer></script>
+  <script src="../../contributor/js/conauchtop.js" defer></script>
+</body>
+</html>

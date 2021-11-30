@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>女優マイページ</title>
+    <meta name="description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <meta name="keywords" content="ラポファン,セクシー女優,オンラインオークション,ラポルノ,ラポルノファンディング,クラファン,クラウドファンディング,ガチャ">
+    <meta property="og:title" content="【ラポルノファンディング】">
+    <meta property="og:description" content="ラポルノファンディング">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ラポルノファンディング">
+    <!-- Facebook -->
+    <meta property="fb:app_id" content="">
+    <!-- //Facebook -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lapornofund">
+    <meta name="twitter:title" content="【ラポルノファンディング】">
+    <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <!-- <title>マイページ</title> -->
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/user_component.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <link rel="stylesheet" href="../../user/css/user_mypage.css">
+    <script src="../../user/js/vue.js"></script>
+
+</head>
+<body>
+    <div id="headers">
+        <headers></headers>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="#tab5">TOP</a></li>
+            <li class="arrow-l">マイページ</li>
+        </ul>
+    </div>
+    <!-- プロフィール -->
+    <div class="user color1" id="profile">
+        <div class="user-left" >
+            <div class="user-img"><img src="../../img/userimage.png" alt=""><img v-show="editpen" @click="openModalEditImg" class="profeditimg" src="../../img/editpen.png" alt=""></div>    
+            <div class="user-rank">
+                <div class="subtitle" >称号</div>
+                    <div @click="openModalPrize" class="rank-icon-area">
+                        <div class="rank-icon" >
+                    <img src="../../img/patoran3.png" alt="patron">
+                    <div class="icon-text">パトロン</div>
+                </div>
+                <div class="rank-icon">
+                    <img src="../../img/patoran3.png" alt="patron">
+                    <div class="icon-text">パトロン</div>
+                </div>
+                <div class="rank-icon">
+                    <img src="../../img/patoran3.png" alt="patron">
+                    <div class="icon-text">パトロン</div>
+                </div>
+            </div>
+        </div>
+        <editimg v-show="showContentEditImg" @close="showContentEditImg = false"></editimg>
+        <prizeselectmodal v-show="showContentPrize" @close="showContentPrize = false">
+        </prizeselectmodal>
+        </div>
+        <div class="user-right">
+            <div class="user-name-area">
+                <div class="subtitle">ユーザー名</div>
+                <div class="user-name">ユーザーの名前<img v-show="editpen" @click="openModalEditName" class="profedit" src="../../img/editpen.png" alt="">
+                </div>
+            </div>
+            <div class="user-info-area" >
+                <div class="lp info">
+                    <div class="subtitle">所持LP</div>
+                    <div class="syojilp subtext">999,999,999 pt</div>
+                </div>
+                <div class="lp-button info">
+                    <a href="buylp.html" class="button color3">LP購入</a>
+                </div>
+                <div class="info" id="patronrank">
+                    <div class="subtitle" v-on:click="openModalRank">
+                        ランク<img src="../../img/ques.png" alt="" class="q-icon">
+                    </div>
+                    <div class="subtext">ゴールド</div>
+                    <patronrank v-show="showContentRank" @close="showContentRank = false"></patronrank>
+                </div>
+                <div class="sien info">
+                    <div class="subtitle">支援総額</div>
+                    <div class="siengaku subtext">999,999,999円</div>
+                </div>
+            </div>
+            <div class="edit-button">
+                <div class="button color3" @click="profileEdit">プロフィール編集</div>
+            </div>
+        </div>
+        <editname v-show="showContentEditName" @close="showContentEditName = false"></editname>
+    </div>
+    <!-- たぶ -->
+    <div id="actprodtop">
+        <input id="tab1" type="radio" name="tab_btn" checked>
+        <input id="tab2" type="radio" name="tab_btn">
+        <input id="tab3" type="radio" name="tab_btn">
+        <input id="tab4" type="radio" name="tab_btn">
+        <input id="tab5" type="radio" name="tab_btn">
+        <input id="tab6" type="radio" name="tab_btn">
+        <div class="tab_labels gap">
+            <label class="tab1_label tabbtn" for="tab1">支援履歴</label>
+            <label class="tab2_label tabbtn" for="tab2">入札落履歴</label>
+            <label class="tab3_label tabbtn relative" for="tab3">景品一覧</label>
+            <label class="tab4_label tabbtn" for="tab4">LP購入履歴</label>
+            <label class="tab5_label tabbtn" for="tab5">お気に入り</label>
+            <label class="tab6_label tabbtn" for="tab6">設定</label>
+        </div>
+        <div class="panel_area color1">
+            <!--支援履歴-->
+            <div id="panel1" class="tab_panel">
+                <div class="content color0">
+                    <div class="content-main" v-cloak>
+                        <img src="../../img/demoimg.png" alt="">
+                        <togbutton1>
+                            <template v-slot:incontent >
+                                <div class="return" >リターン</div>
+                                <div class="content-sub">
+                                    <div class="content-sub-left">
+                                        <div class="content-subtitle">リターンタイトル</div>
+                                        <img  src="../../img/demoimg.png" alt="">
+                                    </div>
+                                    <div class="content-sub-right" >
+                                        <div class="date color3">履行済（デート）</div>
+                                        <div class="pr_but" >
+                                            <div class="price">￥〇〇◯,〇〇〇<span class="discount_span">(10%割引コード使用)</span></div>
+                                            <div class="button color3" @click="openModal">詳細
+                                            </div>
+                                            <returnsendinfocard v-show="showContent" @close="showContent = false"></returnsendinfocard>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </template>
+                        </togbutton1>
+                        </div>
+                </div>
+                <div class="content color0">
+                    <div class="content-main" v-cloak>
+                        <img class="content-main-img" src="../../img/demoimg.png" alt="">
+                        <togbutton1>
+                            <template v-slot:incontent >
+                                <div class="return" >リターン</div>
+                                <div class="content-sub warn_shadow">
+                                    <div class="content-sub-left">
+                                        <div class="content-subtitle warn_icon">リターンタイトル</div>
+                                        <img  src="../../img/demoimg.png" alt="">
+                                    </div>
+                                    <div class="content-sub-right" >
+                                        <div class="date color3">履行済（デート）</div>
+                                        <div class="pr_but" >
+                                            <div class="price">￥〇〇◯,〇〇〇</div>
+                                            <div class="button color3" @click="openModal">詳細
+                                            </div>
+                                            <returnsendinfobank v-show="showContent" @close="showContent = false"></returnsendinfobank>
+                                        </div>
+                                    </div>
+                                    </div>
+                            </template>
+                        </togbutton1>
+                    </div>
+                </div>
+            </div>
+             <!--入札落履歴-->
+            <div id="panel2" class="tab_panel">
+                <div class="maintitle">入札</div>
+                <div class="content2-main1">
+                    <auchcard></auchcard>
+                    <auchcard></auchcard>
+                </div>
+                <div class="content2-main2">
+                    <div class="maintitle" id="detailbutton">落札</div>
+                    <div class="content2-main2-card color0">
+                        <div class="content2-main2-top">
+                            <div class="content2-main2-title">【新村あかり】色紙＋チェキ【新村あかり】色紙＋チェキ</div>
+                            <div class="content2-main2-status color3">ステータス</div>
+                        </div>
+                        <div class="content2-main2-middle">
+                            <img src="../../img/demoimg.png" alt="">
+                            <div class="c2-m2-info">
+                                <div class="info-inner">
+                                    <img src="../../img/lady.png" alt="">
+                                    <div>新村あかり</div>
+                                </div>
+                                <div class="info-inner">
+                                    <img src="../../img/pro.png" alt="">
+                                    <div>桃太郎永劫出版</div>
+                                </div>
+                                <div class="info-inner">
+                                    <img src="../../img/mallet.png" alt="">
+                                    <div>3,111,111円<span class="discount_span">(10%割引コード使用)</span></div>
+                                </div>
+                                <div class="info-inner">
+                                    <img src="../../img/money.png" alt="">
+                                    <div>入金済</div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="content2-main2-bottom" >
+                            <div class="subtitle">発送メモ</div>
+                            <p class="subtitle_p">特になし<br> ここにメモが入ります <br></p>
+                            <div class="c2-m2-button">
+                            <div class="button color3" @click="openModal">詳細
+                            </div>
+                            <auchsendinfobank v-show="showContent" @close="showContent = false"></auchsendinfobank>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content2-main2-card color0 warn_shadow" >
+                        <div class="content2-main2-top">
+                            <div class="content2-main2-title warn_icon">【新村あかり】色紙＋チェキ【新村あかり】色紙＋チェキ</div>
+                            <div class="content2-main2-status color3">ステータス</div>
+                        </div>
+                        <div class="content2-main2-middle">
+                            <img src="../../img/demoimg.png" alt="">
+                            <div class="c2-m2-info">
+                                <div class="info-inner">
+                                    <img src="../../img/lady.png" alt="">
+                                    <div>新村あかり</div>
+                                </div>
+                                <div class="info-inner">
+                                    <img src="../../img/pro.png" alt="">
+                                    <div>桃太郎永劫出版</div>
+                                </div>
+                                <div class="info-inner">
+                                    <img src="../../img/mallet.png" alt="">
+                                    <div>3,111,111円</div>
+                                </div>
+                                <div class="info-inner">
+                                    <img src="../../img/money.png" alt="">
+                                    <div>入金済</div>
+                                </div>
+                            </div>    
+                        </div>
+                        <div class="content2-main2-bottom" >
+                            <div class="subtitle">発送メモ</div>
+                            <p class="subtitle_p">特になし<br> ここにメモが入ります <br></p>
+                            <div class="c2-m2-button">
+                            <div class="button color3" @click="openModal">詳細
+                            </div>
+                            <creditcarduntreated v-show="showContent" @close="showContent = false"></creditcarduntreated>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--景品一覧-->
+            <div id="panel3" class="tab_panel">
+                <gachafreebie></gachafreebie>
+                <gachafreebie></gachafreebie>
+                <gachafreebie></gachafreebie>
+            </div>
+            <!--+LP購入履歴-->
+            <div id="panel4" class="tab_panel">
+                <div class="lp-card">
+                    <div class="lp-card-inner">
+                        <div >現在所持LP</div>
+                        <div >〇〇〇,〇〇〇LP</div>
+                    </div>
+                </div>
+                <a href="buylp.html" class="button buy-lp-button color3">LP購入する</a>
+                <div class="rireki">
+                    <div class="rireki-th color5">LP使用履歴</div>
+                    <div class="mail-main" v-cloak>
+                        <togbutton4>
+                            <template v-slot:outers >
+                                <div class="outer_title">2021/08/08 12:44<br>タイトル</div>
+                                    <p>4400pt</p>
+                            </template>
+                            <template v-slot:incontent >
+                                <p class="rireki_detail_p">タイトルタイトル</p>  
+                            </template>
+                        </togbutton4>
+                        <togbutton4>
+                            <template v-slot:outers >
+                                <div class="outer_title">2021/08/08 12:44<br>タイトル</div>
+                                    <p>4400pt</p>
+                            </template>
+                            <template v-slot:incontent >
+                                <p class="rireki_detail_p">タイトルタイトル</p>  
+                            </template>
+                        </togbutton4>
+                        <togbutton4>
+                            <template v-slot:outers >
+                                <div class="outer_title">2021/08/08 12:44<br>タイトル</div>
+                                    <p>4400pt</p>
+                            </template>
+                            <template v-slot:incontent >
+                                <p class="rireki_detail_p">タイトルタイトル</p>  
+                            </template>
+                        </togbutton4>
+                    </div>
+                </div>
+                <div class="rireki">
+                    <div class="rireki-th color5">LP購入履歴</div>
+                    <togbutton4>
+                        <template v-slot:outers >
+                            <div class="outer_title">2021/08/08 12:44</div>
+                            <p>4400pt<span class="outer_right_span">(おまけ333pt)</span></p>
+                        </template>
+                        <template v-slot:incontent >
+                        <p class="rireki_detail_p">有効期限：1991/11/11<br>クレジットカード決済</p>  
+                        </template>
+                    </togbutton4>
+                    <togbutton4>
+                        <template v-slot:outers >
+                            <div class="outer_title">2021/08/08 12:44</div>
+                            <p>4400pt<span class="outer_right_span">(おまけ333pt)</span></p>
+                        </template>
+                        <template v-slot:incontent >
+                        <p class="rireki_detail_p">有効期限：1991/11/11<br>クレジットカード決済</p>  
+                        </template>
+                    </togbutton4>
+                </div>
+            </div>
+            <!--お気に入り-->
+            <div id="panel5" class="tab_panel">
+                <input id="recht_three_tab1" type="radio" name="tab_btn2" checked>
+                <input id="recht_three_tab2" type="radio" name="tab_btn2">
+                <input id="recht_three_tab3" type="radio" name="tab_btn2">
+                <div class="recht_three_tab_labels gap">
+                <label class="recht_three_tab1_label recht_three_tabbtn" for="recht_three_tab1">プロジェクト</label>
+                <label class="recht_three_tab2_label recht_three_tabbtn" for="recht_three_tab2">オークション</label>
+                <label class="recht_three_tab3_label recht_three_tabbtn" for="recht_three_tab3">ガチャ</label>
+                </div>
+                <div class="recht_three_panel_area">
+                    <div id="recht_three_panel1" class="recht_three_tab_panel">
+                        <projcard></projcard>
+                        <projcard></projcard>
+                        <projcard></projcard>
+                    </div>
+                    <div id="recht_three_panel2" class="recht_three_tab_panel">
+                        <auchcard></auchcard>
+                        <auchcard></auchcard>
+                        <auchcard></auchcard>
+                    </div>
+                    <div id="recht_three_panel3" class="recht_three_tab_panel">
+                        <gachacard></gachacard>
+                        <gachacard></gachacard>
+                        <gachacard></gachacard>
+                    </div>
+                </div>   
+            </div>
+            <div id="panel6" class="tab_two_panel">
+                <input id="tab_two_first" type="radio" name="tab_btn3" checked>
+                <input id="tab_two_second" type="radio" name="tab_btn3">
+                <div class="tab_two_button_area gap">
+                <label class="tab_two_first_label tab_two_button" for="tab_two_first">登録情報</label>
+                <label class="tab_two_second_label tab_two_button" for="tab_two_second">変更</label>
+                </div>
+                <div class="tab_two">
+                    <div id="tab_two_first_panel" class="tab_two_panel">
+                        <div class="content6-card-area">
+                            <div class="content6-card">
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">メールアドレス</div>
+                                    <div class="">XXXXXXXXXX@gmail.com</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">電話番号</div>
+                                    <div class="">090-7777-5555</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">住所</div>
+                                    <div class="">
+                                        <div class="yuubin-num">〒XXX-XXX</div>
+                                        <div class="jyusyo">
+                                            東京都<br>
+                                            新太宗丸ビル7Fインター
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">本名</div>
+                                    <div class="">羅保野 あつし</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">フリガナ</div>
+                                    <div class="">ラホノ アツシ</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">送り主</div>
+                                    <div class="">投稿者法人名</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">郵便局留め先</div>
+                                    <div class="">郵便局の支店の名前</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">ヤマト留め先</div>
+                                    <div class="">ヤマトの支店の名前</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">メール野通知設定</div>
+                                    <div class="">許可</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">ニュースレターの通知設定</div>
+                                    <div class="">許可</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">TwitterURL</div>
+                                    <div class="">https://twitter.com/home</div>
+                                </div>
+                                <div class="touroku-info-part">
+                                    <div class="subtitle">InstagramURL</div>
+                                    <div class="">https://www.instagram.com</div>
+                                </div>
+                                <div class="onebutton">
+                                    <a class="change_button">関係者はこちら</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="tab_two_second_panel" class="tab_two_panel">
+                        <div class="content6-card-area">
+                            <div class="content6-card">
+                                <div class="change-info-part">
+                                    <div class="subtitle">メールアドレス</div>
+                                    <input type="text" class="change-input input-full">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">電話番号</div>
+                                    <input type="text" class="change-input input-half">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">住所</div>
+                                    <div class="content2-main2-top">
+                                        <input type="text" class="change-input input-half" placeholder="〒000-3333">
+                                        <div class="jyuusyo-button-area">
+                                            <div class="button color3 jyuusyo-button">住所検索</div>
+                                        </div>
+                                    </div>                                        
+                                    <input type="text" class="change-input input-full">
+                                    <input type="text" class="change-input input-full">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">本名</div>
+                                    <input type="text" class="change-input input-75">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">フリガナ</div>
+                                    <input type="text" class="change-input input-75">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">送り主</div>
+                                    <div class="content6-card-area">
+                                        <label class="check_select radio-input input-half">投稿者法人名
+                                            <input type="radio" checked="checked" name="radio1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="check_select radio-input input-half">久我明正
+                                            <input type="radio" name="radio1">
+                                            <span class="checkmark"></span>
+                                        </label>                    
+                                    </div>                    
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">郵便局留め先</div>
+                                    <div class="input-choice">
+                                        <select class="change-input input-half" name="" id="">
+                                            <option value="X">選ぶ</option>
+                                            <option value="A">選択肢1</option>
+                                            <option value="B">選択肢2</option>
+                                            <option value="C">選択肢3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">ヤマト留め先</div>
+                                    <select class="change-input input-half" name="" id="">
+                                            <option value="X">選ぶ</option>
+                                            <option value="A">選択肢1</option>
+                                            <option value="B">選択肢2</option>
+                                            <option value="C">選択肢3</option>
+                                        </select>
+                                </div>
+                                <div class="change-info-part harf-size">
+                                    <div class="subtitle">メールの通知設定</div>
+                                    <div class="content6-card-area">
+                                        <label class="check_select radio-input input-half">ON
+                                            <input type="radio" checked="checked" name="radio2">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="check_select radio-input input-half">OFF
+                                            <input type="radio" name="radio2">
+                                            <span class="checkmark"></span>
+                                        </label>  
+                                    </div>
+                                </div>
+                                <div class="change-info-part harf-size">
+                                    <div class="subtitle">ニュースレターの通知設定</div>
+                                    <div class="content6-card-area">
+                                            <label class="check_select radio-input input-half">ON
+                                            <input type="radio" checked="checked" name="radio3">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="check_select radio-input input-half">OFF
+                                            <input type="radio" name="radio3">
+                                            <span class="checkmark"></span>
+                                        </label> 
+                                    </div>
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">TwitterURL</div>
+                                    <input type="text" class="change-input input-full" placeholder="https://twitter.com/home">
+                                </div>
+                                <div class="change-info-part">
+                                    <div class="subtitle">InstagramInstagramURL</div>
+                                    <input type="text" class="change-input input-full" placeholder="https://www.instagram.com/">
+                                </div>
+                                <a class="change_button">変更する</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+    <footer class="color5">
+        <div class="foot_list">
+          <ul class="foot_list_ul">
+            <li><a href="">ラポルノファンディングとは</a></li>
+            <li><a href="">よくある質問</a></li>
+            <li><a href="">お問い合わせ</a></li>
+            <li><a href="">特定商取引法の表示</a></li>
+            <li><a href="">利用規約</a></li>
+            <li><a href="">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+        <p class="footer_copyright">©︎laporno.fund, All Rights Reserved.</p>
+      </footer>
+    <script src="../../user/js/mypage.js" defer></script>
+    <script src="../../user/js/component.js"></script>
+</body>
+</html>

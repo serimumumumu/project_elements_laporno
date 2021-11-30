@@ -1,0 +1,296 @@
+@import "concomponent.scss";
+.main_card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin:20px 16px ;
+    padding:10px;
+}
+.card_img img,.main_in_article_1, .card-img-area img {
+    width: 100%;
+}
+.bold-font{
+    font-weight: bold;
+  }
+.main_in {
+    padding: 10px 10px 8px 10px;
+}
+.main_in_article {
+    display: flex;
+}
+.main_in_article_2 {
+    margin-bottom: 16px;
+    width: 50%;
+}
+.main_in_article_2 img ,.main_in_article_1 img{
+    width: 14px;
+    margin:0 4px 2px 0;
+}
+.main_in_article_2 p ,.main_in_article_1 p {
+    color: $grayblack;
+    font-size: 12px;
+    line-height: 18px;
+    
+}
+.main_in_article_2 a,.main_in_article_2 h6, .main_in_article_1 a, .main_in_article_1 h6 {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 2px 0 12px 12px;
+    
+}
+ .main_in_article_1 h5 {
+    font-size: 22px;
+    line-height: 26px;
+    margin: 2px 0 12px 12px;
+    
+}
+// .main_in_article_1 {
+//     width: 100%;
+// }
+img.favorite_icon2_img {
+    width: 30px;
+}
+.float_area_heart {
+    width: 20%;
+}
+.main-top-card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin: 10px 10px 20px;
+    padding: 10px 10px 10px;
+}
+.main-top-card-title{
+    padding: 10px 0;
+    font-size: 16px;
+    border-bottom: 1px solid #C4C4C4;
+}
+.main_in_article_2 h6 {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 2px 0 0px 12px;
+    
+}
+.percent-area{
+    padding: 4px 0px;
+  }
+  .percent{
+    border-radius: 2px;
+    height: 4px;
+    width: 100%;
+    position: relative;
+  }
+  .percent::before{
+    content: "";
+    width: 100px;
+    height: 4px;
+    background-color: $black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 2px;
+  }
+  .supportbutton {
+    background: $gray;
+    border-radius: 4px;
+    text-align: center;
+    padding: 13px;
+    width: 60%;
+    margin: 0 auto;
+  
+  }
+
+
+// たぶ
+.active{
+    background:$whitewhite;
+     border-bottom: 1px solid #c4c4c4;
+  }
+  .tab-area {
+    padding-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    -ms-flex-pack: distribute;
+    gap: 1px;
+}
+  .tab{
+      width: 33%;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 4px 4px 0 0;
+      display: flex;
+      gap: 1px;
+      justify-content: center;
+      align-items: center;
+  }
+
+
+.sienkingaku{
+    padding-top: 6px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+}
+
+// タブ切り替え
+.content-container {
+    padding: 20px 16px;
+}
+
+// 初めに/
+.main-content1-text{
+     margin:0px 0  20px;
+ }
+ .main-content-img-area img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+ }
+.main-content1-subtitle{
+     padding-bottom: 2px;
+    border-bottom: 1px solid $gray;
+    font-size: 16px;
+        margin-bottom: 8px;
+    font-weight: 700;
+ }
+
+//  リターン
+.return_index img {
+    margin-right: 4px;
+    width:18px ;
+}
+.return_index  {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.content1-card{
+    background: $whitewhite;
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.content-card-subtitle{
+    padding-top: 10px;
+}
+
+.content-card-text{
+    margin-bottom: 10px;
+}
+// .card-img-area img{
+//     width: 100%;
+// }
+.choice-button{
+    border-radius: 4px;
+    height: 44px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $black;
+    background: $whitegray;
+    margin-bottom: 10px;
+}
+.target-area{
+    color: $grayblack;
+    display:flex;
+    align-items: center;
+}
+.target-area img {
+    margin: 0 8px 4px 0;
+    width: 24px;
+
+}
+.target-area-span {
+    margin-left: 8px;
+  }
+// コメント
+.user-name-area{
+    display: flex;
+    margin-bottom: 10px;
+}
+.user-icon-area{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    width: 25px;
+    height: 25px;
+}
+.user-icon-area >img{
+    width: 100%;
+}
+.user-name{
+    font-weight: bold;
+    color: $grayblack;
+    display:flex;
+    align-items: center;
+    margin-left: 8px;
+}
+.content1-date{
+    text-align: right;
+    color: $grayblack;
+}
+// 活動報告
+.content1-card-date {
+    text-align: right;
+    color: $grayblack;
+}
+.content4-card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+
+.content1-card-title{
+    padding: 10px;
+    color:$grayblack;
+}
+
+.content1-card-text{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.content1-card-text p {
+    padding-top: 10px;
+}
+
+#float_area {
+    position: relative;
+    background: $white;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    width: 100%;
+    padding: 10px 30px;
+}
+.float_area_a {
+    width: 80%;
+    display: block;
+    padding: 12px 70px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: $white;
+    margin: 0 auto;
+    background: $grayblack;
+    text-align: center;
+}
+// 追従質問ページスクロールボタン
+.floatbutton {
+    padding: 0px 30px;
+    width: 100%;
+    bottom: 140px;
+    position: fixed;
+}
+.topscrollbutton {
+    position: absolute;
+    width: 72px;
+    right: 30px;
+}
+.questionbutton {
+    width: 40px;
+    position: absolute;
+}

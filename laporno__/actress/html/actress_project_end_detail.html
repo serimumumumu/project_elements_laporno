@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト詳細</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/projdetail.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="headers">
+        <headers></headers>
+    </div>
+<!-- パンクズりすと -->
+<div class="panlist">
+    <ul >
+        <li ><a href="user_user_top.html">TOP</a></li>
+        <li class="arrow-l"><a href="user_project_user_top.html">プロジェクト一覧</a></li>
+        <li class="arrow-l">プロジェクトタイトルタイトル</li>
+    </ul>
+</div>
+
+
+<section class="main_card" id="support">
+    <div class="card_img">
+        <img src="../../img/demoimg.png" alt="">
+    </div>
+    <article class="main-top-card-title">【新村あかり】色紙＋チェキ</article>
+    <div class="main_in">
+        <article class="main_in_article">
+            <div class="main_in_article_2">
+                <p class=""><img src="../../img/lady.png" alt="">女優名</p>
+                <a class="bold-font" href="actressdetail.html">
+                    新村あかり
+                </a>
+            </div>
+            <div class="main_in_article_2">
+                <p class="ain_in_article_2_p"><img src="../../img/pro.png" alt="">投稿者</p>
+                <a class="bold-font" href="user_contributor_profile.html">
+                    桃太郎出版
+                </a>
+            </div>
+        </article>
+        <article class="main_in_article">
+            <div class="main_in_article_2">
+                <p class=""><img src="../../img/guys.png" alt="">支援者数</p>
+                <h6>
+                    999人
+                </h6>
+            </div>
+            <div class="main_in_article_2">
+                <p class="ain_in_article_2_p"><img src="../../img/time.png" alt="">タイムリミット</p>
+                <h6>
+                    残り12時間
+                </h6>
+            </div>
+        </article>
+        <article >
+            <div class="main_in_article_1">
+                <p class=""><img src="../../img/folder.png" alt="">カテゴリー</p>
+                <h6>
+                    スレンダー,美乳,美肌
+                </h6>
+            </div>
+        </article>
+        <div class="sienkingaku">
+            <div>3,111,111円</div>
+        </div>
+        <article class="percent-area">
+            <div class="percent color3"></div>
+        </article> 
+    </div>
+    <div class="supportbutton">
+        <button onclick="location.href=''">販売サイト</button>
+    </div> 
+</section>
+<div class=" color2">
+<div id="actprodtop">
+  <div class="tab-area">
+      <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">初めに</div>
+      <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">リターン</div>
+      <div class="tab color3" @click="isSelect('3')" v-bind:class="{'active': isActive === '3'}">コメント</div>
+      <div class="tab color3" @click="isSelect('4')" v-bind:class="{'active': isActive === '4'}">活動報告</div>
+  </div>
+  <!--タブの中身、activeクラス付与で表示-->
+  <!--初めに-->
+  <div class="content-container color1" v-if="isActive === '1'">
+    <div class="main-content1-inner">
+        <div class="main-content1-text">
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        </div>
+        <div class="main-content-img-area">
+            <img src="../../img/demoimg.png" alt="">
+        </div>
+        <div class="main-content1-subtitle"> 資金の使い道 </div>
+        <div class="main-content1-text">
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        </div>
+        <div class="main-content1-subtitle">注意事項 </div>
+        <div class="main-content1-text">
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        </div>
+    </div>
+  </div>
+    <!--リターン-->
+  <div class="content-container  color1" v-else-if="isActive === '2'">
+        <h5 class="return_index"><img src="../../img/present.png" alt="">リターン一覧</h5>
+       <section class="content1-card">
+            <article class="main-top-card-title">リターーーンタイトル</article>
+            <div class="card-img-area">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <article class="content-card-subtitle">￥5000円</article>
+            <article class="content-card-text">テキストテキストテキスト</article>
+            <div class="choice-button-area">
+                <a href="user_project_return.html" class="choice-button color3">リターンを選択する</a>
+            </div>
+            <div class="target-area"><img src="../../img/guys.png"> 対象者：10名 残り：4名</div>
+        </section>
+       <section class="content1-card">
+            <article class="main-top-card-title">リターーーンタイトル</article>
+            <div class="card-img-area">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <article class="content-card-subtitle">￥5000円</article>
+            <article class="content-card-text">テキストテキストテキスト</article>
+            <div class="choice-button-area">
+                <a href="user_project_return.html" class="choice-button color3">リターンを選択する</a>
+            </div>
+            <div class="target-area"><img src="../../img/guys.png"> 対象者：10名 残り：4名</div>
+        </section>
+       <section class="content1-card">
+            <article class="main-top-card-title">リターーーンタイトル</article>
+            <div class="card-img-area">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <article class="content-card-subtitle">￥5000円</article>
+            <article class="content-card-text">テキストテキストテキスト</article>
+            <div class="choice-button-area">
+                <a href="user_project_return.html" class="choice-button color3">リターンを選択する</a>
+            </div>
+            <div class="target-area"><img src="../../img/guys.png"> 対象者：10名 残り：4名</div>
+        </section>
+  </div>
+  <!--コメント-->
+  <div class="content-container  color1" v-else-if="isActive === '3'">
+      <section class="content1-card">
+                <a href="user_profile.html" class="user-name-area">
+                    <div class="user-icon-area color4">
+                        <img src="../../img/man_white.png" alt="">
+                    </div>
+                    <div class="user-name">パトロン名</div>
+                </a >
+                <div class="content-card-text">
+                    コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント
+                </div>
+                <article class="content1-date">2021/01/11</article>
+        </section>
+      <section class="content1-card">
+                <a ref="user_profile.html" class="user-name-area">
+                    <div class="user-icon-area color4">
+                        <img src="../../img/man_white.png" alt="">
+                    </div>
+                    <div class="user-name">パトロン名</div>
+                </a>
+                <div class="content-card-text">
+                    コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント
+                </div>
+                <article class="content1-date">2021/01/11</article>
+        </section>
+      <section class="content1-card">
+                <a ref="user_profile.html" class="user-name-area">
+                    <div class="user-icon-area color4">
+                        <img src="../../img/man_white.png" alt="">
+                    </div>
+                    <div class="user-name">パトロン名</div>
+                </a>
+                <div class="content-card-text">
+                    コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント
+                </div>
+                <article class="content1-date">2021/01/11</article>
+        </section>
+  </div>
+  <!--活動報告-->
+  <div class="content-container  color1" v-else-if="isActive === '4'">
+       <section class="content4-card">
+            <article class="content1-card-date">2021/01/03</article>
+            <article class="content1-card-title color2">活動報告のタイトル</article>
+            <article class="content1-card-text">
+                <div class="card-img-area">
+                    <img src="../../img/demoimg.png" alt="">
+                </div>
+                <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </article>
+        </section>
+       <section class="content4-card">
+            <article class="content1-card-date">2021/01/03</article>
+            <article class="content1-card-title color2">活動報告のタイトル</article>
+            <article class="content1-card-text">
+                <div class="card-img-area">
+                    <img src="../../img/demoimg.png" alt="">
+                </div>
+                <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </article>
+        </section>
+       <section class="content4-card">
+            <article class="content1-card-date">2021/01/03</article>
+            <article class="content1-card-title color2">活動報告のタイトル</article>
+            <article class="content1-card-text">
+                <div class="card-img-area">
+                    <img src="../../img/demoimg.png" alt="">
+                </div>
+                <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </article>
+        </section>
+  </div>
+
+    </div>   
+</div>
+<div class="floatbutton">
+    <img class="questionbutton" src="../../img/quesblack.png" alt="">
+    <img class="topscrollbutton" src="../../img/pagetop.png" alt="">
+
+
+</div>
+
+<div id="float_area">
+    <div class="float_area_heart">
+            <div class="favorite_icon2" v-if="isActive" @click="changeHeart">
+                <img class="favorite_icon2_img" src="../../img/favheart.png" alt="">
+            </div>
+            <div class="favorite_icon2" v-else @click="changeHeart">
+                <img class="favorite_icon2_img" src="../../img/favedheart.png" alt="">
+            </div>
+        <p class="">324</p>
+    </div>
+    <div class="float_area_a">
+        <p >終了しました</p>
+    </div>
+</div>
+
+<script src="js/mypage.js"></script>
+<script src="js/component.js"></script>
+</body>
+</html>

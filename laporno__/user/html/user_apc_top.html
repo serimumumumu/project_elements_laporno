@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オークショントップ</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_apc_top.css">
+    <script src="../../user/js/vue.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+        <!-- パンクズりすと -->
+        <div class="panlist">
+            <ul >
+                <li ><a href="../../user/html/user_top.html">TOP</a></li>
+                <li class="arrow-l"><p>女優・投稿者・プロダクション一覧</p></li>
+            </ul>
+        </div>
+            <search></search>
+        <div >
+            <div class="main-top color2">
+            <h3 class="page-title">オークション一覧</h3>
+            <div class="tab-area">
+                <div class="tab color3 " @click="isSelectTab('1')" v-bind:class="{'active': isActiveTab === '1'}">女優</div>
+                <div class="tab color3" @click="isSelectTab('2')" v-bind:class="{'active': isActiveTab === '2'}">プロダクション</div>
+                <div class="tab color3" @click="isSelectTab('3')" v-bind:class="{'active': isActiveTab === '3'}">投稿者</div>
+            </div>
+            <!--開催中-->
+            <div class="main-area color1" v-if="isActiveTab === '1'">
+                <div class="user_auc_top_intab" >
+                    <useractresscard ></useractresscard>
+                    <useractresscard ></useractresscard>
+                    <useractresscard ></useractresscard>
+                </div>
+            </div>
+            <!--終了-->
+            <div  class="main-area color1" v-else-if="isActiveTab === '2'">
+                <div class="user_auc_top_intab">
+                    <userproductioncard ></userproductioncard>
+                    <userproductioncard ></userproductioncard>
+                    <userproductioncard ></userproductioncard>
+                    <userproductioncard ></userproductioncard>
+                    <userproductioncard ></userproductioncard>
+                </div>
+            </div>
+            <div  class="main-area color1" v-else="isActiveTab === '3'">
+                <div class="user_auc_top_intab">
+                    <usercontributorcard ></usercontributorcard>
+                    <usercontributorcard ></usercontributorcard>
+                    <usercontributorcard ></usercontributorcard>
+                    <usercontributorcard ></usercontributorcard>
+                    <usercontributorcard ></usercontributorcard>
+                </div>
+            </div>
+            </div>   
+        </div>
+    </div>
+    <script src="../../user/js/user_header_search.js" defer></script>
+    <script src="../../user/js/user_component_actress_production_contributor.js" defer></script>
+    <script>
+          window.onload = function () {
+            new Vue ({
+                el:"#app",
+                data: {
+                    isActiveTab: "1",
+                },
+                methods:{
+                isSelectTab(number) {
+                this.isActiveTab = number;
+                },
+            }
+            });
+        }
+    </script>
+</body>
+</html>

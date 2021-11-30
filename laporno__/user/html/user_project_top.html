@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトトップ</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_project_top.css">
+    <script src="../../user/js/vue.js"></script>
+    <script src="../../user/js/swiper.js"></script>
+</head>
+<body style="background: #e9e9e9;">
+    <div id="app">
+        <headers></headers>
+        <!-- パンクズりすと -->
+        <div class="panlist">
+            <ul >
+                <li ><a href="../../user/html/user_project_top.html">TOP</a></li>
+                <li class="arrow-l"><p>プロジェクトトップ</p></li>
+            </ul>
+        </div>
+        <search></search>
+        <!-- スライダー -->
+        <div class="swiper">
+            <div class="swiper-container"> 
+                <!-- ラッパーの（スライドを囲む） div 要素 -->
+                <div class="swiper-wrapper"> 
+                    <!-- それぞれのスライドの div 要素 -->
+                    <div class="swiper-slide"><img src="../../img/demoimg2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../../img/demoimg.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../../img/demoimg2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../../img/demoimg.png" alt=""></div>
+                </div>
+                <!-- ページネーションの div 要素 -->
+                <div class="swiper-pagination"></div>
+                <!-- ナビゲーションボタンの div 要素-->
+                <div class="swiper-button-prev"><img src="../../img/arrowleft.png" alt=""></div>
+                <div class="swiper-button-next"><img src="../../img/arrowright.png" alt=""></div>
+                <!-- スクロールバーの div 要素 -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+        <!-- 新着プロジェクト -->
+        <div class="new_project color2">
+            <div class="new_title">
+                <p class="title">新着プロジェクト</p>
+            </div>
+            <div class="new_procard" >
+                <userprojectcard ></userprojectcard>
+                <userprojectcard ></userprojectcard>
+                <userprojectcard ></userprojectcard>
+                <userprojectcard ></userprojectcard>
+                <userprojectcard ></userprojectcard>
+            </div>
+        </div>
+        <!-- プロジェクト一覧 -->
+        <div class="main-top color2" >
+            <h3 class="page-title">プロジェクト一覧</h3>
+            <div class="tab-area">
+                <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActiveTab === '1'}">募集中</div>
+                <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActiveTab === '2'}">制作中</div>
+                <div class="tab color3 " @click="isSelect('3')" v-bind:class="{'active': isActiveTab === '3'}">販売中</div>
+                <div class="tab color3" @click="isSelect('4')" v-bind:class="{'active': isActiveTab === '4'}">イベント</div>
+            </div>
+            <!--募集中-->
+            <div class="pro_index" v-if="isActiveTab === '1'">
+                <userprojectcard></userprojectcard>
+                <userprojectcard></userprojectcard>
+            </div>
+            <!--制作中-->
+            <div  class="pro_index" v-else-if="isActiveTab === '2'">
+                <userprojectcard></userprojectcard>
+            </div>
+            <!--販売中-->
+            <div  class="pro_index"  v-else-if="isActiveTab === '3'">
+                <userprojectendcard></userprojectendcard>
+            </div>
+            <!--イベント-->
+            <div  class="pro_index" v-else="isActiveTab === '4'">
+                <userprojectcard></userprojectcard>
+            </div>
+        </div>   
+    </div>
+    <script src="../../user/js/user_header_search.js"></script>
+    <script src="../../user/js/user_component_project_card.js"></script>
+    <script>
+    window.onload = function () {
+        var app = new Vue ({
+            el:'#app',
+            data:{
+                isActiveTab:"1"
+            },
+            mounted: function () {
+                const swiper = new Swiper(".swiper-container", {
+                    // ドットインジケーターの表示
+                    pagination: {
+                        el: ".swiper-pagination",
+                    },
+                    // 前後スライドボタンを表示
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    loop: true, // ループの有効化
+                    autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false,
+                    },
+                });
+            },
+            methods: {
+                isSelect(number) {
+                    this.isActiveTab = number;
+                },
+            }
+        });
+    }
+    </script>
+</body>
+</html>

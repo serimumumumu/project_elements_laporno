@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュース詳細</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <link rel="stylesheet" href="../../user/css/user_news_top.css">
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+        <!-- パンクズりすと -->
+        <div class="panlist">
+            <ul >
+                <li ><a href="../../user/html/user_top.html">TOP</a></li>
+                <li class="arrow-l"><a href="../../user/html/user_news.html">News</a></li>
+                <li class="arrow-l"><p>ニュースタイトル</p></li>
+            </ul>
+        </div>
+        <main>
+            <article class="user_news_detail">
+                <span class="user_news_detail_date">2021/03/01 既読</span>
+                <div class="user_news_detail_title">
+                    <a class="user_news_detail_title_back" href="../../user/html/user_news.html"><img class="user_news_detail_title_back_img" src="../../img/arrowleft.png" alt=""></a>
+                    <h1　class="user_news_detail_title_h1" >支援済みタイトル支援済みタイトル支援済みタイトル支援済みタイトル支援済みタイトル</h1>
+                </div>
+                <div class="user_news_detail_content">
+                    <p class="user_news_detail_content_p">
+                        お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容
+                    </p>
+                    <img class="user_news_detail_content_img" src="../../img/demoimg.png" alt="">
+                    <p class="user_news_detail_content_p">
+                        お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容お知らせの内容
+                    </p>
+                </div>
+            </article>
+            <a class="user_news_detail_back_button" href="../../user/html/user_news.html">一覧へ</a>
+        </main>
+        <userfooter></userfooter>
+    </div>
+    <script src="../../user/js/user_header_search.js"></script>
+    <script src="../../user/js/user_footer.js"></script>
+    <script>
+        window.onload = function () {
+        new Vue ({
+            el:"#app",
+            data: {
+            },
+            created(){
+            },
+            methods:{
+            }
+            });
+        }
+      </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトリターン</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/user_project_return.css">
+    <script src="../../user/js/vue.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+    <!-- </div> -->
+    <!-- パンクズりすと -->
+    <div class="panlist">
+      <ul >
+        <li ><a href="../../user/html/user_top.html">TOP</a></li>
+        <li class="arrow-l"><a href="../../html/user/user_project_user_top.html">プロジェクトTOP</a></li>
+        <li class="arrow-l"><a href="../../user/html/user_project_user_top.html">プロジェクトタイトル</a></li>
+        <li class="arrow-l"><p>プロジェクトリターン</p></li>
+      </ul>
+    </div>
+    <main class="user_project_return"  >
+      <div class="main_frame">
+        <h1 class="title">プロジェクトタイトル</h1>
+        <p class="title_sub">リターン選択一覧</p>
+        <section class="main-top-card">
+          <div class="checkbox-area">
+            <label>
+              <input type="checkbox" name="checkbox2" class="checkbox" id="momo" onchange="foo();" >
+              <span class="checkbox-icon">2000円~</span>
+            </label>
+          </div>
+          <div class="selected color5">
+            <label for="amount">個数</label>
+            <select name="amount" class="amount color1">
+              <option value="1">1</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+          <div class="card-img-area">
+            <img src="../../img/demoimg.png" alt="">
+          </div>
+          <article class="card-title">リターンタイトルリターンタイトル</article>
+          <article class="card-text">
+            <div class="card-text-main">リターンタイトルリターンタイトルリターンタイトルリターンタイトルリターンタイトルリターンタイトル<br></div>
+            <transition name="fade">
+              <div v-if="show" class="card-text-main">リターンタイトルリターンタイトルリターンタイトルリターンタイトルリターンタイトルリターンタイトル</div>
+            </transition>
+            <span v-on:click="show =! show" class="card-text-detail" >{{togglebutton}}</span>
+          </article>
+          <div class="target-area"><img src="../../img/guys.png"> 支援者：10名<span class="target-area-span">残り受付人数：0名</span></div>
+          <div class="target-area"><img src="../../img/ques.png"> 希望の宛名</div>
+          <div class="target-area"><img src="../../img/ques.png"> 色：ピンク,白,黒</div>
+          <div class="color5" id="selected-icon">選択中</div>
+        </section>
+        <section class="main-top-card finish">
+          <article class="finish-title">募集終了しました</article>
+          <div class="card-img-area">
+            <img src="../../img/demoimg.png" alt="">
+          </div>
+          <article class="card-title">リターンタイトルリターンタイトル</article>
+          <article class="card-text">
+            <div class="card-text-main">リターンタイトルリターンタイトルリターンタイトルリターンタイトルリターンタイトルリターンタイトル
+              <span v-on:click="show =!show" class="card-text-detail">...もっと見る</span></div>
+          </article>
+          <div class="target-area"><img src="../../img/guys.png"> 支援者：10名<span class="target-area-span">残り受付人数：0名</span></div>
+          <div class="target-area"><img src="../../img/ques.png"> 希望の宛名</div>
+          <div class="target-area"><img src="../../img/ques.png"> 色：ピンク,白,黒</div>
+        </section>
+        <section class="card_frame">
+          <p class="title_sub">選択中のリターン</p>
+          <div class="main-top-card">
+            <div class="selected_retarn_detail">
+              <h6>リターリターリターンタイトルリターンタイトル</h6>
+              <p class="return-price">￥2000円</p>
+              <div class="selected-return-input">
+                <select name="amount" class="amount color1 selected-return-amount">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div>
+            </div>
+            <div class="cancel-btn" >
+              <span class="x x_1"></span>
+              <span class="x x_2"></span>
+            </div>
+          </div>
+        </section>
+        <section class="card_frame">
+          <p class="title_sub">支援金額</p>
+          <section class="main-midle-card">
+            <article class="midle-card-title-area">
+              <div class="midle-card-title">リターン合計</div>
+              <div class="midle-card-kingaku" ><span class="support_money">{{returnpay+extra}}</span>円</div>
+            </article>
+            <article class="ouen-area" id="counts">
+              <h6 class="ouen-coment">追加支援で応援しよう</h6>
+              <img @click="extra += 100" src="../../img/plus.png" alt="">
+              <div class="ouen-kingaku" > {{extra}}円</div>
+              <img @click="extra -= 100" src="../../img/minus.png" alt="">
+            </article>
+          </section>
+        </section>
+        <section class="card_frame">
+          <p class="title_sub">キャンペーンコードを使う</p>
+          <section class="main-midle-card">
+            <article class="campaign_code_area">
+              <div class="midle-card-title">使用可能なコード</div>
+              <div class="midle-card-kingaku" >
+                <span class="support_money">3</span>枚</div>
+            </article>
+            <span class="campaign_limit_span">(内2021/10/22に期限切れ間近1枚)</span>
+            <article class="code_discount">
+              <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+              <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+              <div class="discount_detail_use">
+                <p class="discount_detail_use_p"><img class="discount_detail_use_p_img" src="../../img/ticket.png" alt="チケットアイコン">オークション</p>
+                <p class="discount_rate">10％割引</p>
+              </div>
+            </article>
+            <article class="code_discount" >
+              <!-- <div class="color5" id="selected-code">選択中</div> -->
+              <p class="selected-code_p">選択中</p>
+              <p class="discount_date"><span class="gray_date">有効期限</span>2021/09/11 ~2021/11/11</p>
+              <h3 class="discount_title">ハロウィン連動キャンペーン！今だけ黒船プロジェクトに限り全企画10%割引！このチャンスを見逃すな！</h3>
+              <div class="discount_detail_use">
+                <p class="discount_detail_use_p"><img class="discount_detail_use_p_img" src="../../img/ticket.png" alt="チケットアイコン">オークション</p>
+                <p class="discount_rate">10％割引</p>
+              </div>
+            </article>
+          </section>
+        </section>
+        <section class="card_frame">
+          <p class="title_sub">LPポイントを使う</p>
+          <div class="main-midle-card">
+            <article class="campaign_code_area">
+              <div class="midle-card-title">現在所持LPポイント</div>
+              <div class="midle-card-kingaku" ><span class="support_money">33,000</span>lp</div>
+              </article>
+              <span class="point_limit_span">（4月21日に失効するポイント<span class="limit_point" >55555</span>lp)</span>
+              <div class="siyoulp-area">
+                <input class="siyoulp" v-model="point" :placeholder="point">
+                <div >ptを使用する</div>
+            </div>
+          </div>
+        </section>
+        <section class="card_frame">
+          <p class="title_sub">支払い方法</p>
+          <div class="tab_wrap" >
+            <input id="tab4" type="radio" name="tab_btn" checked>
+            <input id="tab5" type="radio" name="tab_btn">
+            <div class="button-area">
+              <label class="tab4_label cashbutton " for="tab4">カード決済</label>
+              <label class="tab5_label cashbutton " for="tab5">銀行振込</label>
+            </div>
+            <div class="panel_area">
+              <div id="panel4" class="tab_panel">
+                <section class="main-bottom-card ">
+                  <h6 class="bottom-card-subtitle">注意事項</h6>
+                  <p class="bottom-card-text">ここに注意事項が入ります</p>
+                  <h6 class="bottom-card-subtitle">限度額について</h6>
+                  <p class="bottom-card-text">テキストテキストテキストテキスト</p>
+                  <h6 class="bottom-card-subtitle">キャンセルについて</h6>
+                  <p class="bottom-card-text">テキストテキストテキストテキスト</p>
+                </section>
+              </div>
+              <div id="panel5" class="tab_panel">
+                <section class="main-bottom-card">
+                  <h6 class="bottom-card-title">口座名義</h6>
+                  <input type="text" class=" card-input1 ">
+                  <h6 class="bottom-card-title">振込先口座</h6>
+                  <input type="text" class=" card-input1">
+                  <h6 class="bottom-card-subtitle">注意事項</h6>
+                  <p class="bottom-card-text">テキストテキストテキストテキスト</p>
+                  <h6 class="bottom-card-subtitle">キャンセルについて</h6>
+                  <p class="bottom-card-text">テキストテキストテキストテキスト</p>
+                </section> 
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="result_pay" >
+        <p class="result_p">合計金額:<span class="result_span bold-font">{{returnpay+extra-point}}</span>円</p>
+        <!-- 銀行振込のプレビュー -->
+        <button name="returnsummary" onclick="location.href='../../user/html/user_project_return_bank_preview.html'" :value="returnpay+extra-point"
+        class="submit color3">決済へ進む</button>
+        <!-- カードのプレビュー -->
+        <!-- <button name="returnsummary" type="submit" onclick="location.href='../../user/html/user_project_return_card_preview.html'" value="{{returnpay+extra-point}}"
+        class="submit color3">決済へ進む</button> -->
+      </div>
+    </main>
+</div>
+<script src="../../user/js/user_header_search.js" defer></script>
+    <!-- <script src="../../user/js/projreturn.js"></script> -->
+    <!-- <script src="../../user/js/component.js"></script> -->
+    <script>
+      function foo() {
+          var f = document.getElementById("selected-icon");
+          
+          if (document.getElementById("momo").checked) {
+              console.log(f);
+              f.style.display = "block";
+          } else {
+              f.style.display = "none";
+          }
+      }
+
+
+    window.onload = function () {
+            new Vue ({
+                el:"#app",
+                data: {
+                  extra:300,
+                  point:500,
+                  returnpay:12000,
+                  show:false,
+                  togglebutton:"もっと見る",
+                },
+                methods:{
+            }
+            });
+        }
+    </script>
+   
+</body>
+</html>

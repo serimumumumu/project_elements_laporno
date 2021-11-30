@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト新規作成</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../contributor/css/contributor_hyou.css">
+    <link rel="stylesheet" href="../../contributor/css/contributor_project_new.css">
+    <!-- <link rel="stylesheet" href="../../contributor/css/contributor_modal.css"> -->
+
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <conheaders></conheaders>
+<!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+            <li class="arrow-l"><a href="../../contributor/html/contributor_project_top.html">プロジェクト一覧</a></li>
+            <li class="arrow-l"><p>プロジェクト新規作成</p></li>
+        </ul>
+    </div>
+
+    <section v-show="!isConfirm" class="main_card" id="auchimgedit">
+        <!-- 記入フォーム -->
+        <div>
+            <div class="imgregist">
+                <label>
+                    <input type="file" accept="image/*" class="selectonpreview" onchange="previewImage(this);">写真を変更する
+                </label>
+                <p class="imgpreview">
+                    <img id="preview1" src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+                </p>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">ファンディング種別</p>
+                <select class="new_input_select_50" >
+                    <option >AV</option>
+                    <option >写真集</option>
+                    <option >イベント</option>
+                    <option >その他</option>
+                </select>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">プロジェクトタイトル*</p>
+                <input type="text" v-model="title" class="new_input_select_100" placeholder="ガチャタイトルがはいります"/>
+                <span class="input_text_count">0/50</span>
+            </div>
+            <!-- <div class="new_input">
+                <p class="new_input_sub">発送予定日*</p>
+                <input type="date" v-model="sendDate" id="send_date" class="new_input_select_50"/>
+                <span class="new_input_select_span">から順次発送予定</span>
+            </div> -->
+            <div class="new_input">
+                <p class="new_input_sub">女優</p>
+                <select class="new_input_select_75" >
+                    <option >女優A</option>
+                    <option >女優B</option>
+                    <option >女優C</option>
+                    <option >女優D</option>
+                </select>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">プロダクション</p>
+                <select class="new_input_select_75" >
+                    <option >女優A</option>
+                    <option >女優B</option>
+                    <option >女優C</option>
+                    <option >女優D</option>
+                </select>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub"><img src="../../img/time.png" alt="">開始</p>
+                <select-datetime :date="'start_date'" :time="'start_time'"></select-datetime>
+                <p class="new_input_sub"><img src="../../img/time.png" alt="">終了</p>
+                <select-datetime :date="'end_date'" :time="'end_time'"></select-datetime>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub"><img src="../../img/lady.png" alt="">ジャンル</p>
+                <multiselect
+                    v-model="actressesSelected"
+                    :options="actresses"
+                    :multiple="true"
+                    :close-on-select="true"
+                    placeholder="複数選択セレクタ"
+                >
+                </multiselect>  
+            </div>
+            <!-- 目標金額 -->
+            <div class="new_input">
+                <p class="new_input_sub"><img src="../../img/money.png" alt="">目標金額*</p>
+                <input type="text" class="new_input_select_50" placeholder="800"><span class="new_input_select_span">円</span>
+            </div>
+            <div class="onebutton">
+                <a href="#" @click="tggleConfirm()" class="onebutton_a">確認</a>
+            </div>
+        </div>
+    </section>
+    <!-- 確認画面 -->
+    <section class="main_card">
+        <div class="card_img">
+            <img class="main_top_img" src="../../img/demoimg.png" alt="">
+        </div>
+        <article class="main-top-card-title">【新村あかり】色紙＋チェキ</article>
+            <div class="main_in">
+                <article class="contributor_project_detail_top">
+                    <div class="main_in_article_2">
+                        <p class=""><img src="../../img/lady.png" alt="">女優名</p>
+                        <a class="bold-font" href="../../user/html/user_actress_profile.html"> 新村あかり </a>
+                    </div>
+                    <div class="main_in_article_2">
+                        <p class="main_in_article_2_p"><img src="../../img/pro.png" alt="">投稿者</p>
+                        <a href="../../user/html/user_contributor_profile.html" class="bold-font"> 桃太郎出版 </a>
+                    </div>
+                </article>
+                <article class="contributor_project_detail_top">
+                    <div class="main_in_article_2">
+                        <p class=""><img src="../../img/guys.png" alt="">支援者数</p>
+                        <h6> 999人</h6>
+                    </div>
+                    <div class="main_in_article_2">
+                        <p class="ain_in_article_2_p"><img src="../../img/time.png" alt="">タイムリミット</p>
+                        <h6> 残り12時間 </h6>
+                    </div>
+                </article>
+                <article class="contributor_project_detail_top">
+                    <div class="main_in_article_1">
+                        <p class=""><img src="../../img/folder.png" alt="">カテゴリー</p>
+                        <h6> スレンダー,美乳,美肌</h6>
+                    </div>
+                </article>
+                <p class="support_money"><span class="support_money_sub">目標金額:</span>200,000円</p>
+                <article class="percent-area">
+                    <div class="percent color3"></div>
+                </article> 
+            </div>
+            <div class="onebutton">
+                <a href="#" @click="tggleConfirm()" class="onebutton_a">編集する</a>
+            </div>
+        </article>
+    </section>
+    <div class="color2">
+        <div class="tab-area">
+            <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActiveTab === '1'}">初めに</div>
+            <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActiveTab === '2'}">リターン</div>
+            <div class="tab color3" style="opacity:0.25" @click="isSelect('3')" v-bind:class="{'active': isActiveTab === '3'}">コメント</div>
+            <div class="tab color3" style="opacity:0.25" @click="isSelect('4')" v-bind:class="{'active': isActiveTab === '4'}">活動報告</div>
+            <div class="tab color3" style="opacity:0.25" @click="isSelect('5')" v-bind:class="{'active': isActiveTab === '5'}">パトロン一覧</div>
+        </div>
+        <!--初めに-->
+        <div class="color1 project_new_downpart" v-if="isActiveTab === '1'">
+            <div class="project_title_and_button">
+                <h2 class="project_content_title">内容</h2>
+                <a class="project_content_button" href="../../contributor/html/contributor_project_new_first.html">編集</a>
+            </div>
+            <div class="project_content_main">
+                <div class="contributor_project_content">
+                    <h6 class="contributor_project_content_title">たいとるたいとる</h6>
+                    <p class="contributor_project_content_p">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    <div class="main-content-img-area"><img src="../../img/demoimg.png" alt=""></div>
+                    <h6 class="contributor_project_content_title_border">たいとるたいとる</h6>
+                    <p class="contributor_project_content_p">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+            </div>
+        </div>
+        <!--リターン-->
+        <div class="color1 project_new_downpart" v-else-if="isActiveTab === '2'" >
+            <div class="project_title_and_button">
+                <h2 class="project_content_title">リターン</h2>
+                <a class="project_content_button" @click="openModal" ><img class="project_content_button_img" src="../../img/plus.png">新規作成</a>
+                <div v-show="showContent" @close="showContent = false"> 
+                    <div class="overlay"> 
+                        <div class="overlay-over">
+                          <div class="cancel-btn" @click="closeModal" onclick="location.href='../../contributor/html/contributor_project_new.html'">
+                          <a >
+                            <span class="x x_1"></span>
+                            <span class="x x_2"></span>
+                            </a>
+                          </div>
+                          <div class="modal_section">
+                              <div class="overlay-overmain">
+                                <h6 class="modal_title">新規追加を申請しました
+                                    <p class="modal_title_span">リターンを新規作成します<br>
+                                    作成の手順を選択してください
+                                    </p></h6>
+                                    <div class="content-btn-area">
+                                        <a class="twobutton_a" href="../../contributor/html/contributor_project_new_return_template.html"> テンプレート</a>
+                                        <a class="twobutton_a" href="../../contributor/html/contributor_project_new_return.html"> 新規入力</a>
+                                    </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="hyou_area content">
+                <div class="hyou">
+                  <div class="hyou-top">
+                    <div class="table-title-area color5">
+                      <h2 class="table-title">投稿一覧</h2>
+                      <div class="table_sort">
+                        <select name="order" id="" class="table_sort_select colo">
+                        <option >新着中</option>
+                        <option >登録順</option>
+                        </select>
+                      </div>
+                    </div>
+                    <table class="table patron">
+                      <tr class="table_header">
+                        <th class="table_80">画像</th>
+                        <th class="title-td table_120">タイトル</th>
+                        <th class="table_80">金額</th>
+                        <th class="table_80">パトロン</th>
+                        <th class="table_80">支援数</th>
+                        <th class="table_120">タイプ</th>
+                        <th class="table_160">発送時期</th>
+                        <th class="table_120">編集</th>
+                        <th class="table_60">削除</th>
+                      </tr>
+                      <tr>
+                        <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                        <td class="bold-font"><a href="../../contributor/html/contriutor_actress_profile.html">だいたいろくじ</a></td>
+                        <td >50,000</td>
+                        <td >500</td>
+                        <td >500</td>
+                        <td >リアル(オンライン)</td>
+                        <td >2021年10月12日〜</td>
+                        <td>
+                            <button　class="table-btn" onclick="location.href='../../contributor/html/contributor_project_new_return.html'" >編集</button>
+                        </td>
+                        <td class="text_center"><img class="trash-img" src="../../img/trash_gray.png" al> </td>
+                      </tr>
+      
+                    </table>
+                  </div>
+                </div>
+            </div>
+            <div class="contributor_project_return_index">
+                <article class="contributor_project_detail_return_card">
+                    <h2 class="contributor_project_detail_return_card_title">タイトル</h2>
+                    <img class="contributor_project_detail_return_card_main_img" src="../../img/demoimg.png" alt="リターンイメージ画像">
+                    <p class="contributor_project_detail_return_card_send_info">2021年3月から順次発送予定</p>
+                    <div class="contributor_project_detail_return_card_content">
+                        <p class="contributor_project_detail_return_card_much">¥5,000</p>
+                        <p class="contributor_project_detail_return_card_text">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        <p class="contributor_project_detail_return_card_text_more">...もっと見る</p>
+                        <div class="contributor_project_detail_return_card_data_index">
+                            <p class="contributor_project_detail_return_card_data"><img class="contributor_project_detail_return_card_data_img" src="../../img/movie.png" alt="">動画データ：なし</p>
+                            <p class="contributor_project_detail_return_card_data"><img class="contributor_project_detail_return_card_data_img" src="../../img/usbdata.png" alt="">USB郵送：なし</p>
+                        </div>
+                        <a class="contributor_project_detail_return_card_button"  href="">リターンを選択する</a>
+                        <p class="contributor_project_detail_return_card_info"><img class="contributor_project_detail_return_card_data_img" src="../../img/guys.png" alt="">対象者：10名　残り：10名</p>
+                        <p class="contributor_project_detail_return_card_info"><img class="contributor_project_detail_return_card_data_img" src="../../img/ques.png" alt="">サイズ：M,L,LL</p>
+                    </div>
+                     <a class="contributor_project_detail_return_card_edit_button" href="../../contributor/html/contributor_project_new_return.html">編集</a>
+                </article>
+            </div>
+        </div>
+        <!--コメント-->
+        <div class="color1 project_new_downpart"  v-else-if="isActiveTab === '3'" >
+            <h1 class="title">コメント</h1>
+        </div>
+        <!--活動報告-->
+        <div class="color1 project_new_downpart" v-else-if="isActiveTab === '4'" >
+            <div class="project_title_and_button">
+                <h2 class="project_content_title">活動報告</h2>
+            </div>
+        </div>
+        <!-- パトロン一覧 -->
+        <div class="color1 project_new_downpart" v-else-if="isActiveTab === '5'" >
+            <div class="project_title_and_button">
+                <h2 class="project_content_title">パトロン一覧</h2>
+            </div>
+        </div>
+    </div>
+    <div class="twobutton color1">
+        <a class="twobutton_a" href="../../contributor/html/contributor_project_top.html">戻る</a>
+        <a class="twobutton_a" href="../../contributor/html/contributor_project_new_preview.html">確認</a>
+    </div>
+    <datalist id="actlist">
+        <option>女優１</option>
+        <option>女優２</option>
+        <option>女優３</option>
+    </datalist>　
+    </div>
+<script src="../../contributor/js/contributor_header_search.js"></script>
+<script>
+    function previewImage(obj)
+    {
+        var fileReader = new FileReader();
+        fileReader.onload = (function() {
+            document.getElementById('preview').src = fileReader.result;
+        });
+        fileReader.readAsDataURL(obj.files[0]);
+    }
+    window.onload = function () {
+
+
+    new Vue ({
+    el:"#app",
+    data:{
+        showContent:false,
+        isActiveTab: "1",
+        isConfirm: false,
+    },
+
+    created(){
+                this.getActresses()
+            },
+    methods: {
+        isSelect(number) {
+        this.isActiveTab = number;
+      },
+      openModal(){
+          this.showContent = true;
+        },
+        closeModal(){
+          this.showContent = false;
+        },
+      tggleConfirm() {
+        this.isConfirm = this.isConfirm ? false : true
+        },
+    }
+    });
+    }
+
+
+</script>
+
+<script>
+</script>
+</body>
+</html>

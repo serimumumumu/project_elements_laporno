@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ガチャ景品詳細リスト</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../contributor/css/auchtop.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="conheaders">
+      <conheaders></conheaders>
+    </div>
+    <div class="panlist">
+      <ul >
+        <li ><a href="top.html">TOP</a></li>
+        <li ><a href="gachatop.html">ガチャTOP</a></li>
+        <li class="arrow-l">ガチャ景品詳細リスト</li>
+      </ul>
+    </div>
+    <div id="search">
+      <search></search>
+    </div>
+  <div class="">
+    <div  id="conauchtop">
+      <div >
+        <h1 class="title">ガチャ景品詳細</h1>
+        <div class="content">
+          <div class="listowner color1">
+            <h2 class="">女優の名前</h2>
+            <div class="mailinfo">
+              <div href=""  @click="openInfo" class="usersendinfolist">情報
+              </div>
+              <a href="maildetail.html"><img src="../../img/mail.png" alt=""></a>
+            </div>
+          </div>
+          <div class="hyou-top">
+              <table class="table">
+              <div class="table-title-area color5">
+                <h2 class="table-title">ガチャ詳細一覧</h2>
+                <select name="order" id="" class="order color1">
+                <option >新着中</option>
+                <option >登録順</option>
+                </select>
+              </div>
+              <tr class="table_header">
+                <th class="table_center table_120">賞</th>
+                <th class="table_center table_120">景品</th>
+                <th class="table_120">女優</th>
+                <th class="table_80">VR</th>
+                <th class="table_80">個数</th>
+                <th class="table_120">ステータス</th>
+                <th class="table_120">発送情報</th>
+                <th class="table_120 table_center">発送通知</th>
+                <th class="table_80 table_center">Mail</th>
+              </tr>
+              <tr>
+                <td>賞の名前</td>
+                <td>景品A</td>
+                <td class="bold-font "><a href="actressdetail.html">女優の名前</a></td>
+                <td class=" table_center">AA</td>
+                <td class=" table_center">25</td>
+                <td >
+                  <select class="table-btn">
+                    <option value="">発送前</option>
+                    <option value="">発送済</option>
+                  </select>
+              </td>
+              <td > <a href="gachadeliverinforegist.html"  class="table-btn">登録</a></td>
+              <td >未</td>
+                <td class=" table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>賞の名前</td>
+                <td>景品A</td>
+                <td class="bold-font "><a href="actressdetail.html">女優の名前</a></td>
+                <td class=" table_center">AA</td>
+                <td class=" table_center">25</td>
+                <td >
+                  <select class="table-btn">
+                    <option value="">発送済</option>
+                    <option value="">キャンセル</option>
+                  </select>
+              </td>
+                <td > <a href="gachadeliverinforegist.html"  class="table-btn">登録</a></td>
+                <td ></td>
+                <td class=" table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>賞の名前</td>
+                <td>景品A</td>
+                <td class="bold-font "><a href="actressdetail.html">女優の名前</a></td>
+                <td class=" table_center">AA</td>
+                <td class=" table_center">25</td>
+                <td >
+                  <select class="table-btn">
+                    <option value="">発送済</option>
+                    <option value="">キャンセル</option>
+                  </select>
+              </td>
+                <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                <td >未</td>
+                <td class=" table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>賞の名前</td>
+                <td>景品A</td>
+                <td class="bold-font "><a href="actressdetail.html">女優の名前</a></td>
+                <td class=" table_center">AA</td>
+                <td class=" table_center">25</td>
+                <td >
+                  <select class="table-btn">
+                    <option value="">発送済</option>
+                    <option value="">キャンセル</option>
+                  </select>
+              </td>
+                <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                <td >未</td>
+                <td class=" table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>賞の名前</td>
+                <td>景品A</td>
+                <td class="bold-font "><a href="actressdetail.html">女優の名前</a></td>
+                <td class=" table_center">AA</td>
+                <td class=" table_center">25</td>
+                <td >
+                  <select class="table-btn">
+                    <option value="">発送済</option>
+                    <option value="">キャンセル</option>
+                  </select>
+              </td>
+                <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                <td >未</td>
+                <td class=" table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <tr>
+                <td>賞の名前</td>
+                <td>景品A</td>
+                <td class="bold-font "><a href="actressdetail.html">女優の名前</a></td>
+                <td class=" table_center">AA</td>
+                <td class=" table_center">25</td>
+                <td >
+                  <select class="table-btn">
+                    <option value="">発送済</option>
+                    <option value="">キャンセル</option>
+                  </select>
+              </td>
+                <td> <button class="table-btn" @click="openModal">詳細</button></td>
+                <td >済</td>
+                <td class=" table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+              </tr>
+              <userinfo v-show="showinfoContent" @close="showinfoContent = false"></userinfo>
+              <congachasendinfo v-show="showContent" @close="showContent = false"></congachasendinfo>
+            </table>
+          </div>
+          <h3 class="btn-title">チェックしたパトロンの</h3>
+          <div class="content-btn-area">
+              <button class="content-btn color3">配送情報登録</button>
+              <button class="content-btn color3">発送準備完了</button>
+              <button class="content-btn color3">通知一斉送信</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="../../contributor/js/concomponent.js" defer></script>
+<script src="../../contributor/js/conauchtop.js" defer></script>
+</body>
+</html>

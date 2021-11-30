@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ガチャ発送情報登録</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../contributor/css/contributor_send_info.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <conheaders></conheaders>
+    <div class="panlist">
+        <ul >
+            <li ><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+            <li class="arrow-l"><a href="../../contributor/html/contributor_gacha_top.html">ガチャTOP</a></li>
+            <li class="arrow-l"><p>発送情報登録</p></li>
+        </ul>
+    </div>
+    <main class="contributor_send_info">
+      <form >
+        <h1 class="contributor_send_info_title">発送情報登録</h1>
+        <div class="contributor_send_info_box">
+          <h2 class="sub-title">ユーザー名</h2>
+          <p class="sub-text">ユーザーの名前</p>
+        </div>
+        <div class="contributor_send_info_box">
+          <h2 class="sub-title">タイトル</h2>  
+          <p class="sub-text">ガチャのタイトル</p>          
+        </div>
+        <div class="contributor_send_info_box">
+          <h2 class="sub-title">賞の名前</h2>
+          <p class="sub-text">賞A</p>
+          <!-- <p class="sub-text">賞B</p> -->
+        </div>
+        <div class="contributor_send_info_box">
+          <h2 class="sub-title" >メモ</h2>
+          <textarea class="memo-text" placeholder="メモが入ります"></textarea>
+        </div>
+        <div class="button-area">
+          <div class="contributor_send_postage_button" @click="isSelect('1')" v-bind:class="{'active': isActiveTab === '1'}">元払い</div>
+          <div class="contributor_send_postage_button" @click="isSelect('2')" v-bind:class="{'active': isActiveTab === '2'}">着払い</div>
+        </div>
+        <div  class="" v-if="isActiveTab === '1'">
+          <div class="contributor_send_info_box">
+            <h2 class="sub-title">発送業者</h2>
+            <input name="" id="" class="delitext_60">
+          </div>
+          <div class="contributor_send_info_box">
+            <h2 class="sub-title">発送方法</h2>
+            <input name="" id="" class="delitext_60">
+          </div>
+          <div class="contributor_send_info_box">
+            <h2 class="sub-title">追跡番号</h2>
+            <input name="" id="" class="delitext_60">
+          </div>
+          <div class="contributor_send_info_box">
+            <h2 class="sub-title">伝票写真</h2>
+            <div class="img-input-area">
+              <label for="denpyo-photo" class="img-input">
+                <img src="../../img/pic.png" alt="" class="img-input-icon">
+                <p>画像をアップロード</p>
+                <input  id ="denpyo-photo" type="file" name="example" accept="image/jpeg, image/png">
+              </label>
+              <div class="inputted-img-area">
+                <img src="../../img/demoimg.png" alt="" class="inputted-img">
+                <img src="../../img/demoimg2.png" alt="" class="inputted-img">
+                <img src="../../img/demoimg.png" alt="" class="inputted-img inputted-last">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class=""  v-else-if="isActiveTab === '2'" >
+          <div class="contributor_send_info_box">
+            <h2 class="sub-title">配送料</h2>
+            <input type="text" class="delitext" placeholder="720">円
+          </div>
+          <div class="contributor_send_info_box">
+            <h2 class="sub-title">発送業者</h2>
+            <input name="" id="" class="delitext_60">
+          </div>
+          <div class="contributor_send_info_box">
+            <h2 class="sub-title">発送方法</h2>
+            <input name="" id="" class="delitext_60">
+          </div>
+          <div class="contributor_send_info_box">
+            <h2 class="sub-title">追跡番号</h2>
+            <input name="" id="" class="delitext_60">
+          </div>
+          <div class="contributor_send_info_box">
+            <h2 class="sub-title">伝票写真</h2>
+            <div class="img-input-area">
+              <label for="denpyo-photo" class="img-input">
+                <img src="../../img/pic.png" alt="" class="img-input-icon">
+                <p>画像をアップロード</p>
+                <input id ="denpyo-photo" type="file" name="example" accept="image/jpeg, image/png">
+              </label>
+              <div class="inputted-img-area">
+                <img src="../../img/demoimg2.png" alt="" class="inputted-img">
+                <img src="../../img/demoimg.png" alt="" class="inputted-img">
+                <img src="../../img/demoimg.png" alt="" class="inputted-img inputted-last">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contributor_send_info_box">
+          <h2 class="sub-title" >発送通知メール内容</h2>
+          <textarea class="mailsend-text" placeholder="{{user}}様
+          いつもお世話になっております。
+          
+          {{title}}
+          の発送準備が整いました。
+          お時間いただきまして誠にありがとうございます。
+          
+          【11月19日】(金)ヤマト運輸から着払いでの発送をいたします。
+          
+          ・登録住所宛か支店留め
+          ・着日指定（時間希望もあればご記入ください）
+          　※【11月20日】(土)以降をご指定下さい。
+          　※北海道・四国・九州・離島は【11月21日】（日）以降をご指定下さい。
+          上記2点について、お手数ですが、ご回答お願いいたします。
+          （11月18日）(木)15時までにご回答がない場合は、翌金曜日11月26日に「指定なし」での発送手続きをいたします。
+          ご了承ください。
+          
+          ラポルノ{{contributor}}"></textarea>
+        </div>
+        <div class="contributor_send_info_box">
+          <h2 class="sub-title" >プレースホルダーを挿入する</h2>
+          <div class="placeholders">
+            <p class="priplaceholder">{{user}}</p>
+            <p class="priplaceholder">{{actress}}</p>
+            <p class="priplaceholder">{{contributor}}</p>
+            <p class="priplaceholder">{{title}}</p>
+          </div>
+        </div>
+      <div class="onebutton">
+        <a class="onebutton_a color5" href="../../contributor/html/contributor_gacha_list.html">登録</a>
+      </div>
+    </form>
+    </main>
+  </div>
+<script src="../../contributor/js/contributor_header_search.js"></script>
+<script>
+
+  window.onload = function () {
+    new Vue ({
+        el:"#app",
+        data: {
+          user:"ユーザー名",
+          actress:"女優名",
+          contributor:"投稿者名",
+          title:"タイトル",
+          isActiveTab: "1",
+        },
+        created(){
+        },
+        methods:{
+          isSelect(number) {
+        this.isActiveTab = number;
+      },
+        }
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新規追加申請承認</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_new_add_agree.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_modal.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <masheaders></masheaders>
+    <div class="panlist">
+      <ul>
+        <li ><a href="../../master/html/master_top.html">TOP</a></li>
+        <li ><a href="../../master/html/master_auction_top.html">オークションTOP</a></li>
+        <li class="arrow-l"><p>新規追加申請承認</p></li>
+      </ul>
+      </div>
+    <div class="master_gacha_new_add_agree_form" >
+        <h1 class="master_gacha_new_add_agree_title">新規追加申請承認</h1>
+        <div class="card_info_index">
+
+          <div class="card_info_one">
+            <span class="sub-title">ユーザー名</span>
+            <p class="master_gacha_new_add_agree_form_text">ユーザーのなまえ</p>
+          </div>
+          <div class="card_info_one">
+            <span class="sub-title">オークションタイトル</span>
+            <p class="master_gacha_new_add_agree_form_text">オークションのなまえ</p>
+          </div>
+          <div class="card_info_one">
+            <span class="sub-title">金額</span>
+            <p class="master_gacha_new_add_agree_form_text">600円</p>
+          </div>
+          <div class="card_info_one">
+            <span class="sub-title">備考</span>
+            <p class="master_gacha_new_add_agree_form_text">オークションの送料分</p>
+          </div>
+        </div>
+        <div class="twobutton"> 
+          <a class="twobutton_a" href="../../master/html/master_auction_top.html">戻る</a>
+          <div class="twobutton_a" @click="openModal">承認</div>
+          <div v-show="showContent" @close="showContent = false">
+            <div class="overlay"> 
+              <div class="overlay-over modal_fix">
+                <div class="cancel-btn" onclick="location.href='../../master/html/master_auction_top.html'">
+                <a href="../../master/html/master_auction_top.html">
+                  <span class="x x_1"></span>
+                  <span class="x x_2"></span>
+                  </a>
+                </div>
+                <div class="modal_section">
+                  <div class="overlay-overmain">
+                    <h6 class="modal_title">新規追加申請を承認しました</h6>
+                    <div>
+                      <div>
+                        <span class="subtitle">ユーザー名</span>
+                        <p class="modal_p">ユーザーの名前がはいります</p>
+                        </div>
+                          <span class="subtitle">オークションタイトル</span>
+                          <p class="modal_p">オークションのタイトルが入ります</p>
+                        </div>
+                        <a class="btn-2" href="../../master/html/master_auction_top.html">オークションTOPへ</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+<script src="../../master/js/master_header_search.js"></script>
+  <script>
+    var app = new Vue({
+      el:'#app',
+      data(){
+      return {
+        showContent:false
+      }
+    },
+      methods: {
+        openModal(){
+          this.showContent = true;
+        },
+        closeModal(){
+          this.showContent = false;
+        },
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

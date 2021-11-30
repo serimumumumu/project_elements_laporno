@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投稿者オークション詳細</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/auchdetail.css">
+    <link rel="stylesheet" href="../../contributor/css/auchdetailedit.css">
+    <script src="../../user/js/vue.js" defer></script>
+</head>
+<body>
+    <div id="conheaders">
+        <conheaders></conheaders>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="top.html">TOP</a></li>
+            <li class="arrow-l"><a href="auctiontop.html">オークショントップ</a></li>
+            <li class="arrow-l">オークションタイトル</li>
+        </ul>
+    </div>
+    <section class="main_card">
+        <h6 class="main_card_title">オークションタイトルオークションタイトル</h6>
+        <div class="card_img">
+            <img src="../../img/demoimg.png" alt="">
+        </div>
+        <div class="main_in">
+            <article class="main_in_article2">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/lady.png" alt="">女優名</p>
+                    <a class="bold-font" href="../../user/actressdetail.html"> 新村あかり </a>
+                </div>
+                <div class="main_in_article_2">
+                    <p class="ain_in_article_2_p"><img src="../../img/pro.png" alt="">投稿者</p>
+                    <a class="bold-font" href="contributordetail.html"> 桃太郎出版</a>
+                </div>
+            </article>
+            <article >
+                <div class="main_in_article_1">
+                    <p class=""><img src="../../img/time.png" alt="">タイムリミット</p>
+                    <h6>残り時間12時間</h6>
+                </div>
+            </article>
+            <article >
+                <div class="main_in_article_1">
+                    <p class=""><img src="../../img/mallet.png" alt="">現在入札額</p>
+                    <h5 class="bold-font ">3,111,111円 </h5>
+                </div>
+            </article>
+            <article >
+                <div class="main_in_article_1">
+                    <p class=""><img src="../../img/man.png" alt="">入札者名</p>
+                    <a class="bold-font"> パトロン名パトロンの名前 </a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <div class="main-top color2" id="actprodtop">
+        <div class="tab-area">
+            <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">内容</div>
+            <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">入札状況</div>
+        </div>
+        <!--内容-->
+        <div class="content" v-if="isActive === '1'">
+            <p class="main-content-text">
+                テキストテキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            </p>
+            <div class="main-content-img-area">
+                <img src="../../img/demoimg.png" alt="">
+            </div>
+            <p class="main-content-text">
+                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+            </p>
+        </div>
+        <!--景品一覧-->
+        <div  class="content" v-else="isActive === '2'">
+            <table class="history">
+                <tr>
+                    <th colspan="3" class="history-title color5"><img src="../../img/mallet.png">入札履歴</th>
+                </tr>
+                <tr>
+                    <th class="history-td history-th">入札時間</th>
+                    <th class="history-td history-th">入札額</th>
+                    <th class="history-td history-th">入札者</th>
+                </tr>
+                <tr>
+                    <td class="history-td h-left">2021/01/29 10:28</td>
+                    <td class="history-td h-center">300400円</td>
+                    <td class="history-td h-right bold-font">パトロンの名前</td>
+                </tr>
+                <tr>
+                    <td class="history-td h-left">2021/01/29 10:28</td>
+                    <td class="history-td h-center">300400円</td>
+                    <td class="history-td h-right bold-font">パトロンの名前トロンの名前</td>
+                </tr>
+                <tr>
+                    <td class="history-td h-left">2021/01/29 10:28</td>
+                    <td class="history-td h-center">300400円</td>
+                    <td class="history-td h-right bold-font">パトロンの名前</td>
+                </tr>
+                <tr>
+                    <td class="history-td h-left">2021/01/29 10:28</td>
+                    <td class="history-td h-center">300400円</td>
+                    <td class="history-td h-right bold-font">パトロンの名前</td>
+                </tr>
+            </table>
+        </div>   
+    </div>
+
+    <!-- 追従フッター -->
+    <div class="twobutton color1">
+        <a class="twobutton_a" href="auctiontop.html">戻る</a>
+        <a class="twobutton_a" href="auchdetaileditin.html">編集</a>
+    </div>
+    <script src="../../user/js/actprodtop.js" defer></script>
+    <script src="../../contributor/js/concomponent.js" defer></script>
+</body>
+</html>

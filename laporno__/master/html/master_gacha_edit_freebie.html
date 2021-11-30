@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>景品新規作成</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../contributor/css/contributor_gacha_new_content.css">
+  
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+      <masheaders></masheaders>
+      <!-- パンクズりすと -->
+      <div class="panlist">
+        <ul >
+          <li ><a href="../../master/html/master_top.html">TOP</a></li>
+          <li class="arrow-l"><a href="../../master/html/master_gacha_top.html">ガチャ一覧</a></li>
+          <li class="arrow-l"><a href="../../master/html/master_gacha_detail.html">ガチャタイトル</a></li>
+          <li class="arrow-l"><a href="../../master/html/master_gacha_edit.html">ガチャ編集</a></li>
+          <li class="arrow-l"><p>景品新規登録</p></li>
+        </ul>
+      </div>
+      <main>
+        <section class="gacha_freebie color1">
+          <h2 class="content-title">景品新規登録</h2>
+          <div class="card-content-box">
+            <p class="sub-title" >賞の名前</p>
+            <input class="gacha_title_input" placeholder="賞のなまえ">
+          </div>
+          <label for="denpyo-photo" class="img-input">
+            <div v-if="!isSetImage">
+              <img src="../../img/pic.png" alt="" class="img-input-icon">
+              <p>画像をアップロード</p>
+            </div>
+            <input @change="previewImage($event)"type="file" ref="file" id="denpyo-photo"  accept="image/jpeg, image/png">
+            <img id="preview" class="image-preview" src="">
+          </label>
+          <div class="card-content-box">
+            <p class="sub-title" >説明</p>
+            <textarea class="gacha_description" cols="80" placeholder="せつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめい"></textarea>
+          </div>
+          <!-- タイプ -->
+          <div class="new_input">
+            <p class="new_input_sub">タイプ</p>
+            <div class="new_input_check_nowrap">
+              <label class="new_input_select_24">
+                <input value="goods" type="radio" checked name="count_bonus_type"> 物販
+              </label>
+              <label class="new_input_select_24">
+                <input value="real" type="radio" name="count_bonus_type"> リアル
+              </label>
+              <label class="new_input_select_24">
+                <input value="real" type="radio" name="count_bonus_type"> デジタル
+              </label>
+              <label class="new_input_select_24">
+                <input value="other" type="radio" name="count_bonus_type"> その他
+              </label>
+            </div>
+          </div>
+          <!-- 景品パターン -->
+          <div class="gacha-amount-input-parents">
+            <div v-for="(pattern, index) in freebiePatterns" class="gacha-amount-input">
+              <div class="actress_input">
+                <p class="sub-title_nom">女優</p>
+                <select @change="selectActress(index)" v-model="pattern.actressId" class="select">
+                  <option v-for="actress in actresses" :value="actress.id">{{ actress.name }}</option>
+                </select>
+              </div>
+              <div>
+                  <span class="batsu"></span>
+              </div>
+              <div class="type_input">
+                <p class="sub-title_nom" >タイプ</p>
+                <select v-model="pattern.type" class="select" disabled>
+                  <option v-for="type in types" :value="type">{{ type }}</option>
+                </select>
+              </div>
+              <div>
+                <span class="batsu"></span>
+              </div>
+              <div class="amount_input">
+                <p class="sub-title_nom" >数量</p>
+                <input @change="setTotalQty()" v-model="freebiePatterns[index].qty" type="number" class="qty">
+              </div>
+              <div>
+                <span class="delete_button"></span>
+              </div>
+            </div>
+            <button @click="addPattern()" class="newfreebie_button"><img src="../../img/plus.png">新規追加</button>
+          </div>
+          <div class="card-content-box">
+            <p class="sub-title" >総合計数</p>
+            <p class="total_amount">{{totalQty}}</p>
+            <!-- <input v-model="totalQty" class="radio-input" disabled> -->
+          </div>
+          <!-- 映像データ有無（48%*2） -->
+          <div class="new_input">
+            <p class="new_input_sub">映像データ</p>
+            <div class="new_input_send">
+              <label class="new_send">
+                <input name="movie" class="Radio-Input" type="radio">
+                <span class="Radio-Text">有り</span>
+              </label>
+              <label class="new_send">
+                <input name="movie" class="Radio-Input" type="radio" checked>
+                <span class="Radio-Text">無し</span>
+              </label>
+            </div>
+          </div>
+          <!-- USB郵送有無（48%*2） -->
+          <div class="new_input">
+            <p class="new_input_sub">USB郵送</p>
+            <div class="new_input_send">
+              <label class="new_send">
+                <input name="usb" class="Radio-Input" type="radio">
+                <span class="Radio-Text">有り</span>
+              </label>
+              <label class="new_send">
+                <input name="usb" class="Radio-Input" type="radio" checked>
+                <span class="Radio-Text">無し</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <p class="sub-title" >景品色</p>
+            <div class="freebie_color">
+              <label class="Radio">
+                <input name="radio" class="Radio-Input" type="radio" checked>
+                <span class="Radio-Text">虹</span>
+              </label>
+              <label class="Radio">
+                <input name="radio" class="Radio-Input" type="radio">
+                <span class="Radio-Text">金</span>
+              </label>
+              <label class="Radio">
+                <input name="radio" class="Radio-Input" type="radio">
+                <span class="Radio-Text">銀</span>
+              </label>
+              <label class="Radio">
+                <input name="radio" class="Radio-Input" type="radio">
+                <span class="Radio-Text">銅</span>
+              </label>
+              <label class="Radio">
+                <input name="radio" class="Radio-Input" type="radio">
+                <span class="Radio-Text">白</span>
+              </label>
+            </div>
+          </div>
+        </section>
+        <div class="twobutton color1">
+        <a class="twobutton_a" href="../../master/html/master_gacha_edit.html">戻る</a>
+        <a class="twobutton_a" href="../../master/html/master_gacha_edit.html">確認</a>
+        </div>
+      </main>
+      <footer></footer>
+    </div>
+    <script src="../../master/js/master_header_search.js" defer></script>
+<script>
+    window.onload = function () {
+        new Vue ({
+            el:"#app",
+            data: {
+                isSetImage: false,
+                selectvalue: null,
+                image_text: null,
+                actresses: [
+                    {'id': 1, 'name': '女優名A', 'count': 0 },
+                    {'id': 2, 'name': '女優名B', 'count': 0 },
+                    {'id': 3, 'name': '女優名C', 'count': 0 },
+                ],
+                types: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'],
+                patternDefault: { actressId: null, type: null, qty: null },
+                freebiePatterns: [
+                    { actressId: null, type: null, qty: null }
+                ],
+                totalQty: 0,
+            },
+            methods: {
+                //画像セット
+                previewImage(event) {
+                    let file = event.target.files[0]
+                    let fileReader = new FileReader()
+                        fileReader.readAsDataURL(file)
+                        fileReader.onload = event => {
+                            document.getElementById('preview').src = fileReader.result
+                            this.isSetImage = true
+                        }
+                },
+                addPattern(){
+                    this.freebiePatterns.push(JSON.parse(JSON.stringify(this.patternDefault)))
+                },
+                //景品パターンの女優を選択したイベント
+                selectActress(){
+                    let countByActress = [] //key = 女優ID、value = count
+                    self = this
+                    this.freebiePatterns.forEach((pattern, index) => {
+                        if (pattern.actressId === null) return //女優指定なしならスキップ
+                        if(typeof countByActress[pattern.actressId] != 'undefined') {
+                            // countByActress[pattern.actressId]がすでに存在するなら1プラス
+                            countByActress[pattern.actressId] += 1
+                        } else {
+                            // countByActress[pattern.actressId]が存在しないなら0で宣言
+                            countByActress[pattern.actressId] = 0
+                        }
+                        //countByActressの値をself.typesのキーと紐付けてタイプを決定する
+                        if (typeof self.types[countByActress[pattern.actressId]] != 'undefined') {
+                            self.$set(self.freebiePatterns[index], ['type'], self.types[countByActress[pattern.actressId]])
+                        } else {
+                            //タイプ数がZ以上になる場合
+                            //TODO：タイプ数が多すぎますのメッセージ出力？
+                        }
+
+                    })
+                },
+                setTotalQty() {
+                    self = this
+                    self.totalQty = 0 
+                    this.freebiePatterns.forEach((pattern, index) => {
+                        self.totalQty += Number(pattern.qty)
+                    })
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

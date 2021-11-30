@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新規追加申請</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../contributor/css/contributor_new_add.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="conheaders">
+    <conheaders></conheaders>
+  </div>
+<div class="panlist">
+    <ul >
+        <li ><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+        <li class="arrow-l"><a href="../../contributor/html/contributor_gacha_top.html">ガチャTOP</a></li>
+        <li class="arrow-l"><p>新規追加申請</p></li>
+    </ul>
+</div>
+<main>
+  <form class="new_add_form">
+    <h1 class="new_add_form_title">新規追加申請</h1>
+    <div class="new_add_form_contents">
+      <div class="new_add_form_content ">
+          <h2 class="new_add_form_content_sub">ユーザー名</h2>
+          <select class="new_add_form_content_input_100 new_add_form_content_select_arrow" >
+            <option value="">ユーザーのなまえ</option>
+            <option value="">ユーザーのなまえ</option>
+          </select>
+      </div>
+      <div class="new_add_form_content">
+        <h2 class="new_add_form_content_sub">ガチャタイトル</h2>
+        <select class="new_add_form_content_input_100 new_add_form_content_select_arrow" >
+          <option value="">ガチャタイトル１</option>
+          <option value="">ガチャタイトル２</option>
+          <option value="">ガチャタイトル３</option>
+        </select>
+      </div>
+      <div class="new_add_form_content">
+        <h2 class="new_add_form_content_sub">賞の名前</h2>
+        <select class="new_add_form_content_input_100 new_add_form_content_select_arrow" >
+          <option value="">賞タイトル</option>
+          <option value="">賞タイトル</option>
+          <option value="">賞タイトル</option>
+        </select>
+      </div>
+      <div class="new_add_form_content">
+        <h2 class="new_add_form_content_sub">金額</h2>
+        <input class="new_add_form_content_input_50" placeholder="820"><span class="new_add_form_content_input_span">円</span>
+      </div>
+      <div class="new_add_form_content">
+        <h2 class="new_add_form_content_sub">備考</h2>
+        <textarea class="new_add_form_content_textarea" placeholder="例)送料分"></textarea>
+    </div>
+    </div>
+  <div class="twobutton color1">
+    <a class="twobutton_a" href="../../contributor/html/contributor_gacha_top.html">戻る</a>
+    <a class="twobutton_a" href="../../contributor/html/contributor_gacha_new_add_confirm.html">確認</a>
+    </div>
+  </form>
+</main>
+<script src="../../contributor/js/concomponent.js"></script>
+</body>
+</html>

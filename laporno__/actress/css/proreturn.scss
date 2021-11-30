@@ -1,0 +1,388 @@
+@import "component.scss";
+
+/* main-top */
+.main-top-area , .main-midle-area{
+  padding:20px 16px;
+}
+
+.title{
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.sub-title, .checkbox-area , .selected-title , .main-midle-title{
+  margin-bottom: 10px;
+}
+
+.main-top-card{
+  box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+  margin-bottom: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.card-img-area , .siyoulp {
+  margin-right: 8px;
+}
+.card-img-area img{
+  width: 100%;
+}
+
+
+.checkbox {
+  display: none;
+}
+
+.checkbox-icon {
+  line-height: 20px;
+}
+
+.checkbox + .checkbox-icon::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #232323;
+  vertical-align: middle;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+.checkbox:checked + .checkbox-icon::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../img/check.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -1px 0px;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+
+
+
+.select{
+  margin-bottom: 15px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color:$grayblack;
+  width: 98px;
+  line-height: 23px;
+}
+
+.selected{
+  margin-bottom: 15px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: $white;
+  width: 98px;
+  line-height: 23px;
+}
+
+.selected > select{
+  color: $grayblack;
+}
+
+.selected label{
+  color: $white;
+}
+
+.amount {
+  width: 40px;
+  border-radius: 4px;
+  padding: 3px;
+  background-size: auto;
+  border: 1px solid $grayblack;
+}
+
+.card-title{
+  margin: 10px 0;
+}
+
+.card-text{
+  position:relative;
+  margin-bottom: 10px;
+}
+
+.card-text-detail{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: $grayblack;
+}
+
+
+.target-area{
+  color: $grayblack;
+  display:flex;
+  align-items: center;
+}
+.target-area img {
+  margin: 0 8px 4px 0;
+  width: 24px;
+
+}
+.target-area-span {
+  margin-left: 8px;
+}
+#selected-icon{
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 0;
+  height: 33px;
+  padding: 8px 35px;
+  color: #FAFAFA;
+  font-weight: bold;
+}
+
+.finish-title{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.finish::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #C4C4C4;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+}
+
+.selected-return-area{
+  margin-top: 20px;
+}
+
+.card-info{
+  text-align: right;
+  width: 50%;
+}
+
+.selected-return-input{
+  text-align:right;
+  border-radius: 4px;
+  color: $white;
+  line-height: 23px;
+}
+
+.selected-return-amount{
+  font-size: 12px;
+  line-height: 12px;
+  color:$grayblack;
+}
+
+.return-price{
+  display: block;
+  text-align: right;
+  margin :4px 0  6px;
+}
+.selected_retarn_detail {
+  width: 80%;
+}
+.batsu {
+  display: block;
+  position:absolute;
+  width: 30px;
+  height: 30px;
+  // margin: 8px;
+}
+
+.main-midle-card-area , .main-bottom-area{
+  padding: 10px;
+}
+.main-midle-card{
+  box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+  margin-bottom: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
+
+}
+
+.midle-card-title-area{
+  border-bottom: 1px solid $grayblack;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.ouen-area{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ouen-coment{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ouen-kingaku, .siyoulp{
+  padding: 5px;
+  margin: 0 16px;
+  width: 40%;
+  border-radius: 4px;
+  border: 1px solid #232323;
+  text-align: right;
+}
+
+/* 使用LP */
+.shojilp-title-area{
+  padding: 0 20px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.main-bottom-title{
+  margin-bottom: 10px;
+}
+
+.siharai-choice{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.choice-button{
+  width: 49%;
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid $grayblack;
+}
+
+.main-bottom-card{
+  box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+  margin-bottom: 10px;
+  position: relative;
+  padding: 8px 20px;
+}
+
+.bottom-card-title{
+  font-size: 12px;
+  line-height: 21px;
+}
+.siyoulp-area {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.card-input1{
+  border: 1px solid $grayblack;
+  padding: 0 8px;
+  margin-bottom: 10px;
+  height: 34px;
+}
+
+
+.slash{
+  margin: 0 3px 10px;
+  margin-bottom: 10px;
+
+}
+
+.card-num{
+  width: 100%;
+}
+
+.limit-input-area{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.card-limit{
+  width: 53px;
+}
+
+.card-code{
+  width: 94px;
+}
+
+.card-meigi,.card-kouza{
+  width: 200px;
+}
+
+.bottom-card-subtitle{
+  font-size: 10px;
+  line-height: 21px;
+}
+.bottom-card-text{
+  font-size: 10px;
+  margin-bottom: 6px;
+}
+
+.submit{
+  display: block;
+  padding: 12px 36px;
+  border-radius: 4px;
+}
+.button-area{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cashbutton {
+  width: 49%;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="radio"]
+{display:none;}
+.tab_panel
+{ display:none;}
+
+.tab1_label,.tab2_label,.tab3_label,.tab4_label,.tab5_label{
+    background-color: $gray;
+}
+#tab4:checked ~ .button-area .tab4_label
+{
+    border: 1px solid $grayblack;
+    background:$white;
+ }
+#tab5:checked ~ .button-area .tab5_label
+{
+    border: 1px solid $grayblack;
+    background:$white;
+ }
+#tab4:checked ~ .panel_area #panel4
+{display:block;
+}
+#tab5:checked ~ .panel_area #panel5
+{display:block;
+}
+
+// 追従決済ボタン
+
+.result_pay {
+  display:flex ;
+  justify-content: space-between;
+  padding: 10px 30px;
+  align-items: center;
+  z-index: 10;
+  background: $white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.result_p {
+  font-size: 12px;
+}
+.result_span {
+  font-size: 24px;
+  margin-left: 8px;
+
+}

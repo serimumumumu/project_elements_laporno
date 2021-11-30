@@ -1,0 +1,314 @@
+@import "concomponent.scss";
+
+.twobutton {
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+    
+}
+
+.main_card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin:20px 16px ;
+    padding:10px;
+}
+.main_card_title{
+    padding: 0 0 10px 0;
+    font-size: 16px;
+}
+.card_img img{
+    width: 100%;
+}
+.tab-area {
+    padding-top: 20px;
+}
+
+.act-select{
+    border: 1px solid $gray;
+    width: 43%;
+    margin-left: 12px;
+    // width: 50%;
+    padding: 10px;
+    background: $whitewhite;
+}
+
+.bold-font{
+    font-weight: bold;
+  }
+// 上部
+.main_in {
+    padding: 10px 0;
+}
+.main_in_article {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+.main_in_article2 {
+    display: flex;
+}
+.main_in_article_2 {
+    width: 50%;
+}
+
+.delitext {
+    border: 1px solid #C4C4C4;
+    padding: 10px;
+    width: 86%;
+    margin: 0 0 0 12px;
+  }
+.main_in_article_2 img ,.main_in_article_1 img{
+    width: 14px;
+    margin:0 4px 2px 0;
+}
+.main_in_article_2 p ,.main_in_article_1 p {
+    color: $grayblack;
+    font-size: 12px;
+    line-height: 18px;
+    
+}
+.main_in_article p {
+    margin-bottom: 4px;
+}
+.main_in_article_2 h6{
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 0 0 12px;
+    
+}
+.main_in_article_1 {
+    width: 100%;
+}
+.delitext_span {
+    display: inline-block;
+    position: absolute;
+    bottom: 0px;
+    margin-left: 8px;
+}
+.relative {
+    position: relative;
+}
+
+// 画像テンプレ部分
+.conbutton {
+    font-size: 14px;
+    padding: 8px 2px;
+}
+.tab_labels {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0px 0px 8px;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+.impreview_actname {
+    top:16px;
+    color: $white;
+position: absolute;
+left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid;
+}
+.album {
+    max-width: 100%;
+    // margin: 0 16px;
+    aspect-ratio: 16 / 9;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    background:rgba(255, 95, 146,0.5);
+    
+    padding: 8px;
+    }
+    #album1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    }
+    .actress_name {
+        font-size: 20px;
+        text-align: center;
+        grid-column-start: 4;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        // margin: 8px;
+
+    }
+    .actress_name  h3 {
+        color: rgb(255, 95, 146);
+        font-weight: bold;
+        text-shadow:
+        1px 0 0 white,
+        0 1px 0 white,
+        -1px 0 0 white,
+        0 -1px 0 white;
+        margin: 0;
+        text-align: center;
+    }
+    .actress_name_span {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    #album2 {
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    background-image: url(../../img/demoimg.png);
+    // background-size: auto;
+    background-position: center;
+    }
+    .album img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+// 落札表
+.history{
+    width: 100%;
+    border: 1px $gray;
+}
+
+.history-title{
+    color: $white;
+    padding: 10px;
+    font-size: 14px;
+}
+.history-title img {
+    width: 18px;
+    margin-right: 4px;
+}
+
+th {
+    font-weight: normal;
+}
+.history-td{
+    padding: 8px 10px;
+    border: 1px solid $gray;
+    vertical-align: middle;
+}
+
+.history-th{
+    font-size: 14px;
+    text-align: center;
+}
+
+.h-left, .h-center{
+    font-size: 12px;
+    width: 25%;
+}
+.h-left{
+    text-align: right;
+}
+.h-right{
+    width: 50%;
+}
+
+
+
+  // たぶ
+  .active{
+    background:$whitewhite;
+     border-bottom: 1px solid #c4c4c4;
+  }
+  .page-title{
+    text-align: left;
+      padding: 20px 16px 10px;
+  }
+  .tab{
+      width: 49%;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 4px 4px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .content{
+    padding: 20px 16px;
+    background: $whitewhite;
+  }
+  .tab-area {
+   display: flex;
+   justify-content: space-around;
+  }
+  .main-content-text {
+    padding: 10px;
+    line-height: 22px;
+  }
+.inner-textarea {
+    border: 1px solid $gray;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+}
+.content-btn-area{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ .content-btn{
+    border-radius: 4px;
+    text-align: left;
+    padding: 10px 8px;
+    font-size: 14px;
+    font-weight: 400;
+ }
+.card_img_edit_p {
+    position: absolute;
+    left: 30%;
+    background: $white;
+    color: $black;
+    bottom: 30%;
+}
+.selectonpreview {
+    display: none;
+  }
+  .imgregist{
+    position: relative;
+    margin:0px auto;
+    width: 100%;
+  }
+  .imgregist label {
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 8px;
+  }
+  .imgpreview img {
+    width: 100%;
+  }
+  #preview1,  #preview2,  #preview3{
+    aspect-ratio: 16 / 9;
+    text-align: center;
+    // width: 320px;
+    width: 100%;
+    display: block;
+    // height: 180px;
+    margin: 0 auto;
+    background-image: url(../../img/demoimg.png);
+  }
+  #preview2{
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    }
+//   .preview{
+//     aspect-ratio: 16 / 9;
+//     text-align: center;
+//     // width: 320px;
+//     width: 100%;
+//     display: block;
+//     // height: 180px;
+//     margin: 0 auto;
+//     background-image: url(../../img/demoimg.png);
+//   }

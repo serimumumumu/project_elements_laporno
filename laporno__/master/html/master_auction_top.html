@@ -1,0 +1,249 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オークション一覧</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../user/css/user_component.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_modal.css">
+  <link rel="stylesheet" href="../../master/css/master_auction.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <masheaders></masheaders>
+  <div class="panlist">
+    <ul>
+      <li ><a href="../../master/html/master_top.html">TOP</a></li>
+      <li class="arrow-l"><p>オークションTOP</p></li>
+    </ul>
+    </div>
+    <search></search>
+  <div class="overall">
+   <input id="tab_two_first" type="radio" name="tab_btn3" checked>
+    <input id="tab_two_second" type="radio" name="tab_btn3">
+    <div class="tab_two_button_area gap">
+      <label class="tab_two_first_label tab_two_button" for="tab_two_first">オークション一覧</label>
+      <label class="tab_two_second_label tab_two_button" for="tab_two_second">落札者一覧</label>
+  </div>
+    <div class="tab_two">
+      <!-- 一覧 -->
+      <div id="tab_two_first_panel" class="tab_two_panel">
+        <div class="hyou_area">
+          <div class="hyou">
+            <div class="hyou-top">
+              <div class="table-title-area color5">
+                <h2 class="table-title">オークション一覧</h2>
+                <div class="table_sort">
+                  <select name="order" id="" class="table_sort_select color1">
+                  <option >新着中</option>
+                  <option >登録順</option>
+                  </select>
+                </div>
+              </div>
+              <table class="table auction">
+                <tr class="table_header">
+                  <th class="table_60">ID</th>
+                  <th class="table_160">投稿者</th>
+                  <th class="table_160">女優</th>
+                  <th class="table_180">タイトル</th>
+                  <th class="table_100">開始日</th>
+                  <th class="table_100">終了日</th>
+                  <th class="table_100">入札額</th>
+                  <th class="table_100">入札履歴</th>
+                  <th class="table_100">ステータス</th>
+                  <th class="table_100">公開設定</th>
+                  <th class="table_100">明細発行</th>
+                </tr>
+                <tr>
+                  <td class="fs_12">A-1111</td>
+                  <td class="bold-font"><a class="bold-font" href="../../master/html/master_contributor_profile.html">投稿者のなまえ</a></td>
+                  <td class="bold-font"><a class="bold-font" href="../../master/html/master_actress_profile.html">女優のなまえ</a></td>
+                  <td class="bold-font"><a class="bold-font" href="../../master/html/master_auction_detail.html">オークションの名前</a></td>
+                  <td>2021/03/14<br> 00:00</td>
+                  <td>2021/05/20<br> 23:59</td>
+                  <td class="t_center">30,000</td>
+                  <td><button class="table-btn color3" @click="openModalAuchHistory">見る</button></td>
+                  <td> 
+                    <!-- <p>終了</p>
+                    <p>開催中</p> -->
+                    <p><button class="table-btn color3">承認する</button></p>
+                  </td>
+                  <td> 
+                    <button class="table-btn color3">
+                      <select  id="" >
+                        <option >非公開</option>
+                        <option >公開</option>
+                      </select>
+                    </button>
+                  </td>
+                  <td><button class="table-btn color3">詳細</button></td>
+                  <!-- <td><button class="table-btn color3">発行</button></td> -->
+                </tr>
+              </table>
+            </div>
+          </div>
+         </div>
+      </div>
+      <!-- 落札者一覧 -->
+      <div id="tab_two_second_panel" class="tab_two_panel ">
+        <div class="hyou_area" id="conauchtop">
+          <div class="hyou">
+            <div class="gacha_attention color1" id="gacha_unread">
+              <h5><img src="../../img/excla.png" alt=""><span class="gacha_attention_span">1</span>件の未読記事があります</h5>
+            </div>
+            <div class="hyou-top">
+              <div class="table-title-area color5">
+                <h2 class="table-title">オークション一覧</h2>
+                <div class="table_sort">
+                  <select name="order" id="" class="table_sort_select color1">
+                  <option >新着中</option>
+                  <option >登録順</option>
+                  </select>
+                </div>
+              </div>
+              <div class="search sub_search">
+                <form action="" method="">
+                  <img src="../../img/serch.png" alt="">
+                  <input  type="text" placeholder="検索する" />
+                </form>
+              </div>
+              <table class="table auction">
+                <tr class="table_header">
+                  <th class="table_100">落札日</th>
+                  <th class="table_160">落札者</th>
+                  <th class="table_60">ID</th>
+                  <th class="table_180">タイトル</th>
+                  <th class="table_100">落札額</th>
+                  <th class="table_100">支払状況</th>
+                  <th class="table_100">詳細</th>
+                  <th class="table_100">ステータス</th>
+                  <th class="table_40">Mail</th>
+                </tr>
+                <tr>
+                  <td>2021/03/14<br> 00:00</td>
+                  <td class="bold-font">
+                    <a class="bold-font" href="../../master/html/master_user_profile.html">落札者のなまえ</a>
+                    <div   @click="openInfo" class="usersendinfolist">情報
+                    </div>
+                  </td>
+                  <td class="fs_12">A-1111</td>
+                  <td class="bold-font"><a class="bold-font" href="../../master/html/master_auction_detail.html">オークションの名前</a></td>
+                  <td class="t_center"> 30,000</td>
+                  <td class="t_center">
+                     <!-- <p>カード</p> -->
+                     <p class="t_center">銀行振込</p>
+                     <!-- <p>未入金</p> -->
+                     <button class="table-btn color3" @click="openModalAuchPay">入金処理</button>
+                     <!-- <p>入金済</p> -->
+                  </td>
+                  <td>
+                    <button class="table-btn color3" @click="openModal">詳細</button>
+                  </td>
+                  <td>
+                    <!-- <p class="t_center">発送準備</p> -->
+                    <!-- <p class="t_center">発送済</p> -->
+                    <button class="table-btn color3" onclick="location.href='../../master/html/master_auction_new_add_agree.html'">追加承認</button>
+                  </td>
+                  <td > <a href="../../master/html/master_message_detail.html"><img src="../../img/mail.png" alt="mail" class="td-img"></a></td>
+                </tr>
+                <tr class="warn_bg"> 
+                  <td>2021/03/14<br> 00:00</td>
+                  <td class="bold-font">
+                    <a class="bold-font" href="../../master/html/master_user_profile.html">落札者のなまえ</a>
+                    <div   @click="openInfo" class="usersendinfolist">情報
+                    </div>
+                  </td>
+                  <td class="fs_12">A-1111</td>
+                  <td class="bold-font"><a class="bold-font" href="../../master/html/master_auction_detail.html">オークションの名前</a></td>
+                  <td class="t_center"> 30,000</td>
+                  <td class="t_center">
+                     <p class="t_center">カード</p>
+                     <!-- <p class="t_center">銀行振込</p> -->
+                     <p class="t_center">未入金</p>
+                     <!-- <button class="table-btn color3" @click="openModalAuchPay">入金処理</button> -->
+                     <!-- <p class="t_center">入金済</p> -->
+                  </td>
+                  <td>
+                    <!-- <button class="table-btn color3" @click="openModal">詳細</button> -->
+                  </td>
+                  <td>
+                    <p class="t_center">発送準備</p>
+                    <!-- <p class="t_center">発送済</p> -->
+                    <!-- <button class="table-btn color3" onclick="location.href='../../master/html/master_auction_new_add_agree.html'">追加承認</button> -->
+                  </td>
+                  <td > <a href="../../master/html/master_message_detail.html"><img src="../../img/mail.png" alt="mail" class="td-img"></a></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+         </div>
+      </div>   
+      <userinfo v-show="showinfoContent" @close="showinfoContent = false"></userinfo>
+      <masauchhistory v-show="showAuchHistory" @close="showAuchHistory = false"></masauchhistory>
+      <maspayauch v-show="showAuchPay" @close="showAuchPay = false"></maspayauch>
+      <masteraucsendinfo v-show="showContent" @close="showContent = false"></masteraucsendinfo>
+  </div>
+  </div>
+</div>
+<script src="../../master/js/master_header_search.js"></script>
+<script src="../../master/js/master_auction_top.js"></script>
+<script src="../../master/js/master_userinfo.js"></script>
+  <script>
+    var app = new Vue({
+      el:'#app',
+      data(){
+      return {
+        // isActive:"1",
+        showinfoContent:false,
+        showAuchHistory:false,
+        showAuchPay:false,
+        showContent:false,
+        // list:false
+      }
+      },
+      methods: {
+        // isSelect(number) {
+        //   this.isActive = number;
+        // },
+        openModal(){
+          this.showContent = true;
+        },
+        closeModal(){
+          this.showContent = false;
+        },
+        openModalAuchHistory(){
+          this.showAuchHistory = true;
+        },
+        closeModalAuchHistory(){
+          this.showAuchHistory= false;
+        },
+        openModalAuchPay(){
+          this.showAuchPay = true;
+        },
+        closeModalAuchPay(){
+          this.showAuchPay= false;
+        },
+        openInfo(){
+          this.showinfoContent = true;
+        },
+        closeInfo(){
+          this.showinfoContent = false;
+        },
+        //   open(){
+        //     this.list = !this.list
+        //     // this.min = number
+        // }
+      }
+    });
+  </script>
+</body>
+</html>
+

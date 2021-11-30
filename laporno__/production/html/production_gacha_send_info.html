@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>投稿者メール詳細</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/buylp.css">
+  <link rel="stylesheet" href="../../contributor/css/concomponent.css">
+  <link rel="stylesheet" href="../../contributor/css/auchdeliinforegist.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="conheaders">
+    <conheaders></conheaders>
+  </div>
+<div class="panlist">
+    <ul >
+        <li ><a href="top.html">TOP</a></li>
+        <li class="arrow-l"><a href="gachatop.html">ガチャTOP</a></li>
+        <li class="arrow-l">配送情報登録</li>
+    </ul>
+</div>
+<main>
+  <form class="card">
+    <h1 class="card-title">配送情報登録</h1>
+    <div class="card-content-box">
+        <h2 class="sub-title">タイトル</h2>  
+        <p class="sub-text">ガチャのタイトル</p>          
+    </div>
+    <div class="card-content-box">
+        <h2 class="sub-title">ユーザー名</h2>
+        <p class="sub-text">ユーザーの名前</p>
+    </div>
+    <div class="card-content-box">
+        <h2 class="sub-title">賞の名前</h2>
+        <p class="sub-text">賞A</p>
+        <!-- <p class="sub-text">賞B</p> -->
+    </div>
+    <div class="card-content-box">
+        <h2 class="sub-title">バージョン</h2>
+        <p class="sub-text">水着バージョン</p>
+        <!-- <p class="sub-text">着物バージョン</p> -->
+    </div>
+    <div class="card-content-box">
+        <h2 class="sub-title" >メモ</h2>
+        <textarea class="memo-text" placeholder="メモが入ります"></textarea>
+    </div>
+    <div class="tab_wrap" >
+      <input id="tab4" type="radio" name="tab_btn" checked>
+      <input id="tab5" type="radio" name="tab_btn">
+      <div class="button-area">
+          <label class="tab4_label cashbutton " for="tab4">元払い</label>
+          <label class="tab5_label cashbutton " for="tab5">着払い</label>
+      </div>
+      <div class="panel_area">
+          <div id="panel4" class="tab_panel">
+            <div class="card-content-box">
+              <h2 class="sub-title">配送業者</h2>
+              <select name="" id="" class="lp-amount-select">
+                  <option value="" disabled>選択してください</option>
+                  <option value="">やまと</option>
+                  <option value="">佐川急便</option>
+                  <option value="">郵便</option>
+                  <option value="">DHL</option>
+              </select>
+            </div>
+            <div class="card-content-box">
+              <h2 class="sub-title">配送方法</h2>
+              <select name="" id="" class="lp-amount-select">
+                  <option value="" disabled>選択してください</option>
+                  <option value="">配送方法</option>
+              </select>
+            </div>
+            <div class="card-content-box">
+              <h2 class="sub-title">配送番号</h2>
+              <input type="text" class="delitext" placeholder="1234567890">
+            </div>
+            <div class="card-content-box">
+                <h2 class="sub-title">伝票写真</h2>
+                <div class="img-input-area">
+                    <label for="denpyo-photo" class="img-input">
+                        <img src="../../img/pic.png" alt="" class="img-input-icon">
+                        <p>画像をアップロード</p>
+                        <input  id ="denpyo-photo" type="file" name="example" accept="image/jpeg, image/png">
+                    </label>
+                    <div class="inputted-img-area">
+                        <img src="../../img/demoimg.png" alt="" class="inputted-img">
+                        <img src="../../img/demoimg2.png" alt="" class="inputted-img">
+                        <img src="../../img/demoimg.png" alt="" class="inputted-img inputted-last">
+                    </div>
+                </div>
+            </div>
+
+          </div>
+          <div id="panel5" class="tab_panel">
+              <div class="card-content-box">
+                  <h2 class="sub-title">配送料</h2>
+                  <input type="text" class="delitext" placeholder="720">円
+              </div>
+              <div class="card-content-box">
+                <h2 class="sub-title">配送業者</h2>
+                <select name="" id="" class="lp-amount-select">
+                    <option value="" disabled>選択してください</option>
+                    <option value="">やまと</option>
+                    <option value="">佐川急便</option>
+                    <option value="">郵便</option>
+                    <option value="">DHL</option>
+                </select>
+              </div>
+              <div class="card-content-box">
+                <h2 class="sub-title">配送方法</h2>
+                <select name="" id="" class="lp-amount-select">
+                    <option value="" disabled>選択してください</option>
+                    <option value="">配送方法</option>
+                </select>
+              </div>
+              <div class="card-content-box">
+                <h2 class="sub-title">配送番号</h2>
+                <input type="text" class="delitext" placeholder="1234567890">
+            </div>
+              <div class="card-content-box">
+                  <h2 class="sub-title">伝票写真</h2>
+                  <div class="img-input-area">
+                      <label for="denpyo-photo" class="img-input">
+                          <img src="../../img/pic.png" alt="" class="img-input-icon">
+                          <p>画像をアップロード</p>
+                          <input id ="denpyo-photo" type="file" name="example" accept="image/jpeg, image/png">
+                      </label>
+                      <div class="inputted-img-area">
+                          <img src="../../img/demoimg2.png" alt="" class="inputted-img">
+                          <img src="../../img/demoimg.png" alt="" class="inputted-img">
+                          <img src="../../img/demoimg.png" alt="" class="inputted-img inputted-last">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="onebutton">
+      <a class="onebutton_a" href="gachadetaillist.html">登録</a>
+    </div>
+</form>
+</main>
+<script src="../../contributor/js/concomponent.js"></script>
+</body>
+</html>

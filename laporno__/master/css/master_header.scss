@@ -1,0 +1,151 @@
+@import "../../user/css/color.scss" ;
+
+// ヘッダー
+
+header {
+  z-index: 9;
+  width: 100%;
+  position: fixed;
+  background: $white; 
+  padding: 8px ;
+  display: flex;
+  justify-content: space-between;
+  }
+.header-left img {
+  vertical-align:center ;
+  height: 44px;
+}
+.header-right  {
+  display: flex;
+}
+#hamburger_menu {
+  padding-left: 20px;
+}
+.hbtn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width:80px;
+  height:72px;
+  cursor:pointer;
+  z-index: 50;
+}
+.line {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width:32px;
+  height:2px;
+  background:$black; 
+  text-align:center;
+}
+    
+.line_01 {
+  top:-16px;
+}
+.line_03 {
+  top:-36px;
+}
+.btn_01 {
+  transform:translateY(10px) rotate(-45deg);
+  top:16px;
+}
+.btn_03 {
+  top:36px;
+  transform:translateY(-10px) rotate(45deg);
+}
+.menu {
+  position:fixed;
+  top:0;right: 0;
+  padding: 30px 46px;
+  background:$whitegray; 
+}
+p.menu_user {
+  position: relative;
+  top: -16px;
+  width: 124px;
+}
+.menu ul {
+  padding: 0;
+  margin: 0;
+}
+.menu li {
+  border-bottom: 1px solid $grayblack;
+  padding:16px 0 8px 0;
+}
+.menu a {
+  text-decoration: none;
+  color:$black; 
+}
+.sns {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+
+}
+.sns img {
+  width: 28px;
+}
+
+// パンクズりすと
+.panlist ul {
+  margin: 0;
+  padding:0;
+  background: $white;
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  padding:0 10px 0px ;
+}
+.panlist {
+  background:$white;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 48px 16px 0 16px;
+}
+
+.panlist a {
+  font-weight: bold;
+  display: inline-block;
+  padding: 8px 8px 8px 8px;
+}
+.panlist p {
+  // font-weight: bold;
+  display: inline-block;
+  padding: 8px 8px 8px 8px;
+}
+
+.panlist li {
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  color: $grayblack;
+  text-decoration: none;
+  padding: 8px 8px 0 8px;
+
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+.panlist li:first-child {
+  padding-left: 0px;
+}
+
+.panlist li:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-top: solid 2px $grayblack;
+  border-right: solid 2px $grayblack;
+  position: absolute;
+  top: 60%;
+  left: 0;
+  margin-top: -4px;
+  transform: rotate(45deg);
+}
+
+.panlist li:first-child::before {
+  display: none;
+}

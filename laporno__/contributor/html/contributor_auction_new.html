@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投稿者オークション詳細</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../contributor/css/contributor_auction_new.css">
+    <script src="../../user/js/vue.js" defer></script>
+</head>
+
+<body>
+    <div id="app">
+        <conheaders></conheaders>
+        <!-- パンクズりすと -->
+        <div class="panlist">
+            <ul>
+                <li><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+                <li class="arrow-l"><a href="../../contributor/html/contributor_auction_top.html">オークショントップ</a></li>
+                <li class="arrow-l"><p>新規作成</p></li>
+            </ul>
+        </div>
+        <section class="main_card" id="auchimgedit">
+            <div class="new_input">
+                <p class="new_input_sub">オークションタイトル</p>
+                <input type="text" class="new_input_select_100" placeholder="オークションタイトルがはいります" />
+                <span class="input_text_count">0/25</span>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">発送予定日</p>
+                <input type="date" id="send_date" class="new_input_select_60" placeholder="2020/01/01" />
+            </div>
+            <div class="new_input">
+                <input id="tab1" type="radio" name="tab_btn" checked>
+                <input id="tab2" type="radio" name="tab_btn" disabled>
+                <input id="tab3" type="radio" name="tab_btn" disabled>
+                <div class="tab_labels">
+                    <label class="tab1_label conbutton" for="tab1">テンプレ1</label>
+                    <label class="tab2_label conbutton" for="tab2">テンプレ2</label>
+                    <label class="tab3_label conbutton" for="tab3">テンプレ3</label>
+                </div>
+                <div class="panel_area">
+                    <div id="panel1" class="tab_panel ">
+                        <div class="imgregist">
+                            <label>
+                                <input type="file" accept="image/*" class="selectonpreview"
+                                    onchange="previewImage(this);">写真を変更する
+                            </label>
+                            <p class="imgpreview">
+                                <img id="preview1"
+                                    src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                            </p>
+                        </div>
+                    </div>
+                    <div id="panel2" class="tab_panel ">
+                        <div class="imgregist">
+                            <label>
+                                <input type="file" accept='image/*' class="selectonpreview"
+                                    onchange="previewImage(this);">写真を変更する
+                            </label>
+                            <p class="imgpreview">
+                                <img id="preview3"
+                                    src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+                            </p>
+                            <h5 class="impreview_actname">{{ image_text }}</h5>
+                        </div>
+                        <div class="new_input">
+                            <p class="new_input_sub">画像に挿入する文字</p>
+                            <input type="text" class="new_input_select_100" placeholder="画像に挿入する文字がはいります" />
+                            <span class="input_text_count">0/25</span>
+                        </div>
+                        <div class="new_input new_input_two">
+                            <div class="">
+                                <p class="new_input_sub"><img src="../../img/time.png" alt="">使用するフォント</p>
+                                <input type="text" class="new_input_select_90" v-model="selectvalue" list="fontlist"
+                                    placeholder="明朝">
+                            </div>
+                        </div>
+                        <div class="new_input">
+                            <div class="">
+                                <p class="new_input_sub"><img src="../../img/time.png" alt="">文字色</p>
+                                <div class="colors_index">
+                                    <div class="color" id="white_text"></div>
+                                    <div class="color" id="black_text"></div>
+                                    <div class="color" id="red_text"></div>
+                                    <div class="color" id="orange_text"></div>
+                                    <div class="color" id="yellow_text"></div>
+                                    <div class="color" id="green_text"></div>
+                                    <div class="color" id="water_text"></div>
+                                    <div class="color" id="blue_text"></div>
+                                    <div class="color" id="purple_text"></div>
+                                    <div class="color" id="pink_text"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="panel3" class="tab_panel ">
+                        <div class="imgregist">
+                            <div class="album">
+                                <img class="main_img" src="../../img/demoimg2.png" alt="アルバム1" id="album1">
+                                <div class="actress_name">
+                                    <h3>
+                                        {{ selectvalue }}<span class="actress_name_span">Joyu Name</span>
+                                    </h3>
+                                </div>
+                                <img id="preview2"
+                                    src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    alt="アルバム2" id="album2">
+                            </div>
+                        </div>
+                        <div class="new_input">
+                            <p class="new_input_sub">画像に挿入する文字</p>
+                            <input type="text" class="new_input_select_100" placeholder="画像に挿入する文字がはいります" />
+                            <span class="input_text_count">0/25</span>
+                        </div>
+                        <div class="new_input new_input_two">
+                            <div class="">
+                                <p class="new_input_sub"><img src="../../img/time.png" alt="">使用するフォント</p>
+                                <input type="text" class="new_input_select_90" v-model="selectvalue" list="fontlist"
+                                    placeholder="明朝">
+                            </div>
+                        </div>
+                        <div class="new_input">
+                            <div class="">
+                                <p class="new_input_sub"><img src="../../img/time.png" alt="">文字色</p>
+                                <div class="colors_index">
+                                    <div class="color" id="t3_white_text"></div>
+                                    <div class="color" id="t3_black_text"></div>
+                                    <div class="color" id="t3_red_text"></div>
+                                    <div class="color" id="t3_orange_text"></div>
+                                    <div class="color" id="t3_yellow_text"></div>
+                                    <div class="color" id="t3_green_text"></div>
+                                    <div class="color" id="t3_water_text"></div>
+                                    <div class="color" id="t3_blue_text"></div>
+                                    <div class="color" id="t3_purple_text"></div>
+                                    <div class="color" id="t3_pink_text"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="new_input">
+                            <div class="">
+                                <p class="new_input_sub"><img src="../../img/time.png" alt="">背景色</p>
+                                <div class="colors_index">
+                                    <div class="color" id="white_back"></div>
+                                    <div class="color" id="black_back"></div>
+                                    <div class="color" id="red_back"></div>
+                                    <div class="color" id="orange_back"></div>
+                                    <div class="color" id="yellow_back"></div>
+                                    <div class="color" id="green_back"></div>
+                                    <div class="color" id="water_back"></div>
+                                    <div class="color" id="blue_back"></div>
+                                    <div class="color" id="purple_back"></div>
+                                    <div class="color" id="pink_back"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="main_in new_input">
+                <p class="new_input_sub"><img src="../../img/lady.png" alt="">女優</p>
+                <input type="text" v-model="selectvalue" list="actlist" class="new_input_select_100" placeholder="女優の名前"/>
+                <datalist id="actlist">
+                    <option>女優１</option>
+                    <option>女優２</option>
+                    <option>女優３</option>
+                </datalist>    
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub"><img src="../../img/pro.png" alt="">プロダクション</p>
+                <select name="parentsGacha" class="new_input_select_60">
+                    <option value="1">プロダクション1</option>
+                    <option value="2">プロダクション2</option>
+                    <option value="3">プロダクション3</option>
+                </select>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub"><img src="../../img/time.png" alt="">開始</p>
+                <select-datetime :date="'start_date'" :time="'start_time'"></select-datetime>
+                <p class="new_input_sub"><img src="../../img/time.png" alt="">終了</p>
+                <select-datetime :date="'end_date'" :time="'end_time'"></select-datetime>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub"><img src="../../img/money.png" alt="">スタート金額</p>
+                <input id="start_price" type="number" min="500" step="500" class="new_input_select_30"
+                    placeholder="3000円"><span class="new_input_select_span">円</span>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">タイプ</p>
+                <div class="new_input_check">
+    
+                    <label class="new_input_select_32">
+                        <input type="checkbox" name="level" value="ok">
+                        劇中使用
+                    </label>
+                    <label class="new_input_select_32">
+                        <input type="checkbox" name="level" value="bad">
+                        オリジナル
+                    </label>
+                    <label class="new_input_select_32">
+                        <input type="checkbox" name="level" value="bad">
+                        女優私物
+                    </label>
+                    <label class="new_input_select_32">
+                        <input type="checkbox" name="level" value="bad">
+                        リアル
+                    </label>
+                    <label class="new_input_select_32">
+                        <input type="checkbox" name="level" value="bad">
+                        デジタル
+                    </label>
+                    <label class="new_input_select_32">
+                        <input type="checkbox" name="level" value="bad">
+                        その他
+                    </label>
+                </div>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">タグ(任意)</p>
+                <input type="text" v-model="selectvalue" class="new_input_select_100" placeholder="任意のタグ" />
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">動画データ</p>
+                <div class="new_input_send">
+                    <label class="new_send">
+                        <input name="moviedata" class="Radio-Input" type="radio" checked>
+                        <span class="Radio-Text">有り</span>
+                    </label>
+                    <label class="new_send">
+                        <input name="moviedata" class="Radio-Input" type="radio">
+                        <span class="Radio-Text">無し</span>
+                    </label>
+                </div>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">USB郵送</p>
+                <div class="new_input_send">
+                    <label class="new_send">
+                        <input name="usbsend" class="Radio-Input" type="radio" checked>
+                        <span class="Radio-Text">有り</span>
+                    </label>
+                    <label class="new_send">
+                        <input name="usbsend" class="Radio-Input" type="radio">
+                        <span class="Radio-Text">無し</span>
+                    </label>
+                </div>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub">送料</p>
+                <div class="new_input_send">
+                    <label class="new_send">
+                        <input name="radio" class="Radio-Input" type="radio" checked>
+                        <span class="Radio-Text">元払い</span>
+                    </label>
+                    <label class="new_send">
+                        <input name="radio" class="Radio-Input" type="radio">
+                        <span class="Radio-Text">着払い</span>
+                    </label>
+                </div>
+            </div>
+            <div class="new_input">
+                <p class="new_input_sub"><img src="../../img/money.png" alt="">送料</p>
+                <input id="postage" type="number" class="new_input_select_30" placeholder="800">
+                <span class="new_input_select_span">円</span>
+            </div>
+            <!-- </div> -->
+        </section>
+        <div class="main-top color2" >
+            <div class="tab-area">
+                <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">内容</div>
+                <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">入札状況</div>
+            </div>
+            <!--内容-->
+            <div class="content" v-if="isActive === '1'">
+                <!-- <div class="content-btn-area">
+                    <button class="content-btn color3">見出</button>
+                    <button class="content-btn color3">太字</button>
+                    <button class="content-btn color3">画像</button>
+                    <button class="content-btn color3">埋め込みYoutube</button>
+                    <button class="content-btn color3">動画</button>
+                </div> -->
+                <textarea class="inner-textarea" name="" id="" cols="30" rows="10" placeholder="ここに文章が入ります">
+                </textarea>
+            </div>
+            <!--景品一覧-->
+            <div class="content" v-else="isActive === '2'">
+                <table class="history">
+                    <tr>
+                        <th colspan="3" class="history-title color5"><img src="../../img/mallet.png">入札履歴</th>
+                    </tr>
+                    <tr>
+                        <th class="history-td history-th">入札時間</th>
+                        <th class="history-td history-th">入札額</th>
+                        <th class="history-td history-th">入札者</th>
+                    </tr>
+                    <tr>
+                        <td class="history-td h-left"></td>
+                        <td class="history-td h-center"></td>
+                        <td class="history-td h-right bold-font"></td>
+                    </tr>
+                    <tr>
+                        <td class="history-td h-left"></td>
+                        <td class="history-td h-center"></td>
+                        <td class="history-td h-right bold-font"></td>
+                    </tr>
+                    <tr>
+                        <td class="history-td h-left"></td>
+                        <td class="history-td h-center"></td>
+                        <td class="history-td h-right bold-font"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <datalist id="fontlist">
+            <option>明朝</option>
+            <option>ゴシック</option>
+            <option>イタリック</option>
+        </datalist>
+        <!-- 追従フッター -->
+        <div id="float_area">
+            <a class="twobutton_a" href="../../contributor/html/contributor_auction_top.html">戻る</a>
+            <a class="twobutton_a" href="../../contributor/html/contributor_auction_new_preview.html">確認</a>
+        </div>
+    </div>
+    <!-- <script src="../../user/js/actprodtop.js" defer></script>
+    <script src="../../contributor/js/concomponent.js" defer></script> -->
+    <script src="../../contributor/js/contributor_header_search.js" defer></script>
+    <script>
+        function previewImage(obj) {
+            var fileReader = new FileReader();
+            fileReader.onload = (function () {
+                document.getElementById('preview1').src = fileReader.result;
+            });
+            fileReader.readAsDataURL(obj.files[0]);
+        }
+        window.onload = function () {
+            new Vue ({
+                el:"#app",
+                data: {
+                    selectvalue: null,
+                    image_text:null,
+                    isActive:"1",
+                },
+                created(){
+                },
+                methods:{
+                    isSelect(number) {
+          this.isActive = number;
+        },
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

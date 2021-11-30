@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+html { font-family: 'Roboto', sans-serif; }
+
+html { color: #232323; }
+
+.color0 { background-color: #fff; }
+
+.color1 { background-color: #FAFAFA; }
+
+.color2 { background-color: #E9E9E9; }
+
+.color3 { background-color: #C4C4C4; }
+
+.color4 { background-color: #7D7D7D; }
+
+.color5 { background-color: #232323; }
+
+body { background-color: #FAFAFA; }
+
+.contributor_project_new_return_template_title { margin: 10px 16px 10px; position: relative; }
+
+.contributor_project_new_return_template_title_h2 { font-size: 16px; padding: 8px 0 8px 8px; line-height: 26px; text-align: center; font-weight: bold; }
+
+.contributor_project_new_return_template_title_button { position: absolute; top: 0; right: 0; line-height: 20px; padding: 10px 8px; font-size: 14px; background-color: #C4C4C4; border-radius: 4px; }
+
+.contributor_project_new_return_template_title_button_img { width: 22px; margin: 0 4px 0 0; }
+
+.contributor_project_new_return_template_main { padding: 16px; }
+
+.contributor_project_new_return_template_name { font-size: 12px; color: #7D7D7D; }
+
+.contributor_project_new_return_template_name_select { padding: 12px 10px; margin: 0 0 10px 0; border: 1px solid #C4C4C4; width: 60%; background-image: url(../../img/tridown.png); background-repeat: no-repeat; background-size: 14px; background-position: right 16px center; }
+
+.twobutton { width: 100%; padding: 0px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; margin: 20px auto 0; }
+
+.twobutton_a { width: 45%; color: #FAFAFA; background: #232323; display: block; padding: 10px 0; border-radius: 4px; margin: 0 auto; text-align: center; }

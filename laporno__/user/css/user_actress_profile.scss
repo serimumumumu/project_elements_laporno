@@ -1,0 +1,786 @@
+@import "color.scss";
+.user_actress_profile{
+// モーダル時（応援するボタン）
+  textarea {
+    overflow: auto;
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+}
+
+// / 二つボタン
+.twobutton {
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.twobutton_a {
+  cursor: pointer;
+    width: 40%;
+    background: $gray;
+    display: block;
+    padding: 14px 0;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(196, 196,196,0.5)
+}
+
+
+input[type="radio"]{
+  display:none;
+}
+// 角ふたつタブ
+.tab_two_button_area{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.tab_two_button {
+  width: 49%;
+  text-align: center;
+  font-size: 14;
+  padding: 12px;
+}
+.tab_two_panel{ 
+  display:none;
+}
+
+.tab_two_first_label,.tab_two_second_label{
+  background-color: $gray;
+}
+
+#tab_two_first:checked ~ .tab_two_button_area .tab_two_first_label,
+#tab_two_second:checked ~ .tab_two_button_area .tab_two_second_label{
+  border: 1px solid $grayblack;
+  background:$white;
+ }
+
+
+#tab_two_first:checked ~ .tab_two #tab_two_first_panel,
+#tab_two_second:checked ~ .tab_two #tab_two_second_panel{
+  display:block;
+}
+
+
+// 角タブみっつ
+.recht_three_tab_labels {
+  display: flex;
+  justify-content: space-between;
+}
+.recht_three_tabbtn {
+  width: 32%;
+  background: $gray;
+  font-size: 14px;
+  padding: 12px 8px;
+  text-align: center;
+  
+}
+.recht_three_panel_area {
+  padding: 10px 0px 0;
+  display:flex;
+  justify-content: space-between;
+}
+.recht_three_tab_panel{ 
+  display:none;
+}
+.recht_three_tab1_label,.recht_three_tab2_label,.recht_three_tab3_label{
+background-color: $gray;
+}
+#recht_three_tab1:checked ~ .recht_three_tab_labels .recht_three_tab1_label,#recht_three_tab2:checked ~ .recht_three_tab_labels .recht_three_tab2_label,#recht_three_tab3:checked ~ .recht_three_tab_labels .recht_three_tab3_label
+{
+  font-size: 14px;
+background:$white;
+border:1px solid $gray;
+}
+#recht_three_tab1:checked ~ .recht_three_panel_area #recht_three_panel1,#recht_three_tab2:checked ~ .recht_three_panel_area #recht_three_panel2,#recht_three_tab3:checked ~ .recht_three_panel_area #recht_three_panel3
+{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.tab_panel{ 
+  display:none;
+}
+.tab1_label,.tab2_label,.tab3_label,.tab4_label,.tab5_label,.tab6_label,.tab7_label,.tab8_label{
+background-color: $gray;
+}
+#tab1:checked ~ .tab_labels .tab1_label,#tab2:checked ~ .tab_labels .tab2_label,#tab3:checked ~ .tab_labels .tab3_label,#tab4:checked ~ .tab_labels .tab4_label,#tab5:checked ~ .tab_labels .tab5_label,#tab6:checked ~ .tab_labels .tab6_label,#tab7:checked ~ .tab_labels .tab7_label,#tab8:checked ~ .tab_labels .tab8_label
+{
+background:$white;
+border-bottom: 1px solid $gray;
+}
+#tab1:checked ~ .panel_area #panel1,#tab2:checked ~ .panel_area #panel2,#tab3:checked ~ .panel_area #panel3,#tab4:checked ~ .panel_area #panel4,#tab5:checked ~ .panel_area #panel5,#tab6:checked ~ .panel_area #panel6,#tab7:checked ~ .panel_area #panel7,#tab8:checked ~ .panel_area #panel8
+{display:block;
+}
+.panel_area {
+  padding: 20px 16px 60px;
+}
+
+.mtop_20 {
+    margin-top: 20px;
+  }
+  
+  // 投稿者アイコン
+  .contributor_icon {
+    border-radius: 30px;
+    width: 20px;
+  }
+  // 警告
+  .warn_shadow {
+    box-shadow: 0px 0px 2px 2px rgba(255, 0, 0, 0.25) !important;
+  
+  }
+  .warn_icon {
+    background-image: url(../../img/warnexcla.png);
+    z-index: 14;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position-x: 98%;
+  }
+  
+  
+  // 警告終わり
+  
+  // 検索バー
+  .search {
+      background: $gray;
+      padding:6px 16px;
+  }
+  .search form {
+      height:40px;
+      padding-left: 8px;
+      background-color:$whitewhite;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      
+  }
+  .search input {
+        width: 100%;
+      text-align: left;
+      padding-left: 8px;
+  }
+  .search input::placeholder {
+      color: $gray;
+  }
+  // 検索バー終わり
+  
+  // たぶ
+  .active{
+    background:$white;
+     border-bottom: 1px solid $gray;
+    }
+
+  .page-title{
+    text-align: left;
+      padding: 20px 16px 10px;
+  }
+  .tab{
+      width: 49%;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 4px 4px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .content{
+    padding: 0px 16px 20px;
+  }
+  .tab-area {
+   display: flex;
+   justify-content: space-around;
+  }
+  .acts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .user_auc_top_intab {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  // たぶ終わり
+  
+  // ハート
+  .favorite-icon{
+      z-index: 0;
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+    }
+  .favorite-icon img{
+      border-radius: 16px;
+      background:$whitewhite;
+      width: 31px;
+  }
+  // ハート終わり
+  
+  // 女優カード、ガチャカード、オークションカード　共通
+  a {
+      display: block;
+  }
+  .relative , .gatya_card_imgarea {
+      position: relative;
+    
+    }
+  .compo_card{
+      width: 49%;
+      background: $whitewhite;
+      box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+      margin-bottom: 10px;
+  }
+  .compo_card_inner{
+    text-align: left;
+      padding: 8px;
+  }
+  .compo_main_img{
+      width: 100%;
+  }
+  .info-inner{
+      display: flex;
+      padding-bottom: 4px;
+      font-size: 12px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+  }
+  .info-inner img{
+      width: 14px;
+      margin-right: 5px;
+  }
+  
+  
+  // ガチャカード(gachacard)
+  // .gatya_card_imgarea{
+  //     position: relative;
+  // }
+  .gatya_card_title{
+      font-size: 12px;
+      line-height: 18px;
+      margin-bottom:6px;
+  }
+  .gatya_card_inner{
+    padding: 8px;
+    position: relative;
+      text-align: left;
+  }
+  
+  // ガチャカード(gachacard)終わり
+  // オークションカード(auchcard)
+  .auc_card_inner{
+      text-align: left;
+        padding: 8px;
+    }
+    .auc_card_title{
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom:6px;
+    }
+    .nyuusatu-now > span{
+      font-weight: bold;
+      text-align: right;
+        font-size: 16px
+    }
+    .nyuusatu-now{
+      padding: 8px 0;
+        font-size: 12px;
+    }
+    .patron-name {
+      font-size:14px;
+    }
+    .patron-name-area{
+      border-top: 1px solid $gray;
+        display: flex;
+        align-items: baseline;
+       padding: 8px 0 4px;
+    
+    }
+    .patron-name-area >img{
+      width: 14px;
+        height: 16px;
+        margin-right: 4px;
+    }
+    .heart_nyu{
+      position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .heart_auch {
+        position: absolute;
+        top: 67%;
+      right: 0px;
+    }
+    .compo_card_hot_p {
+      position: absolute;
+      bottom:8px;
+      padding:2px 8px;
+      line-height: 14px;
+      font-size: 12px;
+      font-weight: bold;
+      color: $white;
+      border-radius: 0px 4px 4px 0px;
+      background:rgba(35,35,35,0.5)
+    }
+    .compo_card_hot_fire {
+      width:14px;
+    }
+  // オークションカード(auchcard)終わり
+  // プロジェクトカード
+  .proj_card_title{
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 6px 0;
+  }
+  .info-2column{
+    display:flex;
+    justify-content: space-between;
+  }
+  .sienkingaku{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0 0 0;
+  }
+  .sienkingaku-title{
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: flex-end;
+  }
+  .percent-area{
+    padding: 4px 0px;
+  }
+  .percent{
+    border-radius: 2px;
+    height: 4px;
+    width: 100%;
+    position: relative;
+  }
+  .percent::before{
+    content: "";
+    width: 100px;
+    height: 4px;
+    background-color: $black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 2px;
+  }
+  .projsup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+  
+  }
+  .supportbutton {
+    padding: 7px;
+    width: 75%;
+    background: $gray;
+    border-radius: 4px;
+    text-align: center;
+  
+  }
+  .sellbutton {
+    padding: 7px;
+    width: 100%;
+    background: $gray;
+    border-radius: 4px;
+    text-align: center;
+  
+  }
+  .projsup_heart {
+    position: relative;
+    left: 38px;
+    top: 8px;
+  }
+  #btn-2:disabled {
+    opacity: 0.3;
+  }
+  // プロジェクトカード終わり
+  // 支援ボタンモーダル
+  ::placeholder {
+    font-size: 16px;
+  line-height: 16px;
+  color: $gray;
+  }
+  .button1{
+    background:$gray;
+    border-radius: 4px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button{
+    background:$gray;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cancel-btn {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 110;
+    cursor: pointer;
+    width:72px;
+    height:70px;
+  }
+  #btn-2 ,.btn-2{
+    display: block;
+    background: $black;
+    width: 195px;
+    z-index: 100;
+    color: $white;
+    border-radius: 4px;
+    line-height: center;
+    text-align: center;
+    margin: 30px auto 0;
+    font-size: 16px;
+    padding: 14px;
+  
+  }
+  .main-area{
+    padding: 10px 16px;
+  }
+  
+  // ひとつボタン
+  .onebutton {
+    width: 100%;
+    margin: 30px 0;
+  }
+  .onebutton_a {
+    width: 60%;
+    background: $black;
+    color: $white;
+    display: block;
+    padding: 14px 0;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+
+.button-area{
+    display: flex;
+}
+.actress_profile{
+    z-index: -9;
+    padding: 10px;
+    display:flex;
+}
+.actress_profile_left{
+    width: 40%;
+}
+.actress_profile_img{
+    width: 100%;
+}
+.actress_profile_right{
+  margin:0 0 0 16px;
+    width: 60%;
+  }
+  .user-name{
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0 0 16px 0px;
+}
+.user-name a{
+  font-weight: bold;
+}
+.user-info-area ,.user_lp_aboutsetting_content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.actress_profile_right_button {
+  width:148px;
+  font-size:14px;
+  padding:14px 0;
+  text-align:center;
+  background-color: $gray;
+  border-radius: 4px;
+
+}
+
+.subtext{
+
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.content{
+    padding: 10px ;
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+    margin:0 0 10px 0;
+}
+
+.switch_title{
+      display: flex;
+      padding: 10px;
+      justify-content:space-between;
+      align-items: center;
+  }
+._state_open {
+    transform:rotateX(180deg);
+}
+.user_aboutproject_card_return_card{
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+    padding: 10px;
+    margin:0 0 10px 0;
+}
+.content-subtitle,.change-info-part{
+    margin-bottom: 16px;
+}
+.user_aboutproject_card_return_card_title{
+    margin: 0 0 6px 0;
+}
+.button{
+    border-radius: 4px;
+    height: 34px;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// 支援履歴
+.user_aboutproject_card_img{
+  width:100%;
+}
+.user_aboutproject_card_in {
+  box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+  padding: 10px;
+  margin: 0 0 10px 0;
+}
+.user_aboutproject_card_in_title {
+  
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user_aboutproject_card_return{
+  font-size: 10px;
+  line-height: 12px;
+  margin:12px 0 6px 0;
+}
+
+// 入落札履歴
+.user_aboutauction_title {
+  padding:0 0 6px 0;
+}
+
+.user_aboutauction_card_detail{
+  display: flex; 
+  align-items: flex-start;
+  gap: 10px;
+  
+}
+.user_aboutauction_card_detail_img {
+  width: 50%;
+
+}
+.user_aboutauction_card_detail_info_inner{
+  display: flex;
+  padding: 0 0 4px 0;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+
+}
+
+.user_aboutauction_card_detail_info_inner_img{
+    width: 14px;
+    margin-right: 5px;
+}
+.user_aboutauction_card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    padding: 10px;
+    margin:0 0 10px 0;
+}
+
+.user_aboutauction_card_title{
+    padding:0 0 10px;
+}
+
+.user_aboutauction{
+  display: flex;
+  justify-content: space-between;
+  margin:0 0 20px 0; 
+    gap: 8px;
+    overflow: scroll;
+}
+.user_aboutauction .compo_card{
+  min-width: 49%;
+  width: 100%;
+}
+
+.subtitle{
+    font-size: 10px;
+    line-height: 18px;
+    color: $grayblack;
+    display: block;
+}
+
+// 景品一覧
+.user_aboutgacha {
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+    padding: 10px;
+    margin: 0 0 10px 0;
+}
+.user_aboutgacha_outer_maintitle {
+    padding: 0;
+
+}
+.user_aboutgacha_detail {
+  margin:0 0 10px ;
+  box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.25);
+  padding: 10px;
+  border-radius: 4px;
+}
+.user_aboutgacha_detail_index p{
+    font-size: 12px;
+    margin:0 0 6px;
+}
+.user_aboutgacha_detail_index p:last-child{
+    margin: 0;
+}
+
+.user_aboutgacha_outer_detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 0 10px 0;
+}
+.user_aboutgacha_detail_article_title {
+  font-size: 12px;
+  margin:0  0 6px ;
+}
+.user_aboutgacha_detail_article_span {
+  padding:3px 24px;
+  border-radius: 4px;
+  border: 1px solid $grayblack;
+  font-size:12px;
+  text-align: center;
+}
+
+
+//   上角丸たぶ
+.tabbtn {
+    width: 24.5%;
+    background: $gray;
+    gap: 2px;
+    font-size: 14px;
+    padding: 12px 2px;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+    margin:0 0 2px 0;
+    line-height: 14px;
+    vertical-align: middle;
+    letter-spacing: -1.5px;
+}
+
+.tab_labels {
+    padding: 20px 2px 0 2px;
+    background:$whitegray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .contributor_tab_labels {
+    padding: 20px 2px 0 2px;
+    background: $whitegray;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    justify-content: center;
+}
+
+  .patronranking {
+      padding: 6px 0 0 0;
+  }
+  .user_auction_card_position .favorite-icon {
+    bottom: 108px;
+  }
+  .user_aboutauction{
+    display: flex;
+    justify-content: space-between;
+    margin:0 0 20px 0; 
+
+  }
+  .profile_tab_project,.profile_tab_auction,.profile_tab_gacha,.profile_tab_actress{
+
+    display: flex;
+    justify-content: space-between;
+    margin:10px 0 20px 0; 
+    flex-wrap: wrap;
+  
+  }
+  // お気に入り
+.user_favorite_sort{
+  padding: 6px 30px 4px 10px;
+  background-image: url(../../img/tridown.png);
+  background-size:14px ;
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  margin:10px 0 0 auto;
+  display: block;
+  border: 1px solid $black;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.user_favorite_sort_no_margin{
+  padding: 6px 30px 4px 10px;
+  background-image: url(../../img/tridown.png);
+  background-size:14px ;
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  margin:0px 0 0 auto;
+  display: block;
+  border: 1px solid $black;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+// パトロンランキング　
+
+.actress_aboutpatron_article {
+  padding:10px;
+  margin: 0 0 10px 0;
+  box-shadow: 0px 0 2px 2px rgba(196, 196,196,0.5);
+ border-radius: 4px;
+ background-color: $whitewhite;
+ display: flex;
+ align-items:center;
+}
+.actress_aboutpatron_article_ranking {
+  width:42px;
+  height:36px;
+  margin:0 8px 0 0;
+}
+.patron_info {
+  display: flex;
+}
+.patron_info_img {
+  width:30px ;
+  border-radius: 16px;
+ margin:0 6px 0 0;
+}
+.patron_info_name {
+  font-size:14px;
+  font-weight: bold;
+}
+.patron_info_support {
+  display:block;
+  margin:2px 0 0 0;
+}
+
+}
+

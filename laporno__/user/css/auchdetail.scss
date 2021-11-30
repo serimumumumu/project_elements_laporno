@@ -1,0 +1,129 @@
+@import "component.scss";
+@import "gachadetail.scss";
+
+
+.bold-font{
+    font-weight: bold;
+  }
+// 上部
+.main_in {
+    padding: 10px 10px 8px 10px;
+}
+.main_in_article {
+    display: flex;
+}
+.main_in_article_2 {
+    width: 50%;
+}
+.main_in_article_2 img ,.main_in_article_1 img{
+    width: 14px;
+    margin:0 4px 2px 0;
+}
+.main_in_article_2 p ,.main_in_article_1 p {
+    color: $grayblack;
+    font-size: 12px;
+    line-height: 18px;
+    
+}
+.main_in_article_2 a,.main_in_article_2 h6, .main_in_article_1 a, .main_in_article_1 h6 {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 2px 0 12px 12px;
+    
+}
+ .main_in_article_1 h5 {
+    font-size: 22px;
+    line-height: 26px;
+    margin: 2px 0 12px 12px;
+    
+}
+.main_in_article_1 {
+    width: 100%;
+}
+.content-container {
+    padding: 20px 16px;
+}
+
+// 落札表
+.history{
+    width: 100%;
+    border: 1px $gray;
+}
+
+.history-title{
+    color: $white;
+    padding: 10px;
+    font-size: 14px;
+}
+.history-title img {
+    width: 18px;
+    margin-right: 4px;
+}
+
+th {
+    font-weight: normal;
+}
+.history-td{
+    padding: 8px 10px;
+    border: 1px solid $gray;
+    vertical-align: middle;
+}
+
+.history-th{
+    font-size: 14px;
+    text-align: center;
+}
+
+.h-left, .h-center{
+    font-size: 12px;
+    width: 25%;
+}
+.h-left{
+    text-align: right;
+}
+.h-right{
+    width: 50%;
+}
+
+
+.float-area{
+    background: $white;
+    display: flex;
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+}
+.button-area{
+    width: 80%;
+}
+img.favorite_icon2_img {
+    width: 30px;
+}
+.float_area_heart {
+    width: 20%;
+}
+.warning_p {
+    font-size:12px;
+    text-align: center;
+}
+.auch_span {
+    text-align: center;
+    font-size: 20px;
+    margin:0 4px;
+    font-weight: bold;
+}
+.price_form {
+    text-align: center;
+}
+.price_input {
+    text-align: right;
+    padding:10px 20px;
+    font-size: 24px;
+    width: 60%;
+    margin:6px 0;
+    background:$white;
+}
+.twobutton {
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+    
+}

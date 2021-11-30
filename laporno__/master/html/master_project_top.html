@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロジェクト一覧</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../user/css/user_component.css">
+  <link rel="stylesheet" href="../../user/css/contributor_campaign_top.css">
+  <link rel="stylesheet" href="../../user/css/user_signup.css">
+  <link rel="stylesheet" href="../../user/css/user_mypage.css">
+  <link rel="stylesheet" href="../../user/css/master_project_top.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="conheaders">
+      <masheaders></masheaders>
+    </div>
+    <div class="panlist">
+      <ul >
+          <li ><a href="../../master/html/master_top.html">TOP</a></li>
+          <li class="arrow-l">プロジェクト一覧</li>
+      </ul>
+     </div>
+    <div id="search" >
+      <search></search>
+    </div>
+    <div class="" id="main">
+        <input id="tab1" type="radio" name="tab_btn" checked>
+        <input id="tab2" type="radio" name="tab_btn">
+        <input id="tab3" type="radio" name="tab_btn">
+        <input id="tab4" type="radio" name="tab_btn">
+        <input id="tab5" type="radio" name="tab_btn">
+        <input id="tab6" type="radio" name="tab_btn">
+        <h1 class="title">プロジェクト一覧</h1>
+        <div class="tab_labels gap" style="background:#fafafa;">
+        <label class="tab1_label conbutton" for="tab1">全て</label>
+        <label class="tab2_label conbutton" for="tab2">申請中</label>
+        <label class="tab3_label conbutton" for="tab3">承認済</label>
+        <label class="tab4_label conbutton" for="tab4">募集中</label>
+        <label class="tab5_label conbutton" for="tab5">制作中</label>
+        <label class="tab6_label conbutton" for="tab6">販売中</label>
+        </div>
+        <div class="panel_area">
+            <!-- 全て -->
+            <div id="panel1" class="tab_panel">
+                <div class="hyou_area">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                            <div class="table-title-area color5">
+                                <h2 class="table-title">全て</h2>
+                                <div class="table_sort">
+                                    <select name="order" id="" class="table_sort_select color1">
+                                    <option >新着中</option>
+                                    <option >登録順</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <table class="table">
+                                <tr class="table_header">
+                                    <th class="table_80">ID</th>
+                                    <th class="table_80">画像</th>
+                                    <th class="table_120">投稿者</th>
+                                    <th class="table_120">女優</th>
+                                    <th class="table_160">タイトル</th>
+                                    <th class="table_160">開始日</th>
+                                    <th class="table_160">終了日</th>
+                                    <th class="table_80">パトロン数</th>
+                                    <th class="table_120">リターン数</th>
+                                    <th class="table_160">支援額(括弧内LP数)</th>
+                                    <th class="table_120">ステータス</th>
+                                    <th class="table_120">公開状況</th>
+                                    <th class="table_120">明細発行</th>
+                                </tr>
+                                <tr>
+                                    <td >P-1000</td>
+                                    <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                                    <td class="bold-font"><a href="">メーカーの名前</a></td>
+                                    <td class="bold-font"><a href="">女優の名前</a></td>
+                                    <td class="bold-font"><a href="">プロジェクトタイトルプロジェクトタイトル</a></td>
+                                    <td >2021/03/14 00:00</td>
+                                    <td >2021/03/19 00:00</td>
+                                    <td class="bold-font"><a href="../../master/html/projdetail.html">13</a></td>
+                                    <td >100</td>
+                                    <td >500(500)</td>
+                                    <td >申請中</td>
+                                    <td ><select class="table-btn color3 table_center">
+                                        <option class="table_center" value="">公開</option>
+                                        <option class="table_center" value="">非公開</option>
+                                    </select></td>
+                                    <td ></td>
+                                </tr>
+                                <tr>
+                                    <td >P-2000</td>
+                                    <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                                    <td class="bold-font"><a href="">メーカーの名前</a></td>
+                                    <td class="bold-font"><a href="">女優の名前</a></td>
+                                    <td class="bold-font"><a href="">プロジェクトタイトルプロジェクトタイトル</a></td>
+                                    <td >2021/03/14 00:00</td>
+                                    <td >2021/03/19 00:00</td>
+                                    <td class="bold-font"><a href="../../master/html/projdetail.html">33</a></td>
+                                    <td >100</td>
+                                    <td >50,000</td>
+                                    <td >販売中</td>
+                                    <td ><select class="table-btn color3 table_center">
+                                        <option class="table_center" value="">公開</option>
+                                        <option class="table_center" value="">非公開</option>
+                                    </select></td>
+                                    <td ><button class="table-btn color3"  @click="openModal">発行</button></td>
+                                </tr>
+                                <tr>
+                                    <td >P-2000</td>
+                                    <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                                    <td class="bold-font"><a href="">メーカーの名前</a></td>
+                                    <td class="bold-font"><a href="">女優の名前</a></td>
+                                    <td class="bold-font"><a href="">プロジェクトタイトルプロジェクトタイトル</a></td>
+                                    <td >2021/03/14 00:00</td>
+                                    <td >2021/03/19 00:00</td>
+                                    <td class="bold-font"><a href="../../master/html/projdetail.html">3</a></td>
+                                    <td >100</td>
+                                    <td >50,000(100)</td>
+                                    <td ><button class="table-btn color3" onclick="location.href='../../master/html/master_news_edit_news.html'">承認する</button></td>
+                                    <td ><select class="table-btn color3 table_center">
+                                        <option class="table_center" value="">公開</option>
+                                        <option class="table_center" value="">非公開</option>
+                                    </select></td>
+                                    <td ></td>
+                                </tr>
+                                <tr>
+                                    <td >P-2000</td>
+                                    <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                                    <td class="bold-font"><a href="">メーカーの名前</a></td>
+                                    <td class="bold-font"><a href="">女優の名前</a></td>
+                                    <td class="bold-font"><a href="">プロジェクトタイトルプロジェクトタイトル</a></td>
+                                    <td >2021/03/14 00:00</td>
+                                    <td >2021/03/19 00:00</td>
+                                    <td class="bold-font"><a href="../../master/html/projdetail.html">3</a></td>
+                                    <td >100</td>
+                                    <td >50,000(100)</td>
+                                    <td ><button class="table-btn color3" onclick="location.href='../../master/html/master_news_edit_news.html'">承認する</button></td>
+                                    <td ><select class="table-btn color3 table_center">
+                                        <option class="table_center" value="">公開</option>
+                                        <option class="table_center" value="">非公開</option>
+                                        </select></td>
+                                    <td ></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 申請中 -->
+            <div id="panel2" class="tab_panel">
+                <div class="hyou_area">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                            <div class="table-title-area color5">
+                            <h2 class="table-title">申請中</h2>
+                            <div class="table_sort">
+                                <select name="order" id="" class="table_sort_select color1">
+                                <option >新着中</option>
+                                <option >登録順</option>
+                                </select>
+                            </div>
+                            </div>
+                        <table class="table">
+                            <tr class="table_header">
+                                <th class="table_80">ID</th>
+                                <th class="table_80">画像</th>
+                                <th class="table_120">投稿者</th>
+                                <th class="table_120">女優</th>
+                                <th class="table_160">タイトル</th>
+                                <th class="table_160">開始日</th>
+                                <th class="table_160">終了日</th>
+                                <th class="table_120">パトロン数</th>
+                                <th class="table_120">リターン数</th>
+                                <th class="table_160">支援額(括弧内LP数)</th>
+                                <th class="table_120">ステータス</th>
+                                <th class="table_120">公開状況</th>
+                                <th class="table_120">明細発行</th>
+                            </tr>
+                            <tr>
+                                <td >P-2000</td>
+                                <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                                <td class="bold-font"><a href="">メーカーの名前</a></td>
+                                <td class="bold-font"><a href="">女優の名前</a></td>
+                                <td class="bold-font"><a href="">プロジェクトタイトルプロジェクトタイトル</a></td>
+                                <td >2021/03/14 00:00</td>
+                                <td >2021/03/19 00:00</td>
+                                <td class="bold-font"><a href="../../master/html/projdetail.html">12</a></td>
+                                <td >100</td>
+                                <td >50,000</td>
+                                <td >申請中</td>
+                                <td ><select class="table-btn color3 table_center">
+                                    <option class="table_center" value="">公開</option>
+                                    <option class="table_center" value="">非公開</option>
+                                </select></td>
+                                <td ></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 承認済 -->
+            <div id="panel3" class="tab_panel">
+                <div class="hyou_area">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                            <div class="table-title-area color5">
+                            <h2 class="table-title">承認済</h2>
+                            <div class="table_sort">
+                                <select name="order" id="" class="table_sort_select color1">
+                                <option >新着中</option>
+                                <option >登録順</option>
+                                </select>
+                            </div>
+                            </div>
+                        <table class="table">
+                            <tr class="table_header">
+                                <th class="table_80">ID</th>
+                                <th class="table_80">画像</th>
+                                <th class="table_120">投稿者</th>
+                                <th class="table_120">女優</th>
+                                <th class="table_160">タイトル</th>
+                                <th class="table_160">開始日</th>
+                                <th class="table_160">終了日</th>
+                                <th class="table_120">パトロン数</th>
+                                <th class="table_120">リターン数</th>
+                                <th class="table_160">支援額(括弧内LP数)</th>
+                                <th class="table_120">ステータス</th>
+                                <th class="table_120">公開状況</th>
+                                <th class="table_120">明細発行</th>
+                            </tr>
+                            <tr>
+                                <td >P-1000</td>
+                                <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                                <td class="bold-font"><a href="">メーカーの名前</a></td>
+                                <td class="bold-font"><a href="">女優の名前</a></td>
+                                <td class="bold-font"><a href="">プロジェクトタイトルプロジェクトタイトル</a></td>
+                                <td >2021/03/14 00:00</td>
+                                <td >2021/03/19 00:00</td>
+                                <td class="bold-font"><a href="../../master/html/projdetail.html">10</a></td>
+                                <td >100</td>
+                                <td >50,000</td>
+                                <td >申請中</td>
+                                <td ><select class="table-btn color3 table_center">
+                                    <option class="table_center" value="">公開</option>
+                                    <option class="table_center" value="">非公開</option>
+                                </select></td>
+                                <td ></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 募集中 -->
+            <div id="panel4" class="tab_panel">
+                <div class="hyou_area">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                            <div class="table-title-area color5">
+                            <h2 class="table-title">募集中</h2>
+                            <div class="table_sort">
+                                <select name="order" id="" class="table_sort_select color1">
+                                <option >新着中</option>
+                                <option >登録順</option>
+                                </select>
+                            </div>
+                            </div>
+                        <table class="table">
+                            <tr class="table_header">
+                                <th class="table_80">ID</th>
+                                <th class="table_80">画像</th>
+                                <th class="table_120">投稿者</th>
+                                <th class="table_120">女優</th>
+                                <th class="table_160">タイトル</th>
+                                <th class="table_160">開始日</th>
+                                <th class="table_160">終了日</th>
+                                <th class="table_120">パトロン数</th>
+                                <th class="table_120">リターン数</th>
+                                <th class="table_160">支援額(括弧内LP数)</th>
+                                <th class="table_120">ステータス</th>
+                                <th class="table_120">公開状況</th>
+                                <th class="table_120">明細発行</th>
+                            </tr>
+                            <tr>
+                                <td >P-1000</td>
+                                <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                                <td class="bold-font"><a href="">メーカーの名前</a></td>
+                                <td class="bold-font"><a href="">女優の名前</a></td>
+                                <td class="bold-font"><a href="">プロジェクトタイトルプロジェクトタイトル</a></td>
+                                <td >2021/03/14 00:00</td>
+                                <td >2021/03/19 00:00</td>
+                                <td class="bold-font"><a href="../../master/html/projdetail.html">13</a></td>
+                                <td >100</td>
+                                <td >50,000(2220)</td>
+                                <td >申請中</td>
+                                <td ><select class="table-btn color3 table_center">
+                                    <option class="table_center" value="">公開</option>
+                                    <option class="table_center" value="">非公開</option>
+                                </select></td>
+                                <td ></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 制作中 -->
+            <div id="panel5" class="tab_panel">
+                <div class="hyou_area">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                            <div class="table-title-area color5">
+                            <h2 class="table-title">制作中</h2>
+                            <div class="table_sort">
+                                <select name="order" id="" class="table_sort_select color1">
+                                <option >新着中</option>
+                                <option >登録順</option>
+                                </select>
+                            </div>
+                            </div>
+                        <table class="table">
+                            <tr class="table_header">
+                                <th class="table_80">ID</th>
+                                <th class="table_80">画像</th>
+                                <th class="table_120">投稿者</th>
+                                <th class="table_120">女優</th>
+                                <th class="table_160">タイトル</th>
+                                <th class="table_160">開始日</th>
+                                <th class="table_160">終了日</th>
+                                <th class="table_120">パトロン数</th>
+                                <th class="table_120">リターン数</th>
+                                <th class="table_160">支援額(括弧内LP数)</th>
+                                <th class="table_120">ステータス</th>
+                                <th class="table_120">公開状況</th>
+                                <th class="table_120">明細発行</th>
+                            </tr>
+                            <tr>
+                                <td >P-1000</td>
+                                <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                                <td class="bold-font"><a href="">メーカーの名前</a></td>
+                                <td class="bold-font"><a href="">女優の名前</a></td>
+                                <td class="bold-font"><a href="">プロジェクトタイトルプロジェクトタイトル</a></td>
+                                <td >2021/03/14 00:00</td>
+                                <td >2021/03/19 00:00</td>
+                                <td class="bold-font"><a href="../../master/html/projdetail.html">11</a></td>
+                                <td >100</td>
+                                <td >50,000</td>
+                                <td >申請中</td>
+                                <td ><select class="table-btn color3 table_center">
+                                    <option class="table_center" value="">公開</option>
+                                    <option class="table_center" value="">非公開</option>
+                                </select></td>
+                                <td ><button class="table-btn color3"  @click="openModal">発行</button></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 販売中 -->
+            <div id="panel6" class="tab_panel">
+                <div class="hyou_area">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                            <div class="table-title-area color5">
+                            <h2 class="table-title">販売中</h2>
+                            <div class="table_sort">
+                                <select name="order" id="" class="table_sort_select color1">
+                                <option >新着中</option>
+                                <option >登録順</option>
+                                </select>
+                            </div>
+                            </div>
+                        <table class="table">
+                            <tr class="table_header">
+                                <th class="table_80">ID</th>
+                                <th class="table_80">画像</th>
+                                <th class="table_120">投稿者</th>
+                                <th class="table_120">女優</th>
+                                <th class="table_160">タイトル</th>
+                                <th class="table_160">開始日</th>
+                                <th class="table_160">終了日</th>
+                                <th class="table_120">パトロン数</th>
+                                <th class="table_120">リターン数</th>
+                                <th class="table_160">支援額(括弧内LP数)</th>
+                                <th class="table_120">ステータス</th>
+                                <th class="table_120">公開状況</th>
+                                <th class="table_120">明細発行</th>
+                            </tr>
+                            <tr>
+                                <td >P-1000</td>
+                                <td > <img src="../../img/demoimg.png" alt="" class="td-img"></td>
+                                <td class="bold-font"><a href="">メーカーの名前</a></td>
+                                <td class="bold-font"><a href="">女優の名前</a></td>
+                                <td class="bold-font"><a href="">プロジェクトタイトルプロジェクトタイトル</a></td>
+                                <td >2021/03/14 00:00</td>
+                                <td >2021/03/19 00:00</td>
+                                <td class="bold-font"><a href="../../master/html/projdetail.html">43</a></td>
+                                <td >100</td>
+                                <td >50,000</td>
+                                <td >申請中</td>
+                                <td ><select class="table-btn color3 table_center">
+                                    <option class="table_center" value="">公開</option>
+                                    <option class="table_center" value="">非公開</option>
+                                </select></td>
+                                <td ><button class="table-btn color3"  @click="openModal">発行</button></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <projectreceiptissue v-show="showContent" @close="showContent = false"></projectreceiptissue>
+        </div>
+    </div>
+<script src="../../master/js/mascomponent.js" defer></script>
+<script src="../../user/js/master_project_top.js"></script>
+</body>
+</html>

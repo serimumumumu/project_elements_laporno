@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>景品新規作成</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../contributor/css/contributor_gacha_new_content.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <conheaders></conheaders>
+        <!-- パンクズりすと -->
+        <div class="panlist">
+            <ul >
+                <li ><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+                <li class="arrow-l"><a href="../../contributor/html/contributor_gacha_top.html">ガチャ一覧</a></li>
+                <li class="arrow-l"><a href="../../contributor/html/contributor_gacha_new.html">ガチャタイトル</a></li>
+                <li class="arrow-l"><p>景品新規登録</p></li>
+            </ul>
+        </div>
+        <main>
+            <section class="gacha_freebie color1">
+                <h2 class="gacha_freebie_title">景品新規登録</h2>
+                <div class="gacha_freebie_content">
+                    <p class="sub-title" >賞の名前</p>
+                    <input class="gacha_title_input" placeholder="賞のなまえ">
+                </div>
+                <label for="denpyo-photo" class="img-input">
+                    <div v-if="!isSetImage">
+                        <img src="../../img/pic.png" alt="" class="img-input-icon">
+                        <p>画像をアップロード</p>
+                    </div>
+                    <input @change="previewImage($event)"type="file" ref="file" id="denpyo-photo"  accept="image/jpeg, image/png">
+                    <img id="preview" class="image-preview" src="">
+                </label>
+                <div class="gacha_freebie_content">
+                    <p class="sub-title" >説明</p>
+                    <textarea class="gacha_description" cols="80" placeholder="せつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめいせつめい"></textarea>
+                </div>
+                <!-- タイプ -->
+                <div class="new_input">
+                    <p class="new_input_sub">タイプ</p>
+                    <div class="new_input_check_nowrap">
+                        <label class="new_input_select_24">
+                            <input value="goods" type="radio" checked name="count_bonus_type"> 物販
+                        </label>
+                        <label class="new_input_select_24">
+                            <input value="real" type="radio" name="count_bonus_type"> リアル
+                        </label>
+                        <label class="new_input_select_24">
+                            <input value="real" type="radio" name="count_bonus_type"> デジタル
+                        </label>
+                        <label class="new_input_select_24">
+                            <input value="other" type="radio" name="count_bonus_type"> その他
+                        </label>
+                    </div>
+                </div>
+                <!-- 景品パターン -->
+                <gacha-set-gift-pattern></gacha-set-gift-pattern>
+                <!-- 映像データ有無（48%*2） -->
+                <div class="new_input">
+                    <p class="new_input_sub">映像データ</p>
+                    <div class="new_input_send">
+                        <label class="new_send">
+                            <input name="movie" class="Radio-Input" type="radio">
+                            <span class="Radio-Text">有り</span>
+                        </label>
+                        <label class="new_send">
+                            <input name="movie" class="Radio-Input" type="radio" checked>
+                            <span class="Radio-Text">無し</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- USB郵送有無（48%*2） -->
+                <div class="new_input">
+                    <p class="new_input_sub">USB郵送</p>
+                    <div class="new_input_send">
+                        <label class="new_send">
+                            <input name="usb" class="Radio-Input" type="radio">
+                            <span class="Radio-Text">有り</span>
+                        </label>
+                        <label class="new_send">
+                            <input name="usb" class="Radio-Input" type="radio" checked>
+                            <span class="Radio-Text">無し</span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+            <div class="twobutton color1">
+            <a class="twobutton_a" href="../../contributor/html/contributor_gacha_new.html">戻る</a>
+            <a class="twobutton_a" href="../../contributor/html/contributor_gacha_new.html">確認</a>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+<script src="../../contributor/js/contributor_header_search.js" defer></script>
+<script src="../../contributor/js/contributor_gacha_set_gift_patterns.js" defer></script>
+<script>
+    window.onload = function () {
+        new Vue ({
+            el:"#app",
+            data: {
+                isSetImage: false,
+                selectvalue: null,
+                image_text: null,
+                patternDefault: { actressId: null, type: null, qty: null },
+                freebiePatterns: [
+                    { actressId: null, type: null, qty: null }
+                ],
+                totalQty: 0,
+            },
+            methods: {
+                //画像セット
+                previewImage(event) {
+                    let file = event.target.files[0]
+                    let fileReader = new FileReader()
+                        fileReader.readAsDataURL(file)
+                        fileReader.onload = event => {
+                            document.getElementById('preview').src = fileReader.result
+                            this.isSetImage = true
+                        }
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

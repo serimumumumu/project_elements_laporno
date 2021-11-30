@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新規活動報告作成</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../contributor/css/contributor_report_preview.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <conheaders></conheaders>
+      <!-- パンクズりすと -->
+      <div class="panlist">
+          <ul >
+              <li ><a href="../../contributor/html/contributor_top.html">TOP</a></li>
+              <li class="arrow-l"><a href="../../contributor/html/contributor_gacha_top.html">ガチャ一覧</a></li>
+              <li class="arrow-l"><a href="../../contributor/html/contributor_gacha_detail.html">ガチャタイトル</a></li>
+              <li class="arrow-l"><a href="../../contributor/html/contributor_gacha_new_report.html">新規活動報告作成</a></li>
+              <li class="arrow-l"><p>プレビュー</p></li>
+          </ul>
+      </div>
+      <main>
+        <section class="report_preview color1">
+            <h2 class="report_title">新規活動報告作成</h2>
+            <div class="report_content">
+              <div class="report_content_">
+                <p class="report_content_sub">公開日</p>
+                <h6 class="report_content_main">2021年11月11日</h6>
+              </div>
+              <div class="report_content_">
+                <p class="report_content_sub">トップページへの掲載許可</p>
+                <h6 class="report_content_main">許可</h6>
+              </div>
+              <div class="report_content_">
+                <p class="report_content_sub">公開設定</p>
+                <h6 class="report_content_main">公開</h6>
+              </div>
+
+                <section class="gacha_active_report mg_top_16">
+                  <span class="gacha_active_report_date">2021/01/03</span>
+                  <p class="gacha_active_report_title color2">活動報告のタイトル</p>
+                  <article class="gacha_active_report_content">
+                    <div class="gacha_active_report_img">
+                      <img src="../../img/demoimg.png" alt="">
+                    </div>
+                    <p> テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                  </article>
+                </section>
+            </div>
+        </section>
+        <div class="twobutton color1">
+            <a class="twobutton_a" href="../../contributor/html/contributor_gacha_new_report.html">戻る</a>
+            <a class="twobutton_a" href="../../contributor/html/contributor_gacha_detail.html">登録</a>
+        </div>
+      </main>
+      <footer>
+      </footer>
+  </div>
+<script src="../../contributor/js/contributor_header_search.js"　defer></script>
+<script >
+  window.onload = function () {
+      new Vue ({
+        el:"#app",
+        data:{
+        },
+        methods: {
+        }
+      });
+    }
+</script>
+</body>
+</html>

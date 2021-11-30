@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト詳細</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_project_detail.css">
+    <script src="../../user/js/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue-scrollto"></script> -->
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+        <!-- パンクズりすと -->
+        <div class="panlist">
+            <ul >
+                <li ><a href="../../user/html/user_top.html">TOP</a></li>
+                <li class="arrow-l"><a href="../../user/html/user_project_top.html">プロジェクト一覧</a></li>
+                <li class="arrow-l"><p>プロジェクトのなまえ</p></li>
+            </ul>
+        </div>
+        <section class="main_card" >
+            <div class="card_img">
+                <img class="main_top_img" src="../../img/demoimg.png" alt="">
+            </div>
+            <article class="main-top-card-title">【新村あかり】色紙＋チェキ</article>
+            <div class="main_in">
+                <article class="user_project_detail_top">
+                    <div class="main_in_article_2">
+                        <p class=""><img src="../../img/lady.png" alt="">女優名</p>
+                        <a class="bold-font" href="../../user/html/user_actress_profile.html"> 新村あかり </a>
+                    </div>
+                    <div class="main_in_article_2">
+                        <p class="ain_in_article_2_p"><img src="../../img/pro.png" alt="">投稿者</p>
+                        <a href="../../user/html/user_contributor_profile.html" class="bold-font"> 桃太郎出版 </a>
+                    </div>
+                </article>
+                <article class="user_project_detail_top">
+                    <div class="main_in_article_2">
+                        <p class=""><img src="../../img/guys.png" alt="">支援者数</p>
+                        <h6> 999人</h6>
+                    </div>
+                    <div class="main_in_article_2">
+                        <p class="ain_in_article_2_p"><img src="../../img/time.png" alt="">タイムリミット</p>
+                        <h6> 終了しました </h6>
+                    </div>
+                </article>
+                <article class="user_project_detail_top">
+                    <div class="main_in_article_1">
+                        <p class=""><img src="../../img/folder.png" alt="">カテゴリー</p>
+                        <h6> スレンダー,美乳,美肌</h6>
+                    </div>
+                </article>
+                <p class="support_money">3,111,111円</p>
+                <article class="percent-area">
+                    <div class="percent color3"></div>
+                </article> 
+            </div>
+            <div>
+                <button class="supportbutton" @click="openModalSupportButton">販売サイトへ</button>
+                <div v-show="showContentSupport" @close="showContentSupport = false">
+                    <div class="overlay">
+                        <div class="overlay-over">
+                            <div class="cancel-btn" @click="closeModalSupportButton">
+                                <span class="x x_1"></span>
+                                <span class="x x_2"></span>
+                            </div>
+                            <div class="overlay-overmain">
+                                <div class="modal_section" >
+                                    <h6 class="modal_title">販売サイトへ行く</h6>
+                                    <div class="user_project_sell_link">
+                                        <a href="" class="user_project_sell_link_button" >販売サイト１</a >
+                                        <a href="" class="user_project_sell_link_button" >販売サイト２</a >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class=" color2">
+            <div class="tab-area">
+                <div class="tab color3 " @click="isSelectTab('1')" v-bind:class="{'active': isActiveTab === '1'}">初めに</div>
+                <div class="tab color3" @click="isSelectTab('2')" v-bind:class="{'active': isActiveTab === '2'}">リターン</div>
+                <div class="tab color3" @click="isSelectTab('3')" v-bind:class="{'active': isActiveTab === '3'}">コメント</div>
+                <div class="tab color3" @click="isSelectTab('4')" v-bind:class="{'active': isActiveTab === '4'}">活動報告</div>
+            </div>
+            <!--初めに-->
+            <div class="content-container color1" v-if="isActiveTab === '1'">
+                <div class="main-content1-inner">
+                    <div class="main-content1-text">
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </div>
+                    <div class="main-content-img-area">
+                        <img src="../../img/demoimg.png" alt="">
+                    </div>
+                    <div class="main-content1-subtitle"> 資金の使い道 </div>
+                    <div class="main-content1-text">
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </div>
+                    <div class="main-content1-subtitle">注意事項 </div>
+                    <div class="main-content1-text">
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    </div>
+                </div>
+            </div>
+            <!--リターン-->
+            <div class="content-container color1" v-else-if="isActiveTab === '2'">
+                <article v-for="(projectRetern, index) in projetReterns" class="user_project_detail_return_card">
+                    <h2 class="user_project_detail_return_card_title">タイトル</h2>
+                    <img class="user_project_detail_return_card_main_img" src="../../img/demoimg.png" alt="リターンイメージ画像">
+                    <p class="user_project_detail_return_card_send_info">2021年3月から順次発送予定</p>
+                    <div class="user_project_detail_return_card_content">
+                        <p class="user_project_detail_return_card_much">¥5,000</p>
+                        <p :class="['user_project_detail_return_card_text', projectRetern.isTextShow ? 'user_project_detail_return_card_text_show': '']">
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </p>
+                        <p class="user_project_detail_return_card_text_more" @click="toggleReternText(projectRetern)">
+                            <span v-show="!projectRetern.isTextShow">...もっと見る</span>
+                            <span v-show="projectRetern.isTextShow">とじる</span>
+                        </p>
+                        <div class="user_project_detail_return_card_data_index">
+                            <p class="user_project_detail_return_card_data"><img class="user_project_detail_return_card_data_img" src="../../img/movie.png" alt="">動画データ：なし</p>
+                            <p class="user_project_detail_return_card_data"><img class="user_project_detail_return_card_data_img" src="../../img/usbdata.png" alt="">USB郵送：なし</p>
+                        </div>
+                        <p class="user_project_detail_return_card_end"  href="../../user/html/user_project_return.html">リターンを選択する</p>
+                        <p class="user_project_detail_return_card_info"><img class="user_project_detail_return_card_data_img" src="../../img/guys.png" alt="">対象者：10名　残り：4名</p>
+                        <p class="user_project_detail_return_card_info"><img class="user_project_detail_return_card_data_img" src="../../img/ques.png" alt="">対象者：10名　残り：4名</p>
+                    </div>
+                </article>
+            </div>
+            <!--コメント-->
+            <div class="content-container  color1" v-else-if="isActiveTab === '3'">
+                <article class="user_project_detail_comment">
+                    <a class="user_project_detail_comment_patron" href="../../user/html/user_profile.html">
+                        <img class="user_project_detail_comment_patron_img" src="../../img/man_white.png" alt="man_white">パトロン名
+                    </a>
+                    <p class="user_project_detail_comment_text">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント </p>
+                </article>
+                <article class="user_project_detail_comment">
+                    <a class="user_project_detail_comment_patron" href="../../user/html/user_profile.html">
+                        <img class="user_project_detail_comment_patron_img" src="../../img/man_white.png" alt="man_white">パトロン名
+                    </a>
+                    <p class="user_project_detail_comment_text">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント </p>
+                </article>
+                <article class="user_project_detail_comment">
+                    <a class="user_project_detail_comment_patron" href="../../user/html/user_profile.html">
+                        <img class="user_project_detail_comment_patron_img" src="../../img/man_white.png" alt="man_white">パトロン名
+                    </a>
+                    <p class="user_project_detail_comment_text">コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント </p>
+                </article>
+            </div>
+            <!--活動報告-->
+            <div class="content-container  color1" v-else-if="isActiveTab === '4'">
+                <article class="user_project_detail_report">
+                    <span class="user_project_detail_report_date">2021/01/01</span>
+                    <h5 class="user_project_detail_report_title">活動報告のタイトル</h5>
+                    <img class="user_project_detail_report_img" src="../../img/demoimg.png" alt="">
+                    <p class="user_project_detail_report_text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </article>
+                <article class="user_project_detail_report">
+                    <span class="user_project_detail_report_date">2021/01/01</span>
+                    <h5 class="user_project_detail_report_title">活動報告のタイトル</h5>
+                    <img class="user_project_detail_report_img" src="../../img/demoimg.png" alt="">
+                    <p class="user_project_detail_report_text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </article>
+                <article class="user_project_detail_report">
+                    <span class="user_project_detail_report_date">2021/01/01</span>
+                    <h5 class="user_project_detail_report_title">活動報告のタイトル</h5>
+                    <img class="user_project_detail_report_img" src="../../img/demoimg.png" alt="">
+                    <p class="user_project_detail_report_text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </article>
+                <article class="user_project_detail_report">
+                    <span class="user_project_detail_report_date">2021/01/01</span>
+                    <h5 class="user_project_detail_report_title">活動報告のタイトル</h5>
+                    <img class="user_project_detail_report_img" src="../../img/demoimg.png" alt="">
+                    <p class="user_project_detail_report_text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </article>
+            </div>
+        </div>
+        <div id="float_area">
+            <div class="float_area_heart">
+                <div class="favorite_icon2" v-if="isActiveHeart" @click="changeHeart">
+                    <img class="favorite_icon2_img" src="../../img/favheart.png" alt="">
+                </div>
+                <div class="favorite_icon2" v-else @click="changeHeart">
+                    <img class="favorite_icon2_img" src="../../img/favedheart.png" alt="">
+                </div>
+                <p class="">324</p>
+            </div>
+            <p class="float_area_a" style="opacity:0.25">終了しました</p>
+        </div>
+    </div>
+    <script src="../../user/js/user_header_search.js"></script>
+    <script>
+    window.onload = function () {
+            new Vue ({
+                el:"#app",
+                data: function() {
+                    return {
+                        showContentSupport:false,
+                        isActiveHeart: true,
+                        isActiveTab: "1",
+                        projetReterns:[
+                            { id:1, isTextShow :false},
+                            { id:2, isTextShow :false}
+                        ]
+                    }
+                },
+                methods:{
+                openModalSupportButton(){
+                    this.showContentSupport = true;
+                    this.isActiveComment = true;
+                },
+                closeModalSupportButton(){
+                    this.showContentSupport = false;
+                },
+                isSelectTab(number) {
+                this.isActiveTab = number;
+                },
+                changeHeart() {
+                    this.isActiveHeart = !this.isActiveHeart
+                },
+                toggleReternText(projectRetern) {
+                    projectRetern.isTextShow = projectRetern.isTextShow ? false : true
+                }
+            }
+            });
+        }
+    </script>
+</body>
+</html>

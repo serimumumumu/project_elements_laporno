@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュース一覧</title>
+    <meta name="description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <meta name="keywords" content="ラポファン,セクシー女優,オンラインオークション,ラポルノ,ラポルノファンディング,クラファン,クラウドファンディング,ガチャ">
+    <meta property="og:title" content="【ラポルノファンディング】">
+    <meta property="og:description" content="ラポルノファンディング">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ラポルノファンディング">
+    <!-- Facebook -->
+    <meta property="fb:app_id" content="">
+    <!-- //Facebook -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@lapornofund">
+    <meta name="twitter:title" content="【ラポルノファンディング】">
+    <meta name="twitter:description" content="ラポルノファンディングはクラウドファンディングで好きな女優を推しあげるファンディングサイト。">
+    <!-- <title>マイページ</title> -->
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <link rel="stylesheet" href="../../user/css/user_news_top.css">
+    <script src="../../user/js/vue.js"></script>
+
+</head>
+<body>
+  <div id="app">
+    <headers></headers>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+      <ul >
+        <li ><a href="../../user/html/user_top.html">TOP</a></li>
+        <li class="arrow-l"><p>News</p></li>
+    </ul>
+    </div>
+    <main>
+      <div class="news_attention color1">
+        <h5><img src="../../img/excla.png" alt=""><span class="news_attention_span">{{news_unread}}</span>件の未読記事があります</h5>
+      </div>
+      <div class="mail_index">
+        <div>
+          <a class="news" href="user_news_detail.html" >
+            <div class="category-title"><span class="category-title-span">2021/01/03 19:55 未読</span>
+            支援済みプロジェクトについて運営から特別オファーとお知らせ</div>
+            <img class="more-btn_2" src="../../img/arrowdown.png" alt="" >
+          </a>
+          <a href="user_news_detail.html" class="news">
+            <div class="category-title"><span class="category-title-span">2021/01/03 19:55 未読</span>
+            支援済みプロジェクトについて運営から特別オファーとお知らせ</div>
+            <img class="more-btn_2" src="../../img/arrowdown.png" alt="" >
+          </a>
+          <a href="user_news_detail.html" class="news">
+              <div class="category-title"><span class="category-title-span">2021/01/03 19:55 未読</span>
+              支援済みプロジェクトについて運営から特別オファーとお知らせ</div>
+              <img class="more-btn_2" src="../../img/arrowdown.png" alt="" >
+          </a>
+        </div>
+        <div class="news-box-bottom">
+          <input type="checkbox" id="all-read" class="checkbox">
+          <label for="all-read" class="checkbox-text">すべて既読にする</label>
+          <button class="read-btn color4">実行</button>
+        </div>
+        <ul class="mail_index_pagenumber">
+          <li><a href="" >1</a></li>
+          <li><a href="" class="thispage">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+          <li><a href="">5</a></li>
+          <li>...</li>
+          <li><a href="">7</a></li>
+        </ul>
+      </div>
+      </main>
+      <userfooter></userfooter>
+  </div>
+  <script src="../../user/js/user_header_search.js"></script>
+  <script src="../../user/js/user_footer.js"></script>
+  <script>
+    window.onload = function () {
+    new Vue ({
+        el:"#app",
+        data: {
+          news_unread:5
+        },
+        created(){
+        },
+        methods:{
+        }
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,626 @@
+@import "../../user/css/color.scss" ;
+
+body {
+    background: $white;
+}
+// モーダル
+
+textarea {
+
+    background: $whitewhite;
+    padding: 10px;
+    width: 100%;
+  }
+  ::placeholder {
+    font-size: 16px;
+  line-height: 16px;
+  color: $gray;
+  }
+  .button1{
+    background:$gray;
+    border-radius: 4px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button{
+    background:$gray;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .overlay {
+    background:#232323cb;
+    position:absolute;
+    position:fixed;
+    top:0 ;
+    right:0;
+    width:100%;
+    height:120%;
+    z-index: 100;
+  }
+  .overlay-over{
+    height: 80%;
+    position: relative;
+    margin:60px 16px 60px;
+  }
+  .modal_fix {
+    position: fixed;
+    overflow-y: auto;
+  }
+  .cancel-btn {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 110;
+    cursor: pointer;
+    width:72px;
+    height:70px;
+  }
+  .x {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    width:32px;
+    height:2px;
+    background:$black;
+    text-align:center;
+  }
+  
+  .x_1 {
+    top:16px;
+    transform:translateY(10px) rotate(-45deg);
+  }
+  .x_2 {
+    top:36px;
+    transform:translateY(-10px) rotate(45deg);
+  }
+  .overlay-overmain {
+    // overflow: scroll;
+    color:$black;
+  background:$whitegray;
+    padding:30px 20px;
+    margin:0 auto;
+    overflow: overlay;
+  }
+  #btn-2 ,.btn-2{
+    display: block;
+    background: $black;
+    width: 195px;
+    z-index: 100;
+    color: $white;
+    border-radius: 4px;
+    line-height: center;
+    text-align: center;
+    margin: 30px auto 0;
+    font-size: 16px;
+    padding: 14px;
+  
+  }
+  .modal_title {
+    width: 80%;
+    color: $black;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 30px;
+  }
+  .modal_title  span{
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    margin: 4px 0 0 0;
+  }
+  .modal_heart {
+    margin: 0 auto;
+    width: 50%;
+    display: block;
+  
+  }
+  .main-area{
+    padding: 10px 16px;
+  }
+  
+  // ひとつボタン
+  .onebutton {
+    width: 100%;
+    margin: 30px 0;
+  }
+  .onebutton_a {
+    width: 60%;
+    background: $black;
+    color: $white;
+    display: block;
+    padding: 14px 0;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+
+
+
+.main_card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin:10px 16px 20px;
+    padding:10px;
+    background:$whitewhite;
+}
+.main_card_title{
+    font-size: 16px;
+}
+.main_card_title_send_date {
+    display:block;
+    color: $grayblack;
+    font-size:10px;
+    margin:2px 0 4px 0;
+    text-align:right;
+  }
+.info_inner {
+    padding: 10px 0 ;
+}
+.info-title {
+    margin: 8px 0 0 0;
+}
+.info_sub  {
+    margin: 8px 0 6px 0;
+    font-size: 12px;
+}
+.info_sub img {
+    margin-right: 4px;
+    width: 14px;
+}
+.info-title-ul {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        width: 30%;
+    }
+}
+.actress_link,.contributor_link {
+        font-size:16px;
+        font-weight: bold;
+        margin: 0 0 4px 8px;
+    }
+.info-real {
+    margin: 0 0 0px 8px;
+    font-size: 16px;
+}
+.gacha-times {
+    font-size: 24px;
+}
+.info-title-2 {
+    display: flex;
+}
+.info-title-50{
+    @extend .info-title;
+    width:50%;
+}
+.gacha_detail_toggle_switch {
+    img{
+        display:block;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.probability , .card_img img ,.main-content-img-area img ,.result-img img ,.award_detail img, .result-card-left img{
+    width: 100%;
+}
+.content-container {
+    padding: 20px 16px;
+}
+// .user_gacha_content
+.user_gacha_content_p{
+font-size: 12px;
+margin: 0 0 16px 0;
+}
+.user_gacha_content_title {
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 0 2px 0;
+    margin: 0px 0 8px 0;
+}
+.user_gacha_content_title_border {
+    @extend .user_gacha_content_title;
+    border-bottom: 1px solid $grayblack;
+    margin: 20px 0 8px 0;
+}
+.tab-area {
+    padding-top: 20px;
+}
+.active{
+    background:$white;
+     border-bottom: 1px solid $gray;
+  }
+  .page-title{
+    text-align: left;
+      padding: 20px 16px 10px;
+  }
+  .tab{
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 4px 4px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $gray;
+      width: 33%;
+  
+  }
+  .content{
+    padding: 0px 16px 20px;
+  }
+  .tab-area {
+   display: flex;
+   justify-content: space-around;
+  }
+  .acts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+.active{
+    background: $white;
+    border-bottom: 1px solid $grayblack;
+}
+.gacha_active_report {
+    background: $whitewhite;
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196 , 0.25);
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+.gacha_active_report_date {
+    text-align: right;
+    color: $gray;
+    display: block;
+}
+.gacha_active_report_title{
+    padding: 10px;
+    color: $grayblack;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+ }
+ .gacha_active_report_menu{
+     position: absolute;
+     border-radius: 2px;
+     right: 26px;
+     background: #fff;
+     padding: 5px 10px 0;
+     li{
+         margin: 0 0 5px;
+     }
+ }
+.gacha_active_report_img img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.gacha_active_report_content {
+    padding: 10px;
+    // margin-bottom: 10px;
+}
+.gacha_active_report_title_point {
+    width:14px;
+  }
+  .gacha_active_report_img img {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+  .gacha_active_report_button {
+    font-size: 14px;
+    // padding: 10px 10px;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid $grayblack;
+    margin: 0 0 0 auto;
+    background-image: url("../../img/tridown.png");
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-position: 64px center;
+}
+.gacha_active_report_button_select{
+    text-align: center;
+      width: 94px;
+    padding: 10px 10px;
+  }
+
+// 景品一覧
+.user_gacha_detail_freebie {
+    background: $whitewhite;
+    box-shadow: 0px 0px 4px 2px rgba(233, 233, 233, 0.75);
+    margin:0 0 10px;
+
+}
+.user_gacha_detail_freebie_title {
+    color:$black;
+    background: $whitegray;
+    font-size: 14px;
+    padding:10px;
+
+}
+.user_gacha_detail_freebie_main {
+    padding: 10px 10px 20px;
+}
+.user_gacha_detail_freebie_main_img {
+    width:100%;
+
+}
+.user_gacha_detail_freebie_content {
+    padding:8px 0;
+    font-size:12px
+}
+.user_gacha_detail_datas {
+    display:flex;
+    
+}
+.user_gacha_detail_data {
+    width:50%;
+
+}
+.user_gacha_detail_data_p {
+    color:$grayblack;
+    font-size: 12px;
+}
+.user_gacha_detail_data_img {
+    width:18px;
+    margin: 0 8px 0 0;
+}
+.contributor_gacha_detail_combi_index{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-top: 1px solid $gray;
+    margin: 10px 0 0 0;
+    padding: 10px 0 0;
+    gap: 10px;
+}
+.contributor_gacha_detail_combi{
+    width: 48%;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 12px;
+    // margin: 10px 0 0 0;
+    background: $gray;
+    border-radius: 4px;
+    font-size: 12px;
+}
+.contributor_gacha_detail_combi_p{
+
+}
+.gacha_title_and_button {
+    position: relative;
+    width:100%;
+  }
+  .gacha_content_title {
+    text-align:center;
+    font-size: 16px;font-weight: bold;
+  }
+  .gacha_content_button {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    padding: 10px 0 ;
+    width: 104px;
+    text-align: center;
+    background: $gray;
+    border-radius: 4px;
+  }
+  .gacha_content_button_img {
+    width: 22px;
+    margin: 0 6px 0 0;
+  }
+.keihin {
+    padding: 4px 12px;
+    display: flex;
+    justify-content: space-between;
+    width:49%;
+    border-radius:4px;
+    margin: 10px 0 0 0;
+    p{
+        font-size: 12px;
+        padding: 4px ;
+    }
+}
+.keihin-area {
+    border-top: 1px solid #C4C4C4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 0 0 0;
+}
+.probability th {
+    padding: 8px;
+    font-size:14px;
+
+}
+.probability td {
+    padding: 8px;
+    font-size:14px;
+
+}
+.table_area {
+    padding-top: 20px;
+}
+.probability-title{
+    color: $white;
+    display: block;
+    font-size: 16px;
+    line-height: 12px;
+    padding: 10px 12px;
+    width: 100%;
+    background: $black;
+    font-weight: 400;
+    img {
+        margin: 0 4px 0 0;
+    }
+} 
+.probability td,.probability th {
+    border: solid 1px $gray;
+    border-collapse: collapse;
+}
+.probability {
+    background: $white;
+}
+.probability-text {
+    padding-top: 8px;
+    font-size: 10px;
+}
+img.favorite_icon2_img {
+    width: 30px;
+}
+#float_area {
+    z-index: 10;
+    position: relative;
+    background: $white;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    width: 100%;
+    padding: 10px 30px;
+}
+.float_area_heart {
+    width: 20%;
+}
+.float_area_a {
+    width: 80%;
+    text-align: center;
+    display: block;
+    padding: 12px 0px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: $white;
+    margin: 0 auto;
+    background: $black;
+}
+.twobutton_a{
+    width: 48%;
+    text-align: center;
+    display: block;
+    padding: 12px 0px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: $white;
+    margin: 0 auto;
+    background: $black;
+}
+// ガチャを引く
+.gacha_button {
+    display: flex;
+    justify-content: space-evenly;
+}
+.gacha_one {
+    width: 40%;
+    background: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    font-weight: 300;
+    font-size:12px;
+    text-align: center;
+}
+.gacha_one_span {
+    text-align: center;
+    display:block;
+    font-size:20px;
+    font-weight: bold;
+}
+.withheart {
+    position: relative;
+}
+.gacha_heart {
+    width: 50%;
+    position: absolute;
+    top:-20px;
+    right: -20px;
+}
+.lp_button p {
+    display: block;
+    text-align: center;
+    margin:30px 0 2px;
+
+}
+.havelp {
+    font-weight: bold;
+    font-size:18px;
+}
+#btn-3 {
+    display: block;
+    background: $gray;
+    width: 195px;
+    z-index: 100;
+    color: $white;
+    border-radius: 4px;
+    line-height: center;
+    text-align: center;
+    margin: 0px auto 0;
+    font-size: 16px;
+    padding: 14px;
+  
+}
+
+// ガチャ結果↓/
+
+.result-inner{
+    padding: 10px 30px;
+}
+
+.gacha-title{
+    margin: 10px 0 6px ;
+    font-weight: bold;
+}
+
+.result-card{
+    padding: 10px;
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin-bottom: 10px;
+    display: flex;
+    background: $whitewhite;
+    justify-content: space-between;
+}
+
+.result-card-left, .result-card-right{
+    width: 48%;
+}
+
+.award-title{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.award-text{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.button_area {
+    text-align: center;
+    display: block;
+    width: 48%;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: $black;
+    color: $white;
+}
+#retry {
+    background-color: $white;
+    z-index: 10;
+    display: flex;
+    bottom: 0; 
+    position:fixed;
+    justify-content: space-between;
+    padding: 10px 30px ;
+    width: 100%;
+
+}
+
+[v-cloak] {
+    display: none;
+  }
+
+  .hyou {
+      margin-bottom: 20px;
+  }

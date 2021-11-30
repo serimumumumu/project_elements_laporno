@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オークション詳細</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../master/css/master_gacha_modal.css">
+  <link rel="stylesheet" href="../../user/css/user_auction_detail.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <masheaders></masheaders>
+  <div class="panlist">
+        <ul>
+        <li ><a href="../../master/html/master_top.html">TOP</a></li>
+        <li ><a href="../../master/html/master_auction_top.html">オークションTOP</a></li>
+        <li ><a href="../../master/html/master_auction_detail.html">オークション詳細</a></li>
+        <li ><a href="../../master/html/master_auction_detail.html">編集 </a></li>
+        <li class="arrow-l"><p>オークションプレビュー</p></li>
+        </ul>
+    </div>
+    <section class="main_card watch">
+        <h6 class="main_card_title">オークションタイトルオークションタイトル</h6>
+        <span class="main_card_title_send_date">2021/11/10から順次発送</span>
+        <div class="card_img">
+        <img src="../../img/demoimg.png" alt="">
+        </div>
+        <div class="main_in">
+            <article class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/lady.png" alt="">女優名</p>
+                    <a class="bold-font" href="../../user/html/user_actress_profile.html">
+                        新村あかり
+                    </a>
+                </div>
+                <div class="main_in_article_2">
+                    <p class="ain_in_article_2_p"><img src="../../img/pro.png" alt="">投稿者</p>
+                    <a class="bold-font" href="../../user/html/user_contributor_profile.html">
+                        桃太郎出版
+                    </a>
+                </div>
+            </article>
+            <article class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/time.png" alt="">タイムリミット</p>
+                    <h6>残り時間12時間</h6>
+                </div>
+                <div class="main_in_article_2">
+                    <p class="ain_in_article_2_p"><img src="../../img/money.png" alt="">送料</p>
+                    <h6>着払い</h6>
+                </div>
+            </article>
+            <article class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/movie.png" alt="">動画データ</p>
+                    <h6>なし</h6>
+                </div>
+                <div class="main_in_article_2">
+                    <p class="ain_in_article_2_p"><img src="../../img/usbdata.png" alt="">USB郵送</p>
+                    <h6>なし</h6>
+                </div>
+            </article>
+            <article >
+                <div class="main_in_article_1">
+                    <p class=""><img src="../../img/mallet.png" alt="">現在入札額</p>
+                    <h5 class="bold-font ">
+                        3,111,111円
+                    </h5>
+                </div>
+            </article>
+            <article >
+                <div class="main_in_article_1">
+                    <p class=""><img src="../../img/man.png" alt="">入札者名</p>
+                    <a class="bold-font">
+                        パトロン名パトロンの名前
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+    <div class="main-top color2" id="actprodtop">
+        <div class="tab-area">
+            <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActiveTab === '1'}">内容</div>
+            <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActiveTab === '2'}">入札状況</div>
+        </div>
+        <!--内容-->
+        <div class="content-container color1" v-if="isActiveTab === '1'">
+            <div class="main-content-inner">
+                <p class="main-content-text">
+                    テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+                <div class="main-content-img-area">
+                    <img src="../../img/demoimg.png" alt="">
+                </div>
+                <p class="main-content-text">
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+            </div>
+        </div>
+        <!--景品一覧-->
+        <div  class="content-container color1" v-else="isActiveTab === '2'">
+            <table class="history">
+                <tr>
+                    <th colspan="3" class="history-title color5"><img src="../../img/mallet.png">入札履歴</th>
+                </tr>
+                <tr>
+                    <th class="history-td history-th">入札時間</th>
+                    <th class="history-td history-th">入札額</th>
+                    <th class="history-td history-th">入札者</th>
+                </tr>
+                <tr>
+                    <td class="history-td h-left">2021/01/29 10:28</td>
+                    <td class="history-td h-center">300400円</td>
+                    <td class="history-td h-right bold-font"><a href="../../user/html/user_profile.html" >パトロンの名前</a></td>
+                </tr>
+                <tr>
+                    <td class="history-td h-left">2021/01/29 10:28</td>
+                    <td class="history-td h-center">300400円</td>
+                    <td class="history-td h-right bold-font"><a href="../../user/html/user_profile.html" >パトロンの名前</a></td>
+                </tr>
+                <tr>
+                    <td class="history-td h-left">2021/01/29 10:28</td>
+                    <td class="history-td h-center">300400円</td>
+                    <td class="history-td h-right bold-font"><a href="../../user/html/user_profile.html" >パトロンの名前</a></td>
+                </tr>
+                <tr>
+                    <td class="history-td h-left">2021/01/29 10:28</td>
+                    <td class="history-td h-center">300400円</td>
+                    <td class="history-td h-right bold-font"><a href="../../user/html/user_profile.html" >パトロンの名前</a></td>
+                </tr>
+            </table>
+        </div>   
+    </div>
+
+    <div  class="tempo">
+
+        <div class="tempo_float">
+            <a class="tempo_a" href="../../master/html/master_auction_edit.html">もどる</a>
+            <a class="tempo_a" @click="openModal" >確定</a>
+            <div v-show="showContent" @close="showContent=true">
+                <div class="overlay"> 
+                    <div class="overlay-over">
+                        <div class="cancel-btn" onclick="location.href='../../master/html/master_auction_top.html'">
+                        <span class="x x_1"></span>
+                        <span class="x x_2"></span>
+                        </div>
+                        <div class="modal_section">
+                            <div class="overlay-overmain">
+                            <h6 class="modal_title">オークションを更新しました</h6>
+                            <img class="modal_heart" src="../../img/bigheart.png" alt="" >
+                            <button class="btn-2" onclick="location.href='../../master/html/master_auction_top.html'">オークション一覧へ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../master/js/master_header_search.js"></script>
+  <script>
+    var app = new Vue({
+      el:'#app',
+      data(){
+      return {
+        isActiveTab:"1",
+        showContent:false
+      }
+    },
+      methods: {
+        isSelect(number) {
+          this.isActiveTab = number;
+        },
+        openModal(){
+          this.showContent = true;
+        },
+        closeModal(){
+          this.showContent = false;
+        },
+      }
+    });
+  </script>
+</body>
+</html>
+

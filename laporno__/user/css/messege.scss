@@ -1,0 +1,215 @@
+@import "component.scss";
+html{
+  
+}
+.tab_wrap {
+  padding: 20px 16px;
+  background: $whitegray;
+}
+.button-area {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom: 20px;
+}
+.cashbutton {
+  width: 49%;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="radio"]
+{display:none;}
+.tab_panel
+{ display:none;
+}
+
+.tab1_label,.tab2_label,.tab3_label,.tab4_label,.tab5_label{
+    background-color: $gray;
+}
+#tab4:checked ~ .button-area .tab4_label
+{
+    border: 1px solid $grayblack;
+    background:$white;
+ }
+#tab5:checked ~ .button-area .tab5_label
+{
+    border: 1px solid $grayblack;
+    background:$white;
+ }
+#tab4:checked ~ .panel_area #panel4
+{display:block;
+}
+#tab5:checked ~ .panel_area #panel5
+{display:block;
+}
+
+
+
+// コンテンツ内
+._state_open {
+  transform:rotateX(180deg);
+}
+.box_title {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+.mail_index {
+  background: $white;
+  padding: 14px 8px 30px;
+  margin:0 0 20px;
+  border-radius: 4px;
+}
+.category-container{
+  border-bottom: 1px solid $gray;
+  margin-bottom: 20px;
+}
+
+.category-top{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.mail-main {
+  border-bottom: 1px solid $gray;
+  margin-top: 16px;
+}
+.message{
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 8px;
+padding: 0 8px;
+
+}
+
+.category-title{
+  width: 80%;
+font-weight: 700;
+font-size: 14px;
+}
+
+.more-btn{
+width: 10%;
+padding: 5px;
+}
+
+.mail-icon-area{    
+position: relative;
+}
+
+.mail-icon-area img{
+width: 32px;
+}
+.mail-icon-area-sm img{
+width: 26px;
+}
+.mail-icon-area-sm {    
+  position: relative;
+  }
+.mail-amount{
+  position: absolute;
+  font-weight: 700;
+  font-size: 12px;
+  top: 25%;
+    left: 20%;
+
+}
+
+.more-btn > img{
+width: 90%;
+max-width: 30px;
+}
+
+.mail-folder-card{
+box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+padding: 10px;
+margin-bottom: 10px;
+}
+
+.folder-card-bottom{
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+
+// ニュースTop
+
+.category-title-span {
+  font-size: 10px;
+  color: $grayblack;
+  display: block;
+  font-weight: 300;
+  margin-bottom: 6px;
+}
+.news {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 0 8px 0 36px;
+}
+.news-box-bottom {
+  margin: 6px 0 0 8px;
+}
+.checkbox{
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-text{
+  font-size: 12px;
+  color:$grayblack;
+  margin: 0 10px;
+}
+
+.read-btn{
+  border-radius: 4px;
+  padding: 3px 16px;
+  color: $white;
+  font-size: 12px;
+}
+
+.more-btn_2{
+  width: 10%;
+  padding: 5px;
+  transform: rotate(-90deg);
+  }
+  .mail_index_pagenumber {
+    width: 80%;
+    display: flex;
+    margin: 16px auto 0px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .thispage {
+    color: $white;
+    background: $grayblack;
+    border-radius: 4px;
+    padding: 4px 16px;
+  }
+  .news_attention {
+    margin: 0 0 10px 0;
+    padding:8px 16px;
+    border-radius: 4px;
+    img {
+      max-width: 16px;
+      
+    }
+    h5 {
+      line-height: 14px;
+      font-size: 12px;
+    }
+  }
+  .news_attention_span {
+    font-size: 20px;
+    margin: 0 4px 0 6px;
+  }

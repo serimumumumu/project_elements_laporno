@@ -1,0 +1,252 @@
+@import "component.scss";
+// 上部
+
+.main_card{
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin:20px 16px ;
+    padding:10px;
+}
+.main_card_title{
+    padding: 0 0 10px 0;
+    font-size: 16px;
+}
+.info_inner {
+    display: flex;
+}
+.info_inner article {
+    padding:10px;
+    width: 50%;
+}
+.info_sub img {
+    margin-right: 4px;
+    width: 16px;
+}
+.info-real {
+    padding: 8px 0 0 8px;
+    font-size: 14px;
+}
+.info-maker {
+    padding: 8px 0 0 8px;
+    font-size: 16px;
+    display: block;
+    font-weight:700;
+}
+.tab-area {
+    padding-top: 20px;
+}
+
+.probability , .card_img img ,.main-content-img-area img ,.result-img img ,.award_detail img, .result-card-left img{
+    width: 100%;
+}
+.content-container {
+    padding: 20px 16px;
+}
+
+
+.main-content-text{
+   padding: 10px;
+   line-height: 22px;
+}
+
+// 景品一覧
+.award{
+    box-shadow: 0px 0px 4px 2px rgba(233, 233, 233, 0.75);
+    margin-bottom: 10px;
+}
+.award_h6 {
+    padding :10px;
+    background-color : $whitegray;
+    font-size :18px;
+    color :$grayblack;
+}
+.award_detail ,.award p  {
+    padding: 10px;
+}
+
+.award_text{
+    padding: 0 10px 10px 10px;
+}
+.probability th {
+    padding: 8px;
+    font-size:14px;
+
+}
+.probability td {
+    padding: 8px;
+    font-size:14px;
+
+}
+.table_area {
+    padding-top: 20px;
+}
+.probability-title{
+    color: $white;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    background: $black;
+    font-weight: 400;
+} 
+.probability td,.probability th {
+    border: solid 1px $gray;
+    border-collapse: collapse;
+}
+.probability {
+    background: $white;
+}
+.probability-text {
+    padding-top: 8px;
+    font-size: 10px;;
+}
+img.favorite_icon2_img {
+    width: 30px;
+}
+#float_area {
+    position: relative;
+    background: $white;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    width: 100%;
+    padding: 10px 30px;
+}
+.float_area_heart {
+    width: 20%;
+}
+.float_area_a {
+    width: 80%;
+    text-align: center;
+    display: block;
+    padding: 12px 70px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: $white;
+    margin: 0 auto;
+    background: $grayblack;
+}
+a.float_area_a  {
+    text-align: center;
+    
+}
+// ガチャを引く
+.gacha_button {
+    display: flex;
+    justify-content: space-evenly;
+}
+.gacha_one {
+    width: 40%;
+    background: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    font-weight: 300;
+    font-size:12px;
+    text-align: center;
+}
+.gacha_one_span {
+    text-align: center;
+    display:block;
+    font-size:20px;
+    font-weight: bold;
+}
+.withheart {
+    position: relative;
+}
+.gacha_heart {
+    position: absolute;
+    top:-20px;
+    right: -20px;
+}
+.lp_button p {
+    display: block;
+    text-align: center;
+    margin:30px 0 2px;
+
+}
+.havelp {
+    font-weight: bold;
+    font-size:18px;
+}
+#btn-3 {
+    display: block;
+    background: $gray;
+    width: 195px;
+    z-index: 100;
+    color: $white;
+    border-radius: 4px;
+    line-height: center;
+    text-align: center;
+    margin: 0px auto 0;
+    font-size: 16px;
+    padding: 14px;
+  
+}
+
+// ガチャ結果↓/
+
+.result-inner{
+    padding: 30px;
+}
+
+.gacha-title{
+    margin: 10px 0 6px ;
+    font-weight: bold;
+}
+
+.result-card{
+    padding: 10px;
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-card-left, .result-card-right{
+    width: 48%;
+}
+
+.award-title{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.award-text{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.button_area {
+    text-align: center;
+    display: block;
+    width: 48%;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 4px;
+    background-color: $black;
+    color: $white;
+}
+#retry {
+    background-color: $white;
+    display: flex;
+    bottom: 0; 
+    position:fixed;
+    justify-content: space-between;
+    padding: 10px 30px ;
+    width: 100%;
+
+}
+// 追従質問ページスクロールボタン
+.floatbutton {
+    padding: 0px 30px;
+    width: 100%;
+    bottom: 140px;
+    position: fixed;
+}
+.topscrollbutton {
+    position: absolute;
+    width: 72px;
+    right: 30px;
+}
+.questionbutton {
+    width: 40px;
+    position: absolute;
+}

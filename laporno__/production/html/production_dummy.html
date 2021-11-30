@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ダミーアカウントTop</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/component.css">
+  <link rel="stylesheet" href="../../contributor/css/auchtop.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="conheaders">
+    <conheaders></conheaders>
+  </div>
+  <div class="panlist">
+    <ul >
+      <li ><a href="top.html">TOP</a></li>
+      <li class="arrow-l">ダミーアカウントTOP</li>
+    </ul>
+  </div>
+  <div id="search">
+    <search></search>
+  </div>
+  <div class="" id="conauchtop">
+    <h1 class="title">ダミーアカウント一覧</h1>
+    <div class="content">
+      <div class="hyou-top">
+        <table class="table">
+          <div class="table-title-area color5">
+            <h2 class="table-title">ダミーアカウント一覧</h2>
+            <select name="order" id="" class="order color1">
+            <option >新着中</option>
+            <option >登録順</option>
+            </select>
+          </div>
+          <tr class="table_header">
+            <th class="table_120">ユーザー名</th>
+            <th class="table_80">ランク</th>
+            <th class="table_80 table_center">支援額</th>
+            <th class="table_120">支援する</th>
+          </tr>
+          <tr>
+            <td class="bold-font"><a class="table_center" href="userpage.html">パトロンの名前</a></td>
+            <td >ブロンズ</td>
+            <td class="table_center">20,000</td>
+            <td> <button  class="table-btn" @click="openModal">支援する</button></td>
+          </tr>
+        </table>
+      </div>
+     </div>
+     <supportmodal v-show="showContent" @close="showContent = false"></supportmodal>
+  </div>
+  <script src="../js/concomponent.js" defer></script>
+  <script src="../js/conauchtop.js" defer></script>
+</body>
+</html>

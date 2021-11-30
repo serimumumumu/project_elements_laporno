@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プレゼントユーザー一覧</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/header.css">
+  <link rel="stylesheet" href="../../contributor/css/concomponent.css">
+  <link rel="stylesheet" href="../../user/css/user_component.css">
+  <link rel="stylesheet" href="../../user/css/contributor_campaign_top.css">
+
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="conheaders">
+    <conheaders></conheaders>
+  </div>
+  <div class="panlist">
+    <ul >
+      <li ><a href="../../user/html/user_top.html">TOP</a></li>
+      <li ><a href="../../contributor/html/contributor_campaign_top.html">キャンペーン一覧</a></li>
+      <li class="arrow-l">ユーザー一覧</li>
+    </ul>
+  </div>
+  <div id="search" >
+    <search></search>
+  </div>
+  <h1 class="title color2">ユーザー一覧</h1>
+  <div class="color2" id="conauchtop">
+    <div class="hyou_area_rl16">
+      <div class="hyou">
+        <div class="hyou-top">
+          <div class="table-title-area color5">
+            <h2 class="table-title">キャンペーンの名前名前名前<br>キャンペーンの名前名前名前</h2>
+            <div class="table_sort">
+              <select name="order" id="" class="table_sort_select color1">
+              <option >新着中</option>
+              <option >登録順</option>
+              </select>
+            </div>
+          </div>
+          <table class="table">
+            <tr class="table_header">
+                <th class="table_40"></th>
+                <th class="table_120">取得日</th>
+                <th class="table_160">ユーザー名</th>
+                <th class="table_120">発送ステータス</th>
+                <th class="table_120">発送情報</th>
+                <th class="table_120 table_center">発送通知</th>
+                <th class="table_80 table_center">Mail</th>
+            </tr>
+            <tr>
+              <td class="table_40 table_center"><input type="checkbox"></td>
+              <td>2021/03/12</td>
+              <td class="bold-font"><a href="userpage.html">パトロンの名前</a><button @click="openInfo" class="usersendinfo">情報</button></td>
+              <td> <button class="table-btn"> <select  name="" id="">
+                <option value="">発送準備</option>
+                <option value="">発送済</option>
+                </select></button>
+              </td>
+              <td> <button onclick='location.href="projdeliverinforegist.html"' class="table-btn">登録</button></td>
+              <td >未</td>
+              <td class="table_80 table_center"><a class="table_center" href="maildetail.html"> <img src="../../img/mail.png" alt=""></a></td>
+            </tr>
+          </table>
+        </div>
+        <h3 class="btn-title">チェックしたユーザーの</h3>
+        <div class="content-btn-area">
+          <button class="content-btn color3">配送情報登録</button>
+          <button class="content-btn color3">発送準備完了</button>
+          <button class="content-btn color3">通知一斉送信</button>
+          </div>
+      </div>
+      <userinfo v-show="showinfoContent" @close="showinfoContent = false"></userinfo>
+    </div>
+  </div>
+
+  <script src="../../user/js/component.js" defer></script>
+  <script src="../../contributor/js/concomponent.js" defer></script>
+  <script src="../../contributor/js/conauchtop.js" defer></script>
+</body>
+</html>

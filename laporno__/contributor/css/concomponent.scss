@@ -1,0 +1,349 @@
+@import "../../user/css/header.scss" ;
+
+
+// 検索バー
+.search {
+  background: $gray;
+  padding:6px 16px;
+  // margin-top: 8px;
+}
+.search form {
+  height:40px;
+  padding-left: 8px;
+  background-color:$whitewhite;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  
+}
+.search input {
+      width: 100%;
+    text-align: left;
+    padding-left: 8px;
+}
+.search input::placeholder {
+    color: $gray;
+}
+.sub_search {
+  position: relative;
+  top: 0;
+  left: 0;
+  position: sticky;
+}
+// 検索バー終わり
+.active{
+  background:$whitewhite;
+   border-bottom: 1px solid #c4c4c4;
+}
+
+// <!-- ふたつたぶ角丸 -->
+.tabtwo_labels {
+    display: flex;
+    padding: 20px 1px 0;
+    background: $whitegray;
+    justify-content: space-around;
+  }
+  .twobutton{
+    border-radius: 4px 4px 0 0;
+    width:49%;
+    text-align: center;
+    padding: 12px 2px;
+    margin: 0;
+  }
+  input[type="radio"]{
+      display:none;
+  }
+  .tabtwo_panel{ 
+      display:none;
+    background: $white;
+   padding:20px 16px;
+  }
+  .tabtwo1_label,.tabtwo2_label{
+    background-color: $gray;
+  }
+  #tabtwo1:checked ~ .tabtwo_labels .tabtwo1_label
+  {
+    border-bottom: 1px solid $gray;
+    background:$white;
+  }
+  #tabtwo2:checked ~ .tabtwo_labels .tabtwo2_label
+  {
+    border-bottom: 1px solid $gray;
+    background:$white;
+  }
+  #tabtwo1:checked ~ .paneltwo_area #paneltwo1
+  {display:block;
+  }
+  #tabtwo2:checked ~ .paneltwo_area #paneltwo2
+  {display:block;
+  }
+  // <!-- ふたつたぶ角丸終わり -->
+  
+  
+  // みっつたぶ
+  .tab_labels {
+    display: flex;
+    padding: 20px 16px 0;
+    // background: $whitegray;
+    justify-content: space-around;
+  }
+  .conbutton{
+    width:32%;
+    text-align: center;
+    padding: 12px 2px;
+    margin: 0;
+  }
+  input[type="radio"]{
+      display:none;
+  }
+  .tab_panel{ 
+      display:none;
+//    padding:20px 16px;
+  }
+  .tab1_label,.tab2_label,.tab3_label,.tab4_label,.tab5_label,.tab6_label{
+    background-color: $gray;
+  }
+  #tab1:checked ~ .tab_labels .tab1_label
+  {
+    border: 1px solid $gray;
+    background:$white;
+  }
+  #tab2:checked ~ .tab_labels .tab2_label
+  {
+    border: 1px solid $gray;
+    background:$white;
+  }
+  #tab3:checked ~ .tab_labels .tab3_label
+  {
+    border: 1px solid $gray;
+    background:$white;
+  }
+  #tab4:checked ~ .tab_labels .tab4_label
+  {
+    border: 1px solid $gray;
+    background:$white;
+  }
+  #tab5:checked ~ .tab_labels .tab5_label
+  {
+    border: 1px solid $gray;
+    background:$white;
+  }
+  #tab6:checked ~ .tab_labels .tab6_label
+  {
+    border: 1px solid $gray;
+    background:$white;
+  }
+  #tab1:checked ~ .panel_area #panel1
+  {display:block;
+  }
+  #tab2:checked ~ .panel_area #panel2
+  {display:block;
+  }
+  #tab3:checked ~ .panel_area #panel3
+  {display:block;
+  }
+  #tab4:checked ~ .panel_area #panel4
+  {display:block;
+  }
+  #tab5:checked ~ .panel_area #panel5
+  {display:block;
+  }
+  #tab6:checked ~ .panel_area #panel6
+  {display:block;
+  }
+  // みっつたぶ終わり
+
+  // ひとつボタン
+  .onebutton {
+    width: 100%;
+    margin: 30px 0;
+  }
+  .onebutton_a {
+    width: 60%;
+    background: $black;
+    display: block;
+    padding: 14px 0;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  // ひとつボタン終わり
+
+  .twobutton2 {
+    width: 100%;
+    padding: 0 0px;
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.twobutton {
+  width: 100%;
+  // padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.twobutton_a {
+  cursor: pointer;
+    width: 45%;
+    background: $black;
+    display: block;
+    padding: 14px 0;
+    color: $white;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(196, 196,196,0.5)
+}
+.twobutton_b {
+    width: 48%;
+    background: $gray;
+    display: block;
+    padding: 14px 0;
+    border-radius: 4px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+// モーダル
+
+textarea {
+
+  background: $whitewhite;
+  padding: 10px;
+  width: 100%;
+}
+::placeholder {
+  font-size: 16px;
+line-height: 16px;
+color: $gray;
+}
+.button1{
+  background:$gray;
+  border-radius: 4px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button{
+  background:$gray;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay {
+  background:#232323cb;
+  position:absolute;
+  position:fixed;
+  top:0 ;
+  right:0;
+  width:100%;
+  height:120%;
+  z-index: 100;
+}
+.overlay-over{
+  // height: 400px;
+  position: relative;
+  margin:60px 16px;
+}
+.modal_fix {
+  position: fixed;
+  overflow: scroll;
+  height: 80%;
+  // height: 400px;
+}
+.cancel-btn {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  z-index: 110;
+  cursor: pointer;
+  width:72px;
+  height:70px;
+}
+.x {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width:32px;
+  height:2px;
+  background:$black;
+  text-align:center;
+}
+
+.x_1 {
+  top:16px;
+  transform:translateY(10px) rotate(-45deg);
+}
+.x_2 {
+  top:36px;
+  transform:translateY(-10px) rotate(45deg);
+}
+.overlay-overmain {
+  // height: 600px;
+  overflow: scroll;
+  color:$black;
+background:$whitegray;
+  padding:30px 20px;
+  margin:0 auto;
+}
+.overlay-overmain2 {
+  @extend .overlay-overmain; 
+  // height: 420px;
+}
+#btn-2{
+  display: block;
+  background: $black;
+  width: 195px;
+  z-index: 100;
+  color: $white;
+  border-radius: 4px;
+  line-height: center;
+  text-align: center;
+  margin: 30px auto 0;
+  font-size: 16px;
+  padding: 14px;
+
+}
+#btn-2:disabled {
+  opacity: 0.3;
+}
+.btn-2{
+  display: block;
+  background: $gray;
+  width: 195px;
+  z-index: 100;
+  color: $white;
+  border-radius: 4px;
+  line-height: center;
+  text-align: center;
+  margin: 30px auto 0;
+  font-size: 16px;
+  padding: 14px;
+
+}
+.modal_title {
+  width: 80%;
+  color: $black;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 30px;
+}
+.modal_title  span{
+  display: block;
+  text-align: center;
+  font-size: 12px;
+}
+.modal_heart {
+  margin: 0 auto;
+  width: 50%;
+  display: block;
+
+}
+// 編集時
+.edit::placeholder {
+  color: $black;
+}

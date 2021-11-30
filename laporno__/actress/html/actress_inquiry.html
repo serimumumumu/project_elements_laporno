@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/buylp.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="headers">
+        <headers></headers>
+    </div>
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul >
+            <li ><a href="user_user_top.html">TOP</a></li>
+            <li class="arrow-l">お問い合わせ</li>
+        </ul>
+    </div>
+    <main>
+        <div class="card">
+            <h1 class="card-title">お問い合わせ</h1>
+            <div class="card-content-box">
+                <h2 class="sub-title">お問い合わせの種類</h2>
+                <div class="kind-select-area">
+                    <select name="" id="" class="kind-select">
+                        <option value="hurui">選択してください</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-content-box">
+                <h2 class="sub-title">プロジェクト/オークション/ガチャ名</h2>
+                <div class="kind-select-area">
+                    <select name="" id="" class="kind-select">
+                        <option value="hurui">選択してください</option>
+                    </select>
+                </div>
+                
+            </div>
+            <div class="card-content-box">
+                <h2 class="sub-title">リターン/景品名</h2>
+                <div class="kind-select-area">
+                    <select name="" id="" class="kind-select">
+                        <option value="hurui">選択してください</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-content-box">
+                <h2 class="sub-title">お問い合わせ内容</h2>
+                <textarea class="inquiry-text"></textarea>
+            </div>
+            <div class="check-area">
+                <input type="checkbox" id="agree" class="checkbox">
+                <label for="all-read" class="checkbox-text_2">なにかに同意する</label>
+            </div>
+            <button onclick="location.href='inquirycheck.html'" class="card-btn color3">確認</button>
+        </div>
+    </main>
+    <script src="js/component.js"></script>
+</body>
+</html>

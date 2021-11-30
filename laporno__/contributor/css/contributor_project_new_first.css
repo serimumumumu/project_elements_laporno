@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+html { font-family: 'Roboto', sans-serif; }
+
+html { color: #232323; }
+
+.color0 { background-color: #fff; }
+
+.color1 { background-color: #FAFAFA; }
+
+.color2 { background-color: #E9E9E9; }
+
+.color3 { background-color: #C4C4C4; }
+
+.color4 { background-color: #7D7D7D; }
+
+.color5 { background-color: #232323; }
+
+.contributor_project_first { padding: 10px 16px 60px; }
+
+.contributor_project_first_title { font-size: 16px; font-weight: 700; margin-bottom: 20px; text-align: center; }
+
+.sub-title { font-size: 12px; color: #7D7D7D; margin: 16px 0 2px 0; }
+
+.contributor_project_first_content_button_area { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; margin: 0 0 10px 0; }
+
+.contributor_project_first_content_button { border-radius: 4px; padding: 10px; font-size: 14px; font-weight: 400; background-color: #C4C4C4; }
+
+.contributor_project_first_content_description { border: 1px solid #C4C4C4; width: 100%; resize: none; padding: 10px; background: #fff; height: 320px; }
+
+.twobutton { width: 100%; padding: 10px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+.twobutton_a { cursor: pointer; width: 45%; background: #232323; display: block; padding: 14px 0; color: #FAFAFA; border-radius: 4px; margin: 0 auto; text-align: center; -webkit-box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.5); box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.5); }

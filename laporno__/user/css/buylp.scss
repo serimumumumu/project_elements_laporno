@@ -1,0 +1,182 @@
+@import "component.scss";
+
+.card{
+    margin:20px 16px;
+    box-shadow: 0px 0px 4px 2px rgba(196, 196, 196, 0.25);
+    padding: 20px;
+    background: $whitewhite;
+}
+
+.card-title{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card-content-box{
+    margin: 16px 0;
+}
+
+.sub-title{
+    font-size: 12px;
+    color: $gray;
+    margin-bottom: 2px;
+}
+
+.check-area{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 6px;
+}
+
+.checkbox-text{
+    color: $grayblack;
+    font-size: 10px;
+}
+.checkbox-text_2{
+    font-size: 10px;
+}
+
+.card-btn{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 42px;
+    border-radius: 4px;
+    color: $grayblack;
+    text-align: center;
+}
+
+/* lpbuy*/
+
+.lp-amount-select{
+    border: 1px solid $gray;
+    width: 50%;
+    margin-right: 8px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.radio-input{
+    width: 49%;
+    border: 1px solid $gray;
+    border-radius: 4px;
+    background: $white;
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.radio-input label{
+    padding-left: 10px;
+}
+
+.ctext{
+    border: 1px solid $gray;
+    width: 100%;
+    padding-left: 8px;
+    height: 34px;
+    font-size: 12px;
+}
+
+.input-error{
+    color: #FF0000;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.under-line{
+    text-decoration: underline;
+    font-size: 12px;
+    padding-right: 4px;
+}
+
+.check-error{
+    color: #FF0000;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.attention-area{
+    margin: 60px 0 20px 0;
+}
+
+.attention-area *{
+    color: $grayblack;
+    font-size: 12px;
+}
+
+select {
+    background-image: url("../../img/arrowdown.png");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 14px;
+  }
+
+
+.checkbox {
+    display: inline-block;
+}
+
+// お問い合わせ
+.kind-select-area{
+    position:relative;
+    width: 60%;
+}
+
+.kind-select{
+    border: 1px solid $gray;
+    width: 100%;
+    padding: 10px;
+    color: $grayblack;
+    // background: $whitewhite;
+}
+
+.inquiry-text{
+    border: 1px solid $gray;
+    height: 200px;
+    width: 100%;
+    resize: none;
+}
+.button-area{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cashbutton {
+  width: 49%;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="radio"]
+{display:none;}
+.tab_panel
+{ display:none;}
+
+.tab4_label,.tab5_label{
+    background-color: $gray;
+}
+#tab4:checked ~ .button-area .tab4_label
+{
+    border: 1px solid $grayblack;
+    background:$white;
+ }
+#tab5:checked ~ .button-area .tab5_label
+{
+    border: 1px solid $grayblack;
+    background:$white;
+ }
+#tab4:checked ~ .panel_area #panel4
+{display:block;
+}
+#tab5:checked ~ .panel_area #panel5
+{display:block;
+}

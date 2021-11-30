@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ確認</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <link rel="stylesheet" href="../../user/css/user_inquery_preview.css">
+    <link rel="stylesheet" href="../../user/css/user_modal.css">
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <headers></headers>
+    <!-- </div> -->
+    <!-- パンクズりすと -->
+    <div class="panlist">
+        <ul>
+            <li ><a href="../../user/html/user_top.html">TOP</a></li>
+            <li class="arrow-l"><a href="../../user/html/user_inquiry.html">お問い合わせ</a></li>
+            <li><p>退会申請</p></li>
+        </ul>
+    </div>
+    <main>
+        <div class="card-area">
+            <section class="card">
+                <h2 class="title">退会申請</h2>
+                <div class="card-content-box">
+                    <span class="sub-title">お問い合わせの種類</span>
+                    <p class="user_inquery_sub-text">退会申請</p>
+                </div>
+                <div class="card-content-box">
+                    <h2 class="sub-title">退会の理由</h2>
+                    <textarea class="inquiry-text"></textarea>
+                </div>
+                <div class="check-area">
+                    <input type="checkbox" id="agree" class="checkbox">
+                    <label for="all-read" class="checkbox-text_2">なにかに同意する</label>
+                </div>
+                <button onclick="location.href='../../user/html/user_inquiry_preview.html'" class="user_inquery_preview_button">確認</button>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script src="../../user/js/user_header_search.js" defer></script>
+<script>
+
+    window.onload = function () {
+    new Vue ({
+        el:"#app",
+        data: {
+            showContent:false,
+        },
+        created(){
+        },
+        methods:{
+            openModal(){
+        this.showContent = true;
+        // this.isActive = true;
+      }
+    }
+        });
+    }
+</script>
+</body>
+</html>

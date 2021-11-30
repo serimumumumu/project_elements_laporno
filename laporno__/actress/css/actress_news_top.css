@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+html { font-family: 'Roboto', sans-serif; }
+
+html { color: #232323; }
+
+.color0 { background-color: #fff; }
+
+.color1 { background-color: #FAFAFA; }
+
+.color1 { background-color: #FAFAFA; }
+
+.color2 { background-color: #E9E9E9; }
+
+.color3 { background-color: #C4C4C4; }
+
+.color4 { background-color: #7D7D7D; }
+
+.color5 { background-color: #232323; }
+
+.tab_wrap { padding: 20px 16px; background: #E9E9E9; }
+
+._state_open { -webkit-transform: rotateX(180deg); transform: rotateX(180deg); }
+
+.mail_index { background: #FAFAFA; padding: 14px 8px 30px; margin: 0 0 20px; border-radius: 4px; }
+
+.category-title { font-size: 14px; }
+
+.category-title-span { font-size: 10px; color: #7D7D7D; display: block; margin-bottom: 6px; }
+
+.news { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 0 8px 8px 36px; margin: 16px 0 0; border-bottom: 1px solid #C4C4C4; }
+
+.news-box-bottom { margin: 6px 0 0 8px; }
+
+.checkbox { width: 16px; height: 16px; }
+
+.checkbox-text { font-size: 12px; color: #7D7D7D; margin: 0 10px; }
+
+.read-btn { border-radius: 4px; padding: 3px 16px; color: #FAFAFA; font-size: 12px; }
+
+.more-btn_2 { width: 10%; padding: 5px; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); }
+
+.mail_index_pagenumber { width: 80%; display: -webkit-box; display: -ms-flexbox; display: flex; margin: 16px auto 0px; -ms-flex-pack: distribute; justify-content: space-around; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.thispage { color: #FAFAFA; background: #7D7D7D; border-radius: 4px; padding: 4px 16px; }
+
+.news_attention { margin: 0 0 10px 0; padding: 8px 16px; border-radius: 4px; }
+
+.news_attention img { max-width: 16px; }
+
+.news_attention h5 { line-height: 14px; font-size: 12px; }
+
+.news_attention_span { font-size: 20px; margin: 0 4px 0 6px; }

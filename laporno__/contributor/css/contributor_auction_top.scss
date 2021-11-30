@@ -1,0 +1,315 @@
+@import "../../user/css/color.scss" ;
+
+.active{
+    background:$white;
+     border-bottom: 1px solid $gray;
+}
+
+.content2{
+  margin: 10px 10px 0;
+}
+.content3{
+  margin: 10px 16px 0;
+}
+
+.main-area{
+  padding: 10px 16px;
+}
+
+
+
+
+// .table-title-area{
+//     width: 100%;
+//   padding: 8px 10px;
+//   position: sticky;
+//   top:0;
+//   left: 0;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+
+.table-title{
+  font-size: 14px;
+  font-weight: 400;
+  color: $white;
+}
+// .hyou-top {
+//   width:100%;
+//   height:460px;
+//   overflow:scroll;
+// }
+// .table {
+//   background:$whitewhite;
+//   width:100%;
+//   min-width: 400px;
+//   border-collapse: collapse;
+//   table-layout: fixed;
+// }
+// th,td {
+//     font-weight: normal;
+//   padding:8px;
+//   vertical-align: middle;
+//   border:1px solid $grayblack;
+//   text-align: center;
+//   white-space:initial;
+// }
+.usersendinfo {
+  border-radius: 4px;
+  width: 100%;
+  display: block;
+  background: $black;
+  padding: 8px 16px;
+  margin: 8px auto 0;
+  color: $white;
+  text-align: center;
+}
+.table_40 {
+  width: 40px;
+  
+}
+.table_80 {
+  width: 80px;
+}
+.table_120 {
+  width: 120px;
+}
+.table_160 {
+  width: 160px;
+}
+.table_header {
+  white-space: pre;
+  position: sticky;
+  font-size: 12px;
+  background: $whitewhite;
+  top:44px;
+  left: 0;
+}
+
+
+.order{
+  background-image: url("../../img/arrowdown.png");
+  background-repeat: no-repeat;
+  background-size:14px;
+  background-position: right;
+  border-radius: 4px;
+  width: 30%;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+.td-img{
+  width:  100%;
+}
+
+.table-btn{
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 8px;
+  text-align: center;
+  width:100%;
+  background: $gray;
+}
+.btn-title{
+  font-size: 12px;
+  color: $grayblack;
+  margin: 16px 0 10px;
+}
+
+
+.content-btn-area{
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-btn{
+  border-radius: 4px;
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.modal_section {
+  color:$black;
+}
+.modal_title {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 30px;
+}
+.subtitle{
+  font-size: 10px;
+  line-height: 18px;
+  color: $grayblack;
+  vertical-align: middle;
+}
+.modal_colum {
+  align-items: center;
+  display: flex;
+}
+.modal_colum_2 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.modal_colum_div {
+  width: 50%;
+}
+.modal_colum_div a{
+  color: $white;
+  background-color: $grayblack;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px 34px;
+  
+}
+.modal_colum_2_a a{
+  padding: 6px 24PX;
+  border-radius: 4PX;
+  background-color: $white;
+}
+.modal_p {
+  padding-bottom: 16px;
+  font-weight: normal;
+}
+.modal_textarea {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+.modal_p_last {
+  padding-bottom: 30px;
+}
+.modal_colum_img {
+  display: flex;
+  justify-content: space-around;
+}
+.modal_colum_img img{
+  width: 40%;
+}
+
+.modal_button a{
+  background: $gray;
+  text-align: center;
+  margin:  0 0 16px auto;
+  border-radius: 4px;
+  padding: 10px;
+  width: 50%;
+  display: block;
+}
+
+// 入札履歴
+.history {
+  width: 100%;
+  table-layout: auto;
+  background:$white;
+}
+.history a {
+  padding: 4px 26px;
+  text-align: center;
+  background: $black;
+  border-radius: 4px;
+  color: $white;
+}
+.patoron_name {
+  white-space: pre-wrap;
+  font-size: 12px;
+}
+.patoron_name a {
+  padding: 8px 6px;
+  background: $black;
+  border-radius: 4px;
+  color: $white;
+
+}
+.history td {
+  width: 24%;
+}
+.history th {
+  font-size: 14px;
+}
+
+.sub_search {
+    position: relative;
+    top: 0;
+    left: 0;
+    position: sticky;
+}
+.bold-font  {
+  font-weight: bold;
+}
+.draft_icon {
+  width: 12px;
+  margin-left: 8px;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 16px;
+    position: relative;
+    display:block; 
+    text-align: center;
+    padding: 20px 0 ;
+  }
+.create-btn {
+    position: absolute;
+    right: 16px;
+    padding: 8px 7px;
+    font-weight: 400;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+  }
+
+.create-btn img {
+  width:23px;
+}
+
+.table_sort_black {
+  display: block;
+  border-radius: 4px;
+  width: 30%;
+  padding: 4px;
+  background: #000;
+  margin: 10px 0 8px;
+  font-size: 14px;
+  background: $black;
+}
+.table_sort_select_black {
+  background-image: url(../../img/arrowdown-w.png);
+  background-repeat: no-repeat;
+  padding: 6px 2px;
+  width: 100%;
+  display: block;
+  background-size: 14px;
+  background-position: right;
+  color:$white;
+}
+.table_center {
+  text-align: center;
+}
+
+// まとめて発送
+.contributor_auc_list_hyou_button{
+  width: 100%;
+  padding: 8px 10px;
+  position: sticky;
+  // top: 0;
+  // left: 0;
+  display: flex;
+  align-items: center;
+}
+.contributor_auc_list_hyou_button_p{
+  color: $white;
+  font-size: 12px;
+}
+.contributor_auc_list_hyou_button_a {
+  font-size: 12px;
+  padding:8px 18px ;
+  background: $whitegray;
+  margin: 0 0 0 6px;
+  border-radius: 4px;
+}

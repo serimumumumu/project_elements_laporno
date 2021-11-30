@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+
+    <link rel="stylesheet" href="../../user/css/top.css">
+    <link rel="stylesheet" href="../../user/css/header.css">
+    <!-- <link rel="stylesheet" href="../../user/css/user_component.css"> -->
+    <link rel="stylesheet" href="../../user/css/user_top.css">
+    <!-- <link rel="stylesheet" href="../../user/css/project.css"> -->
+    <link rel="stylesheet" href="../../user/css/user_footer.css">
+    <script src="../../user/js/vue.js" defer></script>
+    <!-- <script src="../../user/js/swiper.js" defer></script> -->
+</head>
+<body>
+  <div id="app">
+    <headers></headers>
+  <!-- </div> -->
+
+  <div style="padding-top: 60px;">
+    <search></search>
+  </div>
+  <a href="user_news_user_top.html" class="info-area color5">
+    <p class="info-attention">お知らせお知らせお知らせ</p>
+    <img src="../../img/arrowright.png" alt="">
+  </a>
+  <!-- カレンダー -->
+  <div class="color1" id="schedule" >
+    <h1 class="calender_title">イベントカレンダー</h1>
+    <div class="calender_link">
+      <p class="calender_link_pre"><img class="calender_link_pre_img" src="../../img/arrowleft.png" alt="">2021年1月</p>
+      <p class="calender_link_pre">2021年3月<img class="calender_link_pre_img" src="../../img/arrowright.png" alt=""></p>
+    </div>
+    <div class="calender_ckeckbox">
+      <input type="checkbox" id="01-A" name="checkbox01">
+      <label for="01-A" class="checkbox01">運営イベント</label>
+      <input type="checkbox" id="01-B" name="checkbox01">
+      <label for="01-B" class="checkbox01">お気に入り</label>
+      <input type="checkbox" id="01-C" name="checkbox01">
+      <label for="01-C" class="checkbox01">投稿者イベント</label>
+    </div>
+    <table class="calendar" >
+      <tr>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+        <th class="sat">土</th>
+        <th class="sun">日</th>
+      </tr>
+      <tr class="day">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td @click="openModal">1
+          <p class="schedule">夏希まろん</p>
+          <p class="schedule schedule-b">夏希まろん</p>
+        </td>
+        <td class="sat">2</td>
+        <td class="sun">3</td>
+      </tr>
+      
+      <tr class="day">
+        <td class="today" @click="openModal">4
+          <p class="schedule schedule-b">夏希まろん</p>
+        </td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td class="sat">9</td>
+        <td class="sun">10</td>
+      </tr>
+      <tr class="day">
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+        <td class="sat">16</td>
+        <td class="sun">17</td>
+      </tr>
+      <tr class="day">
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+        <td>22</td>
+        <td class="sat">23</td>
+        <td class="sun">24</td>
+      </tr>
+      <div v-show="showContent" @close="showContent = false">
+        <div class="overlay">
+          <div class="overlay-over" v-if="isActive">
+            <div class="cancel-btn" @click="closeModal">
+              <span class="x x_1"></span>
+              <span class="x x_2"></span>
+            </div>
+            <div class="overlay-overmain" >
+              <div class="modal_section2">
+                <h6 class="modal_title">◯月◯日<span class="modal_title_span2">スケジュール</span></h6>
+                <article class="schedule_article" >
+                  <h5 >夏樹まろん</h5>
+                  <ul class="schedule_articl_ul" @click="showDetail">
+                  <li class="schedule_articl_li"><p>15:00</p><a class="schedule_article_a">写真集リリースイベント写真集リリースイベント写真集リリースイベント</a></li>
+                  <li class="schedule_articl_li">15:00<a class="schedule_article_a">写真集リリースイベント</a></li>
+                  </ul>
+                </article>
+                <article class="schedule_article" @click="showDetail" >
+                  <h5>綿　アメリ</h5>
+                  <ul class="schedule_articl_ul">
+                  <li class="schedule_articl_li"><p>15:00</p><a class="schedule_article_a">オリジナルCDリリースイベント</a></li>
+                  <li class="schedule_articl_li">18:00<a class="schedule_article_a">らぽふぁんイベント</a></li>
+                  </ul>
+                </article>
+                <button  @click="closeModal" id="btn-2">もどる</button>
+              </div>
+              </div>
+          </div>
+          <div class="overlay-over" v-else>
+              <div class="cancel-btn" @click="closeModal"  @click="showDetail">
+                  <span class="x x_1"></span>
+                  <span class="x x_2"></span>
+              </div>
+              <div class="overlay-overmain" >
+              <div class="modal_section2">
+                  <h6 class="modal_title">◯月◯日<span class="modal_title_span2">14:00~</span></h6>
+                  <h6 class="modal_title">14:00~ 写真集発売イベント<span class="modal_title_span2">@代々木上原蔦屋よようら店</span></h6>
+                      <img src="../../img/demoimg.png"  class="compo_main_img">
+                      <p class="modal_schedule_detail"> ここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入りますここに文章が入ります</p>
+                      <a href="" class="modal_schedule_detail_a">詳しくはこちら</a>                
+                      <button  @click="showDetail" id="btn-2">もどる</button>
+                 </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </table>
+    <div class="td-ex-area">
+      <p class="schedule schedule-b ex-margin">ツイキャス</p>
+      <p class="schedule">その他のイベント</p>
+    </div>
+  </div>
+    <div class="container-flex-area">
+      <div class="btn-container color3">
+        <h3 class="container-title">プロジェクト</h3>
+        <a href="../../user/html/user_project_top.html" class="move-btn color2">会場へ</a>
+      </div>
+      <div class="btn-container color3">
+        <h3 class="container-title">オークション</h3>
+        <a href="../../user/html/user_auction_top.html" class="move-btn color2">会場へ</a>
+      </div>
+      <div class="btn-container color3">
+        <h3 class="container-title">ガチャ</h3>
+        <a href="../../user/html/user_gacha_top.html" class="move-btn color2">会場へ</a>
+      </div>
+      <!-- <div class="container-half color3">
+        <h3 class="container-title">ECサイト</h3>
+      </div>
+      <div class="container-half color3">
+        <h3 class="container-title">RMT</h3>
+      </div> -->
+    </div>
+  <!-- 活動報告スライド -->
+  <!-- <div class="swiper color1">
+    <div class="swiper-container">  -->
+    <!-- ラッパーの（スライドを囲む） div 要素 -->
+    <!-- <div class="swiper-wrapper"> 
+      <!-- それぞれのスライドの div 要素 -->
+      <!-- <div class="swiper-slide"><img src="../../img/demoimg2.png" alt=""></div> -->
+      <!-- <div class="swiper-slide"><img src="../../img/demoimg.png" alt=""></div>
+      <div class="swiper-slide"><img src="../../img/demoimg2.png" alt=""></div>
+      <div class="swiper-slide"><img src="../../img/demoimg2.png" alt=""></div>
+      <div class="swiper-slide"><img src="../../img/demoimg2.png" alt=""></div>
+      <div class="swiper-slide"><img src="../../img/demoimg2.png" alt=""></div>
+      <div class="swiper-slide"><img src="../../img/demoimg.png" alt=""></div>
+    </div>
+    ページネーションの div 要素
+    <div class="swiper-pagination"></div>
+    ナビゲーションボタンの div 要素
+    <div class="swiper-button-prev"><img src="../../img/arrowleft.png" alt=""></div>
+    <div class="swiper-button-next"><img src="../../img/arrowright.png" alt=""></div> -->
+    <!-- スクロールバーの div 要素 -->
+    <!-- <div class="swiper-scrollbar"></div>
+     </div>
+    </div>  -->
+<userfooter></userfooter>
+  </div>
+  <script src="../../user/js/user_header_search.js" defer></script>
+  <script src="../../user/js/user_footer.js" defer></script>
+ <!-- <script src="../../user/js/component.js" defer></script>_ -->
+ <script>
+    // const swiper = new Swiper(".swiper-container", {
+    //     // ドットインジケーターの表示
+    //     pagination: {
+    //         el: ".swiper-pagination",
+    //     },
+    //     // 前後スライドボタンを表示
+    //     navigation: {
+    //         nextEl: ".swiper-button-next",
+    //         prevEl: ".swiper-button-prev",
+    //     },
+    //     loop: true, // ループの有効化
+    //     autoplay: {
+    //             delay: 3000,
+    //             disableOnInteraction: false,
+    //   },
+    // });
+
+    window.onload = function () {
+        new Vue ({
+            el:"#app",
+            data: {
+              showContent:false,
+            isActive:true,
+            },
+            created(){
+            },
+            methods:{
+              openModal(){
+            this.showContent = true;
+        },
+        closeModal(){
+            this.showContent = false;
+        },
+        showDetail() {
+          this.isActive = !this.isActive
+        }
+      },
+            });
+        }
+   
+ </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新規オークション承認</title>
+  <link rel="stylesheet" href="../../user/css/reset.css">
+  <link rel="stylesheet" href="../../user/css/user_auction_detail.css">
+  <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <masheaders></masheaders>
+  <div class="panlist">
+    <ul>
+      <li ><a href="../../master/html/master_top.html">TOP</a></li>
+      <li ><a href="../../master/html/master_auction_top.html">オークションTOP</a></li>
+      <li class="arrow-l"><p>新規オークション承認</p></li>
+    </ul>
+    </div>
+    <section class="main_card watch">
+        <h6 class="main_card_title">オークションタイトルオークションタイトル</h6>
+        <span class="main_card_title_send_date">2021/11/10から順次発送</span>
+        <div class="card_img">
+        <img src="../../img/demoimg.png" alt="">
+        </div>
+        <div class="main_in">
+            <article class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/lady.png" alt="">女優名</p>
+                    <a class="bold-font" href="../../master/html/master_actress_profile.html">
+                        新村あかり
+                    </a>
+                </div>
+                <div class="main_in_article_2">
+                    <p class="ain_in_article_2_p"><img src="../../img/pro.png" alt="">投稿者</p>
+                    <a class="bold-font" href="../../master/html/master_contributor_profile.html">
+                        桃太郎出版
+                    </a>
+                </div>
+            </article>
+            <article class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/time.png" alt="">開始</p>
+                    <h6>10/10 10時</h6>
+                </div>
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/time.png" alt="">終了</p>
+                    <h6>10/19 10時</h6>
+                </div>
+            </article>
+            <article class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/movie.png" alt="">動画データ</p>
+                    <h6>なし</h6>
+                </div>
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/usbdata.png" alt="">USB郵送</p>
+                    <h6>なし</h6>
+                </div>
+            </article>
+            <div class="main_in_article_1">
+                <p class=""><img src="../../img/money.png" alt="">送料</p>
+                <h6>着払い</h6>
+            </div>
+            <div class="main_in_article_1">
+                <p class=""><img src="../../img/mallet.png" alt="">スタート金額</p>
+                <h5 class="bold-font ">
+                    3,500円
+                </h5>
+            </div>
+            <!-- <article >
+                <div class="main_in_article_1">
+                    <p class=""><img src="../../img/man.png" alt="">入札者名</p>
+                    <a class="bold-font">
+                        ------
+                    </a>
+                </div>
+            </article> -->
+        </div>
+    </section>
+    <div class="main-top color2">
+        <div class="tab-area">
+            <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActiveTab === '1'}">内容</div>
+            <div class="tab color3" @click="isSelect('2')" style="opacity: 0.5;" v-bind:class="{'active': isActiveTab === '2'}">入札状況</div>
+        </div>
+        <!--内容-->
+        <div class="content-container color1" v-if="isActiveTab === '1'">
+            <div class="main-content-inner">
+                <p class="main-content-text">
+                    テキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+                <div class="main-content-img-area">
+                    <img src="../../img/demoimg.png" alt="">
+                </div>
+                <p class="main-content-text">
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+            </div>
+        </div>
+        <!--入札状況-->
+        <div  class="content-container color1" v-else="isActiveTab === '2'">
+            <table class="history">
+                <tr>
+                    <th colspan="3" class="history-title color5"><img src="../../img/mallet.png">入札履歴</th>
+                </tr>
+                <tr>
+                    <th class="history-td history-th">入札時間</th>
+                    <th class="history-td history-th">入札額</th>
+                    <th class="history-td history-th">入札者</th>
+                </tr>
+                <tr>
+                    <td class="history-td h-left"></td>
+                    <td class="history-td h-center"></td>
+                    <td class="history-td h-right bold-font"></td>
+                </tr>
+                <tr>
+                    <td class="history-td h-left"></td>
+                    <td class="history-td h-center"></td>
+                    <td class="history-td h-right bold-font"></td>
+                </tr>
+            </table>
+        </div>   
+    </div>
+    <!-- 追従フッター -->
+    <div  class="tempo">
+        <div class="tempo_float">
+            <a class="tempo_a" >差し戻し</a>
+            <a class="tempo_a"  >承認</a>
+        </div>
+    </div>
+</div>
+<script src="../../master/js/master_header_search.js"></script>
+  <script>
+    var app = new Vue({
+      el:'#app',
+      data(){
+      return {
+        isActiveTab:"1"
+      }
+      },
+      methods: {
+        isSelect(number) {
+          this.isActiveTab = number;
+        },
+      }
+    });
+  </script>
+</body>
+</html>
+

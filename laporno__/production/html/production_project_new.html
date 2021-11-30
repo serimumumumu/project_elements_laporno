@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクト詳細</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../contributor/css/projdetail.css">
+    <link rel="stylesheet" href="../../contributor/css/auchtop.css">
+    <link rel="stylesheet" href="../../user/css/projdetail.css">
+    <link rel="stylesheet" href="../../contributor/css/projdetailedit.css">
+    <script src="../../user/js/vue.js"></script>
+</head>
+<body>
+    <div id="conheaders">
+        <conheaders></conheaders>
+    </div>
+<!-- パンクズりすと -->
+<div class="panlist">
+    <ul >
+        <li ><a href="top.html">TOP</a></li>
+        <li class="arrow-l"><a href="projtop.html">プロジェクト一覧</a></li>
+        <li class="arrow-l">プロジェクトタイトルタイトル</li>
+    </ul>
+</div>
+
+
+<section class="main_card" id="support">
+    <div class="imgregist">
+        <label>
+            <input type="file" accept="image/*" class="selectonpreview" onchange="previewImage(this);">写真を登録する
+        </label>
+        <p class="imgpreview">
+            <img id="preview" rc="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+        </p>
+    </div>
+    <div class="main_in">
+        <article class="main_in_article">
+            <div class="main_in_article_1">
+                <p class="">プロジェクトタイトル</p>
+                <input type="text" class="delitext" placeholder="プロジェクトタイトル">
+            </div>
+        </article>
+        <article class="main_in_article">
+            <div class="main_in_article_1">
+                <p class=""><img src="../../img/lady.png" alt="">女優名</p>
+                <input type="text" list="actlist" class="act-select" placeholder="女優の名前"/>
+            </div>
+        </article>
+        <article >
+            <div class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/time.png" alt="">開始</p>
+                    <input type="text" class="delitext" placeholder="05/11 12:00">
+                </div>
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/time.png" alt="">終了</p>
+                    <input type="text" class="delitext" placeholder="05/11 12:00">
+                </div>
+            </div>
+        </article>
+        <article class="main_in_article">
+            <div class="main_in_article_1 relative">
+                <p class=""><img src="../../img/folder.png" alt="">カテゴリー</p>
+                <input type="text" class="delitext" placeholder="カテゴリー自由記入">
+            </div>
+        </article>
+    </div>
+</section>
+<div class=" color2"　style="margin-bottom:300px;">
+    <div id="actprodtop">
+        <div class="tab-area">
+            <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">初めに</div>
+            <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">リターン</div>
+            <div class="tab color3" @click="isSelect('3')" v-bind:class="{'active': isActive === '3'}">コメント</div>
+            <div class="tab color3" @click="isSelect('4')" v-bind:class="{'active': isActive === '4'}">活動報告</div>
+        </div>
+        <!--初めに-->
+        <div class="color1" v-if="isActive === '1'" style="margin-bottom:300px;">
+            <h1 class="title">初めに<button class="create-btn color2" onclick="location.href='projdetailneweditinfirst.html'"><img src="../../img/plus.png"> 新規作成</button></h1>
+        </div>
+        <!--リターン-->
+        <div class="color1" v-else-if="isActive === '2'" style="margin-bottom:300px;">
+            <h1 class="title">リターン<button class="create-btn color2" onclick="location.href='projdetailneweditinreturn.html'"><img src="../../img/plus.png"> 新規作成</button></h1>
+        </div>
+        <!--コメント-->
+        <div class="color1" v-else-if="isActive === '3'" style="margin-bottom:300px;">
+            <h1 class="title">コメント</h1>
+        </div>
+        <!--活動報告-->
+        <div class="color1" v-else-if="isActive === '4'" style="margin-bottom:300px;">
+            <h1 class="title">活動報告<button class="create-btn color2" onclick="location.href='projdetailneweditinreport.html'"><img src="../../img/plus.png"> 新規作成</button></h1>
+        </div>
+    </div>   
+</div>
+<div class="twobutton color1">
+    <a class="twobutton_a" href="projtop.html">戻る</a>
+    <a class="twobutton_a" href="projdetaileditin.html">投稿</a>
+</div>
+<datalist id="actlist">
+    <option>女優１</option>
+    <option>女優２</option>
+    <option>女優３</option>
+</datalist>　
+<script src="../../user/js/mypage.js"></script>
+<script src="../../contributor/js/concomponent.js"></script>
+<script>
+    function previewImage(obj)
+    {
+        var fileReader = new FileReader();
+        fileReader.onload = (function() {
+            document.getElementById('preview').src = fileReader.result;
+        });
+        fileReader.readAsDataURL(obj.files[0]);
+    }
+</script>
+</body>
+</html>

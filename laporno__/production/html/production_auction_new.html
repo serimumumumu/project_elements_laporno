@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投稿者オークション詳細</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../contributor/css/auchdetailedit.css">
+    <script src="../../user/js/vue.js" defer></script>
+</head>
+<body>
+    <div id="conheaders">
+        <conheaders></conheaders>
+    </div>
+<!-- パンクズりすと -->
+<div class="panlist">
+    <ul >
+        <li ><a href="top.html">TOP</a></li>
+        <li class="arrow-l"><a href="auctiontop.html">オークショントップ</a></li>
+        <li class="arrow-l">オークションタイトル</li>
+    </ul>
+</div>
+<section class="main_card">
+    <article class="main_in_article">
+        <div class="main_in_article_1">
+            <p class="">オークションタイトル</p>
+            <input type="text" class="delitext" placeholder="オークションのタイトル">
+        </div>
+    </article>
+    <div class="imgregist">
+        <label>
+            <input type="file" accept="image/*" class="selectonpreview" onchange="previewImage(this);">写真を登録する
+        </label>
+        <p class="imgpreview">
+            <img id="preview" src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+        </p>
+    </div>
+    <div class="main_in">
+        <article class="main_in_article">
+            <div class="main_in_article_1">
+                <p class=""><img src="../../img/lady.png" alt="">女優名</p>
+                <input type="text" list="actlist" class="act-select" placeholder="女優の名前"/>
+            </div>
+        </article>
+        <article >
+            <div class="main_in_article">
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/time.png" alt="">開始</p>
+                    <input type="text" class="delitext" placeholder="05/11 12:00">
+                </div>
+                <div class="main_in_article_2">
+                    <p class=""><img src="../../img/time.png" alt="">終了</p>
+                    <input type="text" class="delitext" placeholder="05/11 12:00">
+                </div>
+            </div>
+        </article>
+        <article class="main_in_article">
+            <div class="main_in_article_2 relative">
+                <p class=""><img src="../../img/money.png" alt="">スタート金額</p>
+                <input type="text" class="delitext" placeholder="1,000"><span class="delitext_span">円</span>
+            </div>
+        </article>
+    </div>
+</section>
+<div class="main-top color2" id="actprodtop">
+    <div class="tab-area">
+        <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActive === '1'}">内容</div>
+        <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActive === '2'}">入札状況</div>
+    </div>
+    <!--内容-->
+    <div class="content" v-if="isActive === '1'">
+            <div class="content-btn-area">
+                <button class="content-btn color3">見出</button>
+                <button class="content-btn color3">太字</button>
+                <button class="content-btn color3">画像</button>
+                <button class="content-btn color3">埋め込みYoutube</button>
+                <button class="content-btn color3">動画</button>
+            </div>
+            <textarea class="inner-textarea" name="" id="" cols="30" rows="10" placeholder="ここに文章が入ります">
+            </textarea>
+    </div>
+      <!--景品一覧-->
+    <div  class="content" v-else="isActive === '2'">
+        <table class="history">
+            <tr>
+                <th colspan="3" class="history-title color5"><img src="../../img/mallet.png">入札履歴</th>
+            </tr>
+            <tr>
+                <th class="history-td history-th">入札時間</th>
+                <th class="history-td history-th">入札額</th>
+                <th class="history-td history-th">入札者</th>
+            </tr>
+            <tr>
+                <td class="history-td h-left"></td>
+                <td class="history-td h-center"></td>
+                <td class="history-td h-right bold-font"></td>
+            </tr>
+            <tr>
+                <td class="history-td h-left"></td>
+                <td class="history-td h-center"></td>
+                <td class="history-td h-right bold-font"></td>
+            </tr>
+            <tr>
+                <td class="history-td h-left"></td>
+                <td class="history-td h-center"></td>
+                <td class="history-td h-right bold-font"></td>
+            </tr>
+        </table>
+    </div>   
+</div>
+<datalist id="actlist">
+    <option>女優１</option>
+    <option>女優２</option>
+    <option>女優３</option>
+</datalist>　
+<!-- 追従フッター -->
+<div class="twobutton color1">
+    <a class="twobutton_a" href="auctiontop.html">戻る</a>
+    <a class="twobutton_a" href="auchdetailnew.html">確認</a>
+</div>
+<script src="../../user/js/actprodtop.js" defer></script>
+<script src="../../contributor/js/concomponent.js" defer></script>
+<script>
+    function previewImage(obj)
+    {
+        var fileReader = new FileReader();
+        fileReader.onload = (function() {
+            document.getElementById('preview').src = fileReader.result;
+        });
+        fileReader.readAsDataURL(obj.files[0]);
+    }
+</script>
+</body>
+</html>

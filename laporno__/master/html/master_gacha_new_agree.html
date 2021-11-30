@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規ガチャ承認</title>
+    <link rel="stylesheet" href="../../user/css/reset.css">
+    <link rel="stylesheet" href="../../master/css/master_hyou.css">
+    <link rel="stylesheet" href="../../contributor/css/contributor_gacha_new.css">
+    <script src="../../user/js/vue.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <masheaders></masheaders>
+        <!-- パンクズりすと -->
+        <div class="panlist">
+            <ul >
+                <li ><a href="../../master/html/master_top.html">TOP</a></li>
+                <li class="arrow-l"><a href="../../master/html/master_gacha_top.html">ガチャトップ</a></li>
+                <li class="arrow-l"><p>新規ガチャ詳細</p></li>
+            </ul>
+        </div>
+        <section class="main_card">
+            <div>
+                <div class="new_input">
+                    <p class="new_input_sub">紐付け先</p>
+                    <p class="new_answer_100">ガチャタイトル<span class="new_input_select_span_gray">に紐付ける</span></p>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">ガチャタイトル*</p>
+                    <p class="new_answer_100">ガチャタイトルガチャタイトルガチャタイトル</p>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">発送予定日</p>
+                    <p class="new_answer_100">2021/11/11<span class="new_input_select_span_gray">から順次発送予定</span></p>
+                </div>
+                <div class="new_input">
+                    <p class="imgpreview">
+                        <img id="preview_preview" src="data:image/png;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+                    </p>
+                </div>
+                <div class="new_input new_input_two">
+                    <div class="">
+                        <p class="new_input_sub"><img src="../../img/time.png" alt="">開始</p>
+                        <p class="new_answer_100">2021/11/11 15時</p>
+                        </div>
+                    <div class="">
+                        <p class="new_input_sub"><img src="../../img/time.png" alt="">終了</p>
+                        <p class="new_answer_100">2021/11/21 15時</p>
+                    </div>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">１回LP</p>
+                    <p class="new_answer_100">800<span class="new_input_select_span_gray">LP</span></p>
+                </div>
+                <div class="new_input new_input_two">
+                    <div class="">
+                        <p class="new_input_sub">ラストワン賞</p>
+                        <p class="new_answer_100">有り</p>
+                    </div>
+                    <div class="">
+                        <p class="new_input_sub">カウントについて</p>
+                        <p class="new_answer_100">カウントアップ式</p>
+                    </div>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">10回回して1回おまけ</p>
+                    <p class="new_answer_100">有り</p>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">回数ボーナス</p>
+                    <p class="new_answer_100">100回回すとサイン付きチェキ</p>
+                    <p class="new_answer_100">1000回回すと名前入りサイン付きチェキ</p>
+                    <p class="new_answer_100">3000回回すとキスマーク付きチェキ</p>
+                </div>
+                <div class="new_input">
+                    <p class="new_input_sub">スクラッチボーナス</p>
+                    <p class="new_answer_100">10000回回すとサイン付きチェキ</p>
+                    <p class="new_answer_100">50000回回すとイベント開催</p>
+                </div>
+                <div class="gacha_content_shrink">
+                    <img class="gacha_content_shrink_img" src="../../img/arrowup.png" alt="">
+                </div>
+            </div>
+        </section>  
+        <div class="main-top color2">
+            <div class="tab-area">
+                <div class="tab color3 " @click="isSelect('1')" v-bind:class="{'active': isActiveTab === '1'}">内容</div>
+                <div class="tab color3" @click="isSelect('2')" v-bind:class="{'active': isActiveTab === '2'}">景品一覧</div>
+                <div class="tab color3" style="opacity:0.5;" ><p>活動報告</p></div>
+            </div>
+            <!--内容-->
+            <div class="color1 gacha_new_downpart" v-if="isActiveTab === '1'">
+                <div class="gacha_title_and_button">
+                <h2 class="gacha_content_title">内容</h2>
+                </div>
+                <div class="gacha_content_main">
+                    <div class="user_gacha_content">
+                        <h6 class="user_gacha_content_title">たいとるたいとる</h6>
+                        <p class="user_gacha_content_p">
+                            テキストテキストテキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </p>
+                        <div class="main-content-img-area">
+                            <img src="../../img/demoimg.png" alt="">
+                        </div>
+                        <h6 class="user_gacha_content_title_border">たいとるたいとる</h6>
+                        <p class="user_gacha_content_p">
+                            テキストテキストテキストテキストテキストテキストテキスト
+                            テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        </p>
+                        </div>
+                        <div class="table_area">
+                            <p class="probability-title"><img src="../../img/scale.png" alt="">確率</p>
+                            <table class="probability">
+                                <tr>
+                                    <th>景品</th>
+                                    <th>確率</th>
+                                </tr>
+                                <tr>
+                                    <td>景品の名前</td>
+                                    <td>20%</td>
+                                </tr>
+                                <tr>
+                                    <td>景品の名前</td>
+                                    <td>20%</td>
+                                </tr>
+                                <tr>
+                                    <td>景品の名前</td>
+                                    <td>20%</td>
+                                </tr>
+                            </table>
+                            <p class="probability-text">※ガチャが引き進められるほど確率は変動し、これに限りません</p>
+                        </div>
+                </div>
+            </div>
+            <!--景品一覧-->
+            <div  class="color1 gacha_new_downpart" v-else="isActiveTab === '2'">
+                <div class="gacha_title_and_button">
+                    <h2 class="gacha_content_title">景品一覧</h2>
+                </div>
+                <div class="gacha_content_main">
+                    <div class="hyou">
+                        <div class="hyou-top">
+                        <div class="table-title-area color5">
+                            <h2 class="table-title">ガチャ一覧</h2>
+                            <div class="table_sort">
+                            <select name="order" id="" class="table_sort_select color1">
+                            <option >総数少ない順</option>
+                            <option >新着中</option>
+                            <option >登録順</option>
+                            </select>
+                            </div>
+                        </div>
+                        <table class="table gacha">
+                            <tr class="table_header">
+                            <th class="table_160">賞の名前</th>
+                            <th class="table_160">女優名</th>
+                            <th class="table_60">合計数</th>
+                            <th class="table_60">出数</th>
+                            <th class="table_60">残数</th>
+                            </tr>
+                            <tr>
+                            <td>賞の名前</td>
+                            <td>女優の名前 </td>
+                            <td class="text_right">10000</td>
+                            <td class="text_right">1000</td>
+                            <td class="text_right">99000</td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td>女優の名前 </td>
+                            <td class="text_right">10000</td>
+                            <td class="text_right">1000</td>
+                            <td class="text_right">99000</td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td>女優の名前 </td>
+                            <td class="text_right">10000</td>
+                            <td class="text_right">1000</td>
+                            <td class="text_right">99000</td>
+                            </tr>
+                            <!-- </tr> -->
+                            <tr>
+                            <td>賞の名前B</td>
+                            <td>女優の名前 </td>
+                            <td class="text_right">10000</td>
+                            <td class="text_right">1000</td>
+                            <td class="text_right">99000</td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td>女優の名前 </td>
+                            <td class="text_right">10000</td>
+                            <td class="text_right">1000</td>
+                            <td class="text_right">99000</td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td>女優の名前 </td>
+                            <td class="text_right">10000</td>
+                            <td class="text_right">1000</td>
+                            <td class="text_right">99000</td>
+                            </tr>
+                            <tr>
+                            <td>賞の名前C</td>
+                            <td>女優の名前 </td>
+                            <td class="text_right">10000</td>
+                            <td class="text_right">1000</td>
+                            <td class="text_right">99000</td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td>女優の名前 </td>
+                            <td class="text_right">10000</td>
+                            <td class="text_right">1000</td>
+                            <td class="text_right">99000</td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td>女優の名前 </td>
+                            <td class="text_right">10000</td>
+                            <td class="text_right">1000</td>
+                            <td class="text_right">99000</td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                    <article class="user_gacha_detail_freebie">
+                        <h5 class="user_gacha_detail_freebie_title">賞のタイトル</h5>
+                        <div class="user_gacha_detail_freebie_main">
+                        <img class="user_gacha_detail_freebie_main_img" src="../../img/demoimg.png"  alt="">
+                        <p class="user_gacha_detail_freebie_content">テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                        <div class="user_gacha_detail_datas">
+                            <div class="user_gacha_detail_data">
+                                <p class="user_gacha_detail_data_p"><img class="user_gacha_detail_data_img" src="../../img/movie.png" alt="">映像データ：なし</p>
+                            </div>
+                            <div class="user_gacha_detail_data">
+                                <p class="user_gacha_detail_data_p"><img class="user_gacha_detail_data_img" src="../../img/usbdata.png" alt="">USB郵送：なし</p>
+                            </div>
+                        </div>
+                        <div class="keihin-area">
+                            <div class="keihin color3">
+                                <p>女優の名前</p>
+                                <p>typeA</p>
+                                <p>10</p>
+                            </div>
+                            <div class="keihin color3">
+                                <p>女優の名前</p>
+                                <p>typeA</p>
+                                <p>10</p>
+                            </div>
+                            <div class="keihin color3">
+                                <p>女優の名前</p>
+                                <p>typeA</p>
+                                <p>10</p>
+                            </div>
+                        </div>
+                        </div>
+                    </article>
+                </div>  
+            </div>
+            <!-- 活動報告一覧 -->
+            <div  class="color1 gacha_new_downpart" v-else-if="isActive === '3'">
+                <div class="gacha_new_downpart color1" >
+                    <div class="gacha_title_and_button">
+                    </div>
+                    <div class="main-content-inner">
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="twobutton color1">
+            <a class="twobutton_a" href="../../master/html/master_gacha_top.html">差し戻し</a>
+            <a class="twobutton_a" href="../../master/html/master_gacha_top.html">承認する</a>
+        </div>
+    </div>
+<script src="../../master/js/master_header_search.js" defer></script>
+<script>
+    function previewImage(obj)
+    {
+        var fileReader = new FileReader();
+        fileReader.onload = (function() {
+            document.getElementById('preview').src = fileReader.result;
+        });
+        fileReader.readAsDataURL(obj.files[0]);
+    }
+    window.onload = function () {
+        new Vue ({
+        el:"#app",
+        data:{
+        isActiveTab: "1",
+            },
+        methods: {
+        isSelect(number) {
+            this.isActiveTab = number;
+         }
+     },
+    });
+    }
+
+    
+    </script>
+</body>
+</html>

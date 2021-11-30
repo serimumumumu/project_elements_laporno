@@ -1,0 +1,61 @@
+@import "concomponent.scss";
+
+body {
+  background: $white;
+}
+
+.img-input-area{
+  display: flex;
+  justify-content: space-between;
+}
+
+.imt-input-icon{
+  display: block;
+}
+
+.img-input{
+  width: 49%;
+  text-align: center;
+  padding: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #C4C4C4;
+}
+
+input[type="file"]{
+  display: none;
+}
+
+.inputted-img-area{
+  width: 49%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.inputted-img{
+  width: 49%;
+  height: fit-content;
+  margin-bottom: 11px;
+}
+
+.inputted-last{
+  margin: 0;
+}
+
+.memo-text{
+  border: 1px solid #C4C4C4;
+  height: 100px;
+  width: 100%;
+  resize: none;
+  padding: 10px;
+}
+
+.delitext {
+  border: 1px solid #C4C4C4;
+  padding: 10px;
+  width: 50%;
+  margin: 0 8px 0 0;
+}

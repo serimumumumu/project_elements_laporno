@@ -1,0 +1,17 @@
+@import "color.scss";
+
+// 　フッター
+.foot_list {
+    color: $white;
+    padding: 30px;
+}
+.foot_list_ul li{
+    padding: 0 0 16px 0;
+}
+.footer_copyright {
+    color: $white;
+    font-weight: 100;
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 30px;
+}
