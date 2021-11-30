@@ -1,2 +1,3 @@
-# project_laporno_html_public
+# ラポルノファンディングのCSS制御用レポジトリ
+
 ラポルノファンディング用HTML・CSS情報
